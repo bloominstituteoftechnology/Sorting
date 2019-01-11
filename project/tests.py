@@ -1,7 +1,7 @@
 import unittest
 from searching import *
-from selection import selection_sort
-from insertion import insertion_sort
+from iterative_sorting import *
+from recursive_sorting import *
 
 class SortingTest(unittest.TestCase):
 

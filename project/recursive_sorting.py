@@ -35,3 +35,15 @@ def merge_sort_in_place(arr):
     # TO-DO
 
     return arr
+
+
+# TO-DO: implement the Quick Sort function below
+def quick_sort( arr ):
+
+    return arr
+
+
+# STRETCH: implement the Timsort function below
+def timsort( arr ):
+
+    return arr

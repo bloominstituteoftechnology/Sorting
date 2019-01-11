@@ -4,9 +4,9 @@ For the purpose of this module, we will be writing and discussing all sorting al
 ## Day 1 - Why is it so important to sort data?
 
 ### We're Always Searching
-With every passing day, users have less patience for slow apps. And rightfully so! And while a large part of why the applications we use now-a-days are so fast is due to the improvements in hardware over the last few decades, the software developer still has an important role to play in keeping everything moving quickly.
+Users do not have patience for slow apps. And rightfully so! While a a big reason why the applications we use now-a-days are so fast is due to the improvements made in hardware over the last few decades, the software developer still has an important role to play in keeping everything moving quickly.
 
-As we write our applications, we should always be mindful of what operations are being done frequently, since optimizing these will have the biggest impact on the efficiency of our overall application. And regardless of *what* type of app you are creating, it is likely that one of the operations you will be relying on is ***searching***. We search [example 1], [example 2], and [example 3]. Because of this, it is essential that we optimize our searches.
+As we write our applications, we should always be mindful of what operations are being done frequently, since optimizing these will have the biggest impact on the efficiency of our overall application. And regardless of *what* type of app you are creating, it is likely that one of the operations you will be relying on is ***searching***. We search for songs to add to a playlist, videos to watch, people we need to talk to and so much more. Because of this, it is essential that we optimize our searches.
 
 ### Linear vs. Binary Search
 There are two common searching algorithms that developers are often introduced to when they are writing some of their first apps: linear search and binary search. Let's walk through the differences between them.
@@ -17,17 +17,21 @@ Sometimes referred to as sequential search, this algorithm is fairly straightfor
 
 #### Binary Search
 
-The process of performing a binary search has a couple of extra steps. First, there is a *precondition* that the set of data you are searching is ***already sorted***. Then, the steps to search are:
+The process of performing a binary search has a couple of extra steps. First, there is a *precondition* that the set of data you are searching is ***already sorted*** (alphabetically, numerically, etc). Then, the steps to search are:
 
 1. Compare the item in the middle of the data set to the item we are searching for.
     - If it is the same, stop. We found it and are done!
     - Else, if the item we are searching for is LESS than the item in the middle:
         - Eliminate the RHS of list. Repeat step 1 with only the LHS of list.
-    - Else: ...
+    - Else, the item we are searching for is GREATER than the item in the middle:
+        - Eliminate the LHS of list. Repeat step 1 with only the RHS of the list.
 
 
 A visualization comparing these two algorithms is shown below.
 ![binary v sequential](https://www.mathwarehouse.com/programming/images/binary-vs-linear-search/binary-and-linear-search-animations.gif "Binary v Sequential Search")
+
+#### Your Task 
+- (STRETCH) Complete some of all of the three functions in `searching.py`
 
 #### Runtimes
 
@@ -36,158 +40,113 @@ These two searching strategies have very different runtimes.
 **Linear Search:** O(n)  
 **Binary Search:** O(log(n))
 
-Looking at the above runtimes, it is clear that we want to avoid linear search. 
+Looking at the above runtimes, it is clear that we should be using binary search over linear search. 
 ***However, we cannot perform binary search if our data isn't ALREADY SORTED!***
 
 While the justification for *WHY* we want to sort our data is pretty clear, a harder question to answer is *HOW* do we want to sort our data. Over the next few days, we will explore several different sorting algorithms, examining the pros and cons of each.
 
-[(VIDEO) 15 Sorting Algorithms in 6 Minutes  ![alt text](https://i.ytimg.com/vi/kPRA0W1kECg/maxresdefault.jpg)](https://www.youtube.com/watch?v=kPRA0W1kECg)
+[Just for fun...(VIDEO) 15 Sorting Algorithms in 6 Minutes  ![alt text](https://i.ytimg.com/vi/kPRA0W1kECg/maxresdefault.jpg)](https://www.youtube.com/watch?v=kPRA0W1kECg)
 
 ## Iterative Sorting Algorithms
 
 ### Selection Sort
-***Selection Sort*** is an algorithm that many of you have actually used before. Imagine that you have several playing cards you need to put in order. You start off by looking for the lowest card, and when you find it, put it at the front of your hand. Then, you look for the second lowest card and insert it directly behind the first card. You repeat this process, selecting the next lowest card and moving it behind the most recently placed card, until you have moved all cards into the right place. This is ***Selection Sort***.  
+***Selection Sort*** is an algorithm that many of you have probably used before when sorting things in your everyday lives. Imagine that you have several books you want to arrange on a shelf from shortest to tallest. You start off by looking for the shortest book, and when you find it, put it on the far left side of the shelf. Then, you look for the second shortest book and insert it directly to the right of the first book. You repeat this process, selecting the next shortest book and moving it next to the most recently placed book, until you have moved all books into the right place. This is ***Selection Sort***.  
 
 An example of this algorithm being applied to an array with 10 numerical elements can be seen in the video below.
 
 [(VIDEO) Select-sort with Gypsy folk dance  ![alt text](https://i.ytimg.com/vi/Ns4TPTC8whw/hqdefault.jpg)](https://www.youtube.com/watch?v=Ns4TPTC8whw)
 
->CHALLENGE: Before scrolling down, try outlining the steps for this algorithm from what you observed in the video above!
-
 
 #### Algorithm
 1. Start with current index = 0
 
-2. For all indices EXCEPT last:
+2. For all indices EXCEPT the last index:
 
     a. Loop through elements on right-hand-side 
-    of current index and find smallest element
+    of current index and find the smallest element
 
-    b. Swap element at current index with 
+    b. Swap the element at current index with the
     smallest element found in above loop
 
 #### Implementation in Python
 ```
 def selectionSort():
-    // For all indices EXCEPT last:
-    for i in range(0, arr.length-2):
-        var cur_min_index = i;
-        // 1. Loop through elements on right-hand-side 
-        // of current index and find smallest element
-        for j in range(i+1, arr.length-2):
-            if arr[j] < arr[cur_min_index]:
-                cur_min_index = j;
-        // 2. Swap element at current index with 
-        // smallest element found in above loop
-        int temp = arr[i];
-        arr[i] = arr[cur_min_index];
-        arr[cur_min_index] = temp;
-    // return sorted array
-    return arr;
+    def selection_sort( arr ):
+    # loop through n-1 elements
+    for i in range(0, len(arr) - 1):
+        cur_index = i
+        smallest_index = cur_index
+        # find next smallest element
+        for j in range(cur_index, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
 
-// try it out
-var arr = [2,5,9,7,4,1,3,8,6];
-print( "Unsorted array: " + arr);
-arr = selectionSort( arr );
-print( "Sorted array: " + arr);
+        # swap
+        temp = arr[smallest_index]
+        arr[smallest_index] = arr[cur_index]
+        arr[cur_index] = temp
+
+    return arr
+
+# try it out
+my_arr = [2,5,9,7,4,1,3,8,6]
+print(my_arr)
+arr = selectionSort(my_arr)
+print(my_arr)
 
 ```
 
 #### Real-World Applications
 While ***Selection Sort*** is one of the easier sorting algorithms to understand and implement, it has one major drawback - its efficiency.
 
-Recall that the runtime complexity of an algorithm, often expressed using *Big O notation*, tells us how the amount of operations our algorithm requires will grow as the size of our input grows. ***Selection Sort*** will have a runtime of O(n²) in *all* cases, making it impractical to use with many large, real-world data sets.
+Recall that the runtime complexity of an algorithm, often expressed using *Big O notation*, tells us how the amount of operations our algorithm requires will grow as the size of our input grows. ***Selection Sort*** has  a runtime of O(n²), making it impractical to use with many large, real-world data sets.
 
-#### Check for understanding
-1. Is ***Selection Sort*** a comparison sorting algorithm?
-    <details><summary>Answer</summary> Yes, since to <i>select</i> the desired element, we compare a current value to the rest of the "unsorted" segment of our list or array.
-    </details>
-
-2. Why do we end our loop before processing the item in the last index of an array when performing ***Selection Sort***?
-    <details><summary>Answer</summary> By the nature of how this algorithm works, if all other elements have been sorted, the last element will have been moved to the correct index.
-
-3. When using ***Selection Sort***, what is the difference between the order or arrangement of elements in *best case* versus *worst case*?
-    <details><summary>Answer</summary> None, since the same number of operations will be performed <b>regardless</b> of how elements are ordered.
-    </details>
-
-4. When using ***Selection Sort***, what would be the runtime of sorting elements in the best, average, and worst cases?
-    <details><summary>Answer</summary> <ul>
-    <li>Best case:    O(n²)</li>
-    <li>Average case: O(n²)</li>
-    <li>Worst case:   O(n²)</li>
-    </ul>
-    </details>
-5. Show how the array **[4, 8, 3, 1, 9, 6]** changes as it is being sorted using ***Selection Sort***. To do this, write out the contents of the array after each pass of the algorithm. (_hint...we should only need n-1 passes to sort the array, where n is the size_)
-    <details><summary>Answer</summary> <pre><samp>[1, 8, 3, 4, 9, 6]  
-   [1, 3, 8, 4, 9, 6]  
-   [1, 3, 4, 8, 9, 6]  
-   [1, 3, 4, 6, 9, 8]  
-   [1, 3, 4, 6, 8, 9]  </samp></pre></details>
+#### Your Task
+- Complete the missing parts of `selection_sort()` in `iterative_sorting.py` with your instructor
 
 ### Insertion Sort
-[overview] 
+Think back to class or team picture day. Everyone stands in a line facing the photographer. Starting at the left-hand side of the line, the photographer checks to make sure each person is taller than the person next to them. If they are shorter, the photographer pulls them out and shifts people over to the right until he or she finds the right spot for this person. They then insert them back into the line. This process repeats until the photographer reaches the last person on the right-hand side, who must be the tallest person in the group. This is ***Insertion Sort***.
 
-[(VIDEO) Insert-sort with Romanian folk dance  ![alt text](https://i.ytimg.com/vi/ROalU379l3U/hqdefault.jpg)](https://www.youtube.com/watch?v=ROalU379l3U)
+[(VIDEO) Insert-sort with Romanian folk dance  ![alt text](https://i.ytimg.com/vi/ROalU379l3U/hqdefault.jpg)](https://www.youtube.com/watch?v=ROalU379l3U)  
 
 #### Algorithm
-1. Separate the first element from the rest of the array. Consider it a sorted list of one element.
+1. Separate the first element from the rest of the array. Think about it as a sorted list of one element.
 
 2. For all other indices, beginning with [1]:
 
-    a. Copy the current item into a temp variable
+    a. Copy the item at that index into a temp variable
 
     b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted  
     - Shift items over to the right as you iterate
     
-    c. When the right index is found, copy temp into this position
+    c. When the correct index is found, copy temp into this position
 
-#### Implementation in Python
+#### Your Task
+- Implement the `insertion_sort()` function in `iterative_sorting.py`
+
 ```
-def insertionSort():
-    // TO-DO
-
+def insertion_sort():
+    # TO BE COMPLETED BY STUDENT
 
 // try it out
-var arr = [2,5,9,7,4,1,3,8,6];
-print( "Unsorted array: " + arr);
+arr = [2,5,9,7,4,1,3,8,6];
+print(arr);
 arr = insertionSort( arr );
-print( "Sorted array: " + arr);
+print(arr);
 
 ```
 
 #### Real-World Applications
-While ***Insertion Sort*** is...
+The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is not always the same. The runtime of ***Insertion Sort*** is dependent on how close to being "in-order" the data is to begin with. In a scenario where you are performing ***Insertion Sort*** on an already or mostly sorted array, very few elements will need to be shifted over, leading to a runtime of Ω(n). However, in a worse-case scenario, where the maximum number of shifts are being performed, the runtime of this algorithm is O(n²).
 
-#### Check for understanding
-1. Is ***Insertion Sort*** a comparison sorting algorithm?
-    <details><summary>Answer</summary>Yes, since to find the correct index at which we "insert" the current element we are sorting, we compare it to the rest of the "sorted" segment of our list or array.
-    </details>
-
-2. Consider a scenario in which you have _____. Which sorting algorithm would you chose and WHY?
-
-3. When using ***Insertion Sort***, what is the difference between the order or arrangement of elements in *best case* versus *worst case*?
-    <details><summary>Answer</summary>When performing <i><b>Insertion Sort</b></i>, the algorithm runs more efficiently if the elements are already mostly sorted. When the original array is close to sorted order, fewer comparisons are required to sort it.  But if the array is in reverse-sorted order, the number of comparisons that need to be done increases significantly.  
-
-    For example:  `[5, 4, 3, 2, 1]`  
-    
-    When inserting the 1 into the correct part of the array, we have to compare it with *every* other number. While this is not such a big deal in an array with 5 elements, it gets ***very*** costly as that array becomes bigger.
-    </details>
-
-4. When using ***Insertion Sort***, what would be the runtime of sorting elements in the best, average, and worst cases?
-    <details><summary>Answer</summary>
-    <ul><li>Best case:    O( )</li>
-    <li>Average case: O( )</li>
-    <li>Worst case:   O( )</li>
-    </details>
-
-5. Show how the array **[4, 8, 3, 1, 9, 6]** changes as it is being sorted using ***Insertion Sort***. To do this, write out the contents of the array after each pass of the algorithm. (_hint...we should only need n-1 passes to sort the array, where n is the size_)
-    <details><summary>Answer</summary> <pre><samp>[4, 8, 3, 1, 9, 6] (comparison done, no swap made)
-   [3, 4, 8, 1, 9, 6]
-   [1, 3, 4, 8, 9, 6]
-   [1, 3, 4, 8, 9, 6] (comparison done, no swap made)
-   [1, 3, 4, 6, 8, 9]</samp></pre></details>
+### MVP
+- Complete the missing parts of `selection_sort()` 
+- Implement `insertion_sort()`
 
 ### Stretch Goals
+
+#### Try to write a search function
+- Complete the functions in `searching.py`
 
 #### There are a few "order n" sorting algorithms whose runtime will be linear, even in a worst case scenario. 
 Look into Radix Sort and Count Sort.
@@ -195,9 +154,8 @@ Look into Radix Sort and Count Sort.
     - What are the advantages/disadvantages to this type of sorting algorithm?
 - Take a look a the psuedocode for these algorithms and try implementing one or both of them in Python.
 
-#### Some other iterative sorting algorithms include Bubble Sort and Bogo Sort.
-- Summarize how they work in 2-3 sentences.
-- Which algorithm has a better runtime? Explain why.
+#### You might be surprised what passes for a sorting algorithm
+- Explore Bogo Sort and summarize how it works in a couple of sentences.
 
 
 ## Day 2 - A Better Way to Sort

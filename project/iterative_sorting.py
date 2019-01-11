@@ -16,3 +16,19 @@ def selection_sort( arr ):
 
 
     return arr
+
+
+# TO-DO: implement the Insertion Sort function below
+def insertion_sort( arr ):
+
+    return arr
+
+# STRETCH: implement the Radix Sort function below
+def radix_sort( arr ):
+
+    return arr
+
+# STRETCH: implement the Count Sort function below
+def count_sort( arr ):
+
+    return arr
