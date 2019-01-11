@@ -141,7 +141,7 @@ The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is
 
 ### MVP
 - Complete the missing parts of `selection_sort()` 
-- Implement `insertion_sort()`
+- Implement `insertion_sort()` in `iterative_sorting.py`
 
 ### Stretch Goals
 
@@ -230,76 +230,38 @@ Have you ever wondered how some of the languages you use actually implement thei
 -  (STRETCH) Try writing an *in-place* ***Merge Sort*** algorithm.
 
 ### Quick Sort
-[overview] 
+Let's think about the group photo example again. Everyone's lined up and the photographer wants to order individuals from shortest to tallest. They pull out the first person from the line and instruct everyone *shorter* than this person to position themselves on the left-hand side. Everyone *taller* than this person is instructed to move to the right-hand side. The photographer then repeats this process with the group of people on the left and the group of people on the right. This is ***Quick Sort***.
 
 [(VIDEO) Quick-sort with Hungarian folk dance  ![alt text](https://i.ytimg.com/vi/ywWBy6J5gz8/hqdefault.jpg)](https://www.youtube.com/watch?v=ywWBy6J5gz8)
 
 
 #### Algorithm
 ```
-TBC
+1. Select a pivot. Often times this is the first or last element in a set. It can also be the middle.
+2. Move all elements smaller than the pivot to the left. 
+3. Move all elements greater than the pivot to the right.
+4. While LHS and RHS are greater than 1, repeat steps 1-3 on each side.
 ```
 
-#### Implementation in Python
+#### Your Task
+- Implement the `quick_sort()` function in `recursive_sorting.py`
 ```
-def quickSort():
-    // TBC
-
-
-// try it out
-var arr = [2,5,9,7,4,1,3,8,6];
-print( "Unsorted array: " + arr);
-arr = quickSort( arr );
-print( "Sorted array: " + arr);
-
+def quick_sort(arr):
+    # TO BE COMPLETED BY STUDENT
 ```
 
 #### Real-World Applications
 While ***Quick Sort*** has "quick" in its name, it is typically not used as frequently as Merge Sort. Although it *is* quick in a best case scenario, worst case for ***Quick Sort*** is *very* bad. Because of this, it is not often chosen for production.
 
-#### Check for understanding
-1. In ***Quick Sort***, if the leftmost element of an already sorted array is chosen as the pivot, this leads to worst case performance. Explain why.
-
-2. Consider a scenario in which you have _____. Which recursive sorting algorithm would you chose and WHY?
-
-
-3. When using ***Quick Sort***, what would be the runtime of sorting elements in the best, average, and worst cases?
-    <details><summary>Answer</summary>
-    <ul><li>Best case:    O(nlog(n))</li>
-    <li>Average case: O(nlog(n))</li>
-    <li>Worst case:   O(n²)</li>
-    </details>
-
-4. Show how the array **[4, 8, 3, 1, 9, 6]** changes as it is being sorted using ***Quick Sort***. To do this, write out the contents of the array after each pass of the algorithm. (_assume the pivot will be the middle index, mid=len of subarray / 2_)
-   <details><summary>Answer</summary> <pre><samp>[1, 8, 3, 4, 9, 6]  // pivot = 1  
-   // Quick Sort LHS, RHS of 1
-   [1, 8, 3, 4, 9, 6]  // LHS done ✓
-    ✓             
-   [1, 8, 3, 4, 9, 6]  // RHS pivot = 4
-    ✓                
-   [1, 3, 4, 8, 9, 6]  
-    ✓             
-   // Quick Sort LHS, RHS of 4
-   [1, 3, 4, 8, 9, 6]  // LHS done ✓
-    ✓  ✓  ✓  
-   [1, 3, 4, 8, 9, 6]  // RHS pivot = 9
-    ✓  ✓  ✓     
-   [1, 3, 4, 8, 6, 9]  
-    ✓  ✓  ✓        
-   // Quick Sort LHS, RHS of 9
-   [1, 3, 4, 8, 6, 9]  // RHS done ✓
-    ✓  ✓  ✓        ✓
-   [1, 3, 4, 8, 6, 9]  // LHS pivot = 6
-    ✓  ✓  ✓        ✓
-   [1, 3, 4, 6, 8, 9]  
-    ✓  ✓  ✓        ✓
-   // Quick Sort LHS, RHS of 6
-   [1, 3, 4, 6, 8, 9]  // LHS, RHS done ✓
-    ✓  ✓  ✓  ✓  ✓  ✓</samp></pre></details>
+### MVP
+- - Implement `quick_sort()` in `recursive_sorting.py`
 
 ### Stretch Goals
 
-#### Tim Sort is a combination of the Merge Sort and Insertion Sort algorithms.
-- What programming languages use **Tim Sort** to implement their built-in `sort()` functions?
+#### Make a better Merge Sort
+- While a little more challenging, it is possible to implement ***Merge Sort*** **in-place** (without using extra memory). Try writing a second `merge_sort()` function that does this.
+
+#### Timsort is a combination of the Merge Sort and Insertion Sort algorithms.
+- What programming languages use **Timsort** to implement their built-in `sort()` functions?
 - If an interviewer asked you to describe the **Tim Sort** algorithm in 3-4 sentences, what would you say?
 - Can you implement **Tim Sort** in Python?
