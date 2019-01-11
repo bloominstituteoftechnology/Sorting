@@ -176,60 +176,58 @@ Recursive cases *must* be written in a way that will eventually allow us to reac
 ## Recursive Sorting Algorithms
 
 ### Merge Sort
-[overview] 
+Your boss asks you to organize an old filing cabinet with 20 years worth of financial documents. He would like things ordered chronologically. You feel overwhelemed. There are thousands of papers in this thing.
+So you decide to break this insane task up into more manageable pieces. First, you focus on organizing a single drawer. But this still has a lot of pieces of data that need to be sorted. Within the drawer, you pull out a single folder. You lay out all the contents on a table, grabbing two pieces at a time, placing the older document on top of the newer one. Then, you start merging sorted sets of documents together until the folder is done. Once all the folders have been reassembled, you order the folders correctly in the drawer. And then you put sorted drawers back into the filing cabinet. This idea of breaking a large set of data down into small pieces, sorting the pieces, then merging them back together is what ***Merge Sort*** is all about.  
 
 [(VIDEO) Merge-sort with Transylvanian-saxon (German) folk dance  ![alt text](https://i.ytimg.com/vi/XaqR3G_NVoo/hqdefault.jpg)](https://www.youtube.com/watch?v=XaqR3G_NVoo)
 
 #### Algorithm
 ```
-TBC
+1. While your data set contains more than one item, split it in half
+2. Once you have gotten down to a single element, you have also *sorted* that element (a single element cannot be "out of order")
+3. Start merging your single lists of one element together into larger, sorted sets
+4. Repeat step 3 until the entire data set has been reassembled
 ```
->CHALLENGE: One implementation is shown below, but take a stab at writing the code for this yourself before scrolling down!
 
 #### Implementation in Python
 ```
-def mergeSort():
-    //TBC
+### helper function
+def merge( arrA, arrB ):
+    elements = len( arrA ) + len( arrB )
+    merged_arr = [ ]
+    a = 0
+    b = 0
+    # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
+    for i in range( 0, elements ):
+        if a >= len(arrA):    # all elements in arrA have been merged
+            merged_arr.append(arrB[b])
+            b += 1
+        elif b >= len(arrB):  # all elements in arrB have been merged
+            merged_arr.append(arrA[a])
+            a += 1
+        elif arrA[a] < arrB[b]:  # next element in arrA smaller, so add to final array
+            merged_arr.append(arrA[a])
+            a += 1
+        else:  # else, next element in arrB must be smaller, so add it to final array
+            merged_arr.append(arrB[b])
+            b += 1
+    return merged_arr
 
-// try it out
-var arr = [2,5,9,7,4,1,3,8,6];
-print( "Unsorted array: " + arr);
-arr = mergeSort( arr );
-print( "Sorted array: " + arr);
 
+### recursive sorting function
+def merge_sort( arr ):
+    if len( arr ) > 1:
+        left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
+        right = merge_sort( arr[ len( arr ) / 2 : ] )
+        arr = merge( left, right )   # merge() defined later
+    return arr
 ```
 
 #### Real-World Applications
-Have you ever wondered how some of the languages you use actually implement their built-in `sort()` functions? Many of them actually utilize the ***Merge Sort*** algorithm! 
+Have you ever wondered how some of the languages you use actually implement their built-in `sort()` functions? Many of them actually utilize the ***Merge Sort*** algorithm! *WHY* they do so is because this sorting algorithm is reliably efficient. In all cases, regardless of how sorted the original data set might be, this algorithm will have a runtime of O(n log(n)), one of the better sorting runtimes out there.
 
-#### Check for understanding
-1. TBD
-    <details><summary>Answer</summary> ... </details>
-
-2. When using ***Merge Sort***, what is the difference between the order or arrangement of elements in *best case* versus *worst case*?
-    <details><summary>Answer</summary> ... </details>
-
-3. When using ***Merge Sort***, what would be the runtime of sorting elements in the best, average, and worst cases?
-    <details><summary>Answer</summary>
-    <ul><li>Best case:    O(nlog(n))</li>
-    <li>Average case: O(nlog(n))</li>
-    <li>Worst case:   O(nlog(n))</li>
-    </details>
-
-4. Show how the array **[4, 8, 3, 1, 9, 6]** changes as it is being sorted using ***Merge Sort***. To do this, write out the contents of the array after each pass of the algorithm. (_hint...we should only need n-1 passes to sort the array, where n is the size_)
-   <details><summary>Answer</summary> <pre><samp>           [4, 8, 3, 1, 9, 6]       // divide
-                /            \
-          [4, 8, 3]       [1, 9, 6] 
-            /     \         /     \
-         [4, 8]   [3]    [1, 9]   [6] 
-         /    \    |     /    \    |
-        [4]   [8] [3]   [1]   [9] [6]   // merge
-         \    /    |     \    /    |
-         [4, 8]   [3]    [1, 9]   [6]
-           \      /       \       /
-          [3, 4, 8]       [1, 6, 9]
-              \               /
-              [1, 3, 4, 6, 8, 9] </samp></pre></details>
+#### Your Task 
+-  (STRETCH) Try writing an *in-place* ***Merge Sort*** algorithm.
 
 ### Quick Sort
 [overview] 
