@@ -151,11 +151,14 @@ The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is
 #### Try to write a search function
 - Complete the functions in `searching.py`
 
+#### Check out Bubble Sort
+- Take a look a the psuedocode for this algorithms and try implementing it in Python.
+
 #### There are a few "order n" sorting algorithms whose runtime will be linear, even in a worst case scenario. 
-Look into Radix Sort and Count Sort.
-- How are these algorithms different from other iterative sorting algorithms?
+Look into Count Sort.
+- How is this algorithms different from other iterative sorting algorithms?
     - What are the advantages/disadvantages to this type of sorting algorithm?
-- Take a look a the psuedocode for these algorithms and try implementing one or both of them in Python.
+- Take a look a the psuedocode for this algorithms and try implementing it in Python.
 
 #### You might be surprised what passes for a sorting algorithm
 - Explore Bogo Sort and summarize how it works in a couple of sentences.
