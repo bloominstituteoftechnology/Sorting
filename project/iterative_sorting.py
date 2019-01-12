@@ -23,12 +23,14 @@ def insertion_sort( arr ):
 
     return arr
 
-# STRETCH: implement the Radix Sort function below
-def radix_sort( arr ):
+
+# STRETCH: implement the Bubble Sort function below
+def bubble_sort( arr ):
 
     return arr
 
+
 # STRETCH: implement the Count Sort function below
-def count_sort( arr ):
+def count_sort( arr, maximum=-1 ):
 
     return arr
