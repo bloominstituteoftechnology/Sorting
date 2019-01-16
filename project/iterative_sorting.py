@@ -20,6 +20,12 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
+    for i in range(1, len(arr)):
+        current = arr[i]
+        while i > 0 and arr[i - 1] > current:
+            arr[i] = arr[i - 1]
+            i = i - 1
+            arr[i] = current
 
     return arr
 
