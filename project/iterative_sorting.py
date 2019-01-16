@@ -22,9 +22,22 @@ print(selection_sort([23, 3, 4, 2, 1]))
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        j = i
+        while j > 0:
+            # if previous element is greater than current element,
+            # swap the 2 elements' positions
+            if arr[j - 1] > arr[j]:
+                temp = arr[j]
+                arr[j] = arr[j - 1]
+                arr[j - 1] = temp
+
+            j -= 1
 
     return arr
 
+
+insertion_sort([6, 5, 3, 2, 1])
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort(arr):
