@@ -28,10 +28,29 @@ print(my_arr)
 
 def insertion_sort(arr):
 
+    for i in range(1, len(arr)):
+        j = i
+
+        temp = arr[j]
+
+        while j > 0 and temp < arr[j-1]:
+
+            arr[j] = arr[j-1]
+
+            j = j-1
+        arr[j] = temp
+
     return arr
 
 
+arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
+print(arr)
+arr = insertion_sort(arr)
+print(arr)
+
 # STRETCH: implement the Bubble Sort function below
+
+
 def bubble_sort(arr):
 
     return arr
