@@ -2,9 +2,9 @@
 def linear_search(arr, target):
 
   # TO-DO: add missing code
-    for i in arr:
-        if arr[i] == target:
-            return i
+    for index, check in enumerate(arr):
+        if check == target:
+            return index
     return -1   # not found
 
 
