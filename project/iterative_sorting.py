@@ -18,9 +18,14 @@ print(selection_sort([60, 4, 20, 9, 6]))
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-
+    for i in range(1, len(arr)):
+        x = i - 1
+        while arr[x] > arr[x + 1] and x >= 0:
+            arr[x], arr[x + 1] =  arr[x + 1], arr[x]
+            x -= 1
     return arr
-
+    
+print(insertion_sort([90, 1, 2, 3, 67]))
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
