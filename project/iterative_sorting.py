@@ -28,7 +28,13 @@ def insertion_sort( arr ):
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    for nums in range(len(arr) -1, 0, -1):
+        for i i range(nums):
+            # will also look at a more Pythonized version of this swap, basic working implementation for now
+            if arr[i] > arr[i + 1]:
+                temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] temp
     return arr
 
 
