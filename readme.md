@@ -276,4 +276,4 @@ While ***Quick Sort*** has "quick" in its name, it is typically not used as freq
 #### Timsort is a combination of the Merge Sort and Insertion Sort algorithms.
 - What programming languages use **Timsort** to implement their built-in `sort()` functions?
 - If an interviewer asked you to describe the **Tim Sort** algorithm in 3-4 sentences, what would you say?
-- Can you implement **Tim Sort** in Python?
+- Can you implement **Tim Sort** in Python? 
