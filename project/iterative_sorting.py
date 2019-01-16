@@ -26,14 +26,15 @@ def selection_sort(arr):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-    for i in range(1, len(arr)-1):
-        tmp = arr[i]
-        for j in range(i, 0, -1):
-            if arr[j] < arr[i]:
-                arr[i] = tmp
-            else:
-                arr[i] = tmp
-
+     # Traverse through 1 to len(arr) 
+    for i in range(1, len(arr)): 
+        tmp = arr[i] 
+        j = i-1
+        
+        while j >=0 and tmp < arr[j] : 
+                arr[j+1] = arr[j] 
+                j -= 1
+        arr[j+1] = tmp
 
     return arr
 print('insertion sort:')
