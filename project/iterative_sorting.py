@@ -1,5 +1,5 @@
 # Complete the selection_sort() function below in class with your instructor
-def selection_sort( arr ):
+def selection_sort(arr):
     for end in range(len(arr) - 1, 0, -1):
         position_of_max = 0
 
@@ -15,18 +15,24 @@ def selection_sort( arr ):
 
 
 # TO-DO: implement the Insertion Sort function below
-def insertion_sort( arr ):
+def insertion_sort(arr):
+    for x in range(1, len(arr)): # 0 is already sorted, so start at 1
+        c_value = arr[x]  # Grab the current value
+        position = x  # Track our current position
 
+        while position and arr[position - 1] > c_value: # Keep shifting until the previous isn't greater than the c_value
+            arr[position] = arr[position - 1]  # Switch our current value with the previous value
+            position = position - 1  # Update the position to start over (after the switch occurred)
+
+        arr[position] = c_value # After any shifting, we've found the correct position, set it to the current value
     return arr
 
 
 # STRETCH: implement the Bubble Sort function below
-def bubble_sort( arr ):
-
+def bubble_sort(arr):
     return arr
 
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
-
+def count_sort(arr, maximum=-1):
     return arr
