@@ -15,7 +15,14 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-
+    for i in range(1, len(arr)):
+        current = arr[i]
+        pos = i
+        # this moves the existing items to the right so that the value can be inserted at the proper location
+        while pos > 0 and arr[pos - 1] current:
+            arr[pos] = arr[pos - 1]
+            pos = pos - 1
+        arr[pos] = curr
     return arr
 
 
