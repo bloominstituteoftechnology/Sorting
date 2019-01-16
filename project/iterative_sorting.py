@@ -15,15 +15,25 @@ def selection_sort( arr ):
     return arr
 
 
-
-print(selection_sort([4, 3, 0, 2, 9, -7, 8]))
-
-
-
-# TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
+# starting at second index, compare num to num to left
+    for i in range(1, len(arr)):
+        print(i)
+        current_val = arr[i]
+        position = i
+
+        while position > 0 and arr[position - 1] > current_val:
+            arr[position] = arr[position - 1]
+            position -= 1
+        
+        arr[position] = current_val
 
     return arr
+
+print(insertion_sort([1, 4, 2, 0]))
+
+
+
 
 
 # STRETCH: implement the Bubble Sort function below
