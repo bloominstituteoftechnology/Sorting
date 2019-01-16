@@ -2,20 +2,21 @@
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc) 
-             
+        first_unsorted_num = arr[i]
 
+        for j in range(i+1, len(arr)-1):
+            compared_num = arr[j]
 
-
-        # TO-DO: swap
-
-
-
+            if compared_num < first_unsorted_num:
+                arr[i] = compared_num
+                arr[j] = first_unsorted_num
 
     return arr
+
+
+
+
+
 
 
 # TO-DO: implement the Insertion Sort function below
