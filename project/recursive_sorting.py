@@ -43,8 +43,19 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
-
+def quick_sort(arr, low, high ):
+    #  Picking the first element as a pivot for reasons I don't quite understand
+    pivot = arr[0]
+    left = []
+    right = []
+    for i in arr[1:]:
+        if i > pivot:
+            right.append(i)
+        elif i < pivot:
+            left.append(i)
+        else:
+            print("I'll figure you out later")
+    quick_sort(arr, left, right)
     return arr
 
 
