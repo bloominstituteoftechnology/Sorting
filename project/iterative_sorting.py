@@ -8,7 +8,7 @@ def selection_sort(arr):
     # TO-DO: find next smallest element
     # (hint, can do in 3 loc) 
     for j in range(cur_index, len(arr)):
-      if arr[j] < [smallest_index]: 
+      if arr[j] < arr[smallest_index]: 
         #if j is less than smallest then make j the new smallest
           smallest_index = j
     # TO-DO: swap
@@ -23,10 +23,20 @@ print(selection_sort(my_arr))
 
 
 # TO-DO: implement the Insertion Sort function below
-def insertion_sort( arr ):
-
+# first element is sorted sub array of the array
+# pull items from unsorted array and put them in the right place in the array
+# sorted in place
+def insertion_sort(arr):
+  for i in range(1, len(arr)):
+    # do sorting from index 1 to the rest of the list b/c first one is sorted subarray
+    current_item = arr[i]
+    j = i-1
+    while j >=0 and current_item < arr[j]: 
+      arr[j+1] = arr[j] 
+      j -= 1
+      arr[j+1] = current_item 
     return arr
-
+print(f'This is insertion sort {insertion_sort(my_arr)}')
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
