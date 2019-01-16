@@ -3,9 +3,9 @@ def selection_sort( arr ):
     for end in range(len(arr) - 1, 0, -1):
         position_of_max = 0
 
-        for start in range(position_of_max, end + 1):
-            if arr[start] > arr[position_of_max]:
-                position_of_max = start
+        for current in range(position_of_max, end + 1):
+            if arr[current] > arr[position_of_max]:
+                position_of_max = current
 
         # Swap
         temp = arr[end]
