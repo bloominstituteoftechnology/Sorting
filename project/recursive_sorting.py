@@ -61,7 +61,7 @@ def quick_sort(arr):
         else:
             high.append(num)
 
-    return [quick_sort(low), pivot, quick_sort(high)]
+    return [*quick_sort(low), pivot, *quick_sort(high)]
 
 
 print(quick_sort([10, 4, 5, 77, 32]))
