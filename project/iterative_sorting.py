@@ -25,7 +25,7 @@ def selection_sort( arr ):
 def insertion_sort( arr ):
   for n in range(1,len(arr)):
     element = arr[n]
-    while n > 0 and n[-1] < element:
+    while n > 0 and arr[n-1] < element:
       arr[n] = arr[n-1]
         n = n-1
         arr[n] = element
