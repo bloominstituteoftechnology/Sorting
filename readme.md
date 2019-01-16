@@ -278,4 +278,4 @@ While ***Quick Sort*** has "quick" in its name, it is typically not used as freq
 - If an interviewer asked you to describe the **Tim Sort** algorithm in 3-4 sentences, what would you say?
 - Can you implement **Tim Sort** in Python?
 
-PR: 
+PR: https://github.com/LambdaSchool/Sorting/pull/2
