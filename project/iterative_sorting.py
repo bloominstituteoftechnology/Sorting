@@ -25,25 +25,40 @@ def selection_sort( arr ):
 # TO-DO: implement the Insertion Sort function below
 
 # Iterative
-def insertion_sort( arr ):
-    current_index = 1 # Start with the second item in the array
-    while current_index < len(arr): # Go through each position in the array 
-        cur_item = arr[current_index] # Get the current item to compare
-        comparison_index = current_index - 1 # Get the index of the item left of the current item
-        # print('loop:' + str(current_index))
-        # print(cur_item)
+# def insertion_sort( arr ):
+#     current_index = 1 # Start with the second item in the array
+#     while current_index < len(arr): # Go through each position in the array 
+#         cur_item = arr[current_index] # Get the current item to compare
+#         comparison_index = current_index - 1 # Get the index of the item left of the current item
+#         # print('loop:' + str(current_index))
+#         # print(cur_item)
 
-        # Shift
-        while comparison_index >= 0 and arr[comparison_index] > cur_item: # Shift items until the beginning of the array is reached, or a smaller item is found.
-            # print(arr)
-            arr[comparison_index+1] = arr[comparison_index] # Shift the item currently being compared to with the item right of it.
-            comparison_index -= 1 # Next Loop, compare to the item left of the item currently being compared.
+#         # Shift
+#         while comparison_index >= 0 and arr[comparison_index] > cur_item: # Shift items until the beginning of the array is reached, or a smaller item is found.
+#             # print(arr)
+#             arr[comparison_index+1] = arr[comparison_index] # Shift the item currently being compared to with the item right of it.
+#             comparison_index -= 1 # Next Loop, compare to the item left of the item currently being compared.
 
-        # Insert
-        arr[comparison_index+1] = cur_item # Insert the item into the original position of the last item that was shifted.
-        current_index += 1 # Next Loop, check the item right of the original position of the item that was just checked.
-        
-    return arr
+#         # Insert
+#         arr[comparison_index+1] = cur_item # Insert the item into the original position of the last item that was shifted.
+#         current_index += 1 # Next Loop, check the item right of the original position of the item that was just checked.
+
+#     return arr
+
+def insertion_sort(unsorted, sorted = [], n = 1, state = 'shift'):
+    if state == 'shift':
+        if len(unsorted) > 0:
+            sorted = insertion_sort([], sorted, unsorted[0], 'insert')
+            return insertion_sort(unsorted[1:], sorted)
+        else:
+            return sorted
+    else:
+        if sorted == []:
+            return unsorted + [n]
+        if n < sorted[0]:
+            return unsorted + [n] + sorted
+        return insertion_sort(unsorted + sorted[:1], sorted[1:], n, 'insert')
+
 
 print(insertion_sort([5,34,2,5,7,3,9,10]))
 
