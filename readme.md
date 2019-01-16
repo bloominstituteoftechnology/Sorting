@@ -1,4 +1,4 @@
-# Sorting Algorithms
+## Sorting Algorithms
 *For the purpose of this module, we will be writing and discussing all sorting algorithms with the assumption that our goal is to sort items in ascending order. But be aware, this does not always have to be the case.*
 
 ## Day 1 - Why is it so important to sort data?
