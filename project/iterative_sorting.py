@@ -23,18 +23,38 @@ def insertion_sort( arr ):
                 temp = arr[j]
                 arr[j] = start
                 arr[j+1] = temp
-            print(arr)
-        print('####################')
     return arr
 
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    n = len(arr)
+    while n > 1:
+        new = 0
+        for i in range(1, n):
+            if arr[i -1] > arr[i]:
+                temp = arr[i]
+                arr[i] = arr[i-1]
+                arr[i-1] = temp
+                new = i
+            print(arr) 
+        n = new + 1
+        print('''##################################
+/////////////////////////////////////''')
     return arr
 
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
-    return arr
+    rangeList = max(arr) - min(arr)
+    sortedList = list(range(0, len(arr)))
+    index = [0] * (rangeList + 1)
+    for num in arr:
+        index[num] += 1
+    for i, val in enumerate(index):
+        if i != 0:
+            index[i] += index[i-1]
+    for num in arr:
+        index[num] -= 1
+        sortedList[index[num]] = num    
+    return sortedList
