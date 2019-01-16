@@ -9,7 +9,7 @@ def selection_sort( arr ):
         # going to look at doing this swap in a more Python fashion, this feels like I've done it in JS
         temp = arr[end]
         arr[end] = arr[max]
-        arr[max] = arr[temp]
+        arr[max] = temp
     return arr
 
 
