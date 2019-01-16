@@ -20,6 +20,7 @@ def selection_sort(arr):
  # O(n^2)
 my_arr = [2,5,9,7,4,1,3,8,6]
 print(selection_sort(my_arr))
+print(f'This is selection sort {selection_sort(my_arr)}')
 
 
 # TO-DO: implement the Insertion Sort function below
@@ -30,7 +31,7 @@ def insertion_sort(arr):
   for i in range(1, len(arr)):
     # do sorting from index 1 to the rest of the list b/c first one is sorted subarray
     current_item = arr[i]
-    j = i-1
+    j = i-1 # previous number from current
     while j >=0 and current_item < arr[j]: 
       arr[j+1] = arr[j] 
       j -= 1
@@ -39,10 +40,17 @@ def insertion_sort(arr):
 print(f'This is insertion sort {insertion_sort(my_arr)}')
 
 # STRETCH: implement the Bubble Sort function below
-def bubble_sort( arr ):
-
+def bubble_sort(arr):
+  n = len(arr)
+  for i in range(n):
+    for j in range(0, n-i-1):
+      # last item will be in place
+      # Swap if item is greater
+      if arr[j] > arr[j+1]:
+          arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr
 
+print(f'This is bubble sort {bubble_sort(my_arr)}')
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
