@@ -31,11 +31,20 @@ def insertion_sort( arr ):
     return arr
 
 print(insertion_sort([3,4,2,1,5,0]))
+
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
+    if len(arr) == 0:
+        return arr
+
+    for i in range(len(arr)):
+        for j in range(len(arr) - 1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
 
+print(bubble_sort([3,4,2,1,5,0]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
