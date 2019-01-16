@@ -16,12 +16,17 @@ def selection_sort( arr ):
         #  This swaps initial value (first value) with new smallest value
         arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
     return arr
-print(selection_sort([2,5,1,7,8]))
 
 
 # TO-DO: implement the Insertion Sort function below
-def insertion_sort( arr ):
-
+def insertion_sort(arr):
+    for i in range(1, len(arr)-1):
+        key = arr[i]
+        shift = i - 1
+        while shift >= 0 and key < arr[shift]:
+            arr[shift + 1] = arr[shift]
+            shift -= 1
+        arr[shift + 1] = key
     return arr
 
 
