@@ -19,6 +19,16 @@ def selection_sort(arr):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
+    for index in range(1, len(arr)):
+        value = arr[index]
+        i = index - 1
+        while i >= 0:
+            if value < arr[i]:
+                arr[i+1] = arr[i]
+                arr[i] = value
+                i = i - 1
+            else:
+                break
 
     return arr
 
