@@ -1,20 +1,15 @@
 # Complete the selection_sort() function below in class with your instructor
 def selection_sort( arr ):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc) 
-             
-    # initial
+    for end in range(len(arr) - 1, 0, -1):
+        max = 0
+        for current_item in rang(max, end + 1):
+            if arr[current_item] > arr[max]:
+                max = current_item
 
-
-        # TO-DO: swap
-
-
-
-
+        # going to look at doing this swap in a more Python fashion, this feels like I've done it in JS
+        temp = arr[end]
+        arr[end] = arr[max]
+        arr[max] = arr[temp]
     return arr
 
 
