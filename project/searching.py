@@ -49,7 +49,7 @@ def binary_search_recursive(arr, target, low, high):
   else:
     return binary_search_recursive(arr, target, low, high)
 
-list = [1,2,3,4,5,6,7,8,9,10]
+# list = [1,2,3,4,5,6,7,8,9,10]
 # print(linear_search(list, 1))
 # print(linear_search(list, 11))
 
@@ -57,6 +57,6 @@ list = [1,2,3,4,5,6,7,8,9,10]
 # print(binary_search(list, 4))
 # print(binary_search(list, 11))
 
-print(binary_search_recursive(list, 1, 0, len(list) - 1))
-print(binary_search_recursive(list, 4, 0, len(list) - 1))
-print(binary_search_recursive(list, 11, 0, len(list) - 1))
+# print(binary_search_recursive(list, 1, 0, len(list) - 1))
+# print(binary_search_recursive(list, 4, 0, len(list) - 1))
+# print(binary_search_recursive(list, 11, 0, len(list) - 1))
