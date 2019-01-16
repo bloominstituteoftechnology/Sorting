@@ -42,22 +42,29 @@ def merge_sort_in_place(arr, l, r):
     return arr
 
 
+import math
 # TO-DO: implement the Quick Sort function below
-def quick_sort(arr, low, high ):
+def quick_sort(arr):
     #  Picking the first element as a pivot for reasons I don't quite understand
-    pivot = arr[0]
-    left = []
-    right = []
-    for i in arr[1:]:
-        if i > pivot:
-            right.append(i)
-        elif i < pivot:
-            left.append(i)
-        else:
-            print("I'll figure you out later")
-    quick_sort(arr, left, right)
-    return arr
+    if len(arr) < 2:
+        return arr
 
+    c_arr = arr.copy()
+    pivot = c_arr[math.floor(len(arr)/2)]
+    c_arr.pop(math.floor(len(arr) / 2))
+    # print(pivot, c_arr)
+    low = []
+    high = []
+    for num in c_arr:
+        if num < pivot:
+            low.append(num)
+        else:
+            high.append(num)
+
+    return [quick_sort(low), pivot, quick_sort(high)]
+
+
+print(quick_sort([10, 4, 5, 77, 32]))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
