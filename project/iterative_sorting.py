@@ -20,10 +20,17 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-
+    if len(arr) == 0:
+        return arr
+    for i in range(len(arr)):
+        j = i + 1
+        for j in range(len(arr)):
+            if arr[i] < arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+            
     return arr
 
-
+print(insertion_sort([3,4,2,1,5,0]))
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
 
