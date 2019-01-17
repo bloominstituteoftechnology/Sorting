@@ -24,9 +24,17 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-
+    # select the first element
+    # create a for loop for from the first index through the length of the array
+    for i in range(1, len(arr)-1):
+        mover = arr[i]
+        list_comp = i - 1
+        while list_comp >= 0 and mover < arr[list_comp]:
+            # once the number finds its home, add it to the array
+            arr[list_comp + 1] = arr[list_comp]
+            list_comp -= 1
+        arr[list_comp + 1] = mover 
     return arr
-
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
