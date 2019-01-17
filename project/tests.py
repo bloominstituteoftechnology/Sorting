@@ -35,24 +35,24 @@ class SortingTest(unittest.TestCase):
     #     self.assertEqual(binary_search_recursive(arr2, 0, 0, len(arr1)-1), -1)
 
 
-    def test_selection(self):
-        arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-        arr2 = []
-        arr3 = [0, 1, 2, 3, 4, 5]
-
-        self.assertEqual(selection_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
-        self.assertEqual(selection_sort(arr2), [])
-        self.assertEqual(selection_sort(arr3), [0,1,2,3,4,5])
-
-
-    # def test_insertion(self):
+    # def test_selection(self):
     #     arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
     #     arr2 = []
     #     arr3 = [0, 1, 2, 3, 4, 5]
 
-    #     self.assertEqual(insertion_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
-    #     self.assertEqual(insertion_sort(arr2), [])
-    #     self.assertEqual(insertion_sort(arr3), [0,1,2,3,4,5])
+    #     self.assertEqual(selection_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
+    #     self.assertEqual(selection_sort(arr2), [])
+    #     self.assertEqual(selection_sort(arr3), [0,1,2,3,4,5])
+
+
+    def test_insertion(self):
+        arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+        arr2 = []
+        arr3 = [0, 1, 2, 3, 4, 5]
+
+        self.assertEqual(insertion_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
+        self.assertEqual(insertion_sort(arr2), [])
+        self.assertEqual(insertion_sort(arr3), [0,1,2,3,4,5])
 
 
     # def test_bubble(self):
