@@ -31,16 +31,23 @@ def insertion_sort(arr):
     return arr
 
 
-print(insertion_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 # STRETCH: implement the Bubble Sort function below
 
 
 def bubble_sort(arr):
+    i = 0
+    while i < len(arr)-1:
+        for j in range(len(arr) - 1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j + 1], arr[j]
+                i = 0
+        i += 1
 
     return arr
 
-
 # STRETCH: implement the Count Sort function below
+
+
 def count_sort(arr, maximum=-1):
 
     return arr
