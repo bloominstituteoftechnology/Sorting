@@ -11,9 +11,7 @@ def selection_sort( arr ):
           smallest_index = j
     # TO-DO: swap
     # swap the next element with the next smallest every time till it's sorted
-      temp = arr[smallest_index]
-      arr[smallest_index] = arr[cur_index]
-      arr[cur_index] = temp
+      arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
     return arr
 
 print(selection_sort([45,23,46,1,4,5]))
