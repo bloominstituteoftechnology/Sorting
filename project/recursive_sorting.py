@@ -44,12 +44,35 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
-
-    return arr
+    if len(arr) == 1:
+        return arr
+    if len(arr) == 0:
+        return [] # empty list
+    left = []
+    right = []
+    pivot = arr[low]
+    # simple left/right sorting based on the item's value relative to the pivot
+    for item in arr:
+        if item < pivot:
+            left.append(item)
+        elif item > pivot:
+            right.append(item)
+    return quick_sort(left, 0, len(left) - 1) + [pivot] + quick_sort(right, 0, len(right) - 1)
 
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
-
+def timsort( arr, run = 3, merged = [] ):
+    # get non-sorting cases out of the way first
+    if len(arr) == 0:
+        return merged
+    if len(arr) == 1:
+        return merge(arr, merged)
+    # if the list only has 2 items, it is either sorted already or needs to be sorted with one step.
+    # can accomplish this by popping the second item and inserting it at the beginning
+    if len(arr) == 2:
+        if arr[0] > arr[1]:
+            lastItem = arr.pop()
+            arr.insert(0, lastItem)
+        return merge(arr, merged) # returns merged array in either case
     return arr
