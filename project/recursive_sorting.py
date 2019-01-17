@@ -26,7 +26,7 @@ def merge_sort( arr ):
     if len( arr ) > 1:
         left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
         right = merge_sort( arr[ len( arr ) / 2 : ] )
-        arr = merge( left, right )   # merge() defined later
+        arr = merge( left, right )   # merge() defined earlier
     return arr
 
 
@@ -42,10 +42,32 @@ def merge_sort_in_place(arr, l, r):
     return arr
 
 
-# TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
+def quick_sort(arr):
 
-    return arr
+    if len(arr) <= 1: # if list only has 1 item, it's already sorted
+        return arr
+    if len(arr) == 2: # if list only has 2 items
+        if arr[0] > arr[1]: # and the first item is larger than the second
+            last = arr.pop() # pop the second item
+            arr.insert(0, last) # and insert it into the first position
+        return arr
+
+    pivot = arr[0]
+    low = []
+    high = []
+    
+    for item in arr[1:]:
+        if item < pivot: # if item is lower than the pivot
+            low.append(item) # add to low list
+        if item > pivot: # if it's higher
+            high.append(item) # add to high list
+        # currently doesn't handle duplicates
+
+    return quick_sort(low) + [pivot] + quick_sort(high)
+
+arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
+arr = quick_sort(arr)
+print(arr)
 
 
 # STRETCH: implement the Timsort function below
