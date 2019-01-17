@@ -12,6 +12,7 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
 
+
 # TO-DO: swap
 
         return arr
@@ -42,10 +43,14 @@ def insertion_sort(arr):
     #         arr[j], arr[j+1] = arr[j+1], arr[j]
     #         j-= 1
 
-    return arr
+        return arr
 
+
+arr = [1, 9, 40, 8, 11, 12]
 
 # STRETCH: implement the Bubble Sort function below
+
+
 def bubble_sort(arr):
     for i in range(0, len(arr) - 1):
         for j in range(0, len(arr) - 1 - i):
