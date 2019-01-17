@@ -45,6 +45,7 @@ def merge_sort_in_place(arr, l, r):
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
 
+
     return arr
 
 
@@ -53,3 +54,4 @@ def quick_sort( arr, low, high ):
 def timsort( arr ):
 
     return arr
+
