@@ -68,7 +68,7 @@ def quick_sort(arr):
     return quick_sort(low) + [pivot] + quick_sort(high)
 
 
-arr = [2, 5, 9, 7, 4, 1, 3, 8, 6, 12, 542, 24314, 23, 13, 32]
+arr = [2, 5, 9, 7, 4, 1, 3, 8, 6, 12, 542, 24314, 23]
 
 
 # STRETCH: implement the Timsort function below
@@ -86,15 +86,12 @@ def timsort( arr, run=3, merged=[] ):
         return merge(arr, merged) # return the sorted array
     if len(arr) < run: # if length of list is smaller than the run
         return merge(insertion_sort(arr), merged) # calls insertion_sort on arr and merges with previously merged
-    if len(arr) % run >= 0:
-        first = insertion_sort(arr[:run])
-        second = insertion_sort(arr[run : run * 2])
-        merged_f_s = merge(first, second)
-        return timsort(arr[run * 2 :], merged=merge(merged_f_s, merged))
-    else:
-        leftover = len(arr) % run
-        first = insertion_sort(arr[-leftover:])
-        return merge(first, merged)
+
+    # out of bounds splicing works so if len(arr) < run or run*2 following code still works correctly
+    first = insertion_sort(arr[:run]) # sorts first "batch"
+    second = insertion_sort(arr[run : run * 2]) # sorts second "batch"
+    merged_f_s = merge(first, second) # merges first and second
+    return timsort(arr[run * 2 :], merged=merge(merged_f_s, merged)) # recursion 
 
 arr = timsort(arr)
 print("THIS IS TIMSORT", arr)
