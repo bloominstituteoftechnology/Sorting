@@ -36,15 +36,33 @@ def insertion_sort( arr ):
 
     return arr
 
-arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
-print("INSERTION\n" + str(arr))
-arr = insertion_sort(arr)
-print(arr)
+
+my_arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
+print("INSERTION\n" + str(my_arr))
+arr = insertion_sort(my_arr)
+print(my_arr)
 
 
 def bubble_sort( arr ):
+    modified = True
+    
+    while modified:
+        modified = False
+        for index, item in enumerate(arr):
+            if index == len(arr) - 1:
+                break
+            if item < arr[index + 1]:
+                arr.pop(index)
+                arr.insert(index, item)
+                modified = True
 
     return arr
+
+
+my_arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
+print("BUBBLE\n" + str(my_arr))
+arr = insertion_sort(my_arr)
+print(my_arr)
 
 
 # STRETCH: implement the Count Sort function below
