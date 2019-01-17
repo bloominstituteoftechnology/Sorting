@@ -31,8 +31,8 @@ class SortingTest(unittest.TestCase):
 
          self.assertEqual(binary_search_recursive(arr1, -8, 0, len(arr1)-1), 1)
          self.assertEqual(binary_search_recursive(arr1, 0, 0, len(arr1)-1), 6)
-         self.assertEqual(binary_search_recursive(arr2, 6, 0, len(arr1)-1), -1)
-         self.assertEqual(binary_search_recursive(arr2, 0, 0, len(arr1)-1), -1)
+         self.assertEqual(binary_search_recursive(arr2, 6, 0, len(arr2)-1), -1)
+         self.assertEqual(binary_search_recursive(arr2, 0, 0, len(arr2)-1), -1)
 
 
 #    def test_selection(self):
