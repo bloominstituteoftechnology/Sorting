@@ -36,16 +36,43 @@ def merge_in_place(arr, start, mid, end):
 
     return arr
 
+
 def merge_sort_in_place(arr, l, r): 
     # TO-DO
 
     return arr
 
+# try it out
+
+
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
-
+def quick_sort( arr, low, high):
+    if low < high:
+        p = partition(arr, low, high)
+        quick_sort(arr, low, p - 1)
+        quick_sort(arr, p + 1, high)
     return arr
+
+def partition( arr, low, high ):
+    # the pivot is set to be the last index
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            # swaps the numbers
+            arr[i], arr[j] = arr[j], arr[i]
+
+    # else if arr[j] > pivot        
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return i+1
+   
+# # try it out
+# arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+# print(arr)
+# arr = quick_sort( arr, 0, 9 )
+# print(arr)
 
 
 # STRETCH: implement the Timsort function below
