@@ -58,7 +58,11 @@ def count_sort( arr, maximum=-1 ):
         maximum = max(arr)
     count = [0] * (maximum + 1)               
     for a in arr:
-        count[a] += 1             
+        if a < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        else:
+            count[a] += 1             
+
     j = 0
     for i in range(0, len(count)):            
         while count[i] > 0:
