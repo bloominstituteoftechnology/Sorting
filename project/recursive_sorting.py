@@ -52,7 +52,6 @@ def quick_sort(arr):
     c_arr = arr.copy()
     pivot = c_arr[math.floor(len(arr)/2)]
     c_arr.pop(math.floor(len(arr) / 2))
-    # print(pivot, c_arr)
     low = []
     high = []
     for num in c_arr:
