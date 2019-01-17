@@ -21,17 +21,22 @@ def merge(arrA, arrB):
     return merged_arr
 
 
+arrA = [1, 5, 6, 9, 1, 2]
+arrB = [10, 51, 16, 9, 1, 12]
+
 # recursive sorting function
+
+
 def merge_sort(arr):
     if len(arr) > 1:
         left = merge_sort(arr[0: len(arr) / 2])
-        right = merge_sort(arr[len(arr) / 2:])
+        right = merge_sort(arr[0:len(arr) / 2:])
         arr = merge(left, right)   # merge() defined later
     return arr
 
 
-arx = [1, 5, 6, 9, 1, 2]
-merge_sort(arx)
+arr = [1, 5, 6, 9, 1, 2]
+merge_sort(arr)
 
 
 # STRETCH: implement an in-place merge sort algorithm
@@ -48,7 +53,25 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
+def split(arr, low, high):
+    i = low(low-i)
+    pivot = arr[high]
+
+    for j in range(low, high):
+
+        if arr[j] <= pivot:
+            i = i+1
+            arr[i], arr[j] = arr[high], arr[i+1]
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return (i+1)
+
+
 def quick_sort(arr, low, high):
+    if low < high:
+        si = split(arr, low, high)
+
+        quick_sort(arr, low, si-1)
+        quick_sort(arr, si+1, high)
 
     return arr
 
