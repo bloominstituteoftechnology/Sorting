@@ -18,17 +18,17 @@ print(selection_sort([45,23,46,1,4,5]))
 
 
 # # # TO-DO: implement the Insertion Sort function below
-# def insertion_sort(arr):
-#   for i in range(1, len(arr)):
-#     # do sorting from index 1 to the rest of the list b/c first one is sorted subarray
-#     current_item = arr[i]
-#     j = i-1 # previous number from current
-#     while j >=0 and current_item < arr[j]: 
-#       arr[j+1] = arr[j] 
-#       j -= 1
-#       arr[j+1] = current_item 
-#   return arr
-# print(insertion_sort([45,23,46,1,4,5]))
+def insertion_sort(arr):
+  for i in range(1, len(arr)):
+    # do sorting from index 1 to the rest of the list b/c first one is sorted subarray
+    current_item = arr[i]
+    j = i-1 # previous number from current
+    while j >=0 and current_item < arr[j]: 
+      arr[j+1] = arr[j] 
+      j -= 1
+      arr[j+1] = current_item 
+  return arr
+print(insertion_sort([45,23,46,1,4,5]))
 
 
 # # # STRETCH: implement the Bubble Sort function below

@@ -45,28 +45,32 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
-  if(low < high):
-    index = partition(arr, low, high)
-    quick_sort(arr, low, index-1)
-    quick_sort(arr, index+1, high)
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    if len(arr) == 2:
+        if arr[0] > arr[1]:
+            last = arr.pop()
+            arr.insert(0, last)
+        return arr
 
-def partition(arr, low, high):
- print("arr=", arr)
- pivot = arr[high]
- index = low
- current = low
- while (current < high):
-  if( arr[current] <= pivot):
-   arr[index], arr[current] = arr[current], arr[index]
-   index += 1
-  current += 1
- arr[high], arr[index] = arr[index], arr[high]
- print("partitioned=", arr)
- return index
+    pivot = arr[0]
+    #all numbers on left array will be less than pivot
+    #all numbers are right array will be greater than pivot
+    left,right= [], []
 
-sample1 = random.sample(range(0,1000),10)
-quick_sort(sample1,0,9)
+    for item in arr[1:]:
+        if item < pivot:
+          #adds to left array
+            left.append(item)
+        if item > pivot:
+
+            right.append(item)
+
+    return quick_sort(left) + [pivot] + quick_sort(right)
+
+
+print(quick_sort([45,45,23,46,1,4,5]))
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
