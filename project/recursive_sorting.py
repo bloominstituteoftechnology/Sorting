@@ -44,8 +44,17 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
+    if len(arr) == 0 or len(arr) == 1: return arr
+    pivot = arr[low]
+    a = []
+    b = []
+    for n in arr:
+        if n < pivot:
+            a.append(n)
+        elif n > pivot:
+            b.append(n)
+    return quick_sort(a, 0, len(a)-1) + [pivot] + quick_sort(b, 0, len(b)-1)
 
-    return arr
 
 
 # STRETCH: implement the Timsort function below
