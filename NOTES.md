@@ -23,3 +23,11 @@
   For simplicity, only use data in the range of 0 - 9. 
   So the frequency array would have a length of 10.
   https://www.youtube.com/watch?v=7zuGmKfUt7s
+
+# quick
+
+
+# Choosing a sorting method
+  Quicksort (divide and conquer) is better when the sub problems are independent of each other.
+  Dynamic programming for dependent sub problems (Fibonnaci)
+    combination problems will generally have dependent sub-problems

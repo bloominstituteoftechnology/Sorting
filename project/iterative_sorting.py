@@ -16,8 +16,8 @@ def selection_sort( arr ):
         arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
-
-
+[1, 3, 5, 0, 2]
+[0, 3, 5, 1, 2]
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
@@ -47,9 +47,9 @@ def bubble_sort( arr ):
 
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
-    empty = [0] * 10
-
+def count_sort( arr, maximum=-1 ): #len 5 [1, 4, 4]
+    empty = [0] * 10                   # 0, 1, 1, 1, 3, 
+                                        
     ret = [0] * (len(arr) + 1)
     for ind, el in enumerate(empty):
         for e in arr:
@@ -69,3 +69,5 @@ def count_sort( arr, maximum=-1 ):
         empty[el] -= 1
     return ret[1:]
 
+
+print(count_sort([1, 4, 1, 2, 7, 5, 2]))
