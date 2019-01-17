@@ -5,8 +5,14 @@ def selection_sort( arr ):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
-        # (hint, can do in 3 loc) 
-             
+    #     # (hint, can do in 3 loc) 
+    #     for i in range( len( aList ) ):
+    # least = i
+    # for k in range( i + 1 , len( aList ) ):
+    #   if aList[k] < aList[least]:
+    #     least = k
+ 
+    # swap( aList, least, i )     
 
 
 
@@ -48,5 +54,24 @@ print(bubble_sort([3,4,2,1,5,0]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
+    if len(arr) == 0:
+        return arr
+    counter = [0] * (max(arr) + 1) 
+    #print(counter)
+    for i in arr:
+        if arr[i] >=0:
+            counter[i] += 1
+            #print(counter)
+        else:
+            return "Error, negative numbers not allowed in Count Sort"
+ 
+    k = 0
+    for i in range( len( counter ) ):
+      while 0 < counter[i]:
+        arr[k] = i
+        k += 1
+        counter[i] -= 1
+     
     return arr
+    
+print(count_sort([1,0,4,3,2,1,4,3,2,4,3,4,4]))
