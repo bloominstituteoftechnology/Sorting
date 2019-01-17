@@ -40,18 +40,38 @@ print('*' * 10)
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
-
-    for i in range(0, len(arr) - 1):
-        curr_val = arr[i]
-        next_val = arr[i + 1]
-        print(curr_val, next_val)
-        if curr_val > next_val:
-            arr[curr_val], arr[next_val] = arr[curr_val], arr[next_val]
-    print(arr)
+    for idx, el in enumerate(arr[:-1]):
+            for i in range(0, len(arr) - 1):
+                curr_val = arr[i]
+                next_val = arr[i + 1]
+                if curr_val > next_val:
+                    temp = curr_val
+                    arr[i] = next_val
+                    arr[i + 1] = temp
     return arr
 print(bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
+    empty = [0] * 10
 
-    return arr
+    ret = [0] * (len(arr) + 1)
+    for ind, el in enumerate(empty):
+        for e in arr:
+            if e == ind:
+                empty[ind] +=1
+
+    for ind, el in enumerate(empty):
+        if ind != 0:
+            prev_ind = ind - 1
+            empty[ind] += empty[prev_ind]
+
+    for ind, el in enumerate(arr): 
+        if el < 0:
+            return 'Error, negative numbers not allowed in Count Sort'
+        empty_val = empty[el]
+        ret[empty_val] = empty_val - 1
+        empty[el] -= 1
+    return ret[1:]
+print(count_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
+# print(count_sort([1, 4, 1, 2, 7, 5, 2]))
