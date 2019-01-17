@@ -20,7 +20,7 @@ def selection_sort( arr ):
 print(selection_sort([3,2,5,8,2]))
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
-    for i in range(1, len(arr)-1):
+    for i in range(1, len(arr)):
         key = arr[i]
         shift = i - 1
         while shift >= 0 and key < arr[shift]:
@@ -71,5 +71,5 @@ print(bubble_sort([3, 5, 8, 9, 2]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
+#  I googled this and had 0 idea what was happening
     return arr
