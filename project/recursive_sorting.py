@@ -62,6 +62,11 @@ def quick_sort( arr, low, high ):
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
-
+def timsort( arr, run = 3, merged = [] ):
+    # get non-sorting cases out of the way first
+    if len(arr) == 0:
+        return merged
+    if len(arr) == 1:
+        return merge(arr, merged)
+    
     return arr
