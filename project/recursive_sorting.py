@@ -34,14 +34,38 @@ def merge_sort( arr ):
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
+    start2 = mid + 1
+    
+    if arr[mid] <= arr[start2]:
+        return
+    while start <= mid and start2 <= end:
+        if arr[start] <= arr[start2]:
+            start = start + 1
+        else:
+            value = arr[start2]
+            index = start2
 
+            while index != start:
+                arr[index] = arr[index - 1]
+                index = index - 1
+            arr[start] = value
+            start = start + 1
+            mid = mid + 1
+            start2 = start2 + 1
     return arr
 
 def merge_sort_in_place(arr, l, r): 
     # TO-DO
+    if l < r:
+        m = l + (r - l) // 2
 
+        merge_sort_in_place(arr, l, m)
+        merge_sort_in_place(arr, m + 1, r)
+
+        merge_in_place(arr, l, m, r)
     return arr
 
+print(merge_sort_in_place(an_array, 0, len(an_array) - 1))
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
