@@ -60,14 +60,15 @@ class SortingTest(unittest.TestCase):
         self.assertEqual(bubble_sort(arr2), [])
         self.assertEqual(bubble_sort(arr3), [0, 1, 2, 3, 4, 5])
 
-    # def test_count(self):
-    #     arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-    #     arr2 = []
-    #     arr3 = [1, 5, -2, 4, 3]
+    def test_count(self):
+        arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+        arr2 = []
+        arr3 = [1, 5, -2, 4, 3]
 
-    #     self.assertEqual(count_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
-    #     self.assertEqual(count_sort(arr2), [])
-    #     self.assertEqual(count_sort(arr3), "Error, negative numbers not allowed in Count Sort")
+        self.assertEqual(count_sort(arr1), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.assertEqual(count_sort(arr2), [])
+        # self.assertEqual(count_sort(
+        #     arr3), "Error, negative numbers not allowed in Count Sort")
 
     def test_merge(self):
         arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]

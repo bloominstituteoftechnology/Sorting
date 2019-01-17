@@ -53,5 +53,25 @@ def bubble_sort(arr):
 
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
+    maximum = 10
+    # find max
+    for i in arr:
+        if i > maximum:
+            maximum = i
+    # create an array of k zeros
+    count = [0] * (maximum + 1)
+    output = [0] * len(arr)
+    # count number of each arr[i]
+    for i in arr:
+        count[i] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    for i in range(len(arr)):
+        output[count[arr[i]]-1] = arr[i]
 
-    return arr
+    return output
+
+
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+arr2 = [1, 4, 1, 2, 7, 5, 2]
+print(count_sort(arr2))

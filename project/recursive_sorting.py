@@ -49,7 +49,7 @@ def merge_sort_in_place(arr, l, r):
     return arr
 
 
-# TO-DO: implement the Quick Sort function below
+# implement the Quick Sort function below
 def quick_sort(arr, low, high):
     if len(arr) >= 1:
         # select a pivot element (middle)
