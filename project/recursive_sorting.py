@@ -68,5 +68,11 @@ def timsort( arr, run = 3, merged = [] ):
         return merged
     if len(arr) == 1:
         return merge(arr, merged)
-    
+    # if the list only has 2 items, it is either sorted already or needs to be sorted with one step.
+    # can accomplish this by popping the second item and inserting it at the beginning
+    if len(arr) == 2:
+        if arr[0] > arr[1]:
+            lastItem = arr.pop()
+            arr.insert(0, lastItem)
+        return merge(arr, merged) # returns merged array in either case
     return arr
