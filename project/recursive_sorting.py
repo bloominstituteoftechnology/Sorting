@@ -1,3 +1,4 @@
+an_array = [23, 32, 21, 9, 22, 88, 8, 77, 1, 25]
 ### helper function
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
@@ -44,10 +45,33 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
-
+    
+    if low < high:
+        p = partition(arr, low, high)
+        quick_sort(arr, low, p - 1)
+        quick_sort(arr, p + 1, high)
     return arr
 
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low
+    for j in range(low, high - 1):
+        if arr[j] <= pivot:
+            temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
+            i = i + 1
+    temp = arr[i]
+    arr[i] = arr[high]
+    arr[high] = temp
+    return i
 
+myArr = [1, 5, 7, 8, 10, 3, 12]
+print(an_array)
+arr = quick_sort(an_array, 0, len(an_array) - 2)
+print(arr)
+    
+# print(quick_sort(an_array, 0, len(an_array) - 1))
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
