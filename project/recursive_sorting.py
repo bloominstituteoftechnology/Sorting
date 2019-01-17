@@ -24,8 +24,8 @@ def merge( arrA, arrB ):
 ### recursive sorting function
 def merge_sort( arr ):
     if len( arr ) > 1:
-        left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
-        right = merge_sort( arr[ len( arr ) / 2 : ] )
+        left = merge_sort( arr[ 0 : len( arr ) // 2 ] )
+        right = merge_sort( arr[ len( arr ) // 2 : ] )
         arr = merge( left, right )   # merge() defined later
     return arr
 
@@ -58,7 +58,7 @@ def quick_sort( arr, low, high ):
         pi = partition(arr, low, high)
         quick_sort(arr, low, pi - 1)
         quick_sort(arr, pi + 1, high)
-        
+
     return arr
 
 
