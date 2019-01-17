@@ -104,9 +104,9 @@ class SortingTest(unittest.TestCase):
         arr2 = []
         arr3 = [0, 1, 2, 3, 4, 5] 
 
-        self.assertEqual(quick_sort(arr1, 0, len(arr1)-1), [0,1,2,3,4,5,6,7,8,9])
-        self.assertEqual(quick_sort(arr2, 0, len(arr2)-1), [])
-        self.assertEqual(quick_sort(arr3, 0, len(arr3)-1), [0,1,2,3,4,5])
+        self.assertEqual(quick_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
+        self.assertEqual(quick_sort(arr2), [])
+        self.assertEqual(quick_sort(arr3), [0,1,2,3,4,5])
 
 
 if __name__ == '__main__':

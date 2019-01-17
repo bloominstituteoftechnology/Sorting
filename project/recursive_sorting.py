@@ -1,3 +1,5 @@
+from iterative_sorting import insertion_sort
+
 ### helper function
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
@@ -24,8 +26,8 @@ def merge( arrA, arrB ):
 ### recursive sorting function
 def merge_sort( arr ):
     if len( arr ) > 1:
-        left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
-        right = merge_sort( arr[ len( arr ) / 2 : ] )
+        left = merge_sort( arr[ 0 : len( arr ) // 2 ] )
+        right = merge_sort( arr[ len( arr ) // 2 : ] )
         arr = merge( left, right )   # merge() defined earlier
     return arr
 
@@ -66,12 +68,28 @@ def quick_sort(arr):
     return quick_sort(low) + [pivot] + quick_sort(high)
 
 arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
-arr = quick_sort(arr)
-print(arr)
+
 
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
+def timsort( arr, run=3 ):
 
-    return arr
+    if len(arr) <= 1: # if list only has 1 item, it's already sorted
+        return arr
+    if len(arr) == 2: # if list only has 2 items
+        if arr[0] > arr[1]: # and the first item is larger than the second
+            last = arr.pop() # pop the second item
+            arr.insert(0, last) # and insert it into the first position
+        return arr # return the sorted array
+    if len(arr) < run: # if lenght of list is smaller than the run
+        return insertion_sort(arr) # simply call insertion_sort instead (no merge_sort needed)
+
+    result = [] # starts with an empty list
+    for i in run - 1: # gets the starting index for each merge_sort's array
+        result.append(merge_sort(arr[i::run])) # appends each to result
+    return result # returns sorted list
+
+
+arr = quick_sort(arr)
+print("THIS IS TIMSORT", arr)
