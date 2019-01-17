@@ -28,9 +28,11 @@ def merge(arrA, arrB):
 # recursive sorting function
 def merge_sort(arr):
     if len(arr) > 1:
-        left = merge_sort(arr[0: len(arr) / 2])
-        right = merge_sort(arr[len(arr) / 2:])
-        arr = merge(left, right)   # merge() defined later
+        # split recusively into sinlge el arrays
+        left = merge_sort(arr[0: len(arr) // 2])
+        right = merge_sort(arr[len(arr) // 2:])
+        # merge() defined later
+        arr = merge(left, right)
     return arr
 
 
@@ -49,8 +51,17 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort(arr, low, high):
+    if len(arr) >= 1:
+        # select a pivot element (middle)
+        pivot = arr[high // 2]
+        lhs = [i for i in arr if i < pivot]
+        rhs = [i for i in arr if i > pivot]
 
-    return arr
+        return (quick_sort(lhs, 0, len(lhs)-1) + [pivot] +
+                quick_sort(rhs, 0, len(rhs)-1))
+
+    else:
+        return arr
 
 
 # STRETCH: implement the Timsort function below
