@@ -59,14 +59,20 @@ def insertion_sort(unsorted, sorted = [], n = 1, state = 'shift'):
             return unsorted + [n] + sorted
         return insertion_sort(unsorted + sorted[:1], sorted[1:], n, 'insert')
 
-
-print(insertion_sort([5,34,2,5,7,3,9,10]))
-
-
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    sorted = False
+    while sorted == False:
+        sorted = True
+        for i in range(1, len(arr)):
+            if arr[i - 1] > arr[i]:
+                temp = arr[i]
+                arr[i] = arr[i - 1]
+                arr[i - 1] = temp 
+                sorted = False
     return arr
+
+print(bubble_sort([5,34,2,5,7,3,9,10]))
 
 
 # STRETCH: implement the Count Sort function below
