@@ -2,7 +2,10 @@
 def linear_search(arr, target):
   
   # TO-DO: add missing code
-
+  # simple search idea, return target if it is what you're looking for
+  for i in range(len(arr)):
+    if arr[i] == target:
+      return i
    return -1   # not found
 
 
