@@ -24,15 +24,20 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-    # select the first element
     # create a for loop for from the first index through the length of the array
     for i in range(1, len(arr)-1):
-        mover = arr[i]
-        list_comp = i - 1
+        # number to compare to
+        mover = arr[i] # starts at 1
+        # create the entry point for the sorted cards to start filling in
+        list_comp = i - 1 # starts at 0
+        # check to be sure the index is above zero and less then the number in at the sorted end of the array
+        # while that is true continue through the list
         while list_comp >= 0 and mover < arr[list_comp]:
-            # once the number finds its home, add it to the array
+            # shift the item left into space matching condition
             arr[list_comp + 1] = arr[list_comp]
+            # as i increments forward decrement list_comp to keep it one behind to continue to compare
             list_comp -= 1
+        # shift item to the right
         arr[list_comp + 1] = mover 
     return arr
 
