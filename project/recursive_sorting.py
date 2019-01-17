@@ -43,12 +43,24 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
-    if low < high:
-        partition = partition(arr, low, high)
-        quick_sort(arr, low)
-    return arr
+def quick_sort(arr, low=None, high=None):
+    if len(arr) <= 1:
+        return arr
+    elif len(arr) == 2:
+        if arr[0] > arr[1]:
+            arr.insert(0, arr.pop())
+        return arr
+    for i in arr:
+        if i < arr[0] and low is None:
+            low = []
+            low.append(i)
+        elif i > arr[0] and high is None:
+            high = []
+            high.append(i)
+    return quick_sort(low) + [arr[0]] + quick_sort(high)
 
+arr = [20, 2, 1, 89, 43, 67]
+print(quick_sort(arr))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
