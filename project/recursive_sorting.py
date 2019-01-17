@@ -1,4 +1,6 @@
 ### helper function
+import random
+
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
@@ -31,7 +33,7 @@ def merge_sort( arr ):
 
 
 # STRETCH: implement an in-place merge sort algorithm
-def merge_in_place(arr, start, mid, end):
+def merge_in_place(arr, low, mid, high):
     # TO-DO
 
     return arr
@@ -44,10 +46,27 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
+  if(low < high):
+    index = partition(arr, low, high)
+    quick_sort(arr, low, index-1)
+    quick_sort(arr, index+1, high)
 
-    return arr
+def partition(arr, low, high):
+ print("arr=", arr)
+ pivot = arr[high]
+ index = low
+ current = low
+ while (current < high):
+  if( arr[current] <= pivot):
+   arr[index], arr[current] = arr[current], arr[index]
+   index += 1
+  current += 1
+ arr[high], arr[index] = arr[index], arr[high]
+ print("partitioned=", arr)
+ return index
 
-
+sample1 = random.sample(range(0,1000),10)
+quick_sort(sample1,0,9)
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
