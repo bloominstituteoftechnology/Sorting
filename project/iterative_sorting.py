@@ -50,7 +50,6 @@ def bubble_sort( arr ):
         assign arr[i] to temp var
         move arr[i+1] down 1
         iterate until sorted
-
     '''
     for numpass in range(len(arr) -1, 0, -1):
         for i in range(numpass):
