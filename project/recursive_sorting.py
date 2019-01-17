@@ -78,19 +78,19 @@ def timsort( arr, run=3, merged=[] ):
     if len(arr) == 0:
         return merged
     if len(arr) == 1: # if list only has 1 item, it's already sorted
-        return arr
+        return merge(arr, merged) # merge sorted arr and previously merged
     if len(arr) == 2: # if list only has 2 items
         if arr[0] > arr[1]: # and the first item is larger than the second
             last = arr.pop() # pop the second item
             arr.insert(0, last) # and insert it into the first position
-        return arr # return the sorted array
-    if len(arr) < run: # if lenght of list is smaller than the run
-        return insertion_sort(arr) # simply call insertion_sort instead (no merge_sort needed)
-
-    if len(arr) % (run * 2) >= 0:
+        return merge(arr, merged) # return the sorted array
+    if len(arr) < run: # if length of list is smaller than the run
+        return merge(insertion_sort(arr), merged) # calls insertion_sort on arr and merges with previously merged
+    if len(arr) % run >= 0:
         first = insertion_sort(arr[:run])
         second = insertion_sort(arr[run : run * 2])
-        return timsort(arr[run * 2 :], merged=merge(first, second))
+        merged_f_s = merge(first, second)
+        return timsort(arr[run * 2 :], merged=merge(merged_f_s, merged))
     else:
         leftover = len(arr) % run
         first = insertion_sort(arr[-leftover:])
