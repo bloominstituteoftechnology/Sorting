@@ -29,7 +29,6 @@ def merge_sort( arr ):
         arr = merge( left, right )   # merge() defined later
     return arr
 
-
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
@@ -43,9 +42,26 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
+def quick_sort( arr, first = 0, last = 0 ):
+    left = []
+    middle = []
+    right = []
+    if len(arr) > 1:
+        pivot = arr[0]
+        for num in arr:
+            if num < pivot:
+                left.append(num)
+            elif num == pivot:
+                middle.append(num)
+            elif num >= pivot:
+                right.append(num)
+        return quick_sort(left) + middle + quick_sort(right)
+    else:
+        return arr
 
-    return arr
+
+
+
 
 
 # STRETCH: implement the Timsort function below

@@ -30,13 +30,9 @@ def binary_search_recursive(arr, target, low, high):
 
     if middle < 0:
         return -1
-
+    if target == arr[middle]:
+        return middle
     if target < arr[middle]:
-        high = middle - 1
-        return binary_search_recursive(arr, target, low, high)
+        return binary_search_recursive(arr, target, low, middle - 1)
     else:
-        if target == arr[middle]:
-            return middle
-        else:
-            low = middle + 1
-            return binary_search_recursive(arr, target, low, high)
+        return binary_search_recursive(arr, target, middle + 1, high)
