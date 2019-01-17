@@ -44,6 +44,10 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
+    if low < high:
+
+        quick_sort(arr, low, high-1)
+        quick_sort(arr, low+1, high)
 
     return arr
 
