@@ -81,10 +81,32 @@ print(f'quick_sort after: {result2}')
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
+def insertion_sort( arr ):
+    if len(arr) == 0:
+        return -1
+
+    for i in range(1, len(arr)):
+        # print(arr[i])
+        index = i 
+        while index > 0 and arr[index - 1] > arr[index]:
+            arr[index], arr[index - 1] = arr[index - 1], arr[index]
+            index = index - 1
 
     return arr
 
+def timsort( arr, run = 32 ):
+    for x in range(0, len(arr), run):
+        arr[x : x + run] = insertion_sort(arr[x : x + run])
 
-arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-merge_sort_in_place(arr1, 0, len(arr1)-1) # [0,1,2,3,4,5,6,7,8,9]
+    run_inc = run
+    while run_inc < len(arr):
+        for x in range(0, len(arr), 2 * run_inc):
+            arr[x : x + 2 * run_inc] = merge(arr[x : x + run_inc], arr[x + run_inc : x + 2 * run_inc])
+        run_inc = run_inc * 2
+    return arr
+
+tim_sort_arr = create_array(100, 99)
+print(f'tim sort before: {tim_sort_arr}')
+tim_sorted = timsort(tim_sort_arr)
+print(f'tim sort after: {tim_sorted}')
+
