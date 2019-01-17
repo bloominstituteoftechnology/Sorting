@@ -26,9 +26,9 @@ def merge( arrA, arrB ):
 ### recursive sorting function
 def merge_sort( arr ):
     if len( arr ) > 1:
-        middleindex int(len( arr ) / 2)
+        middleindex = int(len( arr ) / 2)
         left = merge_sort( arr[ 0 : middleindex ] )
-        right = merge_sort( middleindex / 2 : ] )
+        right = merge_sort( arr[middleindex: ] )
         arr = merge( left, right )   # merge() defined later
     return arr
 
@@ -46,21 +46,29 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
-  
+def quick_sort( arr, low, high ):  
   if len(arr) < 2:
     return arr
   else:
-    pivot = randint(len(arr))
+    pivot = randint(0,len(arr)-1)
     left = []
     right = []
     for n in arr:
       if n < arr[pivot]:
         left.append(n)
-
       if n > arr[pivot]:
         right.append(n)
-  return quick_sort(left, 0, len(left)-1) + pivot + quick_sort(right, 0,len(right)-1)
+  return quick_sort(left, 0, len(left)-1) +  [arr[pivot]] + quick_sort(right, 0,len(right)-1)
+ 
+
+# def quick_sort(arr,low,high):
+#   if len(range(low,high)) < 2:
+#     return arr[low:high]
+
+#   pivot = randint(0,len(arr))
+
+#   for n in arr:
+#     if n < arr[pivot]:
 
 
 # STRETCH: implement the Timsort function below
