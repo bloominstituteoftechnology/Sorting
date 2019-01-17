@@ -1,4 +1,7 @@
+
 # helper function
+
+
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
@@ -20,12 +23,43 @@ def merge(arrA, arrB):
             b += 1
     return merged_arr
 
+# additonal way to write handle function
+
+
+def merge(arrA, arrB):
+    a = 0
+    b = 0
+    merge_array = []
+    while a < len(arrA) and b < len(arrB):
+        if arrA[a] < arrB[b]:
+            merge_array.append(arrA[a])
+            a += 1
+        elif arrA[a] > arrB[b]:
+            merge_array.append(arrB[b])
+            b += 1
+        else:
+            merge_array.append(arrA[a])
+            merge_array.append(arrB[b])
+            a += 1
+            b += 1
+
+    while a < len(arrA):
+        merge_array.append(arrA[a])
+        a += 1
+
+    while b < len(arrB):
+        merge_array.append(arrB[b])
+        b += 1
+
+    return merge_array
 
 # recursive sorting function
+
+
 def merge_sort(arr):
     if len(arr) > 1:
-        left = merge_sort(arr[0: len(arr) / 2])
-        right = merge_sort(arr[len(arr) / 2:])
+        left = merge_sort(arr[0: int(len(arr) / 2)])
+        right = merge_sort(arr[int(len(arr) / 2):])
         arr = merge(left, right)   # merge() defined later
     return arr
 
