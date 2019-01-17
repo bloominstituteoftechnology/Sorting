@@ -15,28 +15,44 @@ def binary_search(arr, target):
   if len(arr) == 0:
     return -1 # array empty
     
-  low = 0
-  high = len(arr)-1
+  low = -1
+  high = len(arr)
 
   # TO-DO: add missing code
   while high - low > 1:
-    middle = low + high // 2
-    if middle == target:
+    middle = (low + high) // 2
+    print('\nBefore: low: ' + str(low) + ' middle: ' + str(middle) + ' high: ' + str(high))
+    if arr[middle] == target:
       return middle
-    elif middle < target:
+    elif arr[middle] < target:
       low = middle
     else:
       high = middle
-
+    print('\nAfter: low: ' + str(low) + ' middle: ' + str(middle) + ' high: ' + str(high))
   return -1 # not found
 
-print(linear_search([1, 2, 3, 4, 5, 7, 9, 10, 18, 19], 9))
+# print(binary_search([1, 2, 3, 4, 5, 7, 9, 10, 18, 19], -1561))
 
 # STRETCH: write a recursive implementation of Binary Search 
-def binary_search_recursive(arr, target, low, high):
+def binary_search_recursive(arr, target, low = -1, high = None):
   
-  middle = (low+high)/2
+  if high == None:
+    high = len(arr)
+
+  middle = (low + high) // 2
+
+  # TO-DO: add missing if/else statements, recursive calls
+  if target == arr[middle]:
+    return middle
+  elif high - low <= 1:
+    return -1
+  elif target < arr[middle]:
+    return binary_search_recursive(arr, target, low, middle)
+  elif target > arr[middle]:
+    return binary_search_recursive(arr, target, middle, high)
+
 
   if len(arr) == 0:
     return -1 # array empty
-  # TO-DO: add missing if/else statements, recursive calls
+
+print(binary_search_recursive([1, 2, 3, 4, 5, 7, 9, 10, 18, 19], -513))
