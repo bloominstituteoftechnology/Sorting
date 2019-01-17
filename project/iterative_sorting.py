@@ -51,9 +51,9 @@ def bubble_sort( arr ):
         for index, item in enumerate(arr):
             if index == len(arr) - 1:
                 break
-            if item < arr[index + 1]:
+            if item > arr[index + 1]:
                 arr.pop(index)
-                arr.insert(index, item)
+                arr.insert(index + 1, item)
                 modified = True
 
     return arr
