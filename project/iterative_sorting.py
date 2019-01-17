@@ -29,7 +29,7 @@ def insertion_sort( arr ):
 
     return arr
 
-print(insertion_sort([1,5,6,2,3]))
+# print(insertion_sort([1,5,6,2,3]))
 
 
 # STRETCH: implement the Bubble Sort function below
@@ -48,21 +48,33 @@ def bubble_sort( arr ):
 
     return arr
 
-print(bubble_sort([1,5,6,2,3]))
+# print(bubble_sort([1,5,6,2,3]))
 
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
-    # create a new array the size of largest - smallest filled with 0's
-    index = [0 for i in range(0, max(arr) + 1)]
+    # create a new array the size of 0 to the biggest number in arr filled with 0's
+    counting = [0 for i in range(0, max(arr) + 1)]
 
     # loop over existing arr and the index 
     # of the ammount in the new_arr += 1
-    for i in range(0, len(arr) - 1):
-        index[arr[i]] += 1
+    for i in range(0, len(arr)):
+        counting[arr[i]] += 1
 
+    # modify the counting array by adding the previous counts
+    for i in range(0, len(counting) -1):
+        counting[i + 1] = counting[i] + counting[i + 1]
+
+    # place the objects in their correct positions and
+    # decrease the count by one
+    places = [0 for i in range(0, len(arr))]
+    for i in range(0, len(arr)):
+        temp = arr[i]
+        places_index = counting[temp] - 1
+        places[places_index] = temp
+        counting[temp] -= 1
     
-    return arr
+    return places
 
-print(count_sort([1,5,1,6,2,5,3]))
+# print(count_sort([1,5,1,6,2,26,5,3,3,3,3,12]))
