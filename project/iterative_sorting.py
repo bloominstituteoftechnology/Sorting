@@ -5,24 +5,17 @@ def selection_sort( arr ):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
-    #     # (hint, can do in 3 loc) 
-    #     for i in range( len( aList ) ):
-    # least = i
-    # for k in range( i + 1 , len( aList ) ):
-    #   if aList[k] < aList[least]:
-    #     least = k
- 
-    # swap( aList, least, i )     
-
-
+        # (hint, can do in 3 loc) 
+        for j in range(cur_index, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
 
         # TO-DO: swap
 
-
-
-
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+        
     return arr
-
+print("Selection_sort  : {}".format(selection_sort([5,7,3,2,1,8,5,12,15])))
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
@@ -36,7 +29,7 @@ def insertion_sort( arr ):
             
     return arr
 
-print(insertion_sort([3,4,2,1,5,0]))
+print("Insertion_sort  : {}".format(insertion_sort([3,4,2,1,5,0])))
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
@@ -50,7 +43,7 @@ def bubble_sort( arr ):
 
     return arr
 
-print(bubble_sort([3,4,2,1,5,0]))
+print("Bubble_sort  : {}".format(bubble_sort([3,4,2,1,5,0])))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
@@ -74,4 +67,4 @@ def count_sort( arr, maximum=-1 ):
      
     return arr
     
-print(count_sort([1,0,4,3,2,1,4,3,2,4,3,4,4]))
+print("Count_sort  : {}".format(count_sort([1,0,4,3,2,1,4,3,2,4,3,4,4])))
