@@ -21,7 +21,6 @@ def selection_sort(arr):
 def insertion_sort(arr):
     for i in range(1, len(arr)):
         cur_index = i
-        print(arr)
         while cur_index > 0 and arr[cur_index] < arr[cur_index - 1]:
             temp = arr[cur_index - 1]
             arr[cur_index - 1] = arr[cur_index]
@@ -29,8 +28,6 @@ def insertion_sort(arr):
             cur_index -= 1
     return arr
 
-
-print(insertion_sort([22, 55, 77, 44, 66, 88, 11, 33]))
 
 # STRETCH: implement the Bubble Sort function below
 
