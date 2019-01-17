@@ -9,7 +9,7 @@ def selection_sort(arr):
         for j in range(cur_index, len(arr)):
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
-        # TO-DO: swap
+        # swap
         temp = arr[smallest_index]
         # take the item at the current i, move it to where smallest item was
         arr[smallest_index] = arr[cur_index]
@@ -37,7 +37,17 @@ def insertion_sort(arr):
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort(arr):
-
+    swapped = True
+    # loop
+    while swapped:
+        swapped = False
+        for i in range(1, len(arr)):
+            temp = arr[i]
+            if arr[i - 1] > arr[i]:
+                # swap
+                arr[i] = arr[i-1]
+                arr[i-1] = temp
+                swapped = True
     return arr
 
 
