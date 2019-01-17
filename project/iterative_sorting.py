@@ -16,7 +16,7 @@ def selection_sort(arr):
     return arr
 
 
-print(selection_sort([23, 3, 4, 2, 1]))
+selection_sort([23, 3, 4, 2, 1])
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
