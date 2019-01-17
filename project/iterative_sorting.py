@@ -38,13 +38,21 @@ def insertion_sort( arr ):
 
     return arr
 
-arr = [12, 11, 13, 5, 6] 
-print(insertionSort(arr))
+arr = [2,5,9,7,4,1,3,8,6]
+print(arr)
+arr = insertionSort( arr )
+print(arr)
 
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
+    n = len(arr)
 
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                
     return arr
 
 
