@@ -55,7 +55,7 @@ def merge(arrA, arrB):
     # to compare the first element of each
     for i in range(0, elements):
         # if all elements of arrA have been merged
-        if a > len(arrA):
+        if a >= len(arrA):
             merged_arr[i] = arrB[b]
             b += 1
         # all elements in arrB have been merged
