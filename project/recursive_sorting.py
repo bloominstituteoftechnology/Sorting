@@ -97,7 +97,31 @@ def quick_sort(arr, low, high):
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 
+def insertion_sort(arr):
+    length = len(arr)
+    for x in range(1, length):
+        for j in range(x, 0, -1):
+            if arr[j] < arr[j-1]:
+                arr[j], arr[j-1] = arr[j-1], arr[j]
+
+    return arr
+
 
 def timsort(arr):
 
+    RUN = 5
+
+    for i in range(0, len(arr), RUN):
+        arr[i: i + RUN] = insertion_sort(arr[i: i + RUN])
+
+    RUNinc = RUN
+    while RUNinc < len(arr):
+        for i in range(0, len(arr), 2 * RUNinc):
+            arr[i: i + 2 * RUNinc] = \
+                merge(arr[i: i + RUNinc], arr[i + RUNinc: i + 2 * RUNinc])
+        RUNinc = RUNinc * 2
+
     return arr
+
+
+print(timsort([-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]))
