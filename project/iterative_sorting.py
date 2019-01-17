@@ -51,5 +51,19 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
+    if len(arr) == 0:
+        return arr
+    
+    if maximum == -1:
+        maximum = max(arr)
+    count = [0] * (maximum + 1)               
+    for a in arr:
+        count[a] += 1             
+    j = 0
+    for i in range(0, len(count)):            
+        while count[i] > 0:
+            arr[j] = i
+            j += 1
+            count[i] -= 1
 
     return arr
