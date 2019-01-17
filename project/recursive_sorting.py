@@ -26,32 +26,32 @@ def merge(arrA, arrB):
 # additonal way to write handle function
 
 
-def merge(arrA, arrB):
-    a = 0
-    b = 0
-    merge_array = []
-    while a < len(arrA) and b < len(arrB):
-        if arrA[a] < arrB[b]:
-            merge_array.append(arrA[a])
-            a += 1
-        elif arrA[a] > arrB[b]:
-            merge_array.append(arrB[b])
-            b += 1
-        else:
-            merge_array.append(arrA[a])
-            merge_array.append(arrB[b])
-            a += 1
-            b += 1
+# def merge(arrA, arrB):
+#     a = 0
+#     b = 0
+#     merge_array = []
+#     while a < len(arrA) and b < len(arrB):
+#         if arrA[a] < arrB[b]:
+#             merge_array.append(arrA[a])
+#             a += 1
+#         elif arrA[a] > arrB[b]:
+#             merge_array.append(arrB[b])
+#             b += 1
+#         else:
+#             merge_array.append(arrA[a])
+#             merge_array.append(arrB[b])
+#             a += 1
+#             b += 1
 
-    while a < len(arrA):
-        merge_array.append(arrA[a])
-        a += 1
+#     while a < len(arrA):
+#         merge_array.append(arrA[a])
+#         a += 1
 
-    while b < len(arrB):
-        merge_array.append(arrB[b])
-        b += 1
+#     while b < len(arrB):
+#         merge_array.append(arrB[b])
+#         b += 1
 
-    return merge_array
+#     return merge_array
 
 # recursive sorting function
 
