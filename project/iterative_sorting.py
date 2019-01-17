@@ -20,7 +20,11 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-
+    for i in range(1, len(arr)):
+        j = i - 1
+        while arr[j] > arr[i] and j >=0:
+            arr[j], arr[i] = arr[i], arr[j]
+            j -= 1
     return arr
 
 
