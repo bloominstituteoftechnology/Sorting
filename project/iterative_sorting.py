@@ -37,8 +37,7 @@ def insertion_sort(arr):
 
     while len(unsorted) > 0:
         for num in sortedList[::-1]:
-            if len(unsorted) == 0:
-                return sortedList
+
             if num < unsorted[0]:
 
                 sortedList.insert(sortedList.index(num) + 1, unsorted[0])
