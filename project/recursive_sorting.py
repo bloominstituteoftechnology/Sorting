@@ -65,9 +65,27 @@ def merge_sort_in_place(arr, l, r):
         merge_in_place(arr, l, m, r)
     return arr
 
-print(merge_sort_in_place(an_array, 0, len(an_array) - 1))
+print("Merge_Sort_In_Place: ", merge_sort_in_place(an_array, 0, len(an_array) - 1))
 
 # TO-DO: implement the Quick Sort function below
+
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i = i + 1
+            # temp = arr[i]
+            # arr[i] = arr[j]
+            # arr[j] = temp
+            arr[i], arr[j] = arr[j], arr[i]
+            
+    # temp = arr[i + 1]
+    # arr[i + 1] = arr[high]
+    # arr[high] = temp
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+    
 def quick_sort( arr, low, high ):
     
     if low < high:
@@ -76,24 +94,12 @@ def quick_sort( arr, low, high ):
         quick_sort(arr, p + 1, high)
     return arr
 
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low
-    for j in range(low, high - 1):
-        if arr[j] <= pivot:
-            temp = arr[i]
-            arr[i] = arr[j]
-            arr[j] = temp
-            i = i + 1
-    temp = arr[i]
-    arr[i] = arr[high]
-    arr[high] = temp
-    return i
 
+different_array = [10, 80, 30, 90, 40, 50, 70]
 myArr = [1, 5, 7, 8, 10, 3, 12]
-print(an_array)
-arr = quick_sort(an_array, 0, len(an_array) - 2)
-print(arr)
+print(different_array)
+arr = quick_sort(different_array, 0, len(different_array) - 1)
+print("Quick_Sort With Different Array: ", arr)
     
 # print(quick_sort(an_array, 0, len(an_array) - 1))
 # STRETCH: implement the Timsort function below
