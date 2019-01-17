@@ -12,6 +12,7 @@ def linear_search(arr, target):
 # STRETCH: write an iterative implementation of Binary Search 
 def binary_search(arr, target):
 
+
   if len(arr) == 0:
     return -1 # array empty
     
@@ -19,6 +20,16 @@ def binary_search(arr, target):
   high = len(arr)-1
 
   # TO-DO: add missing code
+  low = 0
+  high = len(arr) - 1
+  while low <= high:
+    mid - low + (high - low) // 2
+    mid_val = arr[mid]
+    if mid_val == target:
+      return mid
+    elif mid_val < value:
+      low = mid + 1
+    else: high = mid - 1
 
   return -1 # not found
 
