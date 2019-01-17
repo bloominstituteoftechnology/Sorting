@@ -67,15 +67,17 @@ def quick_sort(arr):
 
     return quick_sort(low) + [pivot] + quick_sort(high)
 
-arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
 
+arr = [2, 5, 9, 7, 4, 1, 3, 8, 6, 12, 542, 24314, 23, 13, 32]
 
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr, run=3 ):
+def timsort( arr, run=3, merged=[] ):
 
-    if len(arr) <= 1: # if list only has 1 item, it's already sorted
+    if len(arr) == 0:
+        return merged
+    if len(arr) == 1: # if list only has 1 item, it's already sorted
         return arr
     if len(arr) == 2: # if list only has 2 items
         if arr[0] > arr[1]: # and the first item is larger than the second
@@ -85,11 +87,14 @@ def timsort( arr, run=3 ):
     if len(arr) < run: # if lenght of list is smaller than the run
         return insertion_sort(arr) # simply call insertion_sort instead (no merge_sort needed)
 
-    result = [] # starts with an empty list
-    for i in run - 1: # gets the starting index for each merge_sort's array
-        result.append(merge_sort(arr[i::run])) # appends each to result
-    return result # returns sorted list
+    if len(arr) % (run * 2) >= 0:
+        first = insertion_sort(arr[:run])
+        second = insertion_sort(arr[run : run * 2])
+        return timsort(arr[run * 2 :], merged=merge(first, second))
+    else:
+        leftover = len(arr) % run
+        first = insertion_sort(arr[-leftover:])
+        return merge(first, merged)
 
-
-arr = quick_sort(arr)
+arr = timsort(arr)
 print("THIS IS TIMSORT", arr)
