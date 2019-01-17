@@ -30,10 +30,6 @@ def insertion_sort( arr ):
 
     return arr
 
-print(insertion_sort([1, 4, 2, 0]))
-
-
-
 
 
 # STRETCH: implement the Bubble Sort function below
