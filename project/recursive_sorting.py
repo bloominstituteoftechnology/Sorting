@@ -1,11 +1,11 @@
-### helper function
-def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
+# helper function
+def merge(arrA, arrB):
+    elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
     a = 0
     b = 0
     # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
-    for i in range( 0, elements ):
+    for i in range(0, elements):
         if a >= len(arrA):    # all elements in arrA have been merged
             merged_arr[i] = arrB[b]
             b += 1
@@ -21,12 +21,12 @@ def merge( arrA, arrB ):
     return merged_arr
 
 
-### recursive sorting function
-def merge_sort( arr ):
-    if len( arr ) > 1:
-        left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
-        right = merge_sort( arr[ len( arr ) / 2 : ] )
-        arr = merge( left, right )   # merge() defined later
+# recursive sorting function
+def merge_sort(arr):
+    if len(arr) > 1:
+        left = merge_sort(arr[0: len(arr) / 2])
+        right = merge_sort(arr[len(arr) / 2:])
+        arr = merge(left, right)   # merge() defined later
     return arr
 
 
@@ -36,20 +36,45 @@ def merge_in_place(arr, start, mid, end):
 
     return arr
 
-def merge_sort_in_place(arr, l, r): 
+
+def merge_sort_in_place(arr, l, r):
     # TO-DO
 
     return arr
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
+def quick_sort(arr):
 
-    return arr
+    if len(arr) <= 1:
+        return arr
+    if len(arr) == 2:
+        if arr[0] > arr[1]:
+            last = arr.pop()
+            arr.insert(0, last)
+        return arr
 
+    pivot = arr[0]
+    left = []
+    right = []
+
+    for item in arr[1:]:
+        if item < pivot:
+            left.append(item)
+        if item > pivot:
+            right.append(item)
+
+    return quick_sort(left) + [pivot] + quick_sort(right)
+
+
+arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
+arr = quick_sort(arr)
+print(arr)
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
+
+
+def timsort(arr):
 
     return arr
