@@ -63,10 +63,27 @@ def quick_sort(arr):
     return [*quick_sort(low), pivot, *quick_sort(high)]
 
 
-print(quick_sort([10, 4, 5, 77, 32]))
+# print(quick_sort([10, 4, 5, 77, 32]))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
+    if len(arr) <= 64:
+        nums = [arr[0]]
+        for i in range(1, len(arr)):
+            switch = True
+            count = 1
+            nums.append(arr[i])
+            print("b:", nums)
+            while switch:
+                if nums[i - (count - 1)] < nums[i - count]:
+                    temp = nums[i - (count-1)]
+                    nums[i - (count-1)] = nums[i - count]
+                    nums[i - count] = temp
+                    count += 1
+                    print(nums)
+                else:
+                    switch = False
+        return nums
 
-    return arr
+print(timsort([5,4,7,3,8]))
