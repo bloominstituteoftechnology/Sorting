@@ -20,12 +20,13 @@ def selection_sort(arr):
 
 def insertion_sort(arr):
     for i in range(1, len(arr)):
-        # cur_index = i
-        while arr[i] < arr[i - 1]:
-            temp = arr[i - 1]
-            arr[i - 1] = arr[i]
-            arr[i] = temp
-            # cur_index -= 1
+        cur_index = i
+        print(arr)
+        while cur_index > 0 and arr[cur_index] < arr[cur_index - 1]:
+            temp = arr[cur_index - 1]
+            arr[cur_index - 1] = arr[cur_index]
+            arr[cur_index] = temp
+            cur_index -= 1
     return arr
 
 
