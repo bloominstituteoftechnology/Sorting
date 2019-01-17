@@ -44,18 +44,20 @@ print(my_arr)
 
 
 def bubble_sort( arr ):
-    modified = True
-    
+    modified = True # keeps track if it needs to go over the list again
     while modified:
+        # always resets modified to False
+        # that way if none of the items need to be switched it knows it can just return the list b/c it is all sorted
         modified = False
         for index, item in enumerate(arr):
-            if index == len(arr) - 1:
+            if index == len(arr) - 1: # if it's the last index it has already been taken into account
                 break
-            if item > arr[index + 1]:
-                arr.pop(index)
-                arr.insert(index + 1, item)
-                modified = True
-
+            # compares item with the next one
+            # leaves them alone if they're already in the correct order
+            if item > arr[index + 1]: # if item an dthe next one need to be swapped
+                arr.pop(index) # pops the item at its index
+                arr.insert(index + 1, item) # inserts it at the other's index
+                modified = True # makes sure the list is gone over again to check for unordered items
     return arr
 
 
