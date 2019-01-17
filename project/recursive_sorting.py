@@ -43,7 +43,14 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
+def quick_sort( arr ):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        low = [item for item in arr[1:] if item < pivot]
+        high = [item for item in arr[1:] if item > pivot]
+        return quick_sort(low) + [pivot] + quick_sort(high)
 
     return arr
 
