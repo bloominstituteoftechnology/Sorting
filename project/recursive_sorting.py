@@ -4,18 +4,22 @@ def merge(arrA, arrB):
     merged_arr = [0] * elements
     a = 0
     b = 0
-    # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
+    # since arrA and arrB already sorted,
+    # we only need to compare the first element of each when merging!
     for i in range(0, elements):
-        if a >= len(arrA):    # all elements in arrA have been merged
+        # all elements in arrA have been merged
+        if a >= len(arrA):
             merged_arr[i] = arrB[b]
             b += 1
         elif b >= len(arrB):  # all elements in arrB have been merged
             merged_arr[i] = arrA[a]
             a += 1
-        elif arrA[a] < arrB[b]:  # next element in arrA smaller, so add to final array
+        # next element in arrA smaller, so add to final array
+        elif arrA[a] < arrB[b]:
             merged_arr[i] = arrA[a]
             a += 1
-        else:  # else, next element in arrB must be smaller, so add it to final array
+        # else, next element in arrB must be smaller, so add it to final array
+        else:
             merged_arr[i] = arrB[b]
             b += 1
     return merged_arr
@@ -50,7 +54,8 @@ def quick_sort(arr, low, high):
 
 
 # STRETCH: implement the Timsort function below
-# hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
+# hint: check out
+# https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort(arr):
 
     return arr
