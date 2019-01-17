@@ -42,14 +42,48 @@ def merge_sort_in_place(arr, l, r):
     return arr
 
 
+import math
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
+def quick_sort(arr):
+    #  Picking the first element as a pivot for reasons I don't quite understand
+    if len(arr) < 2:
+        return arr
 
-    return arr
+    c_arr = arr.copy()
+    pivot = c_arr[math.floor(len(arr)/2)]
+    c_arr.pop(math.floor(len(arr) / 2))
+    low = []
+    high = []
+    for num in c_arr:
+        if num < pivot:
+            low.append(num)
+        else:
+            high.append(num)
 
+    return [*quick_sort(low), pivot, *quick_sort(high)]
+
+
+# print(quick_sort([10, 4, 5, 77, 32]))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
+    if len(arr) <= 64:
+        nums = [arr[0]]
+        for i in range(1, len(arr)):
+            switch = True
+            count = 1
+            nums.append(arr[i])
+            print("b:", nums)
+            while switch:
+                if nums[i - (count - 1)] < nums[i - count]:
+                    temp = nums[i - (count-1)]
+                    nums[i - (count-1)] = nums[i - count]
+                    nums[i - count] = temp
+                    count += 1
+                    print(nums)
+                else:
+                    switch = False
+        return nums
 
-    return arr
+print(timsort([5,4,7,3,8]))
