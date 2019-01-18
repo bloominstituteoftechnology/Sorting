@@ -44,9 +44,22 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
+    # pick a random number to select to be sorted
+    # compare remaining numbers to that number and add < to low and > to high
+    # do the same thing to the low and high list of numbers
+    piv = (high-low) // 2
+    left = []
+    right = []
+    for i in arr:
+        if arr[i] < arr[piv]:
+            quick_sort(left, 0, piv - 1)
+        else:
+            quick_sort(right, piv + 1, len(arr))
 
     return arr
 
+arr1 = [2, 5, 4, 9, 8, 6, 3, 4, 5]
+quick_sort(arr1, 0, len(arr1) - 1)
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
