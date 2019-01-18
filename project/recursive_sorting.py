@@ -43,11 +43,28 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
+def partition(arr,low,high): 
+  i = (low-1)
+  pivot = arr[high]
+  for j in range(low , high): 
+    if   arr[j] <= pivot:
+      i = i+1 
+      arr[i],arr[j] = arr[j],arr[i] 
+  arr[i+1],arr[high] = arr[high],arr[i+1] 
+  return ( i+1 ) 
 
-    return arr
+def quick_sort(arr, low, high):
+    # n(logn) pivot
+  if low < high: 
+    pi = partition(arr,low,high) 
+ 
+    quick_sort(arr, low, pi-1) 
+    quick_sort(arr, pi+1, high) 
+  
+  return arr
 
-
+arr = [1, 4, 5, 5, 6, 3]
+print(quick_sort(arr, 0, len(arr)-1))
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
