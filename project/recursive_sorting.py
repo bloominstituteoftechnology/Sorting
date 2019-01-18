@@ -161,5 +161,6 @@ def timsort( arr, n ):
             merge_tim(arr, left, mid, right)
         size = 2*size
     return arr
-
-print("Timmah!: ", timsort(an_array, len(an_array)))
+    
+print(myArr)
+print("Timmah!: ", timsort(myArr, len(myArr)))
