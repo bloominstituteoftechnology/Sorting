@@ -37,3 +37,6 @@ def bubble_sort( arr ):
 def count_sort( arr, maximum=-1 ):
 
     return arr
+
+
+print(insertion_sort([1,5,9,2,5,7,3,2,1]))

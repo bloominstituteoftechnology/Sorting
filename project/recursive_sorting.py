@@ -3,8 +3,7 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     a = 0
-    b = 0
-    # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
+    b = 0 and arrB already sorted, we only need to compare the first element of each when merging!
     for i in range( 0, elements ):
         if a >= len(arrA):    # all elements in arrA have been merged
             merged_arr[i] = arrB[b]
