@@ -44,8 +44,15 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below
 def quick_sort( arr, low, high ):
+    if high - low > 0:
+        p = partition(arr,low,high)
+        quick_sort(arr, low, p-1)
+        quick_sort(arr, p+1, high)
 
-    return arr
+
+def partition(arr, low, high)
+    
+    
 
 
 # STRETCH: implement the Timsort function below
