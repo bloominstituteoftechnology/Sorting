@@ -30,8 +30,17 @@ def insertion_sort(arr):
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort(arr):
-    return arr
+    for _ in range(0, len(arr) - 1):
+        for x in range(0, len(arr) - 1):
+            current_element = arr[x]
+            next_element = arr[x + 1]
 
+            if next_element < current_element:
+                arr[x] = next_element
+                arr[x + 1] = current_element
+
+    return arr
+# O(n^2)
 
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
