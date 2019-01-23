@@ -22,7 +22,16 @@ def selection_sort( arr ):
 
 
 # TO-DO: implement the Insertion Sort function below
-def insertion_sort( arr ):
+def insertion_sort(arr):
+    for index in range(1, len(arr)):
+        cur_value = arr[index]
+        cur_index = index
+
+        while cur_index > 0 and arr[cur_index - 1] > cur_value:
+            arr[cur_index] = arr[cur_index - 1]
+            cur_index = cur_index - 1
+
+        arr[cur_index] = cur_value
 
     return arr
 
