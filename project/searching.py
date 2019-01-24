@@ -26,20 +26,21 @@ def binary_search(arr, target):
     elif target < arr[int(middle)]:
       high = int(middle)
     else:
+      print(int(middle))
       return int(middle)
 
   return -1 # not found
-  
+
 # STRETCH: write a recursive implementation of Binary Search 
 def binary_search_recursive(arr, target, low, high):
   
   middle = (low+high)/2
 
   if len(arr) == 0:
-    return -1 # array empty
-  # TO-DO: add missing if/else statements, recursive calls
-  # if middle > target:
-  #   binary_search_recursive(arr[middle:], target, 0, len(arr)-1)
-  # if middle < target:
-  #   binary_search_recursive(arr[:middle], target, 0, len(arr)-1)
-  # if middle == target
+    return -1
+  elif arr[int(middle)] > target:
+    return binary_search_recursive(arr[:int(middle)], target, 0, int(middle))
+  elif arr[int(middle)] < target:
+    return binary_search_recursive(arr[int(middle):], target, int(middle), len(arr) - 1)
+  else:
+    return int(middle)
