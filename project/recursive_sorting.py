@@ -4,7 +4,7 @@ def merge( arrA, arrB ):
     merged_arr = [0] * elements
     a = 0
     b = 0
-    # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
+    # since arrA and arrB already sorted, we only need to compare the low element of each when merging!
     for i in range( 0, elements ):
         if a >= len(arrA):    # all elements in arrA have been merged
             merged_arr[i] = arrB[b]
@@ -43,16 +43,8 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_sort( arr, low, high ):
-    if high - low > 0:
-        p = partition(arr,low,high)
-        quick_sort(arr, low, p-1)
-        quick_sort(arr, p+1, high)
+def quick_Sort(arr):
 
-
-def partition(arr, low, high)
-    
-    
 
 
 # STRETCH: implement the Timsort function below
