@@ -20,17 +20,16 @@ print(selection_sort(arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-    for i in range (0, len(arr)):
-        curr_num = arr[i]
-        j=0
-        for j in range (i-1,-2,-1):
-            if arr[j] > curr_num:
-                arr[j+1]=arr[j]
-            else:
-                break
-        arr[j+1] = curr_num
-    return arr
-
+    for i in range (1, len(arr)):
+        temp = arr[i]
+        temp_index = i
+        while temp_index > 0 and temp < arr[temp_index-1]:
+            arr[temp_index]=arr[temp_index-1]
+            temp_index -=1
+        arr[temp_index] = temp 
+        
+    
+     
 print(insertion_sort(arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 
 

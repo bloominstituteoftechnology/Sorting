@@ -43,7 +43,27 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below
-def quick_Sort(arr):
+def quick_sort( arr, low, high ):
+     if low < high: 
+        pi = partition(arr,low,high)
+        quick_sort(arr, low, pi)
+        quick_sort(arr, pi+1, high)
+
+def partition(arr, low, high):
+    pivot =arr[low]
+    left_wall=low
+
+    for i in range (low+1,high):
+        if arr[i]<pivot:
+            arr[i],arr[left_wall] = arr[left_wall],arr[i] 
+            left_wall = left_wall + 1
+    pivot,arr[left_wall] = arr[left_wall],pivot
+
+    return left_wall
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+quick_sort(arr1, 0, len(arr1)-1)
+print(arr1)
+
 
 
 
