@@ -53,10 +53,24 @@ print(arr)
 
 def bubble_sort(arr):
 
+    length = len(arr) - 1
+    sorted = False
+
+    while not sorted:
+        sorted = True
+        for i in range(length):
+            if arr[i] > arr[i+1]:
+                sorted = False
+                arr[i], arr[i+1] = arr[i+1], arr[i]
     return arr
 
 
+arr = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+print(f'bubble sort {bubble_sort(arr)}')
+
 # STRETCH: implement the Count Sort function below
+
+
 def count_sort(arr, maximum=-1):
 
     return arr
