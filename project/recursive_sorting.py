@@ -2,6 +2,7 @@
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
+    
     a = 0
     b = 0
     # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
@@ -23,9 +24,10 @@ def merge( arrA, arrB ):
 
 ### recursive sorting function
 def merge_sort( arr ):
+    middle = int(len(arr)/2)
     if len( arr ) > 1:
-        left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
-        right = merge_sort( arr[ len( arr ) / 2 : ] )
+        left = merge_sort( arr[0 : middle] )
+        right = merge_sort( arr[middle:] )
         arr = merge( left, right )   # merge() defined later
     return arr
 
