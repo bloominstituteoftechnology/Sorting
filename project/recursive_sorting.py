@@ -1,4 +1,7 @@
 ### helper function
+
+import math
+
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
@@ -44,7 +47,20 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr, low, high ):
-
+    left = []
+    right = []
+    while len(arr) > 1:
+        pivot = arr[math.floor(len(arr)/2)]
+        print(f'{pivot} PIVOT')
+        for num in arr:
+            if num < pivot:
+                left.append(num)
+            elif num > pivot:
+                right.append(num)
+        print(left)
+        print(right)
+        return quick_sort(left, low, high) + [pivot] + quick_sort(right, low, high)
+    print('************************')
     return arr
 
 
