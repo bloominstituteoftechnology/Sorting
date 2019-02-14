@@ -42,7 +42,7 @@ def merge_sort_in_place(arr, l, r):
     return arr
 
 
-# TO-DO: implement the Quick Sort function below
+# TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr, low, high ):
 
     return arr
