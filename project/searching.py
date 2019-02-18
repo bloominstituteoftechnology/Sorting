@@ -1,9 +1,14 @@
-# STRETCH: implement Linear Search				
+# STRETCH: implement Linear Search		
+# O(n) linear time, for each item in the list it checks against the target		
 def linear_search(arr, target):
-  
-  # TO-DO: add missing code
+    for index, item in enumerate(arr):
+        if item == target:
+            return index
 
-   return -1   # not found
+arr = [2,5,9,7,4,1,3,8,6]
+print(arr)
+arr = linear_search( arr, 8 )
+print(arr)
 
 
 # STRETCH: write an iterative implementation of Binary Search 
