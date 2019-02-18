@@ -32,21 +32,25 @@ def insertion_sort( arr ):
 
     # for all other indices, beginning with [1]:
     for index in range(1, len(arr)):
+        
         # copy the item at that index into a temp variable
         cur_index = arr[index]
         prev_index = index - 1
+        
         # iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted
         while prev_index >= 0:
             if cur_index < arr[prev_index]:
+               
                 # shift items over to the right as you iterate
                 arr[prev_index + 1] = arr[prev_index]
+        
+                # when the correct index is found, copy temp into this position
                 arr[prev_index] = cur_index
                 prev_index = prev_index - 1
 
             else:
                 break
 
-        # when the correct index is found, copy temp into this position
     return arr
 
 # try it out
