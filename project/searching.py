@@ -18,6 +18,8 @@ def binary_search(arr, target):
   high = len(arr)-1
 
   # TO-DO: add missing code
+  
+
 
   return -1 # not found
 
