@@ -25,11 +25,22 @@ print(my_arr)
 
 
 def insertion_sort(arr):
-
+    # separate the first element from the rest of the array, think about it as a sorted list of one element
+    for i in range(1, len(arr)):
+        current = arr[i]
+        pos = i
+        while (pos > 0 and arr[pos - 1] > current):
+            arr[pos] = arr[pos - 1]
+            pos = pos - 1
+        arr[pos] = current
     return arr
 
 
+print(insertion_sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
+
 # STRETCH: implement the Bubble Sort function below
+
+
 def bubble_sort(arr):
 
     return arr
