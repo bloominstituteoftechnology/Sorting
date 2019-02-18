@@ -15,12 +15,19 @@ def selection_sort( arr ):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
+    # Starting at index 1
     for i in range(1, len(arr)):
+        # create a copy of i to not mess up the index
         first = i
+        # holds are temp variable which will be put in the place it belongs
         temp = arr[first]
+        # while temp is less than our array at the index before temp
         while first > 0 and temp < arr[first-1]:
+            # move the item over one
             arr[first] = arr[first-1]
+            # move the item all the way to the left place
             first = first-1
+        # perform the swap
         arr[first] = temp
 
     return arr
