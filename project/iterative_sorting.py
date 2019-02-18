@@ -1,4 +1,5 @@
 # Complete the selection_sort() function below in class with your instructor
+#initial commit
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
