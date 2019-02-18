@@ -32,26 +32,49 @@ def insertion_sort(arr):
 
     return arr
 
-
-insertion_sort(arr)
-print(arr)
 # STRETCH: implement the Bubble Sort function below
 
 
 def bubble_sort(arr):
     n = len(arr)
-
+    # loop through the array
     for i in range(n):
 
         for j in range(0, n-i-1):
-
+            # swap if the element found is greater
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
 
-
 # STRETCH: implement the Count Sort function below
-def count_sort(arr, maximum=-1):
 
-    return arr
+
+def count_sort(arr):
+    if len(arr) > 0:
+        m = max(arr)
+    if len(arr) > 0 and min(arr) > 0:
+        m = max(arr)
+    elif len(arr) == 0:
+        return []
+    else:
+        if min(arr) < 0:
+            return 'Error, negative numbers not allowed in Count Sort'
+
+    # creates an array of zeros that matches the length of the passed in array
+    n = [0 for i in range(m + 1)]
+    sorted_arr = []
+    for i in arr:
+        print(i)
+        n[i] += 1
+    for i in range(len(n)):
+        if n[i] != 0:
+            sorted_arr += [i for n in range(n[i])]
+
+    return sorted_arr
+
+
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+arr2 = []
+arr3 = [1, 5, -2, 4, 3]
+print(count_sort(arr3))
