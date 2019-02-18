@@ -4,10 +4,11 @@ def linear_search(arr, target):
     for index, item in enumerate(arr):
         if item == target:
             return index
+        return -1
 
 arr = [2,5,9,7,4,1,3,8,6]
 print(arr)
-arr = linear_search( arr, 8 )
+arr = linear_search( arr, 22 )
 print(arr)
 
 
