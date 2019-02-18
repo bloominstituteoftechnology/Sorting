@@ -13,6 +13,7 @@ print(arr)
 
 
 # STRETCH: write an iterative implementation of Binary Search 
+# O(log(n)) 
 def binary_search(arr, target):
 
   if len(arr) == 0:
@@ -21,9 +22,25 @@ def binary_search(arr, target):
   low = 0
   high = len(arr)-1
 
-  # TO-DO: add missing code
+  while low <= high:
+      mid = (low + high)
+      if arr[mid] < target:
+          low = mid + 1
+      elif target < arr[mid]:
+          high = mid - 1
+      else:
+          return mid
+    
 
   return -1 # not found
+
+arr = [2,5,9,7,4,1,3,8,6]
+arr.sort()
+print(arr)
+arr = binary_search( arr, 3 )
+print(arr)
+
+
 
 
 # STRETCH: write a recursive implementation of Binary Search 
