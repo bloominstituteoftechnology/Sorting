@@ -16,10 +16,10 @@ def selection_sort(arr):
     return arr
 
 
-my_arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
-print(my_arr)
-arr = selection_sort(my_arr)
-print(my_arr)
+# my_arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
+# print(my_arr)
+# arr = selection_sort(my_arr)
+# print(my_arr)
 
 # TO-DO: implement the Insertion Sort function below
 
@@ -36,17 +36,25 @@ def insertion_sort(arr):
     return arr
 
 
-print(insertion_sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
+# print(insertion_sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
 
 # STRETCH: implement the Bubble Sort function below
 
-
+# Walk through the array, comparing each element to its right neighbor. If it's smaller than that neighbor, swap the elements. Repeat this until you make it through an entire pass without any swaps.
 def bubble_sort(arr):
-
+    for i in range(len(arr)-1, 0, -1):
+        for j in range(i):
+            if (arr[j] > arr[j + 1]):
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
     return arr
 
 
+print(bubble_sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
 # STRETCH: implement the Count Sort function below
+
+
 def count_sort(arr, maximum=-1):
 
     return arr
