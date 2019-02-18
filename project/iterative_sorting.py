@@ -13,15 +13,36 @@ def selection_sort( arr ):
         temp = arr[smallest_index]
         arr[smallest_index] = arr[cur_index]
         arr[cur_index] = temp
-        
+
     return arr
 
 
 # TO-DO: implement the Insertion Sort function below
+
+# Separate the first element from the rest of the array. Think about it as a sorted list of one element.
+# For all other indices, beginning with [1]:
+# a. Copy the item at that index into a temp variable
+# b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted
+# Shift items over to the right as you iterate
+# c. When the correct index is found, copy temp into this position
+
 def insertion_sort( arr ):
+
+    for i in range(1, len(arr)):
+        for j in range(i, 0, -1):
+            if arr[j - 1] > arr[j]:
+                temp = arr[j]
+                arr[j] = arr[j - 1]
+                arr[j - 1] = temp
+            else:
+                break
 
     return arr
 
+# arr = [2,5,9,7,4,1,3,8,6]
+# print(arr)
+# arr = insertion_sort( arr )
+# print(arr)
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
