@@ -32,7 +32,7 @@ print(insertion_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
 def bubble_sort( arr ):
     for k in range(0, len(arr)):
         for i in range(0, len(arr)-k-1):
-            if(arr[i] > arr[i+1]): # bubble the largest number to the end of the array and repeat until it's done for all elements in the array, no need to check the largest numbers at the end of the array since the largest number is already sorted, so we do n-k-1
+            if(arr[i] > arr[i+1]): # bubble the largest number to the end of the array and repeat until it's done for all elements in the array, no need to check the largest numbers at the end of the array since the largest numbers are already sorted, so we do n-k-1
                 arr[i], arr[i+1] = arr[i+1], arr[i]
     return arr
 
