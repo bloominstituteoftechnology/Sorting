@@ -41,9 +41,13 @@ def merge_sort_in_place(arr, l, r):
 
     return arr
 
-
+def swap(arr,e1,e2):
+   temp= arr[e1]
+   arr[e1]=arr[e2]
+   arr[e2]=temp 
 # TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr, low, high ):
+    pivot= arr[len(arr)-1]
 
     return arr
 
