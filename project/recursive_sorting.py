@@ -52,6 +52,19 @@ def quick_sort( arr, low, high ):
     #   the low will be the pivot + 1
     #   the high is the arr[len - 1]
 
+        # while loop?
+        #   increment the low until we hit a value that is greater than the pivot
+        #   STOP
+
+        #   decrement the high until we hit a value that is less than the pivot
+        #   STOP
+        
+        #   Flip these two values
+
+        #   CONTINUE
+
+        #   STOP when you hit the split point, when the low and high cross
+
     return arr
 
 

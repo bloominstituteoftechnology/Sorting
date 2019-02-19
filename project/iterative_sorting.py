@@ -70,7 +70,7 @@ def bubble_sort( arr ):
     #             arr[j], arr[j+1] = arr[j+1], arr[j]  # python swapping
     # return arr
 
-    #found online https://www.youtube.com/watch?v=UOuH8IVFAGk
+    # found online https://www.youtube.com/watch?v=UOuH8IVFAGk
     while True:
         corrected = False
         for i in range(0, len(arr) - 1):
@@ -79,6 +79,17 @@ def bubble_sort( arr ):
                 corrected = True
         if not corrected:
             return arr
+
+    # lecture solution (doesn't pass test!)
+    # is_sorted = False
+    # while not is_sorted:
+    #     is_sorted = True
+
+    #     for i in range(len(arr) - 1):
+    #         if arr[i] > arr[i + 1]:
+    #             arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    #             is_sorted = False
+    #     return arr
 
 #try it out
 print("Bubble Sort")
