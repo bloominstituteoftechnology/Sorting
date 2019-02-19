@@ -24,8 +24,8 @@ def merge( arrA, arrB ):
 ### recursive sorting function
 def merge_sort( arr ):
     if len( arr ) > 1:
-        left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
-        right = merge_sort( arr[ len( arr ) / 2 : ] )
+        left = merge_sort( arr[ 0 : len( arr ) // 2 ] )
+        right = merge_sort( arr[ len( arr ) // 2 : ] )
         arr = merge( left, right )   # merge() defined later
     return arr
 
@@ -43,7 +43,14 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
+# a SORTED POSITION is when all the other elements on the left-hand side
+# are smaller than the SORTED POSITION and the elements on the right-hand
+# side are equal-to or greater than the SORTED POSITION.
 def quick_sort( arr, low, high ):
+    #for each UNSORTED POSITION
+    #   set PIVOT arr[0] (the first value in the list)
+    #   the low will be the pivot + 1
+    #   the high is the arr[len - 1]
 
     return arr
 
