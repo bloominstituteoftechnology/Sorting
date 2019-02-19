@@ -18,6 +18,7 @@ def selection_sort( arr ):
     return arr
 
 # try it out
+print("Selection Sort")
 my_arr = [2,5,9,7,4,1,3,8,6]
 print(my_arr)
 arr = selection_sort(my_arr)
@@ -54,6 +55,7 @@ def insertion_sort( arr ):
     return arr
 
 # try it out
+print("Insertion Sort")
 arr = [2,5,9,7,4,1,3,8,6];
 print(arr);
 arr = insertion_sort( arr );
@@ -62,8 +64,38 @@ print(arr);
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
+    # for i in range(0, len(arr) -1):
+    #     for j in range(0, len(arr) - 1 - i):
+    #         if arr[j] > arr[j + 1]:
+    #             arr[j], arr[j+1] = arr[j+1], arr[j]  # python swapping
+    # return arr
 
-    return arr
+    #found online https://www.youtube.com/watch?v=UOuH8IVFAGk
+    while True:
+        corrected = False
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                corrected = True
+        if not corrected:
+            return arr
+
+#try it out
+print("Bubble Sort")
+arr = ['b', 'd', 'a', 'f', 'c', 'e']
+print(arr)
+arr = bubble_sort(arr)
+print(arr)
+
+arr = [4, 2, 3, 1, 6, 5]
+print(arr)
+arr = bubble_sort(arr)
+print(arr)
+
+arr = [6, 5, 4, 3, 2, 1]
+print(arr)
+arr = bubble_sort(arr)
+print(arr)
 
 
 # STRETCH: implement the Count Sort function below
