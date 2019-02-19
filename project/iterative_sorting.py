@@ -17,14 +17,22 @@ def selection_sort( arr ):
         arr[smallest_index]=temp
     return arr
 
-arr=[7,2,1,4,9,3]
-print(selection_sort(arr))
+
+
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-
+    for i in range(len(arr)):
+        cur_index=i
+        remember_value= arr[cur_index]
+        for j in range(cur_index-1, -1,-1):
+            if arr[cur_index]<arr[j]:
+                arr.pop(cur_index)
+                arr.insert(j, remember_value)
+                print(arr)
+            cur_index=j
     return arr
-
-
+arr=[7,2,1,4,9,3]
+print(insertion_sort(arr))
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
 
