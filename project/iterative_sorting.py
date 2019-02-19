@@ -105,9 +105,23 @@ print(animal)
 
 # STRETCH: implement the Bubble Sort function below
 
+# robot, two short arms can only sort directly next to each other
+
 
 def bubble_sort(arr):
-
+    # walk through the array, comparing each element to its right neightbor
+    # repeat this until you make it through an entire pass without any swaps
+    is_sorted = False
+    while not is_sorted:
+        is_sorted = True
+        # walk through the array
+        for i in range(len(arr) - 1):
+            # comparing each element to its right neighbor
+            # if it's smaller than the neighbor,
+            if arr[i] > arr[i + 1]:
+                # swap the elements
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                is_sorted = False
     return arr
 
 
