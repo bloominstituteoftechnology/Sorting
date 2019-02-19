@@ -99,6 +99,8 @@ print(arr)
 
 
 # STRETCH: implement the Count Sort function below
+# count sort is useful for small ranges
+# You count how many of each digit there is, and then you determine each digit's starting position by counting how many cells are taken up by the digits before it
 def count_sort( arr, maximum=-1 ):
 
     return arr
