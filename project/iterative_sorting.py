@@ -22,7 +22,7 @@ def insertion_sort( arr ):
     for i in range(1, len(arr)):
         for j in range(0, len(arr)):
             if(arr[i] < arr[j]):
-                arr[i], arr[j] = arr[j], arr[i]
+                arr[i], arr[j] = arr[j], arr[i] # lots of swaps happen in insertion sort
     return arr
 
 print(insertion_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
