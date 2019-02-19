@@ -48,7 +48,7 @@ class SortingTest(unittest.TestCase):
         arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
         arr2 = []
         arr3 = [0, 1, 2, 3, 4, 5]
-
+        print("#$#$#$#$#$$$$: ",arr1)
         print("#$#$#$#$#$$$$: ",insertion_sort(arr1))
         self.assertEqual(insertion_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
         self.assertEqual(insertion_sort(arr2), [])

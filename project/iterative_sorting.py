@@ -22,7 +22,7 @@ print(selection_sort(sort_array))
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(arr)):
         cur_value = arr[i]
         position = i
 
