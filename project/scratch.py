@@ -1,19 +1,29 @@
 # print(len([1, 2, 3]) - 1)
 
-a = [ 9, 2, 9, 7, 4, 1, 3, 8, 6, 10 ]
+a = [ 5, 2, 9, 7, 4, 1, 3, 8, 6, 10 ]
 
 def insertion_sort(arr):
-    index = arr[0]
-    if index > arr[1]
-        swap places.
-        index = arr[2]
-    else
-        index = arr[2]
-    if  index > arr[1]
-       swap places.
-       index = arr[3]
-    else
-        index = arr[3]
+    for i in range(0, len(arr) - 1):
+        if arr[i] > arr[i+1]:
+            a, b = arr[i], arr[i+1]
+            arr[b], arr[a] = arr[a], arr[b]
+        if i > 0:
+            while i > 0:
+                if arr[i] < arr[i-1]:
+                    print(i)
+
+                    # We swap like above.
+
+
+
+
+
+
+    # a, b = array[1], array[i+1]
+    # array[b], array[a] = array[a], array[b]
+
+
+
 
 
 
