@@ -69,16 +69,16 @@ class SortingTest(unittest.TestCase):
     #     self.assertEqual(count_sort(arr2), [])
     #     self.assertEqual(count_sort(arr3), "Error, negative numbers not allowed in Count Sort")
 
-    # def test_merge(self):
-    #     arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-    #     arr2 = []
-    #     arr3 = [2]
-    #     arr4 = [0, 1, 2, 3, 4, 5]
+    def test_merge(self):
+        arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+        arr2 = []
+        arr3 = [2]
+        arr4 = [0, 1, 2, 3, 4, 5]
 
-    #     self.assertEqual(merge_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
-    #     self.assertEqual(merge_sort(arr2), [])
-    #     self.assertEqual(merge_sort(arr3), [2])
-    #     self.assertEqual(merge_sort(arr4), [0,1,2,3,4,5])
+        self.assertEqual(merge_sort(arr1), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.assertEqual(merge_sort(arr2), [])
+        self.assertEqual(merge_sort(arr3), [2])
+        self.assertEqual(merge_sort(arr4), [0, 1, 2, 3, 4, 5])
 
     # def test_merge_in_place(self):
     #     arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
