@@ -44,9 +44,13 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
-def quick_sort(arr, low, high):
-
-    return arr
+def quick_sort(arr, low=0, high=0):
+    if len(arr) < 2:
+        return arr
+    pivot = arr[len(arr)//2]  # using the midpoint
+    left = [x for x in arr if x < pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + [pivot] + quick_sort(right)
 
 
 # STRETCH: implement the Timsort function below
