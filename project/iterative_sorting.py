@@ -16,15 +16,13 @@ def selection_sort( arr ):
 
 
 print(selection_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
+
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
     for i in range(1, len(arr)):
-        key = arr[i]
-        j = i-1
-        while j >= 0 and key < arr[j]:
-            arr[j+1] = arr[j]
-            j -= 1
-        arr[j+1] = key
+        for j in range(0, len(arr)):
+            if(arr[i] < arr[j]):
+                arr[i], arr[j] = arr[j], arr[i]
     return arr
 
 print(insertion_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
