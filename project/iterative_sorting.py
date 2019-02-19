@@ -58,25 +58,41 @@ def insertion_sort_noSwap(arr):
     return arr
 
 
-print(insertion_sort(array))
-print(insertion_sort_noSwap(array))
+# print(insertion_sort(array))
+# print(insertion_sort_noSwap(array))
 # STRETCH: implement the Bubble Sort function below
 
 # Walk through the array, comparing each element to its right neighbor. If it's smaller than that neighbor, swap the elements. Repeat this until you make it through an entire pass without any swaps.
 
 
 def bubble_sort(arr):
-    for i in range(len(arr)-1, 0, -1):
-        for j in range(i):
-            first = arr[j]
-            second = arr[j + 1]
-            if (first > second):
-                first, second = second, first
-                # temp = first
-                # first = second
-                # second = temp
+    # the outer loop controls the number of passes needed to sort everything.
+    # Each pass of the bubble sorts 1 element. The number of passes is len(list) - 1.
+    swaps = True
+    while swaps:
+        swaps = False
+        for i in range(0, len(arr)-1):
+            if arr[i] > arr[i+1]:
+                # swap
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swaps = True
+
     return arr
 
+
+def newBubble_sort(arr):
+    is_sorted = False
+    while not is_sorted:
+        is_sorted: True
+        for i in range(len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                is_sorted = False
+    return arr
+
+
+print(bubble_sort(array))
+print(array)
 
 # print(bubble_sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
 # STRETCH: implement the Count Sort function below
@@ -85,6 +101,3 @@ def bubble_sort(arr):
 def count_sort(arr, maximum=-1):
 
     return arr
-
-
-bubble_sort(array)

@@ -1,4 +1,6 @@
-array = [54, 26, 93, 17, 77, 31, 44, 55, 20, 55, 46, 99, 35, 62, 1, 14, 67, 59, 49, 29, 11]
+import random
+myList = [random.randint(0, 10000) for i in range(0, 10000)]
+
 # ### helper function
 
 
@@ -28,13 +30,13 @@ def merge(arrA, arrB):
 
 def merge_sort(arr):
     if len(arr) > 1:
-        left = merge_sort(arr[0: len(arr) / 2])
-        right = merge_sort(arr[len(arr) / 2:])
+        left = merge_sort(arr[0: len(arr) // 2])
+        right = merge_sort(arr[len(arr) // 2:])
         arr = merge(left, right)   # merge() defined later
     return arr
 
 
-merge_sort(array)
+# print(merge_sort(myList))
 
 # STRETCH: implement an in-place merge sort algorithm
 
@@ -52,13 +54,30 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
-def quick_sort(arr, low, high):
+def quick_sort(arr):
+        # base case (arrays with 0 or 1 are already sorted)
+    if (len(arr) < 2):
+        # so just return the array
+        return arr
+    else:
+        # else start your pivot at the first number
+        pivot = arr[0]
+        # sub array of all the elements less than the pivot
+        less = [i for i in arr[1:] if i <= pivot]
+        # sub-array of all the elements greater than the pivot
+        greater = [i for i in arr[1:] if i > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
 
-    return arr
+
+print(quick_sort(myList))
 
 
+# print(quick_sort(myList, 0, len(myList) - 1))
+# print(myList)
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
+
+
 def timsort(arr):
 
     return arr
