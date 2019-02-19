@@ -33,7 +33,15 @@ print(insertion_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
 
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
     return arr
+
+print(bubble_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
 
 
 # STRETCH: implement the Count Sort function below
