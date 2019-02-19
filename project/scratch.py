@@ -6,32 +6,49 @@ a = [item for item in range(30)]
 
 # a.sort()
 #binary sory.
-def binary_search(arr, target): 
-    # step 1. we find the midpoint.
-    midpoint = len(arr) // 2
-    while len(arr) > 3:
-    # We check to see if midpoint is equal to target.
-        if target == arr[midpoint]:
-            return target
-        # we check to see which side target is on
+
+def binary_search(arr, target):
+    first = 0
+    last = len(arr) -1
+    while first <= last:
+        midpoint = (first + last) // 2
+        if arr[midpoint] == target:
+            return arr[midpoint]
         else:
-            if target > arr[midpoint]:
-                print('on the left')
-                
-                # midpoint = len(arr[midpoint:]) // 2
-                # The pop is just to reduce the array to end the loop.
-                arr.pop()
-                # arr = arr[midpoint:]
-                # arr = arr[:midpoint]
-                # print(f"Left midpoint {midpoint} ")
+            if target < arr[midpoint]:
+                last = midpoint - 1
             else:
-                print('on the left')
+                first = midpoint + 1
+    return arr
+
+print(binary_search(a, 13))
+def binary_search1(arr, target): 
+    pass
+    # step 1. we find the midpoint.
+    # midpoint = len(arr) // 2
+    # while len(arr) > 3:
+    # # We check to see if midpoint is equal to target.
+    #     if target == arr[midpoint]:
+    #         return target
+    #     # we check to see which side target is on
+    #     else:
+    #         if target > arr[midpoint]:
+    #             print('on the left')
                 
-                # midpoint = len(arr[:midpoint]) // 2
-                arr.pop()
-                print(len(arr))
-                # # arr = arr[:midpoint]
-                # print(f"Right midpoint {midpoint}")
+    #             # midpoint = len(arr[midpoint:]) // 2
+    #             # The pop is just to reduce the array to end the loop.
+    #             arr.pop()
+    #             # arr = arr[midpoint:]
+    #             # arr = arr[:midpoint]
+    #             # print(f"Left midpoint {midpoint} ")
+    #         else:
+    #             print('on the left')
+                
+    #             # midpoint = len(arr[:midpoint]) // 2
+    #             arr.pop()
+    #             print(len(arr))
+    #             # # arr = arr[:midpoint]
+    #             # print(f"Right midpoint {midpoint}")
                 # arr = arr[midpoint:]
 
     # 3. We set that as a new array.
@@ -40,7 +57,6 @@ def binary_search(arr, target):
     # midpoint = len(arr) // 2
     # new_array = arr 
     # while len(new_arry) > 1:
-print(binary_search(a, 2))
 
 
 # while len(a) > 1:
