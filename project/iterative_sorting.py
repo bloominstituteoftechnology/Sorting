@@ -38,9 +38,31 @@ print(arr)
 arr = insertion_sort( arr )
 print(arr)
 
+def insertion_sort2(arr):
+    for i in range(1, len(arr)):
+        current_element = arr[i]
+        j = i - 1
+        while j >= 0 and current_element < arr[j]:
+            arr[j+1] = arr[j]
+            j -= 1
+        arr[j+1] = current_element
+    return arr
 
+arr = [2,5,9,7,4,1,3,8,6]
+print(arr)
+arr = insertion_sort2( arr )
+print(arr)
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
+    is_sorted = False
+    while not is_sorted:
+        is_sorted = True
+        for i in range(len(arr) -1):
+            if arr[i] > arr[i+1]:
+                #swap elements
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                # set is_sorted back to false
+                is_sorted = False
 
     return arr
 

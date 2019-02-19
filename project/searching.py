@@ -50,4 +50,12 @@ def binary_search_recursive(arr, target, low, high):
 
   if len(arr) == 0:
     return -1 # array empty
-  # TO-DO: add missing if/else statements, recursive calls
+  else:
+      binary_search_recursive(middle, target, 0, middle)
+
+arr = [2,5,9,7,4,1,3,8,6]
+arr.sort()
+print(arr)
+arr = binary_search_recursive( arr, 3, 0, len(arr) -1 )
+print(arr)
+
