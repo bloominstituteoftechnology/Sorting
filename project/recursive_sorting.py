@@ -1,11 +1,11 @@
-### helper function
-def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
+# helper function
+def merge(arrA, arrB):
+    elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
     a = 0
     b = 0
     # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
-    for i in range( 0, elements ):
+    for i in range(0, elements):
         if a >= len(arrA):    # all elements in arrA have been merged
             merged_arr[i] = arrB[b]
             b += 1
@@ -21,15 +21,15 @@ def merge( arrA, arrB ):
     return merged_arr
 
 
-### recursive sorting function
-def merge_sort( arr ):
-    if len( arr ) > 1: # why? we want to get the arrays down to one element
+# recursive sorting function
+def merge_sort(arr):
+    if len(arr) > 1:  # why? we want to get the arrays down to one element
         # SPLIT from index 0, splice to the midpoint of array. // returns the math.floor
-        left = merge_sort( arr[ 0 : len( arr ) // 2 ] )
+        left = merge_sort(arr[0: len(arr) // 2])
         # SPLIT from the midpoint to the end
-        right = merge_sort( arr[ len( arr ) // 2 : ] )
+        right = merge_sort(arr[len(arr) // 2:])
 
-        arr = merge( left, right )   # merge() defined later
+        arr = merge(left, right)   # merge() defined later
     return arr
 
 
@@ -39,15 +39,16 @@ def merge_in_place(arr, start, mid, end):
 
     return arr
 
-def merge_sort_in_place(arr, l, r): 
+
+def merge_sort_in_place(arr, l, r):
     # TO-DO
 
     return arr
 
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
-# QUICKSORT ALGORITHM EXPLAINED in C++ 
-# (good explanation; uses partition helper): 
+# QUICKSORT ALGORITHM EXPLAINED in C++
+# (good explanation; uses partition helper):
 # [(https://www.youtube.com/watch?v=7h1s2SojIRw&t=427)]
 
 # a SORTED POSITION is when all the other elements on the left-hand side
@@ -57,7 +58,7 @@ def merge_sort_in_place(arr, l, r):
 def quick_sort(arr, low, high):
     pivot = high
     count = low
-    
+
     # if the pivot is less than the count
     if low < high:
         # ci = current index
@@ -65,7 +66,7 @@ def quick_sort(arr, low, high):
         for ci in range(low, high):
             # if the current index in the array is less than the pivot
             if arr[ci] < arr[pivot]:
-                
+
                 # swap positions
                 arr[ci], arr[count] = arr[count], arr[ci]
                 # increment the count index by one
@@ -79,22 +80,26 @@ def quick_sort(arr, low, high):
 
     return arr
 
+
 print(f"Quick Sort")
 array = [4, 2, 3, 1, 6, 5]
 print(array)
-array = quick_sort(array, 0, len(array) -1)
+array = quick_sort(array, 0, len(array) - 1)
 print(array)
 
 array = [6, 5, 4, 3, 2, 1]
 print(array)
-array = quick_sort(array, 0, len(array) -1)
+array = quick_sort(array, 0, len(array) - 1)
 print(array)
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort( arr ):
+
+
+def timsort(arr):
 
     return arr
+
 
 def mergeSort(arr):
     print('mergesort call')
@@ -119,14 +124,14 @@ def mergeSort(arr):
                 arr[k] = R[j]
                 j += 1
             k += 1
-        
+
         # checking if any element was left out
         while i < len(L):
             arr[k] = L[i]
             i += 1
             k += 1
             print(arr)
-        
+
         while j < len(R):
             arr[k] = R[j]
             j += 1
@@ -135,9 +140,10 @@ def mergeSort(arr):
 
     return arr
 
+
 # try it out
 print("Merge Sort 2")
-arr = [2,5,9,7,4,1,3,8,6];
+arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
 print(mergeSort(arr))
 print(arr)
 
@@ -154,15 +160,16 @@ def partition(arr, low, high):
             # increment the index of the smaller element and swap
             i += 1
             arr[i], arr[j] = arr[j], arr[i]
-    
+
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
     return i + 1
 
-def quick_sort( arr, low, high=None ):
+
+def quick_sort2(arr, low, high=None):
     if high is None:
         high = len(arr) - 1
     if low < high:
         pivot = partition(arr, low, high)
-        quick_sort(arr, low, pivot - 1)
-        quick_sort(arr, pivot + 1, high)
+        quick_sort2(arr, low, pivot - 1)
+        quick_sort2(arr, pivot + 1, high)
     return arr
