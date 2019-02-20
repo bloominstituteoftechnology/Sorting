@@ -23,9 +23,12 @@ def merge( arrA, arrB ):
 
 ### recursive sorting function
 def merge_sort( arr ):
-    if len( arr ) > 1:
+    if len( arr ) > 1: # why? we want to get the arrays down to one element
+        # SPLIT from index 0, splice to the midpoint of array. // returns the math.floor
         left = merge_sort( arr[ 0 : len( arr ) // 2 ] )
+        # SPLIT from the midpoint to the end
         right = merge_sort( arr[ len( arr ) // 2 : ] )
+
         arr = merge( left, right )   # merge() defined later
     return arr
 
@@ -43,33 +46,93 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
+# QUICKSORT ALGORITHM EXPLAINED in C++ 
+# (good explanation; uses partition helper): 
+# [(https://www.youtube.com/watch?v=7h1s2SojIRw&t=427)]
+
 # a SORTED POSITION is when all the other elements on the left-hand side
 # are smaller than the SORTED POSITION and the elements on the right-hand
 # side are equal-to or greater than the SORTED POSITION.
-def quick_sort( arr, low, high ):
-    #for each UNSORTED POSITION
-    #   set PIVOT arr[0] (the first value in the list)
-    #   the low will be the pivot + 1
-    #   the high is the arr[len - 1]
 
-        # while loop?
-        #   increment the low until we hit a value that is greater than the pivot
-        #   STOP
+def quick_sort(arr, low, high):
+    pivot = high
+    count = low
 
-        #   decrement the high until we hit a value that is less than the pivot
-        #   STOP
-        
-        #   Flip these two values
+    if low < high:
+        # ci = current index
+        for ci in range(low, high):
+            if arr[ci] < arr[pivot]:
+                
+                #swap positions
+                arr[ci], arr[count] = arr[count], arr[ci]
+                count += 1
 
-        #   CONTINUE
-
-        #   STOP when you hit the split point, when the low and high cross
+        # RECURSION
+        # swap positions
+        arr[pivot], arr[count] = arr[count], arr[pivot]
+        quick_sort(arr, count + 1, high)
+        quick_sort(arr, low, count - 1)
 
     return arr
 
+print(f"Quick Sort")
+array = [4, 2, 3, 1, 6, 5]
+print(array)
+array = quick_sort(array, 0, len(array) -1)
+print(array)
+
+array = [6, 5, 4, 3, 2, 1]
+print(array)
+array = quick_sort(array, 0, len(array) -1)
+print(array)
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort( arr ):
 
     return arr
+
+def mergeSort(arr):
+    print('mergesort call')
+    print(arr)
+
+    if len(arr) > 1:
+        middle = (len(arr))//2
+        L = arr[:middle]
+        R = arr[middle:]
+
+        mergeSort(L)
+        mergeSort(R)
+
+        i = j = k = 0
+
+        # merging
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+        
+        # checking if any element was left out
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+            print(arr)
+        
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+            print(arr)
+
+    return arr
+
+# try it out
+print("Merge Sort 2")
+arr = [2,5,9,7,4,1,3,8,6];
+print(mergeSort(arr))
+print(arr)
