@@ -57,14 +57,18 @@ def merge_sort_in_place(arr, l, r):
 def quick_sort(arr, low, high):
     pivot = high
     count = low
-
+    
+    # if the pivot is less than the count
     if low < high:
         # ci = current index
+        # for the current index in the range (the array)
         for ci in range(low, high):
+            # if the current index in the array is less than the pivot
             if arr[ci] < arr[pivot]:
                 
-                #swap positions
+                # swap positions
                 arr[ci], arr[count] = arr[count], arr[ci]
+                # increment the count index by one
                 count += 1
 
         # RECURSION
@@ -136,3 +140,29 @@ print("Merge Sort 2")
 arr = [2,5,9,7,4,1,3,8,6];
 print(mergeSort(arr))
 print(arr)
+
+
+# QUICK SORT WITH PARTITION helper
+
+def partition(arr, low, high):
+    i = low - 1
+    pivot = arr[high]
+
+    for j in range(low, high):
+        # if the current element is smaller or equal to the pivot
+        if arr[j] <= pivot:
+            # increment the index of the smaller element and swap
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+def quick_sort( arr, low, high=None ):
+    if high is None:
+        high = len(arr) - 1
+    if low < high:
+        pivot = partition(arr, low, high)
+        quick_sort(arr, low, pivot - 1)
+        quick_sort(arr, pivot + 1, high)
+    return arr
