@@ -37,11 +37,24 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
-def quick_sort( arr, low, high):
+def quick_sort( arr):
+    if len(arr) <= 1:
+        return arr
     
-    return arr
+    smaller, equal, larger = [], [], []
+    pivot = arr[len(arr)-1]
 
-print(quick_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
+    for number in arr:
+        if number < pivot:
+            smaller.append(number)
+        elif number > pivot:
+            larger.append(number)
+        else:
+            equal.append(number)
+    
+    return quick_sort(smaller)+equal+quick_sort(larger)
+
+print(quick_sort([1, 5, 8, 4, 2, 9, -6, 0, -3, 7]))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
