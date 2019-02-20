@@ -47,10 +47,17 @@ def swap(arr,e1,e2):
    arr[e2]=temp 
 # TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr, low, high ):
-    pivot= arr[len(arr)-1]
-
+    if high>low:
+        pivot= arr[len(arr)-1]
+        to_switch= low
+        for i in range(high):
+            if(arr[i]<pivot):
+                swap(arr, i, to_switch)
+                to_switch+=1
+        swap(arr, to_switch, (len(arr)-1))
+        quick_sort(arr[0:to_switch], 0, to_switch-1)
+        quick_sort(arr[to_switch:(len(arr))], to_switch, len(arr)-1)
     return arr
-
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
