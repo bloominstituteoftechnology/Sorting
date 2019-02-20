@@ -32,7 +32,7 @@ def merge_sort(arr):
     return arr
 
 
-some_arr = [4, 22, 15, 53, 65, 33, 23, 45, 12, 7, 10, 17, 27, 48, 66]
+# some_arr = [4, 22, 15, 53, 65, 33, 23, 45, 12, 7, 10, 17, 27, 48, 66]
 # print(some_arr)
 # print(merge_sort(some_arr))
 
@@ -76,6 +76,10 @@ def merge_sort_in_place(arr, l, r):
 # 1[6,8,2,5,9,1,0,3,4,7], 2[6,4,2,5,9,1,0,3,8,7], 3[6,4,2,5,9,1,0,3,8,7], 4[6,4,2,5,9,1,0,3,8,7], 5[6,4,2,5,3,1,0,9,8,7], 6[6,4,2,5,3,1,0,9,8,7], 7[6,4,2,5,3,1,0,9,8,7], 8[6,4,2,5,3,1,0,7,8,9]
 # partitioned arrays [6,4,2,5,3,1,0] pivot 0 and [8,9]
 # exit recursion when ar length is 1
+
+a_arr = [7, 9, 0, 4, 2, 8, 6, 1, 3, 5]
+
+
 def quick_sort(arr, low, high):
     # first select a pivot
     # rearrange the arr so that elements less than pivot are to the left, elements greater than the pivot are to the right
@@ -110,18 +114,21 @@ def partition(arr, low, high):
             # increment partition index to account for swap and placement of pivot
             p_index += 1
             print(i)
-            print(arr[i])
-            print(arr[p_index])
+            print(f" arr at i, {arr[i]} arr at p index: {arr[p_index]}")
         # swap, assign the element at p_index to element at element of pivot
-        temp = arr[p_index]
-        arr[p_index] = pivot
-        # swap, assign the element at the pivot to element at p_index
-        pivot = temp
+    temp = arr[p_index]
+    arr[p_index] = pivot
+    # swap, assign the element at the pivot to element at p_index
+    # pivot = temp
+    arr[high] = temp
     # return the partition index
+    print(p_index)
     return p_index
 
+    [7, 9, 0, 4, 2, 8, 6, 1, 3, 5]
 
-print(quick_sort(some_arr, 0, len(some_arr)-1))
+
+print(quick_sort(a_arr, 0, len(a_arr)-1))
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
