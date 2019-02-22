@@ -115,6 +115,20 @@ print(arr)
 # STRETCH: implement the Count Sort function below
 # count sort is useful for small ranges
 # You count how many of each digit there is, and then you determine each digit's starting position by counting how many cells are taken up by the digits before it
-def count_sort(arr, maximum=-1):
+def count_sort(arr, maximum ):
 
+    m = maximum + 1
+    count = [0] * m
+
+    for a in arr:
+        # count
+        count[a] += 1
+
+    i = 0
+    for a in range(m):
+        for c in range(count[a]):
+            arr[i] += a
     return arr
+
+print('countsort')
+print(count_sort( [1, 2, 7, 3, 2, 1, 4, 2, 3, 2, 1], 7 ))
