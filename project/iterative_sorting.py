@@ -14,11 +14,27 @@ def selection_sort( arr ):
     return arr
 
 
-a = [random.randint(0, 100) for i in range(0, 100)]
 # print(selection_sort(a))
 
 # TO-DO: implement the Insertion Sort function below
-def insertion_sort( arr ):
+def insertion_sort(arr):
+    # We set the first item in the array as sorted.
+    # for item in range(1, len(arr)):
+    start the for loop.
+    first sorted.
+    the second is the temp
+    Start the while loop.
+        while the temp is larger than the items down  to 0
+            we compare the temp item to it's neighbor to the left
+            if the temp variable is larger. Then we stop. If it is less than, 
+                We keep moving down until there is one that is less than. Or rather the temp variable is larger. than the one on the left.
+                If the variable on the left is smaller, then we break the loop. Set a new temp and start over.
+
+
+
+
+
+
     return arr
 
 # import random
