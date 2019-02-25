@@ -24,8 +24,21 @@ print(selection_sort([78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 23
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
+    for i in range(0, len(arr)):
+        temp = arr[i]
+
+        j = i - 1
+        while temp < arr[j] and j >= 0:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        arr[j + 1] = temp 
+
 
     return arr
+
+
+print(insertion_sort([78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 234, 66, 178, 38, 73, 188, 211, 114]))
 
 
 # STRETCH: implement the Bubble Sort function below
