@@ -29,8 +29,7 @@ print(my_arr)
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
     # separate the first element from the rest of the array
-    # think about it as a sorted list of one element
-    #first_element = arr.pop(0)
+    # current unsorted index
 
     # for all other indices, beginning with [1]:
     for index in range(1, len(arr)):
