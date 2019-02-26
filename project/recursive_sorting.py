@@ -1,6 +1,6 @@
 ### helper function
-def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
+def merge( arrA, arrB ): # left/right as written in merge_sort() below
+    elements = len( arrA ) + len( arrB ) # an integer
     merged_arr = [0] * elements
     a = 0
     b = 0
@@ -23,14 +23,66 @@ def merge( arrA, arrB ):
 
 ### recursive sorting function
 def merge_sort( arr ):
-    if len( arr ) > 1: # why? we want to get the arrays down to one element
-        # SPLIT from index 0, splice to the midpoint of array. // returns the math.floor
+        # split the list down to arrays of one.
+    if len( arr ) > 1: # if theres more than one thing, keep:
+
+        # SPLIT from index 0, splice to the midpoint of array. 
+        #  `//` returns the math.floor
+        # recursive will sort all the the left first (because we told it to)
+        # then come back up and do the right, until all are sorted
         left = merge_sort( arr[ 0 : len( arr ) // 2 ] )
+
         # SPLIT from the midpoint to the end
         right = merge_sort( arr[ len( arr ) // 2 : ] )
 
-        arr = merge( left, right )   # merge() defined later
+        arr = merge( left, right )   # merge() helper defined later/seperately
     return arr
+
+# recursive merge sort without helper
+def mergeSort(arr):
+    print('mergesort call')
+    print(arr)
+
+    if len(arr) > 1:
+        middle = (len(arr))//2
+        L = arr[:middle]
+        R = arr[middle:]
+
+        mergeSort(L)
+        mergeSort(R)
+
+        i = j = k = 0
+
+        # merging
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+        
+        # checking if any element was left out
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+            print(arr)
+        
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+            print(arr)
+
+    return arr
+
+# try it out
+print("Merge Sort 2")
+arr = [2,5,9,7,4,1,3,8,6];
+print(mergeSort(arr))
+print(arr)
 
 
 # STRETCH: implement an in-place merge sort algorithm
@@ -92,47 +144,5 @@ def timsort( arr ):
 
     return arr
 
-def mergeSort(arr):
-    print('mergesort call')
-    print(arr)
 
-    if len(arr) > 1:
-        middle = (len(arr))//2
-        L = arr[:middle]
-        R = arr[middle:]
-
-        mergeSort(L)
-        mergeSort(R)
-
-        i = j = k = 0
-
-        # merging
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                arr[k] = L[i]
-                i += 1
-            else:
-                arr[k] = R[j]
-                j += 1
-            k += 1
-        
-        # checking if any element was left out
-        while i < len(L):
-            arr[k] = L[i]
-            i += 1
-            k += 1
-            print(arr)
-        
-        while j < len(R):
-            arr[k] = R[j]
-            j += 1
-            k += 1
-            print(arr)
-
-    return arr
-
-# try it out
-print("Merge Sort 2")
-arr = [2,5,9,7,4,1,3,8,6];
-print(mergeSort(arr))
-print(arr)
+ 
