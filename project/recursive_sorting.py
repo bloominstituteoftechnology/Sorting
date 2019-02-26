@@ -23,6 +23,7 @@ def merge( arrA, arrB ):
 
 ### recursive sorting function
 def merge_sort( arr ):
+
     if len( arr ) > 1: # why? we want to get the arrays down to one element
         # SPLIT from index 0, splice to the midpoint of array. // returns the math.floor
         left = merge_sort( arr[ 0 : len( arr ) // 2 ] )
