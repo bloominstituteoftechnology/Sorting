@@ -1,6 +1,8 @@
 # Complete the selection_sort() function below in class with your instructor
 def selection_sort(arr):
-    # loop through n-1 elements
+    # loop through elements except the final element
+    # it should be in the correct place since the previous elements
+    # went through loop
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
@@ -11,9 +13,11 @@ def selection_sort(arr):
                 smallest_index = j
 
         # TO-DO: swap
-        temp = arr[smallest_index]
-        arr[smallest_index] = arr[cur_index]
-        arr[cur_index] = temp
+        # temp = arr[smallest_index]
+        # arr[smallest_index] = arr[cur_index]
+        # arr[cur_index] = temp
+
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
     return arr
 
@@ -42,7 +46,7 @@ def insertion_sort(arr):
         while prev_index >= 0:
             if cur_index < arr[prev_index]:
 
-                # shift items over to the right as you iterate
+                # shift item over to the right as you iterate
                 arr[prev_index + 1] = arr[prev_index]
 
                 # when the correct index is found, copy temp into this position
