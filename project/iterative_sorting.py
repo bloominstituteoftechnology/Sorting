@@ -24,15 +24,16 @@ print(selection_sort([78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 23
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort( arr ):
-    for i in range(0, len(arr)):
-        temp = arr[i]
-
+    # loops through the entire array starting at index 1 since starting at index 0 would just be a wasted operation
+    for i in range(1, len(arr)):
+        # set j equal the the current iteration minus 1 since we will be working backwards from i and comparing
         j = i - 1
-        while temp < arr[j] and j >= 0:
-            arr[j + 1] = arr[j]
+        # as long as the array at j+1 is larger than the array at j AND j is larger than or equal to 0 we will continue to compare our current number to the rest of the numbers in the array to find its spot. 
+        while arr[j + 1] < arr[j] and j >= 0:
+            # swaps the two numbers as it works its way down the array
+            arr[j + 1], arr[j] = arr[j], arr[j + 1]
+            # decrements j 
             j -= 1
-
-        arr[j + 1] = temp 
 
 
     return arr
