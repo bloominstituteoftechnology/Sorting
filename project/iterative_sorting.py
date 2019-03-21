@@ -1,4 +1,4 @@
-# Complete the selection_sort() function below in class with your instructor
+# TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
@@ -18,13 +18,7 @@ def selection_sort( arr ):
     return arr
 
 
-# TO-DO: implement the Insertion Sort function below
-def insertion_sort( arr ):
-
-    return arr
-
-
-# STRETCH: implement the Bubble Sort function below
+# TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
 
     return arr
