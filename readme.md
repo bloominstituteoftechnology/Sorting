@@ -1,7 +1,7 @@
 # Sorting Algorithms
 *For the purpose of this module, we will be writing and discussing all sorting algorithms with the assumption that our goal is to sort items in ascending order. But be aware, this does not always have to be the case.*
 
-## Day 1 - Why Is It So Important to Sort Data?
+## Part 1: Why is it So Important to Sort Data?
 
 ### We're Always Searching
 Users do not have patience for slow apps. And rightfully so! While a a big reason why the applications we use now-a-days are so fast is due to the improvements made in hardware over the last few decades, the software developer still has an important role to play in keeping everything moving quickly.
@@ -9,7 +9,7 @@ Users do not have patience for slow apps. And rightfully so! While a a big reaso
 As we write our applications, we should always be mindful of what operations are being done frequently, since optimizing these will have the biggest impact on the efficiency of our overall application. And regardless of *what* type of app you are creating, it is likely that one of the operations you will be relying on is ***searching***. We search for songs to add to a playlist, videos to watch, people we need to talk to and so much more. Because of this, it is essential that we optimize our searches.
 
 ### Linear vs. Binary Search
-There are two common searching algorithms that developers are often introduced to when they are writing some of their first apps: linear search and binary search. Let's walk through the differences between them.
+There are two common searching algorithms that developers are often introduced to when they are writing some of their first apps: **linear search** and **binary search**. Let's walk through the differences between them.
 
 #### Linear (Sequential) Search
 
@@ -47,7 +47,33 @@ While the justification for *WHY* we want to sort our data is pretty clear, a ha
 
 [Just for fun...(VIDEO) 15 Sorting Algorithms in 6 Minutes  ![alt text](https://i.ytimg.com/vi/kPRA0W1kECg/maxresdefault.jpg)](https://www.youtube.com/watch?v=kPRA0W1kECg)
 
-## Iterative Sorting Algorithms
+## Part 2: Iterative Sorting Algorithms
+
+### Insertion Sort
+Think back to class or team picture day. Everyone stands in a line facing the photographer. Starting at the left-hand side of the line, the photographer checks to make sure each person is taller than the person next to them. If they are shorter, the photographer pulls them out and shifts people over to the right until he or she finds the right spot for this person. They then insert them back into the line. This process repeats until the photographer reaches the last person on the right-hand side, who must be the tallest person in the group. This is ***Insertion Sort***.
+
+[(VIDEO) Insert-sort with Romanian folk dance](https://www.youtube.com/watch?v=ROalU379l3U) 
+
+[![(VIDEO) Insert-sort with Romanian folk dance](https://i.ytimg.com/vi/ROalU379l3U/hqdefault.jpg)](https://www.youtube.com/watch?v=ROalU379l3U) 
+
+#### Algorithm
+1. Separate the first element from the rest of the array. Think about it as a sorted list of one element.
+
+2. For all other indices, beginning with [1]:
+
+    a. Copy the item at that index into a temp variable
+
+    b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted  
+    - Shift items over to the right as you iterate
+    
+    c. When the correct index is found, copy temp into this position
+
+#### Your Task
+- Implement the `insertion_sort()` function in the Guided Project with your TA
+
+#### Real-World Applications
+The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is not always the same. The runtime of ***Insertion Sort*** is dependent on how close to being "in-order" the data is to begin with. In a scenario where you are performing ***Insertion Sort*** on an already or mostly sorted array, very few elements will need to be shifted over, leading to a runtime of Ω(n). However, in a worse-case scenario, where the maximum number of shifts are being performed, the runtime of this algorithm is O(n²).
+
 
 ### Selection Sort
 ***Selection Sort*** is an algorithm that many of you have probably used before when sorting things in your everyday lives. Imagine that you have several books you want to arrange on a shelf from shortest to tallest. You start off by looking for the shortest book, and when you find it, put it on the far left side of the shelf. Then, you look for the second shortest book and insert it directly to the right of the first book. You repeat this process, selecting the next shortest book and moving it next to the most recently placed book, until you have moved all books into the correct place. This is ***Selection Sort***.  
@@ -102,56 +128,33 @@ While ***Selection Sort*** is one of the easier sorting algorithms to understand
 Recall that the runtime complexity of an algorithm, often expressed using *Big O notation*, tells us how the amount of operations our algorithm requires will grow as the size of our input grows. ***Selection Sort*** has  a runtime of O(n²), making it impractical to use with many large, real-world data sets.
 
 #### Your Task
-- Complete the missing parts of `selection_sort()` in `iterative_sorting.py` with your instructor
+- Complete the missing parts of `selection_sort()` in `iterative_sorting.py`.
 
-### Insertion Sort
-Think back to class or team picture day. Everyone stands in a line facing the photographer. Starting at the left-hand side of the line, the photographer checks to make sure each person is taller than the person next to them. If they are shorter, the photographer pulls them out and shifts people over to the right until he or she finds the right spot for this person. They then insert them back into the line. This process repeats until the photographer reaches the last person on the right-hand side, who must be the tallest person in the group. This is ***Insertion Sort***.
-
-[(VIDEO) Insert-sort with Romanian folk dance](https://www.youtube.com/watch?v=ROalU379l3U) 
-
-[![(VIDEO) Insert-sort with Romanian folk dance](https://i.ytimg.com/vi/ROalU379l3U/hqdefault.jpg)](https://www.youtube.com/watch?v=ROalU379l3U) 
+### Bubble Sort
+In **Bubble Sort**, we make a series of swaps between adjacent elements, gradually moving larger elements towards the end of the array (or _bubbling_ larger elements up).
 
 #### Algorithm
-1. Separate the first element from the rest of the array. Think about it as a sorted list of one element.
-
-2. For all other indices, beginning with [1]:
-
-    a. Copy the item at that index into a temp variable
-
-    b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted  
-    - Shift items over to the right as you iterate
-    
-    c. When the correct index is found, copy temp into this position
-
-#### Your Task
-- Implement the `insertion_sort()` function in `iterative_sorting.py`
-
-```
-def insertion_sort():
-    # TO BE COMPLETED BY STUDENT
-
-// try it out
-arr = [2,5,9,7,4,1,3,8,6];
-print(arr);
-arr = insertionSort( arr );
-print(arr);
-
-```
+1. Loop through your array
+    - Compare each element to its neighbor
+    - If elements in wrong position (relative to each other, swap them)
+2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
 
 #### Real-World Applications
-The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is not always the same. The runtime of ***Insertion Sort*** is dependent on how close to being "in-order" the data is to begin with. In a scenario where you are performing ***Insertion Sort*** on an already or mostly sorted array, very few elements will need to be shifted over, leading to a runtime of Ω(n). However, in a worse-case scenario, where the maximum number of shifts are being performed, the runtime of this algorithm is O(n²).
+***Bubble Sort*** is not ideal for many real-world applications. If a small element that _should_ be at the beginning of our array is originally located near the end, it will take a long time to move it into its correct position.
+
+However, it should be noted that if you perform **Bubble Sort** on an array that's already sorted, it will only require a single pass through the array, making its best-case performance linear.
+
+#### Your Task
+- Complete `bubble_sort()` in `iterative_sorting.py`.
+
 
 ### TO-DO in iterative_sorting.py
-- Complete the missing parts of `selection_sort()` 
-- Implement `insertion_sort()` in `iterative_sorting.py`
+- Complete `selection_sort()` and `bubble_sort()`
 
 ### Stretch Goals
 
 #### Try to write a search function
 - Complete the functions in `searching.py`
-
-#### Check out Bubble Sort
-- Take a look a the psuedocode for this algorithm and try implementing it in Python.
 
 #### There are a few "order n" sorting algorithms whose runtime will be linear, even in a worst case scenario. 
 Look into Counting Sort.
@@ -163,7 +166,7 @@ Look into Counting Sort.
 - Explore Bogo Sort and summarize how it works in a couple of sentences.
 
 
-## Day 2 - A Better Way to Sort
+## Part 3: A Better Way to Sort
 
 ### Divide & Conquer
 >A divide-and-conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly.  
@@ -179,6 +182,30 @@ Remember that when writing a recursive algorithm, there are two pieces we have t
 Recursive cases *must* be written in a way that will eventually allow us to reach the base case. Otherwise, infinite recursion will lead to ***STACK OVERFLOW***!
 
 ## Recursive Sorting Algorithms
+
+### Quick Sort
+Let's think about the group photo example again. Everyone's lined up and the photographer wants to order individuals from shortest to tallest. They pull out the first person from the line and instruct everyone *shorter* than this person to position themselves on the left-hand side. Everyone *taller* than this person is instructed to move to the right-hand side. The photographer then repeats this process with the group of people on the left and the group of people on the right. This is ***Quick Sort***.
+
+[(VIDEO) Quick-sort with Hungarian folk dance](https://www.youtube.com/watch?v=ywWBy6J5gz8)
+
+[![(VIDEO) Quick-sort with Hungarian folk dance](https://i.ytimg.com/vi/ywWBy6J5gz8/hqdefault.jpg)](https://www.youtube.com/watch?v=ywWBy6J5gz8)
+
+
+#### Algorithm
+```
+1. Select a pivot. Often times this is the first or last element in a set. It can also be the middle.
+2. Move all elements smaller than the pivot to the left. 
+3. Move all elements greater than the pivot to the right.
+4. While LHS and RHS are greater than 1, repeat steps 1-3 on each side.
+```
+
+### Your Task
+- Implement the `quick_sort()` function in the Guided Project with your TA
+
+#### Real-World Applications
+While ***Quick Sort*** has "quick" in its name, it is typically not used as frequently as Merge Sort. Although it *is* quick in a best case scenario, worst case for ***Quick Sort*** is *very* bad. Because of this, it is not often chosen for production.
+
+
 
 ### Merge Sort
 Your boss asks you to organize an old filing cabinet with 20 years worth of financial documents. He would like things ordered chronologically. You feel overwhelemed. There are thousands of papers in this thing.
@@ -198,74 +225,19 @@ So you decide to break this insane task up into more manageable pieces. First, y
 4. Repeat step 3 until the entire data set has been reassembled
 ```
 
-#### Implementation in Python
-```
-### helper function
-def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [ ]
-    a = 0
-    b = 0
-    # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
-    for i in range( 0, elements ):
-        if a >= len(arrA):    # all elements in arrA have been merged
-            merged_arr.append(arrB[b])
-            b += 1
-        elif b >= len(arrB):  # all elements in arrB have been merged
-            merged_arr.append(arrA[a])
-            a += 1
-        elif arrA[a] < arrB[b]:  # next element in arrA smaller, so add to final array
-            merged_arr.append(arrA[a])
-            a += 1
-        else:  # else, next element in arrB must be smaller, so add it to final array
-            merged_arr.append(arrB[b])
-            b += 1
-    return merged_arr
-
-
-### recursive sorting function
-def merge_sort( arr ):
-    if len( arr ) > 1:
-        left = merge_sort( arr[ 0 : len( arr ) / 2 ] )
-        right = merge_sort( arr[ len( arr ) / 2 : ] )
-        arr = merge( left, right )   # merge() defined later
-    return arr
-```
 
 #### Real-World Applications
 Have you ever wondered how some of the languages you use actually implement their built-in `sort()` functions? Many of them actually utilize the ***Merge Sort*** algorithm! *WHY* they do so is because this sorting algorithm is reliably efficient. In all cases, regardless of how sorted the original data set might be, this algorithm will have a runtime of O(n log(n)), one of the better sorting runtimes out there.
 
 #### Your Task 
--  (STRETCH) Try writing an *in-place* ***Merge Sort*** algorithm.
+- Implement `merge_sort()` in `recursive_sorting.py`. It's recommended that you use...
+  - A recursive function that handles dividing the array (or subarray) in half
+  - A helper function that handles merging sorted pieces back together
+- ***STRETCH*** - Try writing an *in-place* ***Merge Sort*** algorithm.
 
-### Quick Sort
-Let's think about the group photo example again. Everyone's lined up and the photographer wants to order individuals from shortest to tallest. They pull out the first person from the line and instruct everyone *shorter* than this person to position themselves on the left-hand side. Everyone *taller* than this person is instructed to move to the right-hand side. The photographer then repeats this process with the group of people on the left and the group of people on the right. This is ***Quick Sort***.
-
-[(VIDEO) Quick-sort with Hungarian folk dance](https://www.youtube.com/watch?v=ywWBy6J5gz8)
-
-[![(VIDEO) Quick-sort with Hungarian folk dance](https://i.ytimg.com/vi/ywWBy6J5gz8/hqdefault.jpg)](https://www.youtube.com/watch?v=ywWBy6J5gz8)
-
-
-#### Algorithm
-```
-1. Select a pivot. Often times this is the first or last element in a set. It can also be the middle.
-2. Move all elements smaller than the pivot to the left. 
-3. Move all elements greater than the pivot to the right.
-4. While LHS and RHS are greater than 1, repeat steps 1-3 on each side.
-```
-
-#### Your Task
-- Implement the `quick_sort()` function in `recursive_sorting.py`
-```
-def quick_sort(arr):
-    # TO BE COMPLETED BY STUDENT
-```
-
-#### Real-World Applications
-While ***Quick Sort*** has "quick" in its name, it is typically not used as frequently as Merge Sort. Although it *is* quick in a best case scenario, worst case for ***Quick Sort*** is *very* bad. Because of this, it is not often chosen for production.
 
 ### TO-DO in recursive_sorting.py
-- Implement `quick_sort()` in `recursive_sorting.py`
+- Implement the `merge_sort()`
 
 ### Stretch Goals
 
