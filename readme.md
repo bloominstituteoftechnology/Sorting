@@ -1,7 +1,7 @@
 # Sorting Algorithms
 *For the purpose of this module, we will be writing and discussing all sorting algorithms with the assumption that our goal is to sort items in ascending order. But be aware, this does not always have to be the case.*
 
-## Day 1 - Why is it so important to sort data?
+## Day 1 - Why Is It So Important to Sort Data?
 
 ### We're Always Searching
 Users do not have patience for slow apps. And rightfully so! While a a big reason why the applications we use now-a-days are so fast is due to the improvements made in hardware over the last few decades, the software developer still has an important role to play in keeping everything moving quickly.
@@ -71,8 +71,7 @@ An example of this algorithm being applied to an array with 10 numerical element
 
 #### Implementation in Python
 ```
-def selectionSort():
-    def selection_sort( arr ):
+def selectionSort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
@@ -152,15 +151,15 @@ The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is
 - Complete the functions in `searching.py`
 
 #### Check out Bubble Sort
-- Take a look a the psuedocode for this algorithms and try implementing it in Python.
+- Take a look a the psuedocode for this algorithm and try implementing it in Python.
 
 #### There are a few "order n" sorting algorithms whose runtime will be linear, even in a worst case scenario. 
-Look into Count Sort.
-- How is this algorithms different from other iterative sorting algorithms?
+Look into Counting Sort.
+- How is this algorithm different from other iterative sorting algorithms?
     - What are the advantages/disadvantages to this type of sorting algorithm?
-- Take a look a the psuedocode for this algorithms and try implementing it in Python.
+- Take a look a the pseudocode for this algorithm and try implementing it in Python.
 
-#### You might be surprised what passes for a sorting algorithm
+#### You Might be Surprised at What Passes for a Sorting Algorithm
 - Explore Bogo Sort and summarize how it works in a couple of sentences.
 
 
