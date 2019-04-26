@@ -1,8 +1,6 @@
 # Sorting Algorithms
 
-In this two day project, you will be implementing many different solutions to the same simple problem: sorting a list of integers. You will also be using your newfound knowledge of complexity analysis to evaluate each implementation for efficiency.
-
-For the purpose of this module, we will be writing and discussing all sorting algorithms with the goal to sort items in ascending order. Be aware, this is not always the case.
+In this two day project, you will be implementing many different solutions to the same problem: sort a list of integers in ascending order. You will also be using your newfound knowledge of complexity analysis to evaluate each implementation for efficiency.
 
 # No Googling
 
