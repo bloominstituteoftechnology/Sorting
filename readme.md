@@ -12,7 +12,7 @@ Many times in your Lambda career, we encourage you to scour the internet anytime
 ## Tasks
 
  - Open up the [iterative_sorting](src/iterative_sorting) directory
- - Read through the descriptions of the `selection_sort` and `bubble_sort` algorithms
+ - Read through the descriptions of the `bubble_sort` and `selection_sort` algorithms
  - Implement `bubble_sort` and `selection_sort` in [iterative_sorting.py](src/iterative_sorting/iterative_sorting.py)
  - Test your implementation by running `test_iterative.py`
 
