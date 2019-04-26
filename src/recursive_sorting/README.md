@@ -34,33 +34,6 @@ Let's think about the group photo example again. Everyone's lined up and the pho
 ## Your Task
 - Implement the `quick_sort()` function in the Guided Project with your TA
 
-## Implementation in Python
-```python
-def quick_sort( arr, low, high ):
-    # base case
-    if high-low <= 0:
-        return arr
-
-    # partition
-    pivot = low
-    for i in range(low+1, high+1):
-        if arr[i] < arr[pivot]:
-            # move to LHS of pivot - 2 swaps
-            temp = arr[i]
-            arr[i] = arr[pivot+1]
-            arr[pivot+1] = temp
-
-            temp = arr[pivot]
-            arr[pivot] = arr[pivot+1]
-            arr[pivot+1] = temp
-            pivot += 1
-    
-    # Quick Sort LHS, RHS
-    arr = quick_sort(arr, low, pivot-1)
-    arr = quick_sort(arr, pivot+1, high)
-
-    return arr
-```
 
 ### Real-World Applications
 While ***Quick Sort*** has "quick" in its name, it is typically not used as frequently as Merge Sort. Although it *is* quick in a best case scenario, worst case for ***Quick Sort*** is *very* bad. Because of this, it is not often chosen for production.
