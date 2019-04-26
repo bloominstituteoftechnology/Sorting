@@ -24,23 +24,6 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
 - Implement the `insertion_sort()` function in the Guided Project with your TA
 
 
-### Implementation in Python
-```python
-def insertion_sort( arr ):
-  # loop through n-1 elements
-  for i in range(1, len(arr)):
-    temp = arr[i]
-    j = i
-    while j > 0 and temp < arr[j - 1]:
-      # shift left until correct position found
-      arr[j] = arr[j - 1]
-      j -= 1
-    # insert at correct position
-    arr[j] = temp
-
-  return arr
-```
-
 ### Real-World Applications
 The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is not always the same. The runtime of ***Insertion Sort*** is dependent on how close to being "in-order" the data is to begin with. In a scenario where you are performing ***Insertion Sort*** on an already or mostly sorted array, very few elements will need to be shifted over, leading to a runtime of Ω(n). However, in a worse-case scenario, where the maximum number of shifts are being performed, the runtime of this algorithm is O(n²).
 
