@@ -9,7 +9,7 @@ Many times in your Lambda career, we encourage you to scour the internet anytime
 
 # Day 1
 
-## Tasks
+## MVP Tasks
 
  - Open up the [iterative_sorting](src/iterative_sorting) directory
  - Read through the descriptions of the `bubble_sort` and `selection_sort` algorithms
@@ -18,7 +18,7 @@ Many times in your Lambda career, we encourage you to scour the internet anytime
 
 # Day 2
 
-## Tasks
+## MVP Tasks
 
  - Open up the [recursive_sorting](src/recursive_sorting) directory
  - Read through the descriptions of the `merge_sort` algorithm
