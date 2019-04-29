@@ -23,25 +23,54 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
-    swapped = True # O(1)
-    while swapped is True: # O(n)
-        swapped = False # O(1)
+    swapped = True  # O(1)
+    while swapped is True:  # O(n)
+        swapped = False  # O(1)
         print(arr)
-        for i in range(1, len(arr)): # O(n)
-            if arr[i - 1] > arr[i]: # O(1)
-                temp = arr[i] # O(1)
-                arr[i] = arr[i-1] # O(1)
-                arr[i-1] = temp # O(1)
-                swapped = True # O(1)
+        for i in range(1, len(arr)):  # O(n)
+            if arr[i - 1] > arr[i]:  # O(1)
+                temp = arr[i]  # O(1)
+                arr[i] = arr[i-1]  # O(1)
+                arr[i-1] = temp  # O(1)
+                swapped = True  # O(1)
         print(swapped)
     return arr
 
 # bubble_sort = O(n) = O(1) + ( O(n) * O(1) * ( O(n) * O(1)*5 ) ) = O(n^2)
 
 # STRETCH: implement the Count Sort function below
+
+
 def count_sort(arr, maximum=-1):
+    main_arr = []
+    result_arr = []
+    max_value = 0
+    for j in range(0, len(arr)):
+        if type(arr[j]) is str:
+            return None
+        elif arr[j] > max_value:
+            max_value = arr[j]
+    for z in range(0, max_value + 1):
+        main_arr.append(0)
+    for i in range(0, len(arr)):
+        num = arr[i]
+        if num >= maximum:
+            main_arr[num] += 1
+        else:
+            return "Error, negative numbers not allowed in Count Sort"
+    # print(main_arr)
+    for w in range(0, len(main_arr)):
+        print(main_arr[w])
+        while main_arr[w] > 0:
+            result_arr.append(w)
+            main_arr[w] -= 1
+    print(max_value)
+    # print(main_arr)
+    # print(result_arr)
+    return result_arr
 
-    return arr
+import random
 
-
-print(bubble_sort([2, 4, 3, 0, 5, 6, 7, 8, 9, 1, 10, 0]))
+# print(count_sort([1, 5, 8, 4, 2, 9, 6, 0, 7, 5, "tyoe"]))
+# print(random.sample(range(200), 50))
+print(count_sort(random.sample(range(200), 50)))
