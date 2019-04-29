@@ -73,4 +73,4 @@ import random
 
 # print(count_sort([1, 5, 8, 4, 2, 9, 6, 0, 7, 5, "tyoe"]))
 # print(random.sample(range(200), 50))
-print(count_sort(random.sample(range(200), 50)))
+print(selection_sort(random.sample(range(200), 50)))
