@@ -13,6 +13,9 @@ def selection_sort(arr):
         arr[cur_index] = arr[smallest_index]  # O(1)
         arr[smallest_index] = temp  # O(1)
 
+        # Python Version for swap
+        # arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+
     # TO-DO: swap
 
     return arr  # O(1)
@@ -37,6 +40,17 @@ def bubble_sort(arr):
     return arr
 
 # bubble_sort = O(n) = O(1) + ( O(n) * O(1) * ( O(n) * O(1)*5 ) ) = O(n^2)
+
+# Recursive version
+# def bubble_sort(arr):
+#     swapped = False
+#     for i in range(0, len(arr) - 1):
+#         if arr[i+1] < arr[i]:
+#             arr[i], arr[i+1] = arr[i+1], arr[i]
+#             swapped = True
+#     if swapped:
+#         return bubble_sort(arr)
+#     return arr
 
 # STRETCH: implement the Count Sort function below
 
