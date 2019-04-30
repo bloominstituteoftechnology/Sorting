@@ -1,25 +1,24 @@
 import math
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 
-
-def merge(arrA, arrB, arr):
+def merge(arrA, arrB):
     print(f'run: {arrA}, {arrB}')
-    # elements = len(arrA) + len(arrB)
-    # merged_arr = [0] * elements
+    elements = len(arrA) + len(arrB)
+    merged_arr = [0] * elements
 
     # # TO-DO
-    i, j, k = 0, 0, 0  # i= arrA counter, j= arrB counter, k= master counter
+    i, j, k = 0, 0, 0  # i= arrA counter, j= arrB counter, k= arr counter
 
        # run until left or right is out
     while i < len(arrA) and j < len(arrB):
         # if current arrA val is < current arrB val; assign to master list
         if arrA[i] < arrB[j]:
-            arr[k] = arrA[i]
+            merged_arr[k] = arrA[i]
             i += 1
             k += 1
         # else assign arrB to master
         else:
-            arr[k] = arrB[j]
+            merged_arr[k] = arrB[j]
             j += 1
             k += 1
 
@@ -28,11 +27,11 @@ def merge(arrA, arrB, arr):
     r = i if remaining == arrA else j
 
     while r < len(remaining):
-        arr[k] = remaining[r]
+        merged_arr[k] = remaining[r]
         r += 1
         k += 1
 
-    return arr
+    return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
@@ -49,9 +48,8 @@ def merge_sort(arr):
         arr1 = merge_sort(arr[:middle])
         arr2 = merge_sort(arr[middle:])
         print(f'arr1: {arr1}, arr2: {arr2}')
-        result = merge(arr1, arr2, arr)
+        result = merge(arr1, arr2)
     return result
-
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
@@ -73,4 +71,4 @@ def timsort(arr):
     return arr
 
 
-print(merge_sort([0, 1, 2, 3, 4, 5]))
+print(merge_sort([0, 3, 4, 1, 2, 3, 4, 5, 7]))
