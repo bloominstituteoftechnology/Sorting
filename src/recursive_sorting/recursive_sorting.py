@@ -10,7 +10,7 @@ def merge(arrA, arrB):
     # # TO-DO
     i, j, k = 0, 0, 0  # i= arrA counter, j= arrB counter, k= arr counter
 
-       # run until left or right is out
+    # run until left or right is out
     while i < len(arrA) and j < len(arrB):
         # if current arrA val is < current arrB val; assign to master list
         if arrA[i] < arrB[j]:
@@ -31,6 +31,8 @@ def merge(arrA, arrB):
         merged_arr[k] = remaining[r]
         r += 1
         k += 1
+
+    print(f'merged_arr: {merged_arr}')
 
     return merged_arr
 
@@ -65,7 +67,7 @@ def merge_in_place(arr, start, mid, end):
 
     i, j, k = 0, 0, 0  # i= arrA counter, j= arrB counter, k= arr counter
 
-       # run until left or right is out
+    # run until left or right is out
     while i < len(arrA) and j < len(arrB):
         # if current arrA val is < current arrB val; assign to master list
         if arrA[i] < arrB[j]:
@@ -101,9 +103,13 @@ def merge_sort_in_place(arr, l, r):
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
+
+
 def timsort(arr):
 
     return arr
 
-listTest=[0, 3, 4, 1, 2, 3, 4, 5, 7]
-print(merge_sort_in_place(listTest, 0, len(listTest)-1))
+
+listTest = [0, 3, 4, 1, 2, 3, 4, 5, 7]
+print(merge_sort(listTest))
+# print(merge_sort_in_place(listTest, 0, len(listTest)-1))
