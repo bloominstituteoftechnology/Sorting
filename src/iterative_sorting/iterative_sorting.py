@@ -22,18 +22,18 @@ def selection_sort( arr ):
                 # we are looking at
                 smallest_index = each_index 
 
-                # set the element in the smallest_index to the element
-                # that's in the current index
-                arr[smallest_index] = arr[cur_index]
-
-                # set the element at the current index to the temporary var,
-                # which is the smallest element
-                arr[cur_index] = temp
-
-
-
         # TO-DO: swap
-        arr[cur_index] = smallest_index
+
+        # set a temp variable that holds the element at the index of the smallest
+        temp = arr[smallest_index]
+
+        # set the element in the smallest_index to the element
+        # that's in the current index
+        arr[smallest_index] = arr[cur_index]
+
+        # set the element at the current index to the temporary var,
+        # which is the smallest element
+        arr[cur_index] = temp
 
 
 
