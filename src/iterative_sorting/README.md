@@ -40,7 +40,7 @@ In **Bubble Sort**, we make a series of swaps between adjacent elements, gradual
 ### Real-World Applications
 ***Bubble Sort*** is not ideal for many real-world applications. If a small element that _should_ be at the beginning of our array is originally located near the end, it will take a long time to move it into its correct position.
 
-However, it should be noted that if you perform **Bubble Sort** on an array that's already sorted, it will only require a single pass through the array, making its best-case performance linear. It's also very simple to implement and
+However, it should be noted that if you perform **Bubble Sort** on an array that's already sorted, it will only require a single pass through the array, making its best-case performance linear. It's also very simple to implement.
 
 ### Your Task
 - Complete `bubble_sort()` in `iterative_sorting.py`.
