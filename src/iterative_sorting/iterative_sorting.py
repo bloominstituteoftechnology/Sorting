@@ -4,7 +4,9 @@
 l = [1, 3, 5, 7, 9, 8, 6, 4, 10, 2]
 
 def selection_sort( arr ):
+
     # loop through n-1 elements
+    # For all indices EXCEPT the last index:
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
@@ -35,8 +37,12 @@ def selection_sort( arr ):
         # which is the smallest element
         arr[cur_index] = temp
 
+        # OR Python magic w/ no temp variable
+        # arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+
     return arr
 
+print("selection sort:")
 print(selection_sort(l))
 
 test = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
@@ -47,26 +53,60 @@ def bubble_sort( arr ):
     # keep track of if a swap happened during a pass
     swap_occured = True
 
-    current_index = 0
-
     while swap_occured:
 
-        for i in range(0, len(arr) - 2):
+        # Swap is false unless the following if-statement is triggered
+        swap_occured = False
+
+        for i in range(0, len(arr) - 1):
+
+            current_index = i
 
             if arr[current_index] > arr[current_index + 1]:
                 # Swap
-                temp = arr[current_index]
-                arr[current_index] = arr[current_index + 1]
-                arr[current_index + 1] = temp
+                arr[current_index], arr[current_index + 1] = arr[current_index + 1], arr[current_index]
+                
+                # Set Boolean to True only if a swap happened during the pass
                 swap_occured = True
-            else:
-                swap_occured = False
-            
-            current_index += 1
 
     return arr
 
+print("bubble sort:")
 print(bubble_sort(test))
+
+## Blake's Solution
+
+def bubble_sort_solution( arr ):
+    
+    # If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+
+    swapped = True
+
+    while swapped:
+        print("this is from our while loop")
+        print(arr)
+        swapped = False
+        # if the for loop does no swaps, the while loop will stop after the first iteration
+        
+        # Loop through your array
+        # iterate to length minus one b/c we're comparing everything to the element in front
+        for i in range(len(arr) - 1):
+            # Compare each element to its neighbor
+            if arr[i] > arr[i + 1]:
+                # if elements in wrong position, swap them
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+
+        # If elements in wrong position (relative to each other) swap them
+    print("this is from our return statement")
+    print(arr)
+    return arr
+
+# bubble_sort_solution(test)
+
+
+
+
 
 
 # STRETCH: implement the Count Sort function below
