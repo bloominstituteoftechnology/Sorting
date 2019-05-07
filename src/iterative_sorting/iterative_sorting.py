@@ -35,16 +35,31 @@ def selection_sort( arr ):
         # which is the smallest element
         arr[cur_index] = temp
 
-
-
     return arr
 
 print(selection_sort(l))
 
+test = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
 
+    current_index = 0
+
+    for i in range(0, len(arr) - 1):
+
+        while arr[0]
+        if arr[current_index] > arr[current_index + 1]:
+            # Swap
+            temp = arr[current_index]
+            arr[current_index] = arr[current_index + 1]
+            arr[current_index + 1] = temp
+        
+        current_index += 1
+ 
     return arr
+
+print(bubble_sort(test))
 
 
 # STRETCH: implement the Count Sort function below
