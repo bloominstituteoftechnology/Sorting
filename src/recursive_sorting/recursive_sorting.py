@@ -12,10 +12,10 @@ def merge( arrA, arrB ):
         elif b >= len(arrB):  # all elements in arrB have been merged
             merged_arr[i] = arrA[a]
             a += 1
-        elif arrA[a] < arrB[b]:  # next element in arrA smaller, so add to final array
+        elif arrA[a] < arrB[b]:  
             merged_arr[i] = arrA[a]
             a += 1
-        else:  # else, next element in arrB must be smaller, so add it to final array
+        else:
             merged_arr[i] = arrB[b]
             b += 1
 
@@ -28,11 +28,9 @@ def merge_sort( arr ):
     if len(arr) > 1:
         l = merge_sort(arr[0: len(arr) // 2])
         r = merge_sort(arr[len(arr) // 2:])
-        print(r)
         arr = merge(l, r)
     return arr
-arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-(merge_sort(arr1))
+
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
