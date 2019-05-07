@@ -44,19 +44,26 @@ test = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
 
+    # keep track of if a swap happened during a pass
+    swap_occured = True
+
     current_index = 0
 
-    for i in range(0, len(arr) - 1):
+    while swap_occured:
 
-        while arr[0]
-        if arr[current_index] > arr[current_index + 1]:
-            # Swap
-            temp = arr[current_index]
-            arr[current_index] = arr[current_index + 1]
-            arr[current_index + 1] = temp
-        
-        current_index += 1
- 
+        for i in range(0, len(arr) - 2):
+
+            if arr[current_index] > arr[current_index + 1]:
+                # Swap
+                temp = arr[current_index]
+                arr[current_index] = arr[current_index + 1]
+                arr[current_index + 1] = temp
+                swap_occured = True
+            else:
+                swap_occured = False
+            
+            current_index += 1
+
     return arr
 
 print(bubble_sort(test))
