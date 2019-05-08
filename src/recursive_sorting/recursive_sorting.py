@@ -1,5 +1,6 @@
 test = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
+# O(n)
 # Helper function merges 2 sorted arrays
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
@@ -15,14 +16,14 @@ def merge( arrA, arrB ):
         # if all elements from arrA have been merged
         if a >= len(arrA):
             # put next element in arrB into merged array
-            merged_arr[i] = arrB[b]
+            merged_arr[i] = arrB[b] # Could use append if started with merged_arr = []
             b += 1
 
         # if all elements from arrB have been merged
         elif b >= len(arrB):
             # put next element in arrA into merged array
             merged_arr[i] = arrA[a]
-            b += 1
+            a += 1
 
         # if A[0] is smaller than B[0]
         elif arrA[a] < arrB[b]:
@@ -40,6 +41,7 @@ def merge( arrA, arrB ):
 
     return merged_arr
 
+# O(n log(n)) - we are doing an O(n) function (splitting the initial array in half), log(n) times
 # Implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
 
