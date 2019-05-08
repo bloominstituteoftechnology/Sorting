@@ -1,3 +1,5 @@
+test = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
 # Helper function merges 2 sorted arrays
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
@@ -6,8 +8,6 @@ def merge( arrA, arrB ):
     # initialize indices for accessing elements in the two arrays
     a = 0
     b = 0
-
-    # merged_arr = arrA + arrB
 
     # Loop through list of elements
     for i in range(elements):
@@ -40,18 +40,14 @@ def merge( arrA, arrB ):
 
     return merged_arr
 
-a = [1, 4, 6]
-b = [2, 3, 5]
-print(merge(a, b))
-
-c = [1, 3, 2, 0, 4, 5, 9, 7, 8, 6, 10]
-
-# TO-DO: implement the Merge Sort function below USING RECURSION
+# Implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
 
+    # Base Case
     # While data set contains more than one item, split it in half
     if len(arr) > 1:
 
+        # Recursive Case
         # Recursively call merge_sort to continue splitting the arrays in half
         left_partition = merge_sort(arr[:len(arr) // 2])
         right_partition = merge_sort(arr[len(arr) // 2:])
@@ -61,7 +57,7 @@ def merge_sort( arr ):
 
     return arr
 
-print(merge_sort(c))
+print(merge_sort(test))
 
 
 
