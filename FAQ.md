@@ -6,10 +6,15 @@
 
 * [How do you assess space complexity?](#q100)
 
+### Recursion
+
+* [How do you keep track of recursion in your head?](#q500)
+
 ### General
 
 * [Both promises and recursion wait for something to resolve. Are they related?](#q200)
 * [Should we use a language's built-in functionality as much as possible?](#q300)
+* [What are the tradeoffs with in-place versus non-in-place sorting solutions?](#q400)
 
 ## Questions
 
@@ -211,3 +216,65 @@ def quicksort(data):
 
     return quicksort(left) + [pivot] + quicksort(right)
 ```
+
+--------------------------------------------------------------------------
+
+<a name="q500"></a>
+### How do you keep track of recursion in your head?
+
+One of the main tricks is to _not_ try to follow the flow of the code.
+
+This is counterintuitive, because you're used to reading code and "running" it
+mentally to follow what it does.
+
+Unfortunately, with recursion, keeping track of all the calls and returns
+quickly gets out of hand and human brains can't handle it. Computers are fine,
+but people, not so much.
+
+A better approach is to see how you're using recursion and try to model it in
+your head a different way.
+
+Commonly, recursion is used to break a problem up into identical, smaller
+subproblems.
+
+For example, the Fibonacci sequence is:
+
+```
+0 1 1 2 3 5 8 13 21 34 ...
+```
+
+where each number is the sum of the previous two numbers. And the _0th_ number
+is defined to be `0`, and the _1st_ number is defined to be `1`.
+
+We can write that mathematically like so:
+
+```
+fib(0) = 0
+fib(1) = 1
+fib(n) = fib(n-1) + fib(n-2)
+```
+
+But look there: it's a recursive definition! That last line of math says "the
+_nth_ Fibonacci number is defined to be the sum of the two previous Fibonacci
+numbers", just like the original definition of the sequence, we gave above.
+
+Don't think of it as something that spirals off into an infinity of calls. Just
+think of it as "any Fibonacci number is the sum of the previous two", and leave
+it at that.
+
+And that translates to code pretty easily:
+
+```python
+def fib(n):
+    if n == 0:
+        return 0
+
+    if n == 1:
+        return 1
+
+    return fib(n - 1) + fib(n - 2)
+```
+
+(Note that the above naive solution runs in `O(2^n)` time. You can get it down
+to `O(n)` using [_dynamic
+programming_](https://en.wikipedia.org/wiki/Dynamic_programming#Computer_programming).)
