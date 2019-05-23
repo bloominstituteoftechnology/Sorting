@@ -1,11 +1,8 @@
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        # cur_index = i
-        # smallest_index = cur_index
-        for j in range(i):
-            if arr[j] > arr[j+1]:
+    for x in range(len(arr)-1,0,-1):
+        for i in range(x):
+            if arr[i]>arr[i+1]:
                 temp = arr[i]
                 arr[i] = arr[i+1]
                 arr[i+1] = temp
