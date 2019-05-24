@@ -78,6 +78,6 @@ Have you ever wondered how some of the languages you use actually implement thei
 - While a little more challenging, it is possible to implement ***Merge Sort*** **in-place** (without using extra memory). Try writing a second `merge_sort()` function that does this.
 
 ### Timsort is a combination of the Merge Sort and Insertion Sort algorithms.
-- What programming languages use **Timsort** to implement their built-in `sort()` functions?
+- What programming languages use **Timsort** to implement their built-in `sort()` functions? Python, Java, Octave
 - If an interviewer asked you to describe the **Tim Sort** algorithm in 3-4 sentences, what would you say?
 - Can you implement **Tim Sort** in Python?
