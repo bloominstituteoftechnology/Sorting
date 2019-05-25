@@ -8,13 +8,15 @@ def selection_sort( arr ):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
-        for j in range(i + 1, len( arr )):
-          if arr[ j ] < arr[ cur_index ]:
-              cur_index = j
-              arr[i], arr[cur_index] = arr[cur_index], arr[i]
+        for smallest_index in range(i + 1, len(arr)):
+            if arr[cur_index] > arr[smallest_index]:
+              cur_index = smallest_index
           
     # TO-DO: swap
-    print(arr)
+        temp = arr[i]
+        arr[i] = arr[cur_index]
+        arr[cur_index] = tempclea
+
     return arr
 
 selection_sort(sumArr)
