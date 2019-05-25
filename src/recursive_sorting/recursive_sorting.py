@@ -24,13 +24,19 @@ def merge( arrA, arrB ):
 myArr = [22, 55, 34, 76, 432, 4322, 41, 1, 3]
 myArr2 = [12, 546, 87, 65, 32, 67, 54, 777, 765]
 
-merge(myArr, myArr2)
+print(merge(myArr, myArr2))
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    # TO-DO
+
+    if len(arr) > 1:
+        l = merge_sort(arr[0: len(arr) // 2])
+        r = merge_sort(arr[len(arr) // 2:])
+        arr = merge(l, r)
 
     return arr
+
+print(merge_sort(myArr))
 
 
 # STRETCH: implement an in-place merge sort algorithm
