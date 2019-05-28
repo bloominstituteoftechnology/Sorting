@@ -1,5 +1,5 @@
 # TO-DO: Complete the selection_sort() function below 
-sumArr = [ 5, 6, 3, 8, 10, 12, 15, 1, 4]
+sumArr = [1, 5, 8, 4, 2, 9, 6, 3, 7, 0]
 
 def selection_sort( arr ):
     # loop through n-1 elements
@@ -19,14 +19,18 @@ def selection_sort( arr ):
 
     return arr
 
-selection_sort(sumArr)
 # TO-DO:  implement the Bubble Sort function below
 
 def bubble_sort( arr ):
-
+    for i in range( 0, len( arr ) - 1):
+        for j in range(i + 1, len( arr ) ):
+          if arr[i] > arr[j]:
+            arr[i], arr[j] = arr[j], arr[i]
+            
+    print("bubble_sort", arr)
     return arr
 
-
+bubble_sort(sumArr)
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
