@@ -1,0 +1,12 @@
+day1:
+    - Read through descriptions of bubble and selection @done
+    - Implement bubble sort @done
+    - Implement selection @done
+    - Test Both @done
+
+day2:
+    - implement the quick_sort() function in the Guided Project with your TA
+    - Implement merge_sort() in recursive_sorting.py. It's recommended that you use...
+       - A recursive function that handles dividing the array (or subarray) in half
+       - A helper function that handles merging sorted pieces back together
+        

@@ -1,0 +1,1 @@
+*smallest_index: saving current sammlest index to new variable in memory
