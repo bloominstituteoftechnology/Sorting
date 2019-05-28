@@ -22,5 +22,17 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
+    maxnum = maximum +1
+    counter = [0] * maxnum
+    for i in arr:
+        counter[i] += 1
+    
+    index = 0;
+    for i in range(maxnum):
+        for y in range(counter[i]):
+            arr[index] = i
+            index += 1
     return arr
+
+print(count_sort([2,3,6,1,7,5], 7))
+
