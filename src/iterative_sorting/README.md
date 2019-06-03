@@ -1,4 +1,4 @@
-# Part 2: Iterative Sorting Algorithms
+# Iterative Sorting Algorithms
 
 ## Insertion Sort
 Think back to class or team picture day. Everyone stands in a line facing the photographer. Starting at the left-hand side of the line, the photographer checks to make sure each person is taller than the person next to them. If they are shorter, the photographer pulls them out and shifts people over to the right until he or she finds the right spot for this person. They then insert them back into the line. This process repeats until the photographer reaches the last person on the right-hand side, who must be the tallest person in the group. This is ***Insertion Sort***.
@@ -19,11 +19,31 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
     
     c. When the correct index is found, copy temp into this position
 
+
 ### Your Task
 - Implement the `insertion_sort()` function in the Guided Project with your TA
 
+
 ### Real-World Applications
 The answer to the question, "Is ***Insertion Sort*** an efficient algorithm?" is not always the same. The runtime of ***Insertion Sort*** is dependent on how close to being "in-order" the data is to begin with. In a scenario where you are performing ***Insertion Sort*** on an already or mostly sorted array, very few elements will need to be shifted over, leading to a runtime of Ω(n). However, in a worse-case scenario, where the maximum number of shifts are being performed, the runtime of this algorithm is O(n²).
+
+
+## Bubble Sort
+In **Bubble Sort**, we make a series of swaps between adjacent elements, gradually moving larger elements towards the end of the array (or _bubbling_ larger elements up).
+
+### Algorithm
+1. Loop through your array
+    - Compare each element to its neighbor
+    - If elements in wrong position (relative to each other, swap them)
+2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+
+### Real-World Applications
+***Bubble Sort*** is not ideal for many real-world applications. If a small element that _should_ be at the beginning of our array is originally located near the end, it will take a long time to move it into its correct position.
+
+However, it should be noted that if you perform **Bubble Sort** on an array that's already sorted, it will only require a single pass through the array, making its best-case performance linear. It's also very simple to implement.
+
+### Your Task
+- Complete `bubble_sort()` in `iterative_sorting.py`.
 
 
 ## Selection Sort
@@ -46,32 +66,6 @@ An example of this algorithm being applied to an array with 10 numerical element
     b. Swap the element at current index with the
     smallest element found in above loop
 
-### Implementation in Python
-```
-def selectionSort(arr):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # find next smallest element
-        for j in range(cur_index, len(arr)):
-            if arr[j] < arr[smallest_index]:
-                smallest_index = j
-
-        # swap
-        temp = arr[smallest_index]
-        arr[smallest_index] = arr[cur_index]
-        arr[cur_index] = temp
-
-    return arr
-
-# try it out
-my_arr = [2,5,9,7,4,1,3,8,6]
-print(my_arr)
-arr = selectionSort(my_arr)
-print(my_arr)
-
-```
 
 ### Real-World Applications
 While ***Selection Sort*** is one of the easier sorting algorithms to understand and implement, it has one major drawback - its efficiency.
@@ -80,24 +74,6 @@ Recall that the runtime complexity of an algorithm, often expressed using *Big O
 
 ### Your Task
 - Complete the missing parts of `selection_sort()` in `iterative_sorting.py`.
-
-## Bubble Sort
-In **Bubble Sort**, we make a series of swaps between adjacent elements, gradually moving larger elements towards the end of the array (or _bubbling_ larger elements up).
-
-### Algorithm
-1. Loop through your array
-    - Compare each element to its neighbor
-    - If elements in wrong position (relative to each other, swap them)
-2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
-
-### Real-World Applications
-***Bubble Sort*** is not ideal for many real-world applications. If a small element that _should_ be at the beginning of our array is originally located near the end, it will take a long time to move it into its correct position.
-
-However, it should be noted that if you perform **Bubble Sort** on an array that's already sorted, it will only require a single pass through the array, making its best-case performance linear.
-
-### Your Task
-- Complete `bubble_sort()` in `iterative_sorting.py`.
-
 
 ## TO-DO in iterative_sorting.py
 - Complete `selection_sort()` and `bubble_sort()`

@@ -1,4 +1,4 @@
-# Part 3: A Better Way to Sort
+# A Better Way to Sort
 
 ## Divide & Conquer
 >A divide-and-conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly.  
@@ -33,6 +33,7 @@ Let's think about the group photo example again. Everyone's lined up and the pho
 
 ## Your Task
 - Implement the `quick_sort()` function in the Guided Project with your TA
+
 
 ### Real-World Applications
 While ***Quick Sort*** has "quick" in its name, it is typically not used as frequently as Merge Sort. Although it *is* quick in a best case scenario, worst case for ***Quick Sort*** is *very* bad. Because of this, it is not often chosen for production.
