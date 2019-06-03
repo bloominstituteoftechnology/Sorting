@@ -19,19 +19,28 @@ def selection_sort( arr ):
     print(arr)
     return arr
 
-selection_sort([0,5,2,3,1])
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    for i in range(0, len(arr) - 1):
-        if arr[i] > arr[i + 1]:
-            print(True)
-            swapped_value = arr[i]
-            arr [i] = arr[i + 1]
-            arr[i + 1] = swapped_value
+    swaps_performed = 1
+    while swaps_performed >= 0:
+        print(arr)
+        swaps_performed = 0
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                current_index = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = current_index
+                swaps_performed += 1
+                print(swaps_performed)
+        if swaps_performed == 0:
+            swaps_performed = -1
+
+    print(arr)
     return arr
 
+bubble_sort([0,4,3,5,9,2])
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
