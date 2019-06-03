@@ -7,6 +7,7 @@ In this two day project, you will be implementing many different solutions to th
 Many times in your Lambda career, we encourage you to scour the internet anytime you are stumped by a problem. This is NOT one of those cases. Yes, it is possible to Google "quicksort in Python" and find a solution in about 10 seconds but that is not the point of these exercises. Your task is to take a simple problem (sort an list of ints) and a pre-defined plan (we give you an algorithm description) and turn that into code. These steps should sound familiar, as they are 1-3 of [Polya's Problem Solving techniques](https://github.com/LambdaSchool/CS-Wiki/wiki/Polya%27s-Problem-Solving-Techniques). Soon, you will be coming up with your own plans for more complex problems so don't cheat yourself out of valuable coding practice.
 
 
+
 # Part 1
 
 ## MVP Tasks
