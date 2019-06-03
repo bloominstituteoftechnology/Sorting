@@ -6,9 +6,9 @@ def selection_sort(arr):
         print(arr)
         for j in range(i, 0, -1):
             if arr[j] < arr[j - 1]:
-                temp = arr[j]
-                arr[j] = arr[I]
-                arr[i] = temp
+                temp = arr[j - 1] 
+                arr[j-1] = arr[j]
+                arr[j] = temp
             else:
                 break
     return arr
