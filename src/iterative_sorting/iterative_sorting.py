@@ -25,7 +25,6 @@ def selection_sort( arr ):
 def bubble_sort( arr ):
     swaps_performed = 1
     while swaps_performed >= 0:
-        print(arr)
         swaps_performed = 0
         for i in range(0, len(arr) - 1):
             if arr[i] > arr[i + 1]:
@@ -33,11 +32,9 @@ def bubble_sort( arr ):
                 arr[i] = arr[i + 1]
                 arr[i + 1] = current_index
                 swaps_performed += 1
-                print(swaps_performed)
         if swaps_performed == 0:
             swaps_performed = -1
 
-    print(arr)
     return arr
 
 bubble_sort([0,4,3,5,9,2])
