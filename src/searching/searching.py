@@ -56,4 +56,4 @@ def binary_search_recursive(arr, target, low, high):
         low = middle + 1
         binary_search_recursive(arr, target, low, high)
 
-binary_search_recursive([-11,-8,0,1,2,3,4,5,6,7,8], -8, 0, 8)
+binary_search_recursive([-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9], -8, 0, 13)
