@@ -36,6 +36,27 @@ def bubble_sort(list):
 
 
 # STRETCH: implement the Count Sort function below
-def count_sort(list, maximum=-1):
+def count_sort(list, max=-1):
+    for i in list:
+        if i < 0:
+            return "Error, negative numbers not allowed in Count Sort"
 
+    count = [0 for i in range(max)]
+
+    for i in range(1, len(list)):
+        count[list[i]] = count[list[i]] + 1
+
+    for i in range(2, max):
+        count[i] = count[i] + count[i - 1]
+
+    for i in range(len(list), 1):
+        list[count[list[i]]] = list[i]
+        count[list[i]] = count[list[i]] - 1
+
+    print(count)
     return list
+
+
+nums = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
+print(count_sort(nums))
