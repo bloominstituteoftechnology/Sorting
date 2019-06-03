@@ -39,10 +39,3 @@ def bubble_sort(list):
 def count_sort(list, maximum=-1):
 
     return list
-
-
-# nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-
-# print(bubble_sort(nums))
-
-# print(selection_sort(nums))
