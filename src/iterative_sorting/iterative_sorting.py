@@ -31,5 +31,12 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
+    count_arr = [0] * maximum
+    for a in arr:
+        count_arr += 1
+    init = 0
+    for ind, val in enumerate(count_arr):
+        for a in range(val):
+            arr[init] = ind
+            init += 1
     return arr
