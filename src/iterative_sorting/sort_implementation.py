@@ -79,6 +79,49 @@ def selection_sort(arr):
     return arr
 
 
+# Implementation based on https://www.youtube.com/watch?v=7zuGmKfUt7s
+def count_sort(arr, maximum=-1):
+    if maximum == -1:
+        maximum = max(arr)
+
+    # Create a count list to hold occurance
+    count_list = [0] * (maximum+1)
+
+    # print(count_list)
+
+    # Check and update the occurance
+    for i in range(len(arr)):
+        count_list[arr[i]] += 1
+
+    # print(count_list)
+
+    # Find relative position
+    for i in range(0, len(count_list)-1):
+        count_list[i+1] += count_list[i]
+
+    # print(count_list)
+
+    # Create output array with len same as input arr
+    output = [None] * len(arr)
+
+    for i in range(len(arr)):
+        # Find element's value in arr
+        value = arr[i]
+        # Find value's index from count_list
+        index = count_list[value]
+        # Put value in output array based on index
+        output[index-1] = value
+        # Decrement the index in count_list
+        count_list[value] -= 1
+
+    return output
+
+
+arr = [1, 4, 1, 2, 7, 5, 2]
+print(arr)
+print(count_sort(arr))
+
+
 arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 # arr1 = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 print(f'Input: {arr1}')

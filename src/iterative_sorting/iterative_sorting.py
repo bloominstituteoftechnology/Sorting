@@ -46,6 +46,46 @@ def bubble_sort2(arr):
 
 
 # STRETCH: implement the Count Sort function below
+# Implementation based on https://www.youtube.com/watch?v=7zuGmKfUt7s
 def count_sort(arr, maximum=-1):
+    if len(arr) == 0:
+        return []
 
-    return arr
+    for num in arr:
+        if num < 0:
+            return 'Error, negative numbers not allowed in Count Sort'
+
+    if maximum == -1:
+        maximum = max(arr)
+
+    # Create a count list to hold occurance
+    count_list = [0] * (maximum+1)
+
+    # print(count_list)
+
+    # Check and update the occurance
+    for i in range(len(arr)):
+        count_list[arr[i]] += 1
+
+    # print(count_list)
+
+    # Find relative position
+    for i in range(0, len(count_list)-1):
+        count_list[i+1] += count_list[i]
+
+    # print(count_list)
+
+    # Create output array with len same as input arr
+    output = [None] * len(arr)
+
+    for i in range(len(arr)):
+        # Find element's value in arr
+        value = arr[i]
+        # Find value's index from count_list
+        index = count_list[value]
+        # Put value in output array based on index
+        output[index-1] = value
+        # Decrement the index in count_list
+        count_list[value] -= 1
+
+    return output
