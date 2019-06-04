@@ -35,4 +35,20 @@ def bubble_sort(arr):
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
 
-    return arr
+    count = [0] * len(arr)
+    output = [0] * len(arr)
+
+    # build histogram of array
+    for i in range(len(arr)):
+        count[arr[i]] += 1
+
+    # build cumulative sum of histogram
+    # starting at index 2
+    for i in range(1, len(array)):
+        count[i] = count[i] + count[i - 1]
+
+    for i in range(len(arr), 0, -1):
+        output[count[arr[i]]] = arr[i]
+        count[arr[i]] -= 1
+
+    return output
