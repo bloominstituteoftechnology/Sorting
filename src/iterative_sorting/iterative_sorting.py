@@ -21,7 +21,6 @@ def selection_sort(arr):
         
     return arr
 def bubble_sort( arr ):
-    def bubble_sort(arr):
     new_arr = None # to compare with original array
     while True: # loop until no more swaps performed
         for i in range(0, len(arr) - 1):
