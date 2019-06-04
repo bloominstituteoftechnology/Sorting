@@ -31,14 +31,58 @@ def merge_sort(arr):
 
 
 # STRETCH: implement an in-place merge sort algorithm
+# Reference: https://www.geeksforgeeks.org/in-place-merge-sort/
 def merge_in_place(arr, start, mid, end):
     # TO-DO
+    """
+    1. Maintain two pointers which point to start of the segments which
+    have to be merged.
+    2. Compare the elements at which the pointers are present.
+    3. If element1 < element2 then element1 is at right position,
+    simply increase pointer1.
+    4. Else place element2 in its right position and all the elements
+    at the right of element2 will be shifted right by one position.
+    Increment all the pointers by 1.
+    """
+    start2 = mid+1
 
-    return arr
+    # if arr[mid] <= arr[start2]:
+    #     return
+
+    while start <= mid and start2 <= end:
+        if arr[start] <= arr[start2]:
+            # Element in right place do nothing
+            start += 1
+        else:
+            value = arr[start2]
+            index = start2
+
+            # Shift all the elements between element 1
+            # element 2, right by 1.
+            while index >= start:
+                arr[index] = arr[index-1]
+                index -= 1
+
+            # Copy the value at start
+            arr[start] = value
+
+            start += 1
+            mid += 1
+            start2 += 1
+
+    return
 
 
 def merge_sort_in_place(arr, l, r):
     # TO-DO
+    # Split the array into 2
+    if l < r:
+        m = (l + r) // 2
+
+        merge_sort_in_place(arr, l, m)
+        merge_sort_in_place(arr, m+1, r)
+
+        merge_in_place(arr, l, m, r)
 
     return arr
 
