@@ -40,23 +40,22 @@ def count_sort(list, max=-1):
     for i in list:
         if i < 0:
             return "Error, negative numbers not allowed in Count Sort"
+        # determines highest value in the list
+        if i > max:
+            max = i
 
-    count = [0 for i in range(max)]
+    # creates count list with a 0 for each integer from 1 to max value (plus one more for an initial 0)
+    count = [0] * (max + 1)
 
-    for i in range(1, len(list)):
-        count[list[i]] = count[list[i]] + 1
+    # for each value in the provided list, the appropriate item in the count list is incremented by 1
+    for i in list:
+        count[i] += 1
 
-    for i in range(2, max):
-        count[i] = count[i] + count[i - 1]
+    # this is where the values in the original list actually get sorted, but I'm still not sure of how it works
+    i = 0
+    for l in range(max+1):
+        for _ in range(count[l]):
+            list[i] = l
+            i += 1
 
-    for i in range(len(list), 1):
-        list[count[list[i]]] = list[i]
-        count[list[i]] = count[list[i]] - 1
-
-    print(count)
     return list
-
-
-nums = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-
-print(count_sort(nums))
