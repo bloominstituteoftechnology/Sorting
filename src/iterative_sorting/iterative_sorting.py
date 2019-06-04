@@ -21,8 +21,24 @@ def selection_sort(arr):
         
     return arr
 def bubble_sort( arr ):
-
-    return arr
+    def bubble_sort(arr):
+    new_arr = None # to compare with original array
+    while True: # loop until no more swaps performed
+        for i in range(0, len(arr) - 1):
+            left = arr[i]
+            right = arr[i+1]
+            # if left element is greater than right
+            # the swap places
+            if arr[i] > arr[i+1]:
+                left = arr[i+1]
+                right = arr[i]
+            arr[i] = left
+            arr[i+1] = right
+        # break once "new_array" is equal to copy original
+        if new_arr == arr:
+            return arr
+        # making "new_array" equal to copy of original
+        new_arr = arr.copy()
 
 
 # STRETCH: implement the Count Sort function below
