@@ -1,4 +1,4 @@
-# Sorting Algorithms
+# S orting Algorithms
 
 In this two day project, you will be implementing many different solutions to the same problem: sort a list of integers in ascending order. You will also be using your newfound knowledge of complexity analysis to evaluate each implementation for efficiency.
 
