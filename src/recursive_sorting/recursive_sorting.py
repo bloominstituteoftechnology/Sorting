@@ -34,9 +34,13 @@ def merge( arrA, arrB ):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
+    
+    if len(arr) <= 1:
+            return arr
 
-    return arr
 
+    split = len(arr) // 2
+    return merge(merge_sort(arr[:split]), merge_sort(arr[split:]))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
