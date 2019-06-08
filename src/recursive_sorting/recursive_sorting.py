@@ -3,6 +3,16 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
+
+    a = 0
+    b = 0
+    print(elements)
+    print(merged_arr)
+
+    for n in range(0, elements):
+        if a >= len(arrA):
+            merged_arr[n] = arrB[b]
+        b = b + 1
     
     return merged_arr
 
