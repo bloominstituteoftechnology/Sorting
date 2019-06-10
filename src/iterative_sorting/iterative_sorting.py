@@ -20,9 +20,24 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
-    return arr
-
+    ref = arr.copy() # create a reference point 
+    arrLen = int(len(arr))
+    print(arr)
+    for i in range(arrLen - 1):
+        if arr[i] < arr[i + 1]: # if the starting value is less than the adjacent value
+            pass # pass over it
+        elif arr[i] > arr[i + 1]: # if current value is greater than the adjacent value
+            a = arr[i] # store index value in variable
+            b = arr[i + 1] # store index + 1 value in variable
+            # organize the values by "swapping"
+            arr.pop(i)
+            arr.insert(i, b) 
+            arr.pop(i + 1)
+            arr.insert(i + 1, a)
+    if ref == arr:
+        print('Array is sorted!')
+    elif ref != arr:
+        bubble_sort(arr)
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
