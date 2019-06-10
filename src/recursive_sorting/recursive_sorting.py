@@ -16,7 +16,6 @@ def quicksort(data):
         return data
 
     left, pivot, right = partition(data)
-    print(left + [pivot] + right)
 
     return quicksort(left) + [pivot] + quicksort(right)
 
@@ -37,7 +36,6 @@ def merge( arrA, arrB ):
             merged_arr[m] = arrB[b] # Add b to merged
             b += 1 # Increment b
         m += 1 # Increment m
-        print(f"Merge: {merged_arr}")
 
     # Might have some leftovers... Previous loop ends when one reaches the end
     while a < len(arrA):
@@ -50,20 +48,15 @@ def merge( arrA, arrB ):
         b += 1
         m += 1
 
-    print(f"Merged: {merged_arr}")
-
     return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    print(arr)
+
     if len(arr) > 1:
         mid = len(arr) // 2
-        print(f"Mid: {mid}")
-        print(f"Sliced A: {arr[:mid]}")
         arrA = merge_sort(arr[:mid]) # Sort left
-        print(f"Sliced B: {arr[mid:]}")
         arrB = merge_sort(arr[mid:]) # Sort right
         arr = merge(arrA, arrB)
 
