@@ -1,63 +1,71 @@
 def partition(data):
-  left = []
-  pivot = data[0]
-  right = []
+    left = []
+    pivot = data[0]
+    right = []
 
-  for v in data[1:]:
-    if v <= pivot:
-      left.append(v)
-    else:
-      right.append(v)
+    for v in data[1:]:
+        if v <= pivot:
+            left.append(v)
+        else:
+            right.append(v)
 
-  return left, pivot, right
+    return left, pivot, right
 
 def quicksort(data):
-  if data == []:
-    return data
-    
-  left, pivot, right = partition(data)
-  print(left + [pivot] + right)
-  
-  return quicksort(left) + [pivot] + quicksort(right)
+    if data == []:
+        return data
+
+    left, pivot, right = partition(data)
+    print(left + [pivot] + right)
+
+    return quicksort(left) + [pivot] + quicksort(right)
 
 
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
-    
+
     a, b, m = 0, 0, 0
-    
+
     # Loop through arrays, adding smallest element from each to merged array
     while a < len(arrA) and b < len(arrB):
-      if arrA[a] < arrB[b]:
-        merged_arr[m] = arrA[a] # Add a to merged
-        a += 1 # Increment a
-      else:
-        merged_arr[m] = arrB[b] # Add b to merged
-        b += 1 # Increment b
-      m += 1 # Increment m
-      print(merged_arr)
+        if arrA[a] < arrB[b]:
+            merged_arr[m] = arrA[a] # Add a to merged
+            a += 1 # Increment a
+        else: # Else also handles a = b
+            merged_arr[m] = arrB[b] # Add b to merged
+            b += 1 # Increment b
+        m += 1 # Increment m
+        print(f"Merge: {merged_arr}")
 
     # Might have some leftovers... Previous loop ends when one reaches the end
     while a < len(arrA):
-      merged_arr[m] = arrA[a]
-      a += 1
-      m += 1
+        merged_arr[m] = arrA[a]
+        a += 1
+        m += 1
 
     while b < len(arrB):
-      merged_arr[m] = arrB[b]
-      b += 1
-      m += 1
-    
-    print(merged_arr)
-    
+        merged_arr[m] = arrB[b]
+        b += 1
+        m += 1
+
+    print(f"Merged: {merged_arr}")
+
     return merged_arr
 
-merge([0,2],[1,3])
+
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    # TO-DO
+    print(arr)
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        print(f"Mid: {mid}")
+        print(f"Sliced A: {arr[:mid]}")
+        arrA = merge_sort(arr[:mid]) # Sort left
+        print(f"Sliced B: {arr[mid:]}")
+        arrB = merge_sort(arr[mid:]) # Sort right
+        arr = merge(arrA, arrB)
 
     return arr
 
