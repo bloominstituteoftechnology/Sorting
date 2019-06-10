@@ -1,5 +1,5 @@
 # Iterative Sorting Algorithms
-
+Griffin Huth 
 ## Insertion Sort
 Think back to class or team picture day. Everyone stands in a line facing the photographer. Starting at the left-hand side of the line, the photographer checks to make sure each person is taller than the person next to them. If they are shorter, the photographer pulls them out and shifts people over to the right until he or she finds the right spot for this person. They then insert them back into the line. This process repeats until the photographer reaches the last person on the right-hand side, who must be the tallest person in the group. This is ***Insertion Sort***.
 
