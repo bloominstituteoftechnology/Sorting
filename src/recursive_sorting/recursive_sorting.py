@@ -13,6 +13,8 @@ def merge( arrA, arrB ):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
+    if len(arr) == 1:
+        return arr
     if len( arr ) > 1:
         left = merge_sort(arr[:int(len( arr ) / 2)]) #fixes error: TypeError: slice indices must be integers or None or have an __index__ method
         right = merge_sort(arr[int(len( arr ) / 2):])
