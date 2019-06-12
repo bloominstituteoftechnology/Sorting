@@ -15,11 +15,9 @@ def bubble_sort( arr ):
         for i in range(0, len(arr) - num_of_scan - 1):
             if arr[i] > arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
-    print(arr)
     return arr
 
 # bubble_sort([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7])
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
