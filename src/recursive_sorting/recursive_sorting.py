@@ -1,7 +1,5 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
-def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
+def merge( arrA, arrB, merged_arr ):
     ixA = 0
     ixB = 0
     ixm = 0
@@ -32,9 +30,7 @@ def merge_sort( arr ):
         return arr
     else:
         split = int(len_arr / 2)
-        list1 = merge_sort( arr[0:split] )
-        list2 = merge_sort( arr[split:len_arr] )
-        return(merge(list1, list2))
+        return merge(merge_sort(arr[0:split]), merge_sort(arr[split:len_arr]), arr)
 
     return arr
 
@@ -56,5 +52,3 @@ def merge_sort_in_place(arr, l, r):
 def timsort( arr ):
 
     return arr
-
-#print(merge_sort([4,6,5,6,3,2,5,3,2,1]))
