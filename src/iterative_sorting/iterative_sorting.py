@@ -40,5 +40,15 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
+    for i in range(len(arr)-1)
+        i = maximum
+        i=min
+        count = 1
+        if arr[i+1]> maximum:
+            maximum = arr[i+1]
+        elif arr[i+1] < min:
+            min = arr[i+1]
+
+
 
     return arr
