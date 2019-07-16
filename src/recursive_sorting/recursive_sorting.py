@@ -20,17 +20,14 @@ def merge( arrA, arrB, merged_arr ):
     
     return merged_arr
 
-
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     len_arr = len(arr)
-    if len_arr == 0:
-        return []
-    if len_arr == 1:
+    if len_arr <= 1:
         return arr
     else:
         split = int(len_arr / 2)
-        return merge(merge_sort(arr[0:split]), merge_sort(arr[split:len_arr]), arr)
+        return merge(merge_sort(arr[:split]), merge_sort(arr[split:]), arr)
 
     return arr
 
