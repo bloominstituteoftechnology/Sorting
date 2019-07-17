@@ -22,9 +22,17 @@ def merge( arrA, arrB ):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    # TO-DO
+    if len(arr) <= 1:
+        return arr
+    middle = len(arr)//2
+    left = merge_sort(arr[:middle])
+    right = merge_sort(arr[middle:])
+    return merge(left, right)
 
-    return arr
+    
+
+    
+
 
 
 # STRETCH: implement an in-place merge sort algorithm
