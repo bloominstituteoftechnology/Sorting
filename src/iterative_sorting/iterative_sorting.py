@@ -41,10 +41,10 @@ def bubble_sort( arr ):
                 
                 print(arr,i,swap_count,len(arr))
                 swap_count = 0
-                break
+                
             
 
-            if arr[i] < arr[i + 1]:
+            elif arr[i] < arr[i + 1]:
                 swap_count = swap_count + 1
                 print(arr,i,swap_count,len(arr))
                 
@@ -52,8 +52,10 @@ def bubble_sort( arr ):
             if swap_count == len(arr) - 1:
                 print("FINALLY",arr)
                 
-                
+                restart = False
+               
                 return arr
+                
 
     
         
