@@ -1,6 +1,6 @@
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
-    # loop through from zero to the second to last item in the list
+    # loop through from zero to the second to last item in the list, bc the last item will be the highest. when you get there return arr
     for i in range( 0, len( arr ) - 1 ):
         #pivot set to temp var
         cur_index = i
