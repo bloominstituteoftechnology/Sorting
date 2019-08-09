@@ -2,9 +2,23 @@
 
 In this two day project, you will be implementing many different solutions to the same problem: sort a list of integers in ascending order. You will also be using your newfound knowledge of complexity analysis to evaluate each implementation for efficiency.
 
-# No Googling
+# No Googling for Code
 
-Many times in your Lambda career, we encourage you to scour the internet anytime you are stumped by a problem. This is NOT one of those cases. Yes, it is possible to Google "quicksort in Python" and find a solution in about 10 seconds but that is not the point of these exercises. Your task is to take a simple problem (sort an list of ints) and a pre-defined plan (we give you an algorithm description) and turn that into code. These steps should sound familiar, as they are 1-3 of [Polya's Problem Solving techniques](https://github.com/LambdaSchool/CS-Wiki/wiki/Polya%27s-Problem-Solving-Techniques). Soon, you will be coming up with your own plans for more complex problems so don't cheat yourself out of valuable coding practice.
+For the sorting module, it's OK to Google for things like this:
+
+* Pseudocode
+* Descriptions of algorithms
+* Videos that show how the algorithm works
+
+But you should **NOT** search for:
+
+* Code
+
+If you see code, avert your eyes and hit the back button!
+
+This isn't for anti-cheating purposes. This is because _if you copy code, you won't learn the most important part of this lesson!_ One of the things we want to practice here is to take a spec and turn it into code. You'll be expected to do this incessantly at work, and we want to practice it here. Yes, it's harder this way, but you don't get better by practicing easy stuff.
+
+Your task is to take a simple problem (sort an list of ints) and a pre-defined plan (we give you an algorithm description) and turn that into code. These steps should sound familiar, as they are 1-3 of [Polya's Problem Solving techniques](https://github.com/LambdaSchool/CS-Wiki/wiki/Polya%27s-Problem-Solving-Techniques). Soon, you will be coming up with your own plans for more complex problems so don't cheat yourself out of valuable coding practice.
 
 That being said, please still use the 20 minute rule :slightly_smiling_face:
 
