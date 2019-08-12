@@ -20,10 +20,10 @@ def selection_sort( arr ):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
     for i in range(len(arr)):
-        j = i
-        while j > 0 and arr[j] < arr[j-1]:
-            arr[j], arr[j-1] = arr[j-1], arr[j]
-            j -= 1
+        j = i           #I think this is the currect position if I'm understanding
+        while j > 0 and arr[j] < arr[j-1]:        # checking each element to see if it is less
+            arr[j], arr[j-1] = arr[j-1], arr[j]    #this is the actual swap
+            j -= 1                           #go back to previous element in the list
 
     return arr
 
