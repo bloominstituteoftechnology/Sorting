@@ -1,27 +1,24 @@
 # TO-DO: Complete the selection_sort() function below 
-arr = [64, 25, 12, 22, 11]
+l = [64, 25, 12, 22, 11]
 def selection_sort( arr ):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):  #iterate over list to find smallest item, set that as current index
+    for i in range(0, len(arr) - 1):  
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
-        for n in range(i + 1, len(arr)):  #iterate again to look at grab the item next to current index
-            if arr[n] < arr[cur_index]:  #compare, if next item is less then current index
-                smallest_index = n              #set next item as the new current index by swap
-
-        # TO-DO: swap
-            #arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
-            temp = arr[cur_index]
-            arr[cur_index] = arr[smallest_index]
-            arr[smallest_index] = temp
+        for num in range(i + 1, len(arr)):  
+            if arr[num] < arr[cur_index]: 
+                smallest_index = num
+                
+                temp = arr[cur_index]
+                arr[cur_index] = arr[smallest_index]
+                arr[smallest_index] = temp
 
 
     return arr
 
-selection_sort(arr)
-print(arr)
+print(selection_sort(l))
 
 
 # TO-DO:  implement the Bubble Sort function below
