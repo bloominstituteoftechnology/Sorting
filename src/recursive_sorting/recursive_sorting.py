@@ -4,14 +4,16 @@ def merge( arrA, arrB ):
     merged_arr = [0] * elements
     # TO-DO
     i, j = 0,0
-    if arrA[i] < arrB[j]:
-        merged_arr.append(arrA[i])
-        i += 1
-    else:
-        merged_arr.append(arrB[j])
-        j += 1
-    print(f"Left list index i is {i} and has value: {arrA[i]}")
-    print(f"Right list index j is {j} and has value: {arrB[j]}")
+    while i < len(arrA) and j < len(arrB):
+        print(f"Left list index i is {i} and has value: {arrA[i]}")
+        print(f"Right list index j is {j} and has value: {arrB[j]}")
+        if arrA[i] < arrB[j]:
+            merged_arr.append(arrA[i])
+            i += 1
+        else:
+            merged_arr.append(arrB[j])
+            j += 1
+
     return merged_arr
 
 l1 = [2, 4, 6, 8, 10]
