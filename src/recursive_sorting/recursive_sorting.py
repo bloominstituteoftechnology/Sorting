@@ -5,20 +5,24 @@ def merge( arrA, arrB ):
     # TO-DO
     i, j = 0,0
     while i < len(arrA) and j < len(arrB):
-        print(f"Left list index i is {i} and has value: {arrA[i]}")
-        print(f"Right list index j is {j} and has value: {arrB[j]}")
         if arrA[i] < arrB[j]:
             merged_arr.append(arrA[i])
             i += 1
         else:
             merged_arr.append(arrB[j])
             j += 1
+    while i < len(arrA):
+        merged_arr.append(arrA[i])
+        i += 1
+    while j < len(arrB):
+        merged_arr.append(arrB[j])
+        j += 1
 
     return merged_arr
 
 l1 = [2, 4, 6, 8, 10]
 l2 = [1, 3, 5, 7, 8, 9]
-print(f"un-merged list: {merge(l1, l2)}")
+print(f"merged list: {merge(l1, l2)}")
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
