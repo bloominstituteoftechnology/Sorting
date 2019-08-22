@@ -1,0 +1,20 @@
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+o1 = Node(10)
+o2 = Node(20)
+o2.next = o1
+
+o3 = Node(30)
+o3.next = o2
+
+o = o3
+while o:
+    print(o.data)
+    o = o.next
