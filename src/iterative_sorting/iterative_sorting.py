@@ -26,7 +26,7 @@ def bubble_sort(arr):
     for i in range(0, len(newArr) - 1):
         cur_index = i
         # TO-DO: compare numbers
-        for j in range(0, len(newArr)-cur_index-1):
+        for j in range(0, len(newArr)-cur_index - 1):
             first_num = j
             second_num = j + 1
             if newArr[first_num] > newArr[second_num]:
@@ -38,6 +38,25 @@ def bubble_sort(arr):
 
 
 # # STRETCH: implement the Count Sort function below
-# def count_sort( arr, maximum=-1 ):
 
-#     return arr
+
+def count_sort(arr, maximum=-1):
+    if arr:
+        occurences = [0] * (max(arr)+1)
+        newArr = [0] * len(arr)
+        for num in arr:
+            if num < 0:
+                return "Error, negative numbers not allowed in Count Sort"
+            else:
+                occurences[num] += 1
+        accum = occurences[:]
+        for i in range(1, len(accum)):
+            accum[i] += accum[i-1]
+            shift = accum[:-1]
+            shift.insert(0, 0)
+        for num in arr:
+            newArr[shift[num]] = num
+            shift[num] += 1
+        return newArr
+    else:
+        return arr
