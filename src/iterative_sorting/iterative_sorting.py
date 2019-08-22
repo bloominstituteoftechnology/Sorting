@@ -1,4 +1,3 @@
-arr = [4, 7, 9, 2, 3, 1, 0, 10, 6, 8, 5]
 # TO-DO: Complete the selection_sort() function below
 
 
@@ -18,29 +17,24 @@ def selection_sort(arr):
         arr[smallest_index] = temp
     return arr
 
-
-print(selection_sort(arr))
-
 # # TO-DO:  implement the Bubble Sort function below
 
 
 def bubble_sort(arr):
+    newArr = arr[:]
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(newArr) - 1):
         cur_index = i
         # TO-DO: compare numbers
-        for j in range(cur_index, len(arr)-1):
+        for j in range(0, len(newArr)-cur_index-1):
             first_num = j
             second_num = j + 1
-            if arr[first_num] > arr[second_num]:
+            if newArr[first_num] > newArr[second_num]:
                 # TO-DO: swap
-                temp = arr[first_num]
-                arr[first_num] = arr[second_num]
-                arr[second_num] = temp
-    return arr
-
-
-print(bubble_sort(arr))
+                temp = newArr[first_num]
+                newArr[first_num] = newArr[second_num]
+                newArr[second_num] = temp
+    return newArr
 
 
 # # STRETCH: implement the Count Sort function below
