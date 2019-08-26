@@ -43,8 +43,8 @@ print("Btree",binary_search([1,9,12,18,24,45,47,90],12))
 
 # STRETCH: write a recursive implementation of Binary Search 
 def binary_search_recursive(arr, target, low, high):
-  #low=0
-  #high =len(arr)-1
+  low=0
+  high =len(arr)-1
 
   middle = (low+high)//2
   print (middle)
