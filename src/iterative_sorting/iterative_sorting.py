@@ -45,6 +45,16 @@ def selection_sort( arr ):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
 
+    swapped = True
+
+    while swapped == True:
+        swapped = False
+        for i in range(0, len(arr)-1):
+            if arr[i] > arr[i+1]:
+                #How you should actually swap things
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swapped = True
+
     return arr
 
 
