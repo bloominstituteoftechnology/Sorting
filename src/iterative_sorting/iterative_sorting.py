@@ -31,7 +31,7 @@ def bubble_sort(arr):
                 arr[i] = arr[next_num]
                 arr[next_num] = temp
 
-        return arr
+    return arr
 
 
 # # STRETCH: implement the Count Sort function below
