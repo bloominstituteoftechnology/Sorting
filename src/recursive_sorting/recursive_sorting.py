@@ -3,6 +3,18 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
+
+    arrAIndex = 0
+
+    arrBIndex = len(arrA)
+    
+    for n in arrA:
+        merged_arr[arrAIndex] = n
+        arrAIndex += 1
+
+    for n in arrB:
+        merged_arr[arrBIndex] = n
+        arrBIndex += 1
     
     return merged_arr
 
