@@ -4,14 +4,14 @@ def merge( arrA, arrB ):
     merged_arr = [0] * elements
     # TO-DO
 
-    merged_err = []
+    merged_arr = []
     left, right = 0, 0
     while left < len(arrA) and right < len(arrB):
         if arrA[left] < arrB[right]:
             merged_arr.append(arrA[left])
             left += 1
         else:
-            mergeed_arr.append(arrB[right])
+            merged_arr.append(arrB[right])
             right += 1
     if left == len(arrA):
         merged_arr.extend(arrB[right:])
