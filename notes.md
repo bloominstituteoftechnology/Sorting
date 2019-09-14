@@ -39,5 +39,17 @@ To be concise: Our inputs is size `n`, and for each of these inputs, the functio
 
 Even if the function has multiple lines of codes run, the rule is, you always drop the constant coefficient. It just matters *how many* times the cude is run rather than the complexity of the code. (e.g. even though the function has 5 lines of code it wouldn't be `0(5n)` but still would be `0(n)` because we care about the shape of the curve and not necessarily the complexity of it.)
 
+    # returns each animal with all letters lowercase
+    def getLowerCaseAnimals():
+        lowercase_animals = animals
+        animal_index = 0
+        for animal in animals:
+            lowercase_animals[animal_index] = lowercase_animals[animal_index].lower()
+            animal_index += 1
+        return lowercase_animals
+
+In this function we set `lowercase_animals` as the animals array, and then set `animal_index` variable to 0. After, we create a loop for each anim in animals, we reassign each element in the `lowercase_animals` array as the lower case version. After this is run, we run the line `animal_index += 1` which then reassigns the value of `animal_index` as the current value + 1. After the end of the loop is finished, we return the `lowercase_animals` array with the new assignments.
+
+
 
 
