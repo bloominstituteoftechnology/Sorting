@@ -151,6 +151,38 @@ N factorials are explosively bad. In the following case, the passed in animal li
                     arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[0])
             return arrangements
 
+### Comparisons:
+
+Let's compare a function that returns the length of a list. In the following function we're looping over the array in order to count the list. It would then be an `O(n)`.
+
+    # Given a list
+    # Return the list's length 
+    # O(n)
+    def getLengthOfList(l):
+        list_length = 0
+        for i in l:
+            list_length += 1
+        return list_length
+
+Now, how do we make this into a Big-O of `O(1)`, which is way more efficient? We could track whenever there's an addition or removal in regards to the array.
+
+    def getLengthOfList(l):
+        return len(l)
+
+Now let's create a function used to time the runtime of various functions.
+
+    def printFunctionRuntime():
+        state_time = datetime.now()
+        x = getAllArrangements(animals)
+        # x = getAllArrangements(animals_10 + ["Kangaroo"])
+        end_time = datetime.now()
+        print (end_time - start_time)
+
+
+
+
+
+
 
 
     
