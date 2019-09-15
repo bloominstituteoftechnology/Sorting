@@ -8,9 +8,9 @@
 
 ### Performance Curve Shapes:
 
-#### 0(1):
+#### O(1):
 
-The time complexity of this is going to be `0(1)`, which means that it is `constant`. The reason why this is constant(constant time operation) is because we're returning a pointer to the start of our list. This doesn't necessarily mean it would be faster to return a smaller list vs. a bigger list--all you're returning is one operation, which is returning the start of the list, regardless of the size of the list.
+The time complexity of this is going to be `O(1)`, which means that it is `constant`. The reason why this is constant(constant time operation) is because we're returning a pointer to the start of our list. This doesn't necessarily mean it would be faster to return a smaller list vs. a bigger list--all you're returning is one operation, which is returning the start of the list, regardless of the size of the list.
 
     import math
     import random
@@ -24,13 +24,13 @@ The time complexity of this is going to be `0(1)`, which means that it is `const
     def getAnimals():
         return animals
 
-#### 0(n):
+#### O(n):
 
-This time complexity is going to be `0(n)` because as the list gets bigger, the number of operations get bigger, which increases the time spent running the function based on the number of inputs.
+This time complexity is going to be `O(n)` because as the list gets bigger, the number of operations get bigger, which increases the time spent running the function based on the number of inputs.
 
 To be concise: Our inputs is size `n`, and for each of these inputs, the function runs. The number of operations we need to do dependent on the number of inputs; therefore, the performance curve will be a linear shape.
 
-Even if the function has multiple lines of codes run, the rule is, you always drop the constant coefficient. It just matters *how many* times the code is run rather than the complexity of the code. (e.g. even though the function has 5 lines of code it wouldn't be `0(5n)` but still would be `0(n)` because we care about the shape of the curve and not necessarily the complexity of it.)
+Even if the function has multiple lines of codes run, the rule is, you always drop the constant coefficient. It just matters *how many* times the code is run rather than the complexity of the code. (e.g. even though the function has 5 lines of code it wouldn't be `O(5n)` but still would be `O(n)` because we care about the shape of the curve and not necessarily the complexity of it.)
 
     # returns the number of all animals
     def countAnimals():
@@ -41,7 +41,7 @@ Even if the function has multiple lines of codes run, the rule is, you always dr
 
 In this function we set `lowercase_animals` as the animals array, and then set `animal_index` variable to 0. After, we create a loop: for each animal in animals, we reassign each element in the `lowercase_animals` array as the lower case version. After this operation, we run the line `animal_index += 1` which then reassigns the value of `animal_index` as the current value + 1. After the end of the loop is finished, we return the `lowercase_animals` array with the new assignments.
 
-All in all, this function would still be an `0(n)` regardless of the number of operations. 
+All in all, this function would still be an `O(n)` regardless of the number of operations. 
 
     # returns each animal with all letters lowercase
     def getLowerCaseAnimals():
@@ -52,7 +52,9 @@ All in all, this function would still be an `0(n)` regardless of the number of o
             animal_index += 1
         return lowercase_animals
 
-For the following function, we are comparing each element in the array with the input given. The time complexity of this case would still be `0(n)` even when it depends if the item is in our list or not. Therefore when refering to the `Big-O` of the following case, one is asking, interchangeably, the average and worst case curve--the order of complexity.
+For the following function, we are comparing each element in the array with the input given. The time complexity of this case would still be `O(n)` even when it depends if the item is in our list or not. Therefore when refering to the `Big-O` of the following case, one is asking, interchangeably, the average and worst case curve--the order of complexity. 
+
+Given that the average case is `O(n/2)` which is the same as `O(0.5 *n)`, drop the constant coefficent and you get `O(n)`
 
     # Given the name of an animal--
     # Return True if that animal is in the list, False, otherwise
