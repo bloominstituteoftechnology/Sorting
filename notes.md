@@ -85,11 +85,11 @@ Given that the average case is `O(n/2)` which is the same as `O(0.5 *n)`, drop t
             animals[i] = animals[random_i]
             animals[random_i] = temp_storage
 
-Overall, for `O(n)`, "For every item in the list, you do something," which usually means a for loop. Thus, a huge indicator of an `O(n)` would be a for loop.
+Overall, for `O(n)`, "For every item in the list, you do something," which usually means a for loop. Thus, a huge indicator of an `O(n)` would be a **for loop**.
 
 ### :three: O(n^2): :arrow_heading_up:
 
-The number of operations within functions with a Big-O of `O(n^2)` would mean that, depending on the number of inputs, the number of operations grow exponentially.
+The number of operations within functions with a Big-O of `O(n^2)` would mean that, **depending on the number of inputs, the number of operations grow exponentially.**
 
 In the following function, we are looping through every element in the list, and then for every element looped through, we are looping through it again in order to print out all the possible combinations. Therefore, the Big-O would be `O(n) * O(n)` which is `O(n^2)`.
 
@@ -102,7 +102,9 @@ In the following function, we are looping through every element in the list, and
                 num_operations += 1
                 print (f"{num_operations}: {animal1} - {animal2}")
 
-### :four: O(n^3): :arrow_heading_up:
+#### O(n^3): 
+
+Similarly, `O(n^3)` would have the same logic of time complexity when increasing the number of combinations.
 
     # Prints a list of all possible animal triples
     def printAnimalTriples():
@@ -113,6 +115,43 @@ In the following function, we are looping through every element in the list, and
                     num_operations += 1
                     print(f"{num_operations}: {animal1} - {animal2} - {animal3}")
                     
+
+### :four: O(2^n): :arrow_up:
+
+The following function uses a recursive strategy in order to return a list of all the possible combinations in the passed in list. First, you check if the array length is empty. If it is, return an empty array. If it isn't, grab the list from the index of 1 onwards, call the function recursively, then loop over the previousCombos array and append the first element, then the element with the list index of 0. After the list is thoroughly processed, you would get the full amount of combination in the return animalCombos array.
+
+    # Given a list,
+    # Return a list of all possible combination of animals
+    def getListOfAnimalCombos(list):
+        list_length == len(list)
+        if list_length == 0:
+            return [ [] ]
+        else:
+            animalCombos = []
+            previousCombos = getListOfAnimalCombos( list[1:] )
+            for combo in previousCombos:
+                animalCombos.append( combo )
+                animalCombos.append( combo + [list[0]] )
+            return animalCombos
+
+### :five: O(n!) :heavy_exclamation_mark: :arrow_up:
+
+N factorials are explosively bad. In the following case, the passed in animal list would output to `10 * 9 * 8 * 7 * 6 * 5....` until the end of the list. The total number of arrangements would exceed three million.
+
+    # Given a list,
+    # Return a list of all possible arrangements of list items
+    def getAllArrangements(list):
+        if list_length <= 1:
+            return [list]
+        else:
+            arrangements = []
+            previousArrangements = getAllArrangements( l[1:] )
+            for previousArrangement in previousArrangements:
+                for i in range(len(previousArrangement) + 1):
+                    arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[0])
+            return arrangements
+
+
 
     
 
