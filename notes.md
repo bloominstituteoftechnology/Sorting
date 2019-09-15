@@ -30,6 +30,8 @@ This time complexity is going to be `0(n)` because as the list gets bigger, the 
 
 To be concise: Our inputs is size `n`, and for each of these inputs, the function runs. The number of operations we need to do dependent on the number of inputs; therefore, the performance curve will be a linear shape.
 
+Even if the function has multiple lines of codes run, the rule is, you always drop the constant coefficient. It just matters *how many* times the code is run rather than the complexity of the code. (e.g. even though the function has 5 lines of code it wouldn't be `0(5n)` but still would be `0(n)` because we care about the shape of the curve and not necessarily the complexity of it.)
+
     # returns the number of all animals
     def countAnimals():
         num_animals = 0
@@ -37,7 +39,9 @@ To be concise: Our inputs is size `n`, and for each of these inputs, the functio
             num_animals +=1
         return num_animals
 
-Even if the function has multiple lines of codes run, the rule is, you always drop the constant coefficient. It just matters *how many* times the cude is run rather than the complexity of the code. (e.g. even though the function has 5 lines of code it wouldn't be `0(5n)` but still would be `0(n)` because we care about the shape of the curve and not necessarily the complexity of it.)
+In this function we set `lowercase_animals` as the animals array, and then set `animal_index` variable to 0. After, we create a loop: for each animal in animals, we reassign each element in the `lowercase_animals` array as the lower case version. After this operation, we run the line `animal_index += 1` which then reassigns the value of `animal_index` as the current value + 1. After the end of the loop is finished, we return the `lowercase_animals` array with the new assignments.
+
+All in all, this function would still be an `0(n)` regardless of the number of operations. 
 
     # returns each animal with all letters lowercase
     def getLowerCaseAnimals():
@@ -48,8 +52,26 @@ Even if the function has multiple lines of codes run, the rule is, you always dr
             animal_index += 1
         return lowercase_animals
 
-In this function we set `lowercase_animals` as the animals array, and then set `animal_index` variable to 0. After, we create a loop for each anim in animals, we reassign each element in the `lowercase_animals` array as the lower case version. After this is run, we run the line `animal_index += 1` which then reassigns the value of `animal_index` as the current value + 1. After the end of the loop is finished, we return the `lowercase_animals` array with the new assignments.
+For the following function, we are comparing each element in the array with the input given. The time complexity of this case would still be `0(n)` even when it depends if the item is in our list or not. Therefore when refering to the `Big-O` of the following case, one is asking, interchangeably, the average and worst case curve--the order of complexity.
+
+    # Given the name of an animal--
+    # Return True if that animal is in the list, False, otherwise
+    def hasAnimal(animal_name):
+        num_comparisons = 0
+        for animal in animals: 
+            num_comparisons += 1
+            print("comparisons: {num_comparisons}")
+            if animal == animal_name:
+                return True
+        return False
 
 
+
+    # Given the name of an animal, 
+    # Return the animal's index if that animal is in the list, -1 otherwise
+    def findAnimal(animal_name):
+    for animal in animals:
+        if animal == animal_name:
+            return animal_index
 
 
