@@ -3,7 +3,7 @@
 ## BIG-O and TIME COMPLEXITY
 ### How does the performance of your code scale based on the size of your inputs?
 
- [<img src="https://i.imgur.com/E53oSiV.jpg" target="_blank" />](https://www.bigocheatsheet.com/)
+ [<img src="https://i.imgur.com/E53oSiV.jpg"/>](https://www.bigocheatsheet.com/)
 
 ## Performance Curve Shapes:
 
