@@ -25,7 +25,7 @@ The time complexity of this is going to be `O(1)`, which means that it is `const
 
 ### :two: O(n):  :arrow_upper_right:
 
-This time complexity is going to be `O(n)` because as the list gets bigger, the number of operations get bigger, which increases the time spent running the function based on the number of inputs. Such speed dependent on the inputs would depict a linear Big-O shape.
+This time complexity is going to be `O(n)` because as the list gets bigger, the number of operations gradually gets bigger, which increases the time spent running the function based on the number of inputs. Such speed dependent on the inputs would depict a linear Big-O shape.
 
 To be concise: Our inputs is size `n`, and for each of these inputs, the function runs. The number of operations we need to do dependent on the number of inputs; therefore, the performance curve will be a linear shape.
 
@@ -102,7 +102,18 @@ In the following function, we are looping through every element in the list, and
                 num_operations += 1
                 print (f"{num_operations}: {animal1} - {animal2}")
 
-### :four: O(n^3): 
+### :four: O(n^3): :arrow_heading_up:
+
+    # Prints a list of all possible animal triples
+    def printAnimalTriples():
+        num_operations = 0
+        for animal1 in animals:
+            for animal2 in animals:
+                for animal3 in animals:
+                    num_operations += 1
+                    print(f"{num_operations}: {animal1} - {animal2} - {animal3}")
+                    
+
     
 
 
