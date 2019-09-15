@@ -8,7 +8,7 @@
 
 ## Performance Curve Shapes:
 
-### O(1):
+### :arrow_right: O(1):
 
 The time complexity of this is going to be `O(1)`, which means that it is `constant`. The reason why this is constant(constant time operation) is because we're returning a pointer to the start of our list. This doesn't necessarily mean it would be faster to return a smaller list vs. a bigger list--all you're returning is one operation, which is returning the start of the list, regardless of the size of the list.
 
@@ -24,7 +24,7 @@ The time complexity of this is going to be `O(1)`, which means that it is `const
     def getAnimals():
         return animals
 
-### O(n):
+### :arrow_upper_right: O(n):
 
 This time complexity is going to be `O(n)` because as the list gets bigger, the number of operations get bigger, which increases the time spent running the function based on the number of inputs. Such speed dependent on the inputs would depict a linear Big-O shape.
 
@@ -88,7 +88,7 @@ Given that the average case is `O(n/2)` which is the same as `O(0.5 *n)`, drop t
 
 Overall, for `O(n)`, "For every item in the list, you do something," which usually means a for loop. Thus, a huge indicator of an `O(n)` would be a for loop.
 
-### O(n^2):
+### :arrow_heading_up: O(n^2):
 
 The number of operations within functions with a Big-O of `O(n^2)` would mean that, depending on the number of inputs, the number of operations grow exponentially.
 
