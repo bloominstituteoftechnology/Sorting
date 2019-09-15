@@ -26,7 +26,7 @@ The time complexity of this is going to be `O(1)`, which means that it is `const
 
 #### O(n):
 
-This time complexity is going to be `O(n)` because as the list gets bigger, the number of operations get bigger, which increases the time spent running the function based on the number of inputs.
+This time complexity is going to be `O(n)` because as the list gets bigger, the number of operations get bigger, which increases the time spent running the function based on the number of inputs. Such speed dependent on the inputs would depict a linear Big-O shape.
 
 To be concise: Our inputs is size `n`, and for each of these inputs, the function runs. The number of operations we need to do dependent on the number of inputs; therefore, the performance curve will be a linear shape.
 
@@ -68,12 +68,42 @@ Given that the average case is `O(n/2)` which is the same as `O(0.5 *n)`, drop t
         return False
 
 
-
     # Given the name of an animal, 
     # Return the animal's index if that animal is in the list, -1 otherwise
     def findAnimal(animal_name):
     for animal in animals:
         if animal == animal_name:
-            return animal_index
+            return animal_index +=1
+    return -1
+
+
+    # Shuffle the order of the stored animals
+    def shuffleAnimals():
+        num_animals = countAnimals()
+        for i in range(num_animals):
+            random_i = random.randrange(num_animals)
+            temp_storage = animals[i]
+            animals[i] = animals[random_i]
+            animals[random_i] = temp_storage
+
+Overall, for `O(n)`, "For every item in the list, you do something," which usually means a for loop. Thus, a huge indicator of an `O(n)` would be a for loop.
+
+#### O(n^2):
+
+The number of operations within functions with a Big-O of `O(n^2)` would mean that, depending on the number of inputs, the number of operations grow exponentially.
+
+    animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
+
+    def printAnimalPairs():
+        num_operations = 0
+        for animal1 in animals:
+            for animal2 in animals:
+                num_operations += 1
+                print (f"{num_operations}: {animal1} - {animal2}")
+
+
+
+
+
 
 
