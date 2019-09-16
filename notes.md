@@ -251,14 +251,18 @@ Here's our list:
     - so `list[1] = list[0]`, which is `5`.
     
         list = [5, 5, 1, 6]
+
+        
 6. The fourth opertation, `j -= 1`, subtracts 1 from `j`.
     - `j` is now `0`.
     - `j` is no longer greater than `0`. Exit out of the while loop.
 7. The fifth operation is `list[j] = temp`
     - It overwrites `list[j]`, which right now is `list[0]`, with `temp`.
     - `temp` is currently `3`, so it will overwrite it with 3.
+
     
         list = [3, 5, 1, 6]
+
 
 The for loop will continue until the end of the length of the list.
 
