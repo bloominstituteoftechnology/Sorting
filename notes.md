@@ -183,7 +183,7 @@ Amortization is where you store a counter inside--storing metadata. So with an a
     def getLengthOfList(l):
         return len(l)
 
-Now let's create a function used to time the runtime of various functions.
+Here's an example of a function used to time the runtime of various functions.
 
     def printFunctionRuntime():
         state_time = datetime.now()
@@ -192,7 +192,31 @@ Now let's create a function used to time the runtime of various functions.
         end_time = datetime.now()
         print (end_time - start_time)
 
+## Insertion Sort:
 
+A simple sorting technique that scans the sorted list, starting at the beginning, for the correct insertion point for each of the items from the unsorted list. Similar to the way people manually sort items(e.g. playing 13, sorting playing cards, low-high), an insertion sort is not efficient for large lists, but is relatively fast for adding a small number of new items periodically.
+
+    # 2, K, 5, 9, J, 4
+
+    def insertion_sort(list):
+    # Separate the first element fom the rest of the array
+    # Think about it as a sorted list of one element
+    # For all other indices, beginning with [1]:
+    for i in range(1, len(list)):
+        # a. Copy the item at that index into a temp variable
+        temp = list[i]
+        # b. Iterate to the left until you find the correct index in the  "sorted"
+        # part of the array at which this element should be inserted
+        # Shift items to the right as you iterate
+        j = i
+        while j > 0 and temp < list[j - 1]:
+            list[j] = list[j - 1]
+            j -= 1
+        # c. When the correct index is fund, copy temp into this position
+        list[j] = temp
+    return list
+
+    
 ## Binary Search
 
 Let's say you need to find a specific user from a database.
@@ -204,6 +228,8 @@ Now, let's look at Facebook. Searching for one user in the massive pool of Faceb
 **We optimize this by sorting. We reduce the size of the potential results using binary search.**
 
 **Binary Search:** Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one. 
+
+
 
 
 
