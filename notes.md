@@ -12,9 +12,9 @@ Why do we need to sort? Well, the short answer to that is that it allows us to s
 - A logarithm is a quantity representing the power to which a fixed number (the base) must be raised to produce a given number.
 - **log** with a base 2 _basically_ means:
     - if you have `2^x = num`
-    - `log2(2x)` = `log2(num)`
+    - `log2(2^x)` = `log2(num)`
     - Any log of the log's base returns a value of 1
-    - so cross `log2(2)`, isolate x
+    - so cross out `~~log2(2)~~X` = `log2(num)`, isolate x
     - `x = log2(num)`    
 
 ## Performance Curve Shapes:
