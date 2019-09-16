@@ -9,12 +9,12 @@ Why do we need to sort? Well, the short answer to that is that it allows us to s
 
 ### Terms:
 - **log** means **logarithm**
-- A logarithm is a quantity representing the power to which a fixed number (the base) must be raised to produce a given number.
+- A **logarithm** is a quantity representing the power to which a fixed number (the base) must be raised to produce a given number.
 - **log** with a base 2 _basically_ means:
     - if you have `2^x = num`
     - `log2(2^x)` = `log2(num)`
     - Any log of the log's base returns a value of 1
-    - so cross out ~~`log2(2)`~~ `^x` = `log2(num)`, which isolates x and removes it as an exponential
+    - so cross out ~~`log2(2)`~~ `^x` = `log2(num)`, which isolates `x` and removes it as an exponential
     - resulting in `x = log2(num)`    
 
 ## Performance Curve Shapes:
@@ -163,7 +163,7 @@ N factorials are explosively bad. In the following case, the passed in animal li
                     arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[0])
             return arrangements
 
-### Comparisons:
+### Application:
 
 Let's compare a function that returns the length of a list. In the following function we're looping over the array in order to count the list. It would then be an `O(n)`.
 
@@ -176,7 +176,9 @@ Let's compare a function that returns the length of a list. In the following fun
             list_length += 1
         return list_length
 
-Now, how do we make this into a Big-O of `O(1)`, which is way more efficient? To optimize the previous array, we could track whenever there's an addition or removal in regards to the array. This is called **Amortization**. Amortization is where you store a counter inside--storing metadata.
+Now, how do we make this into a Big-O of `O(1)`, which is way more efficient? To optimize the previous array, we could track whenever there's an addition or removal in regards to the array. This is called **Amortization**. 
+
+Amortization is where you store a counter inside--storing metadata. So with an addition or removal of an element, the counter decreases or increases, which is essentially only one operation instead of looping through the hole list again, resulting in an `O(1)` operation.
 
     def getLengthOfList(l):
         return len(l)
