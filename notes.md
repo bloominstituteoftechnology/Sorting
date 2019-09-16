@@ -196,7 +196,17 @@ Here's an example of a function used to time the runtime of various functions.
 
 A simple sorting technique that scans the sorted list, starting at the beginning, for the correct insertion point for each of the items from the unsorted list. Similar to the way people manually sort items(e.g. playing 13, sorting playing cards, low-high), an insertion sort is not efficient for large lists, but is relatively fast for adding a small number of new items periodically.
 
-    # 2, K, 5, 9, J, 4
+    l = [5, 3, 1, 6]
+
+- In iterative sort, the first number is already sorted, and is to the left. 
+- In this case, the sorted list is 5. 
+- The index of zero is automatically sorted.
+
+All in all, the while loop keeps taking it backwards until temp finds a home.
+
+    i = 1  
+    temp = 1 # This is the number we want to insert into the sorted half on the left
+    j = 1 # keeps track of the sorted array
 
     def insertion_sort(list):
     # Separate the first element fom the rest of the array
@@ -206,17 +216,17 @@ A simple sorting technique that scans the sorted list, starting at the beginning
         # a. Copy the item at that index into a temp variable
         temp = list[i]
         # b. Iterate to the left until you find the correct index in the  "sorted"
-        # part of the array at which this element should be inserted
-        # Shift items to the right as you iterate
+        # part of the array at which this element should be inserted       
         j = i
         while j > 0 and temp < list[j - 1]:
+            # Shift items to the right as you iterate
             list[j] = list[j - 1]
             j -= 1
-        # c. When the correct index is fund, copy temp into this position
+        # c. When the correct index is found, copy temp into this position
         list[j] = temp
     return list
 
-    
+
 ## Binary Search
 
 Let's say you need to find a specific user from a database.
