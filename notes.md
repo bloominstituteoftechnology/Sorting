@@ -14,7 +14,7 @@ Why do we need to sort? Well, the short answer to that is that it allows us to s
     - if you have `2^x = num`
     - `log2(2^x)` = `log2(num)`
     - Any log of the log's base returns a value of 1
-    - so cross out `~~log2(2)~~X` = `log2(num)`, isolate x
+    - so cross out ~~log2(2)~~X = `log2(num)`, isolate x
     - `x = log2(num)`    
 
 ## Performance Curve Shapes:
