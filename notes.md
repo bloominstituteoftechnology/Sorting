@@ -14,14 +14,14 @@ Why do we need to sort? Well, the short answer to that is that it allows us to s
     - if you have `2^x = num`
     - `log2(2^x)` = `log2(num)`
     - Any log of the log's base returns a value of 1
-    - so cross out ~~log2(2)~~X = `log2(num)`, isolate x
+    - so cross out ~~log2(2)~~ X = `log2(num)`, isolate x
     - `x = log2(num)`    
 
 ## Performance Curve Shapes:
 
 ### :one: O(1) || O(log n): :arrow_right:
 
-The time complexity of this is going to be `O(1)`, which means that it is `constant`. The reason why this is constant(constant time operation) is because we're returning a pointer to the start of our list. This doesn't necessarily mean it would be faster to return a smaller list vs. a bigger list--all you're returning is one operation, which is returning the start of the list, regardless of the size of the list.
+The ~~time complexity~~ of this is going to be `O(1)`, which means that it is `constant`. The reason why this is constant(constant time operation) is because we're returning a pointer to the start of our list. This doesn't necessarily mean it would be faster to return a smaller list vs. a bigger list--all you're returning is one operation, which is returning the start of the list, regardless of the size of the list.
 
     import math
     import random
