@@ -196,7 +196,7 @@ Here's an example of a function used to time the runtime of various functions.
 
 A simple sorting technique that scans the sorted list, starting at the beginning, for the correct insertion point for each of the items from the unsorted list. Similar to the way people manually sort items(e.g. playing 13, sorting playing cards, low-high), an insertion sort is not efficient for large lists, but is relatively fast for adding a small number of new items periodically.
 
-Now, here's an example of an iterative sort function:
+Now, here's an example of an **iterative sort function**:
 
     def insertion_sort(list):
     # Separate the first element fom the rest of the array
@@ -223,10 +223,10 @@ Here's our list:
 - In this iterative sort function, the first number is already sorted (`list[0]`) 
 - In this case, the sorted list is 5. 
 - This is because we're looping starting from 1, because we declared it as 1
-    - `for i in range(1`...
+    - `for i in range(1,`...
 - ending to the length of the list.
     - ...`len(list))`
-- so everything to the left of i is sorted.
+- so that everything to the left of `i` is sorted.
 
 ### Iteration 1:
 
@@ -234,9 +234,49 @@ Here's our list:
 
     i = 1  
     temp = 3 # This is the number we want to insert into the sorted half on the left
-    j = 1 # keeps track of the sorted array
+    j = 1 
 
+1. Right now `i` is `1`.
+2.  Our first operation is `temp = list[i]`. 
+    - So, `temp = list[1]`, which means `temp` is now `3`.
+3. The second operation assigns `j` as `i`. 
+    - So `j` is now `1`.
+4. The third operation is a while loop:
+    - `while j > 0 and temp < list[j - 1]:`
+    - this runs as long as `j` is *greater than zero* 
+    - and `temp` is *smaller than list, index of `j - 1`*, which now is `list[0]`
+    - so `while 1 > 0 and 3 < 5`
+    - which fulfills the while condition
+5. The while loop overwrites the list index of j. `list[j] = list[j - 1]`
+    - so `list[1] = list[0]`, which is `5`.
+    
+        list = [5, 5, 1, 6]
+6. The fourth opertation, `j -= 1`, subtracts 1 from `j`.
+    - `j` is now `0`.
+    - `j` is no longer greater than `0`. Exit out of the while loop.
+7. The fifth operation is `list[j] = temp`
+    - It overwrites `list[j]`, which right now is `list[0]`, with `temp`.
+    - `temp` is currently `3`, so it will overwrite it with 3.
+    
+        list = [3, 5, 1, 6]
 
+The for loop will continue until the end of the length of the list.
+
+### Iteration 2:
+
+    list = [1, 3, 5, 6]
+
+    i = 2  
+    temp = 1 
+    j = 2 
+
+### Iteration 3:
+
+    list = [1, 3, 5, 6]
+
+    i = 3 
+    temp = 6 
+    j = 3 
 
 
 ## Binary Search
