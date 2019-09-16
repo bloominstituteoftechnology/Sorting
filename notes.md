@@ -8,7 +8,8 @@ Why do we need to sort? Well, the short answer to that is that it allows us to s
  [<img src="https://i.imgur.com/E53oSiV.jpg"/>](https://www.bigocheatsheet.com/)
 
 ### Terms:
-
+- **log** means **logarithm**
+- A logarithm is a quantity representing the power to which a fixed number (the base) must be raised to produce a given number.
 - **log** with a base _basically_ means:
     - if `log2(num) = x`, then `2^x = num`
 
