@@ -1,9 +1,16 @@
 # Iterative Sorting w/ Brady Fukumoto
 
+Why do we need to sort? Well, the short answer to that is that it allows us to search at an optimized, effective speed. In this unit we cover the Big-O, which is the perfomance of your code based on the size of your inputs, and how it is used to made definitive decisions on the way you code.
+
 ## BIG-O and TIME COMPLEXITY
 ### How does the performance of your code scale based on the size of your inputs?
 
  [<img src="https://i.imgur.com/E53oSiV.jpg"/>](https://www.bigocheatsheet.com/)
+
+### Terms:
+
+- **log** with a base _basically_ means:
+    - if `log2(num) = x`, then `2^x = num`
 
 ## Performance Curve Shapes:
 
@@ -164,7 +171,7 @@ Let's compare a function that returns the length of a list. In the following fun
             list_length += 1
         return list_length
 
-Now, how do we make this into a Big-O of `O(1)`, which is way more efficient? We could track whenever there's an addition or removal in regards to the array.
+Now, how do we make this into a Big-O of `O(1)`, which is way more efficient? To optimize the previous array, we could track whenever there's an addition or removal in regards to the array. This is called **Amortization**. Amortization is where you store a counter inside--storing metadata.
 
     def getLengthOfList(l):
         return len(l)
@@ -177,6 +184,19 @@ Now let's create a function used to time the runtime of various functions.
         # x = getAllArrangements(animals_10 + ["Kangaroo"])
         end_time = datetime.now()
         print (end_time - start_time)
+
+
+## Binary Search
+
+Let's say you need to find a specific user from a database.
+
+Searching through your entire database for one user is an `O(n)` function. The time complexity increases as the database of users increases. 
+
+Now, let's look at Facebook. Searching for one user in the massive pool of Facebook's users means running a billion operations for a single retrieval. How do we optimize this?
+
+**We optimize this by sorting. We reduce the size of the potential results using binary search.**
+
+**Binary Search:** Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one. 
 
 
 
