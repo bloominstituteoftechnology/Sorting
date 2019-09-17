@@ -22,7 +22,7 @@ Why do we need to sort? Well, the short answer to that is that it allows us to s
 ### :one: O(1) || O(log n): :arrow_right:
 
 The time complexity of this is going to be `O(1)`, which means that it is `constant`. The reason why this is constant(constant time operation) is because we're returning a pointer to the start of our list. This doesn't necessarily mean it would be faster to return a smaller list vs. a bigger list--all you're returning is one operation, which is returning the start of the list, regardless of the size of the list.
-
+```python
     import math
     import random
     import time
@@ -34,6 +34,7 @@ The time complexity of this is going to be `O(1)`, which means that it is `const
     # returns the names of all animals
     def getAnimals():
         return animals
+```
 
 ### :two: O(n):  :arrow_upper_right:
 
@@ -42,18 +43,18 @@ This time complexity is going to be `O(n)` because as the list gets bigger, the 
 To be concise: Our inputs is size `n`, and for each of these inputs, the function runs. The number of operations we need to do dependent on the number of inputs; therefore, the performance curve will be a linear shape.
 
 Even if the function has multiple lines of codes run, the rule is, you always drop the constant coefficient. It just matters *how many* times the code is run rather than the complexity of the code. (e.g. even though the function has 5 lines of code it wouldn't be `O(5n)` but still would be `O(n)` because we care about the shape of the curve and not necessarily the complexity of it.)
-
+```python
     # returns the number of all animals
     def countAnimals():
         num_animals = 0
         for animal in animals:
             num_animals +=1
         return num_animals
-
+```
 In this function we set `lowercase_animals` as the animals array, and then set `animal_index` variable to 0. After, we create a loop: for each animal in animals, we reassign each element in the `lowercase_animals` array as the lower case version. After this operation, we run the line `animal_index += 1` which then reassigns the value of `animal_index` as the current value + 1. After the end of the loop is finished, we return the `lowercase_animals` array with the new assignments.
 
 All in all, this function would still be an `O(n)` regardless of the number of operations. 
-
+```python
     # returns each animal with all letters lowercase
     def getLowerCaseAnimals():
         lowercase_animals = animals
@@ -62,10 +63,11 @@ All in all, this function would still be an `O(n)` regardless of the number of o
             lowercase_animals[animal_index] = lowercase_animals[animal_index].lower()
             animal_index += 1
         return lowercase_animals
-
+```
 For the following function, we are comparing each element in the array with the input given. The time complexity of this case would still be `O(n)` even when it depends if the item is in our list or not. Therefore when refering to the `Big-O` of the following case, one is asking, interchangeably, the average and worst case curve--the order of complexity. 
 
 Given that the average case is `O(n/2)` which is the same as `O(0.5 *n)`, drop the constant coefficent and you get `O(n)`
+```python
 
     # Given the name of an animal--
     # Return True if that animal is in the list, False, otherwise
@@ -96,6 +98,7 @@ Given that the average case is `O(n/2)` which is the same as `O(0.5 *n)`, drop t
             temp_storage = animals[i]
             animals[i] = animals[random_i]
             animals[random_i] = temp_storage
+```
 
 Overall, for `O(n)`, "For every item in the list, you do something," which usually means a for loop. Thus, a huge indicator of an `O(n)` would be a **for loop**.
 
@@ -104,7 +107,7 @@ Overall, for `O(n)`, "For every item in the list, you do something," which usual
 The number of operations within functions with a Big-O of `O(n^2)` would mean that, **depending on the number of inputs, the number of operations grow exponentially.**
 
 In the following function, we are looping through every element in the list, and then for every element looped through, we are looping through it again in order to print out all the possible combinations. Therefore, the Big-O would be `O(n) * O(n)` which is `O(n^2)`.
-
+```python
     animals = ['Duck', 'Jackal', 'Hippo', 'Aardvark', 'Cat', 'Flamingo', 'Iguana', 'Giraffe', 'Elephant', 'Bear']
 
     def printAnimalPairs():
@@ -113,11 +116,12 @@ In the following function, we are looping through every element in the list, and
             for animal2 in animals:
                 num_operations += 1
                 print (f"{num_operations}: {animal1} - {animal2}")
+```
 
 #### O(n^3): 
 
 Similarly, `O(n^3)` would have the same logic of time complexity when increasing the number of combinations.
-
+```python
     # Prints a list of all possible animal triples
     def printAnimalTriples():
         num_operations = 0
@@ -127,10 +131,12 @@ Similarly, `O(n^3)` would have the same logic of time complexity when increasing
                     num_operations += 1
                     print(f"{num_operations}: {animal1} - {animal2} - {animal3}")
                     
+```
 
 ### :four: O(2^n): :arrow_up:
 
 The following function uses a recursive strategy in order to return a list of all the possible combinations in the passed in list. First, you check if the array length is empty. If it is, return an empty array. If it isn't, grab the list from the index of 1 onwards, call the function recursively, then loop over the previousCombos array and append the first element, then the element with the list index of 0. After the list is thoroughly processed, you would get the full amount of combination in the return animalCombos array.
+```python
 
     # Given a list,
     # Return a list of all possible combination of animals
@@ -145,11 +151,12 @@ The following function uses a recursive strategy in order to return a list of al
                 animalCombos.append( combo )
                 animalCombos.append( combo + [list[0]] )
             return animalCombos
+```
 
 ### :five: O(n!) :heavy_exclamation_mark: :arrow_up:
 
 N factorials are explosively bad. In the following case, the passed in animal list would output to `10 * 9 * 8 * 7 * 6 * 5....` until the end of the list. The total number of arrangements would exceed three million.
-
+```python
     # Given a list,
     # Return a list of all possible arrangements of list items
     def getAllArrangements(list):
@@ -162,10 +169,12 @@ N factorials are explosively bad. In the following case, the passed in animal li
                 for i in range(len(previousArrangement) + 1):
                     arrangements.append( previousArrangement[i:] + [l[0]] + previousArrangement[0])
             return arrangements
+```
 
 ### Application:
 
 Let's compare a function that returns the length of a list. In the following function we're looping over the array in order to count the list. It would then be an `O(n)`.
+```python
 
     # Given a list
     # Return the list's length 
@@ -175,15 +184,19 @@ Let's compare a function that returns the length of a list. In the following fun
         for i in l:
             list_length += 1
         return list_length
+```
 
 Now, how do we make this into a Big-O of `O(1)`, which is way more efficient? To optimize the previous array, we could track whenever there's an addition or removal in regards to the array. This is called **Amortization**. 
 
 Amortization is where you store a counter inside--storing metadata. So with an addition or removal of an element, the counter decreases or increases, which is essentially only one operation instead of looping through the whole list again, resulting in an `O(1)` operation.
+```python
 
     def getLengthOfList(l):
         return len(l)
+```
 
 Here's an example of a function used to time the runtime of various functions.
+```python
 
     def printFunctionRuntime():
         state_time = datetime.now()
@@ -191,13 +204,14 @@ Here's an example of a function used to time the runtime of various functions.
         # x = getAllArrangements(animals_10 + ["Kangaroo"])
         end_time = datetime.now()
         print (end_time - start_time)
+```
 
 ## Insertion Sort:
 
 A simple sorting technique that scans the sorted list, starting at the beginning, for the correct insertion point for each of the items from the unsorted list. Similar to the way people manually sort items(e.g. playing 13, sorting playing cards, low-high), an insertion sort is not efficient for large lists, but is relatively fast for adding a small number of new items periodically.
 
 Now, here's an example of an **iterative sort function**:
-
+```python
     def insertion_sort(list):
     # Separate the first element fom the rest of the array
     # Think about it as a sorted list of one element
@@ -215,7 +229,7 @@ Now, here's an example of an **iterative sort function**:
         # c. When the correct index is found, copy temp into this position
         list[j] = temp
     return list
-
+```
 Here's our list:
 
     list = [5, 3, 1, 6]
