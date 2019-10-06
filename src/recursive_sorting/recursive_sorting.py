@@ -2,19 +2,26 @@
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
-    # TO-DO
-
+    # TODO
     return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
     # TO-DO
+    middle = len(arr) // 2
 
+    arrA = arr[:middle]
+    arrB = arr[middle:]
+
+    merge_sort(merge(arrA, arrB))
     return arr
 
 
+merge_sort([23, 45, 21, 65, 78])
 # STRETCH: implement an in-place merge sort algorithm
+
+
 def merge_in_place(arr, start, mid, end):
     # TO-DO
 
