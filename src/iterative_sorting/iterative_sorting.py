@@ -23,7 +23,24 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    
+    swap_occurred = True
+    last_index = len(arr) - 1
+    while swap_occurred == True:
+        swap_occurred = False
 
+        if last_index == 0:
+            break
+
+        for i in range(last_index):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swap_occurred = True
+
+        last_index -= 1
+    
+
+    print(arr)
     return arr
 
 
