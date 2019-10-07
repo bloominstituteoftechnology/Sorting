@@ -18,7 +18,7 @@ def selection_sort(arr):
                 smallest_index = k
 
         # Why does this work?
-        # for k in range(0, len(arr[i:])):
+        # for k in range(1, len(arr[i:])):
         #     if (arr[k+i] < arr[smallest_index]):
         #         smallest_index = k+i
 
