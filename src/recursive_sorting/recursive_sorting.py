@@ -1,12 +1,34 @@
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
+
+"""need to compare the numbers and sort the elements one by one start with left first index and compare to first right index, if left is smaller put into array and them compare second element to right first and if right is small push to new array and then compare left second element to second right element."""
+
+
 def merge(arrA, arrB):
-    elements = len(arrA) + len(arrB)
-    merged_arr = [0] * elements
+
+    merged_arr = []
+
     # TODO
+    i = 0
+    j = 0
+    while (i < len(arrA) and j < len(arrB)):
+        print(f"i: {i}")
+        print(f"j: {j}")
+            merged_arr.append(arrA[i])
+            i += 1
+        else:
+            merged_arr.append(arrB[j])
+            j += 1
+    while (i < len(arrA)):
+        merged_arr.append(arrA[i])
+        i += 1
+    while (j < len(arrB)):
+        merged_arr.append(arrB[j])
+
     return merged_arr
 
-
 # TO-DO: implement the Merge Sort function below USING RECURSION
+
+
 def merge_sort(arr):
     # TO-DO
     middle = len(arr) // 2
