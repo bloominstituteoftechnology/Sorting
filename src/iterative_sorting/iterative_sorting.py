@@ -10,16 +10,20 @@ def selection_sort(arr):
         # print(smallest_index)
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
-        # swap_index = arr.index(min(arr[i:]))
-        # for k in range(i, len(arr)):
-        #     if (arr[k] < arr[smallest_index]):
-        #         smallest_index = k
-        for k in range(0, len(arr[i:])):
-            if (arr[k+i] < arr[smallest_index]):
-                smallest_index = k+i
-        # print(swap_index)
+
+        # cur_index = arr.index(min(arr[i:]))
+
+        for k in range(i, len(arr)):
+            if (arr[k] < arr[smallest_index]):
+                smallest_index = k
+
+        # Why does this work?
+        # for k in range(0, len(arr[i:])):
+        #     if (arr[k+i] < arr[smallest_index]):
+        #         smallest_index = k+i
+
         # TO-DO: swap
-        # arr[smallest_index], arr[swap_index] = arr[swap_index], arr[smallest_index]
+
         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
     return arr
