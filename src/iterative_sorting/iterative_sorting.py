@@ -19,6 +19,12 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) - 1):
+            # check if LHS element is greater than RHS element
+            if arr[j] > arr[j + 1]:
+                # swap elements
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
 
