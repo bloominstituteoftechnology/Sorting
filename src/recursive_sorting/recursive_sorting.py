@@ -31,6 +31,13 @@ def merge(arrA, arrB):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
+"""
+merge takes two sorted arrays and merges them together.
+I need to keep calling merge sort until the array is divided
+into arrays of 1, so they are technically sorted and then
+call merge on them to merge them.
+"""
+
 
 def merge_sort(arr):
     # TO-DO
@@ -40,9 +47,19 @@ def merge_sort(arr):
     arrA = arr[:middle]
     arrB = arr[middle:]
 
+    """
+    base case for recursion function, so it returns when the arr
+    is only has one value.
+    """
     if len(arr) <= 1:
         return arr
 
+    """
+    executing the recursive function that will keep dividing
+    the arrays until they only have one value and are "sorted".
+    once it hits the base case it will start executing merge on
+    the returning functions.
+    """
     return merge(merge_sort(arrA), merge_sort(arrB))
 
 # STRETCH: implement an in-place merge sort algorithm
