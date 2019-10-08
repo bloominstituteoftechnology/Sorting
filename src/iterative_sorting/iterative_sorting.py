@@ -21,27 +21,24 @@ def selection_sort( arr ):
         cur_index = i
         smallest_index = cur_index
 
-        index = smallest_index
-        while index < len(arr[cur_index + 1:]):
-
-            if arr[index] < arr[smallest_index]:
-                print(arr[index])
-                arr.insert(smallest_index, arr.pop(index))
+        new_arr = arr[i + 1:]
+        new_arr_count = -1
+        for item_count in range(cur_index , len(new_arr) ):
+            # print(f"{item_count} \n {cur_index} - {len(arr[cur_index:])}")
+            
+            if new_arr[item_count] < arr[smallest_index]:
+                print(f"{new_arr[item_count]} < {arr[smallest_index]} ")
+                new_arr_count = item_count
                 break
+                
+
+        print(f"{new_arr[new_arr_count]} found at {new_arr_count}")
+
+        # arr.pop(cur_index + new_arr )
+        arr.insert(cur_index, arr.pop(cur_index + new_arr_count + 1))
 
 
-            index += 1
-            # if arr[i_count] < arr[smallest_index]:
-            #          print(arr[i_count])
-
-
-        # for item_count in range(arr[1:]):
-        #     if item < arr[smallest_index]:
-        #         print(arritem, end=',')
-        #         arr.insert(0, arr.pop(item_count))
-        #         break
-
-        print(f"{i} --->>>> {arr}")
+        # print(f"{i} --->>>> {arr}")
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
         # TO-DO: swap
@@ -50,9 +47,10 @@ def selection_sort( arr ):
 
 arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
-print(f"\narr ->> {arr}\n")
+print(f"\nstart ->> {arr}\n")
 
 a = selection_sort(arr)
+print(f"\n\nend ->>>>{a}")
 
 
 # TO-DO:  implement the Bubble Sort function below
