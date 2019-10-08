@@ -28,5 +28,9 @@ def bubble_sort(arr):
 
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
-
+    #take a count of each array element
+    #place into a array that has as many indexes as the max N in given arr
+        #can make for loop to find largest element in given array, make that size of arr
+    #add up array elements consecutively
+    #create another count array
     return arr
