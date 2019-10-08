@@ -52,33 +52,37 @@ def binary_search(arr, target):
 
 # STRETCH: write a recursive implementation of Binary Search 
 def binary_search_recursive(arr, target, low, high):
-  # test to see if the array is empty
+  # Check base case 
+
   if len(arr) == 0:
       return -1 # array empty
 
-  if (high - low) % 2 == 1:
-    middle = (high+1) // 2
-  else:
+  if high >= low:
+  
     middle = (low + (high - low)) // 2
-  
-  item = arr[middle]
 
-  print(f'item: {item}')
-  print(f'target: {target}')
-  print(f'middle: {middle}')
-  print(f'high: {high}')
-  print(f'low: {low} \n')
+    # Catches the issue of the sequence getting stuck at 1
+    if middle == low:
+      middle +=1
 
-  
-  if item == target:
-    print(f'return: {middle, type(middle)}')
-    return int(middle)
+    item = arr[middle]
 
-  elif item < target:
-    binary_search_recursive(arr, target, middle+1, high )
-  
-  elif item > target:
-    binary_search_recursive(arr, target, low, middle-1)
+    print(f'item: {item}')
+    print(f'target: {target}')
+    print(f'middle: {middle}')
+    print(f'high: {high}')
+    print(f'low: {low} \n')
+    print(arr)
+
+    if item == target:
+      print(f'return: {middle, type(middle)}')
+      return int(middle)
+
+    elif item < target:
+      return binary_search_recursive(arr, target, middle+1, high )
+      
+    else: 
+      return binary_search_recursive(arr, target, low, middle-1)
 
   else:
     return -1
