@@ -24,21 +24,21 @@ def selection_sort( arr ):
         new_arr = arr[i + 1:]
         print(new_arr)
         new_arr_count = -1
-        for item_count in range(cur_index, len(new_arr) - 1):
+        for item_count in range(len(new_arr)):
             # print(f"{item_count} \n {cur_index} - {len(arr[cur_index:])}")
             
             print(f"{new_arr[item_count]} < {arr[smallest_index]}  == {new_arr[item_count] < arr[smallest_index]}")
-            if new_arr[item_count] < arr[smallest_index]:
+            if new_arr[item_count] < arr[i]:
                 new_arr_count = item_count
                 break
                 
 
        
 
-        if new_arr_count != -1:
-            print(f"new_arr_count: {new_arr_count + (i + 1)}")
-
+        if new_arr_count != -1:            
             arr.insert(cur_index, arr.pop(cur_index + new_arr_count + 1))
+
+            print(f"arr{arr} \n")
 
 
         # print(f"{i} --->>>> {arr}")
