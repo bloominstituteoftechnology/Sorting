@@ -25,16 +25,20 @@ def selection_sort( arr ):
         cur_index = i
         smallest_index = cur_index
         #print(f"i:{i}")
+
+        finished = True
         new_arr = arr[smallest_index + 1:]
         for item_count in range(len(new_arr)):
+
             if new_arr[item_count] < arr[i]:
                 arr.insert(cur_index, arr.pop(cur_index + item_count + 1))
+                finished = False
+                
          #       print(f"arr{arr} \n")
 
         if arr[i] > arr[i+1]:
-            swaped = swap(arr[i], arr[i + 1])
-            arr[i] = swaped[0]
-            arr[i+1] = swaped[1]
+            arr[i], arr[i+1] = arr[i + 1], arr[i]
+
 
         # print(f"{i} --->>>> {arr}")
         # TO-DO: find next smallest element
@@ -57,9 +61,7 @@ def bubble_sort( arr ):
     for _ in range(len(arr)):
         for i in range(len(arr) - 1):
             if arr[i] > arr[i + 1]:
-                swaped = swap(arr[i], arr[i + 1])
-                arr[i] = swaped[0]
-                arr[i + 1] = swaped[1] 
+                arr[i], arr[i+1] = arr[i + 1], arr[i]
                 print(f"\n{arr[i]} > {arr[i + 1]}\n{arr}")
                 
 

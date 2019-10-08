@@ -15,12 +15,6 @@ def merge_sort( arr ):
 
 
 
-
-
-
-
-
-
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
