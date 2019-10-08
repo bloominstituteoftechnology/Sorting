@@ -21,12 +21,16 @@ def selection_sort( arr ):
         cur_index = i
         smallest_index = cur_index
 
-        i_count = smallest_index
-        while i_count < len(arr[1:]):
-            print(arr[i_count])
+        index = smallest_index
+        while index < len(arr[cur_index + 1:]):
+
+            if arr[index] < arr[smallest_index]:
+                print(arr[index])
+                arr.insert(smallest_index, arr.pop(index))
+                break
 
 
-            i_count += 1
+            index += 1
             # if arr[i_count] < arr[smallest_index]:
             #          print(arr[i_count])
 
@@ -45,7 +49,9 @@ def selection_sort( arr ):
     return arr
 
 arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-print(f"arr ->> {arr}")
+
+print(f"\narr ->> {arr}\n")
+
 a = selection_sort(arr)
 
 
