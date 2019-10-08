@@ -45,7 +45,7 @@ def selection_sort( arr ):
 
 arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
-print(f"\nstart ->> {arr}\n\n")
+# print(f"\nstart ->> {arr}\n\n")
 
 # a = selection_sort(arr)
 
@@ -53,24 +53,25 @@ print(f"\nstart ->> {arr}\n\n")
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    for i in range(len(arr) - 1):
-        
-        if arr[i] > arr[i + 1]:
-            swaped = swap(arr[i], arr[i + 1])
-            arr[i] = swaped[0]
-            arr[i + 1] = swaped[1] 
-            print(f"\n{arr[i]} > {arr[i + 1]}\n{arr}")
-            
+
+    for _ in range(len(arr) - 1):
+        for i in range(len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                swaped = swap(arr[i], arr[i + 1])
+                arr[i] = swaped[0]
+                arr[i + 1] = swaped[1] 
+                print(f"\n{arr[i]} > {arr[i + 1]}\n{arr}")
+                
 
     return arr
 
 
 x = bubble_sort(arr)
 
-print(x)
+# print(x)
 
 
-print(f"\nend   ->> {x}\n\n")
+# print(f"\nend   ->> {x}\n\n")
 
 
 # STRETCH: implement the Count Sort function below
