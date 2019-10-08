@@ -11,7 +11,11 @@
 
 
 
-
+def swap(a, b):
+    temp = a
+    a = b
+    b = temp
+    return a, b
 
 
 
@@ -28,9 +32,9 @@ def selection_sort( arr ):
          #       print(f"arr{arr} \n")
 
         if arr[i] > arr[i+1]:
-            temp = arr[i]
-            arr[i] = arr[i+1]
-            arr[i+1] = temp
+            swaped = swap(arr[i], arr[i + 1])
+            arr[i] = swaped[0]
+            arr[i+1] = swaped[1]
 
         # print(f"{i} --->>>> {arr}")
         # TO-DO: find next smallest element
@@ -39,18 +43,31 @@ def selection_sort( arr ):
 
     return arr
 
-# arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
-# print(f"\nstart ->> {arr}\n\n")
+print(f"\nstart ->> {arr}\n\n")
 
-# a = selection_sort(arr)
-# print(f"\n\nend ->>>>{a}")
+a = selection_sort(arr)
+print(f"\n\nend ->>>>{a}")
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    for i in range(len(arr) - 1):
+        
+        if arr[i] > arr[i + 1]:
+            print(arr[i])
+
 
     return arr
+
+
+x = bubble_sort(arr)
+
+print(x)
+
+
+
 
 
 # STRETCH: implement the Count Sort function below
