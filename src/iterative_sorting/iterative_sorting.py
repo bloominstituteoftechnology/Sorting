@@ -54,7 +54,7 @@ arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
 
-    for _ in range(len(arr) - 1):
+    for _ in range(len(arr)):
         for i in range(len(arr) - 1):
             if arr[i] > arr[i + 1]:
                 swaped = swap(arr[i], arr[i + 1])
