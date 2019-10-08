@@ -20,26 +20,17 @@ def selection_sort( arr ):
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
-
-        new_arr = arr[i + 1:]
-        print(new_arr)
-        new_arr_count = -1
+        print(f"i:{i}")
+        new_arr = arr[smallest_index + 1:]
         for item_count in range(len(new_arr)):
-            # print(f"{item_count} \n {cur_index} - {len(arr[cur_index:])}")
-            
-            print(f"{new_arr[item_count]} < {arr[smallest_index]}  == {new_arr[item_count] < arr[smallest_index]}")
             if new_arr[item_count] < arr[i]:
-                new_arr_count = item_count
-                break
-                
+                arr.insert(cur_index, arr.pop(cur_index + item_count + 1))
+                print(f"arr{arr} \n")
 
-       
-
-        if new_arr_count != -1:            
-            arr.insert(cur_index, arr.pop(cur_index + new_arr_count + 1))
-
-            print(f"arr{arr} \n")
-
+        if arr[i] > arr[i+1]:
+            temp = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = temp
 
         # print(f"{i} --->>>> {arr}")
         # TO-DO: find next smallest element
@@ -50,7 +41,7 @@ def selection_sort( arr ):
 
 arr = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
-print(f"\nstart ->> {arr}\n")
+print(f"\nstart ->> {arr}\n\n")
 
 a = selection_sort(arr)
 print(f"\n\nend ->>>>{a}")
