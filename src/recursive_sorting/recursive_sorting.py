@@ -9,18 +9,22 @@ def merge( arrA, arrB ):
     print(f"elements: {arrA} and {arrB} - merged_arr {merged_arr}")
     i = 0
     y = 0
+    z = 0
     while i < len(arrA) and y < len(arrB):
 
         if arrA[i] < arrB[y]:
             # print(f"{arrA[i]} < {arrB[y]}")
-            print(f"{arrB[y]}")
-            y += 1
+            print(f"{arrA[i]}")
+            merged_arr[z] = arrA[i]
+            i += 1
         else:
             # print(f"{arrA[i]} > {arrB[y]}")
-            print(f"{arrA[i]}")
-            i += 1
-
-        print("")
+            print(f"{arrB[i]}")
+            merged_arr[z] = arrB[i]
+            y += 1
+            
+        z += 1
+        print(merged_arr)
 
 
 
