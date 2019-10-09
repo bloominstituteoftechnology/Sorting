@@ -6,13 +6,30 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-    print(f"elements: {elements} - merged_arr {merged_arr}")
+    print(f"elements: {arrA} and {arrB} - merged_arr {merged_arr}")
+    i = 0
+    y = 0
+    while i < len(arrA) and y < len(arrB):
+
+        if arrA[i] < arrB[y]:
+            # print(f"{arrA[i]} < {arrB[y]}")
+            print(f"{arrB[y]}")
+            y += 1
+        else:
+            # print(f"{arrA[i]} > {arrB[y]}")
+            print(f"{arrA[i]}")
+            i += 1
+
+        print("")
+
+
+
 
     return merged_arr
 
+half = len(l)//2
 
-
-# x = merge(l[:4], l[4:])
+x = merge(l[:half], l[half:])
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
@@ -25,14 +42,13 @@ def merge_sort( arr ):
 
     # get first half
     arr1 = l[:half_len]
-
     # get second half
     arr2 = l[half_len:]
 
     print(f"{arr1} - {arr2}")
 
-    return arr
-
+    # return merge(arr1, arr2)
+    return []
 
 
 # print(l)
@@ -40,7 +56,7 @@ def merge_sort( arr ):
 # print(l[len(l)//2:])
 
 
-merge_sort(l)
+# merge_sort(l)
 
 
 # STRETCH: implement an in-place merge sort algorithm
