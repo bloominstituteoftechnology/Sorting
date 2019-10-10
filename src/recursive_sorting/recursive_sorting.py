@@ -6,34 +6,30 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-    print(f"elements: {arrA} and {arrB} - merged_arr {merged_arr}")
+    #print(f"elements: {arrA} and {arrB} - merged_arr {merged_arr}")
+
+    a = 0
+    b = 0
     i = 0
-    y = 0
-    z = 0
-    while i < len(arrA) and y < len(arrB):
 
-        if arrA[i] < arrB[y]:
-            # print(f"{arrA[i]} < {arrB[y]}")
-            print(f"{arrA[i]}")
-            merged_arr[z] = arrA[i]
-            i += 1
+    while i < len(merged_arr):
+        if a > len(arrA):
+            merged_arr[i] = arrB[b]
+            b += 1
+        elif b > len(arrB):
+            merged_arr[i] = arrB[a]
+            a += 1
+        elif arrA[a] < arrB[b]:
+            merged_arr[i] = arrA[a]
+            a += 1
         else:
-            # print(f"{arrA[i]} > {arrB[y]}")
-            print(f"{arrB[i]}")
-            merged_arr[z] = arrB[i]
-            y += 1
-            
-        z += 1
-        print(merged_arr)
-
-
-
-
+            merged_arr[i] = arrB[b]
+            b += 1
+        i += 1
     return merged_arr
 
-half = len(l)//2
-
-x = merge(l[:half], l[half:])
+# half = len(l)//2
+# x = merge(l[:half], l[half:])
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
@@ -41,26 +37,28 @@ def merge_sort( arr ):
     # TO-DO
     if (len(arr) == 1):
         return arr
+    else:
+        half_len = len(arr)//2
+        # get first half
+        left_arr = l[:half_len]
+        # get second half
+        right_arr = l[half_len:]
 
-    half_len = len(arr)//2
-
-    # get first half
-    arr1 = l[:half_len]
-    # get second half
-    arr2 = l[half_len:]
-
-    print(f"{arr1} - {arr2}")
-
-    # return merge(arr1, arr2)
-    return []
+        left_sorted = merge_sort(right_arr)
+        right_sorted = merge_sort(left_side)
 
 
-# print(l)
+
+    return merge(left_sorted, right_sorted)
+
+
+
+
 # print(l[:len(l)//2])
 # print(l[len(l)//2:])
 
 
-# merge_sort(l)
+print(merge_sort(l))
 
 
 # STRETCH: implement an in-place merge sort algorithm
@@ -69,7 +67,7 @@ def merge_in_place(arr, start, mid, end):
 
     return arr
 
-def merge_sort_in_place(arr, l, r): 
+def merge_sort_in_place(arr, l, r):
     # TO-DO
 
     return arr
