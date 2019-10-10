@@ -1,6 +1,3 @@
-l = [1, 5, 8, 4, 2, 9, 6, 0, 10, 3, 7]
-
-
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
@@ -27,10 +24,6 @@ def merge( arrA, arrB ):
         i += 1
     return merged_arr
 
-# half = len(l)//2
-# x = merge(l[:half], l[half:])
-
-
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
@@ -49,12 +42,6 @@ def merge_sort( arr ):
 
 
 
-
-# print(l[:len(l)//2])
-# print(l[len(l)//2:])
-
-
-print(merge_sort(l))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
