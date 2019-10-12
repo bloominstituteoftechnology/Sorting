@@ -27,13 +27,17 @@ def insertion_sort( arr ):
     
 print(insertion_sort([90, 1, 2, 3, 67]))
 
-# STRETCH: implement the Bubble Sort function below
-def bubble_sort( arr ):
-
+# TO-DO: implement the Bubble Sort function below
+def bubble_sort(arr):
+    for i in arr[::-1]:
+        for j in range(0, len(arr) - 1):
+            if arr[j] > arr[j + 1]:
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
     return arr
-
+print(bubble_sort([3, 2, 41, 34, 22]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
     return arr
