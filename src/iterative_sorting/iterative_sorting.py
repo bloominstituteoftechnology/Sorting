@@ -2,14 +2,19 @@
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_num = arr[i]
-        smallest_num = cur_num
-        lowest_index = i
-        for j in range(i, len(arr)):
-            if arr[j] < smallest_num:
-                smallest_num = arr[j]
-                lowest_index = j
-        arr[i], arr[lowest_index] = smallest_num, cur_num
+        smallest_index = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+        # cur_num = arr[i]
+        # smallest_num = cur_num
+        # lowest_index = i
+        # for j in range(i, len(arr)):
+        #     if arr[j] < smallest_num:
+        #         smallest_num = arr[j]
+        #         lowest_index = j
+        # arr[i], arr[lowest_index] = smallest_num, cur_num   
     return arr
 
 
