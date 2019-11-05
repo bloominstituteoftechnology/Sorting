@@ -10,8 +10,8 @@ def merge( arrA, arrB ):
         else:
             merged_arr.append(arrB[i_of_b])
             i_of_b+=1
-    if i_of_a == len(arrA): merged_arr.extend(b[i_of_b:])
-    else:                   merged_arr.extend(a[i_of_a:])
+    if i_of_a == len(arrA): merged_arr.extend(arrB[i_of_b:])
+    else:                   merged_arr.extend(arrA[i_of_a:])
     return merged_arr
 
 
@@ -19,7 +19,8 @@ def merge( arrA, arrB ):
 def merge_sort( arr ):
     # TO-DO
     if len(arr) <= 1: return arr
-    L, R = merge_sort(arr[ : len(arr) / 2]), merge_sort(arr[ len(arr) / 2 : ])
+    pivot = len(arr)/2
+    L, R = merge_sort(arr[ : len(arr) // 2]), merge_sort(arr[ len(arr) // 2 : ])
     return merge(L,R)
 
 
