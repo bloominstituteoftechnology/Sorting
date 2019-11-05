@@ -19,7 +19,6 @@ def merge( arrA, arrB ):
 def merge_sort( arr ):
     # TO-DO
     if len(arr) <= 1: return arr
-    pivot = len(arr)/2
     L, R = merge_sort(arr[ : len(arr) // 2]), merge_sort(arr[ len(arr) // 2 : ])
     return merge(L,R)
 
