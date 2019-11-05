@@ -1,4 +1,4 @@
-# TO-DO: Complete the selection_sort() function below 
+# TO-DO: Complete the selection_sort() function below --> O(n^2)
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
@@ -18,13 +18,13 @@ def selection_sort( arr ):
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
+# TO-DO:  implement the Bubble Sort function below --> O(n^2)
 def bubble_sort( arr ):
 
     return arr
 
 
-# STRETCH: implement the Count Sort function below
+# STRETCH: implement the Count Sort function below --> O(n+k)
 def count_sort( arr, maximum=-1 ):
 
     return arr
