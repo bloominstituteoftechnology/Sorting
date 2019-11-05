@@ -1,4 +1,4 @@
-# TO-DO: complete the helpe function below to merge 2 sorted arrays
+# TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
     merged_arr = []
     i_of_a, i_of_b = 0, 0
@@ -19,6 +19,7 @@ def merge( arrA, arrB ):
 def merge_sort( arr ):
     # TO-DO
     if len(arr) <= 1: return arr
+    if len(arr) == 2: merge([arr[0]],[arr[1]])
     L, R = merge_sort(arr[ : len(arr) // 2]), merge_sort(arr[ len(arr) // 2 : ])
     return merge(L,R)
 
@@ -26,7 +27,16 @@ def merge_sort( arr ):
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
+    L, R, i_of_L, i_of_R = arr[start:mid] ,arr[mid:end], 0, 0
 
+    for k in range(start,end):
+        if i_of_R >= len(R) or (i_of_L < len(L) and L[i_of_L] < R[i_of_R]):
+            arr[k] = L[i_of_L]
+            i_of_L = i_of_L + 1
+        else:
+            arr[k] = R[i_of_R]
+            i_of_R = i_of_R + 1  
+                
     return arr
 
 def merge_sort_in_place(arr, l, r): 
