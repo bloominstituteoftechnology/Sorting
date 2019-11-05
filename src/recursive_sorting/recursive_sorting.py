@@ -28,22 +28,28 @@ def merge_sort( arr ):
 def merge_in_place(arr, start, mid, end):
     # TO-DO
     L, R, i_of_L, i_of_R = arr[start:mid] ,arr[mid:end], 0, 0
-
     for k in range(start,end):
         if i_of_R >= len(R) or (i_of_L < len(L) and L[i_of_L] < R[i_of_R]):
             arr[k] = L[i_of_L]
-            i_of_L = i_of_L + 1
+            i_of_L += 1
         else:
             arr[k] = R[i_of_R]
-            i_of_R = i_of_R + 1  
-                
+            i_of_R += 1 
     return arr
 
 def merge_sort_in_place(arr, l, r): 
     # TO-DO
+    if r - l > 1:
+        mid = int((l+r)/2)
+        merge_sort_in_place(arr,l,mid)
+        merge_sort_in_place(arr,mid,r)
+        merge_in_place(arr,l,mid,r)
 
     return arr
 
+A  = [20, 30, 21, 15, 42, 45, 31, 0, 9]
+merge_sort_in_place(A,0,len(A))
+print(A)
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
