@@ -6,20 +6,21 @@ def merge( arrA, arrB ):
     while i_of_a < len(arrA) and i_of_b < len(arrB):
         if arrA[i_of_a] < arrB[i_of_b]:
             merged_arr.append(arrA[i_of_a])
-            i_of_a++
+            i_of_a+=1
         else:
-            merged_arr.append(arrB[i_of_a])
-            i_of_b++
-    if i_of_a == len(arrA): merged_arr.extend(b[i_of_b])
-    else:                   merged_arr.extend(a[i_of_a])
+            merged_arr.append(arrB[i_of_b])
+            i_of_b+=1
+    if i_of_a == len(arrA): merged_arr.extend(b[i_of_b:])
+    else:                   merged_arr.extend(a[i_of_a:])
     return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
-
-    return arr
+    if len(arr) <= 1: return arr
+    L, R = merge_sort(arr[ : len(arr) / 2]), merge_sort(arr[ len(arr) / 2 : ])
+    return merge(L,R)
 
 
 # STRETCH: implement an in-place merge sort algorithm
