@@ -5,17 +5,16 @@ def merge( arrA, arrB ):
     # TO-DO
     ai = 0
     bi = 0
-    for i in range(0,len(merged_arr)-1):
-        if arrA[ai] < arrB[bi]:
-            merged_arr[i] = arrA[ai]
-            ai += 1
-            print(ai)
-            print(bi)``
-        else:
-            merged_arr[i] = arrB[bi]
-            bi += 1
-            print(bi)
-            print(ai)
+    if arrA[ai] < arrB[bi]:
+        merged_arr[0] = arrA[ai]
+        merged_arr[1] = arrB[bi]
+        ai += 1
+        print(merged_arr)
+    else:
+        merged_arr[0] = arrB[bi]
+        merged_arr[1] = arrB[ai]
+        bi += 1
+        print(merged_arr)
     
     return merged_arr
 
