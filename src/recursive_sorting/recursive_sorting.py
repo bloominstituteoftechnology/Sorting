@@ -44,7 +44,6 @@ def merge_sort_in_place(arr, l, r):
         merge_sort_in_place(arr,l,mid)
         merge_sort_in_place(arr,mid,r)
         merge_in_place(arr,l,mid,r)
-
     return arr
 
 A  = [20, 30, 21, 15, 42, 45, 31, 0, 9]
