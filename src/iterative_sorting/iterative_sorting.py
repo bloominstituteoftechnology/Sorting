@@ -41,17 +41,23 @@
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
     count = [0,0,0,0,0,0,0,0,0,0]
-
+    print(f'origina arr {arr}')
     for i in range(0, len(arr)):
         count[arr[i]] += 1
-    
+    print(f'count {count}')
     # print(f'callback {add_up(count)}')
-    count2= add_up(count)
-    print(count2)
+    count2= add_up(count)   #[0, 2, 4, 4, 5, 6, 6, 7, 7, 7]
+    print(f'count2 {count2}')
 
       #Last step is confusing. I think it can be solved using hashtables, which i have no idea how to use. 
+    placeholderindex = 0
+    for nums in range(0, len(count)):
+        while count[nums] > 0:
+            arr[placeholderindex] = nums
+            placeholderindex += 1
+            count[nums] -= 1
+    print(f'in while loop {count}')
   
-
     return arr
 
     
@@ -64,14 +70,14 @@ def add_up(count):
     # print(f' inside new function {newcount}')
     return newcount
 
-    # answer = [0,0,0,0,0,0,0]
+    
     # for a in range(0, len(answer)):
     #     answer[newcount[a]] += 1
     
 
     # return newcount
     
-print(f'output {count_sort([1,4,1,2,7,5,2])}')
+print(f'arr output {count_sort([1,4,1,2,7,5,2])}')
 
 
 
