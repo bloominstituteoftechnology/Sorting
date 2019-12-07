@@ -9,9 +9,29 @@ def merge( arrA, arrB ):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
+    # base case
+    if len(arr) <= 1:
+        return arr
     # TO-DO
+    half = len( arr ) // 2
 
-    return arr
+    left = merge_sort(arr[:half])
+    right = merge_sort(arr[half:])
+
+    arr =[]
+
+    while left and right:
+      if left[0] < right[0]:
+        arr.append(left.pop(0))
+      else:
+        arr.append(right.pop(0))
+    
+    while left:
+      arr.append(left.pop(0))
+    while right:
+      arr.append(right.pop(0))
+
+    return( arr)
 
 
 # STRETCH: implement an in-place merge sort algorithm
