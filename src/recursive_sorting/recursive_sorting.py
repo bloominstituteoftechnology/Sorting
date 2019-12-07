@@ -2,8 +2,7 @@
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
-    # TO-DO
-    
+    # TO-DO 
     return merged_arr
 
 
