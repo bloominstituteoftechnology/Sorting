@@ -19,18 +19,31 @@
 # process will repeat until list is fully sorted
 
 def selection_sort( arr ):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        index = i
-        smallest_index = index
+    index_length = range(0, len(arr)-1)
+
+    for i in index_length:
+	## each time we do an iteration we want that
+	## first element in the unsorted list to be the
+	## the default min
+	## need this default to do the comparisons && swaps
+
+        min_value = i
+
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         for j in range(i + 1, len(arr)):
-            if arr[smallest_index] > arr[j]:
-                smallest_index = j
-        temp = arr[i]
-        arr[i] = arr[smallest_index]
-        arr[smallest_index] = temp
+        ## i + 1 being RHS
+
+            if arr[min_value] > arr[j]:
+            ## going through all the elements to the right
+			## of where we currently are on the index and if
+			## and if we find something smaller,
+			## change that to the min value
+
+                min_value = j
+
+        arr[i], arr[min_value] = arr[min_value], arr[i]
+        ## performs the swap
         # TO-DO: swap
 
     return arr
