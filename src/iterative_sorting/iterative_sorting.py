@@ -34,7 +34,7 @@ def selection_sort( arr ):
         for j in range(i + 1, len(arr)):
         ## i + 1 being RHS
 
-            if arr[min_value] > arr[j]:
+            if arr[j] < arr[min_value]:
             ## going through all the elements to the right
 			## of where we currently are on the index and if
 			## and if we find something smaller,
@@ -58,22 +58,34 @@ print(selection_sort([5,2,1,9,0,4,6]))
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+	index_length = len(arr) - 1
+	#setting a variable name to length needed
+	## - 1 used here because we cannot perform a comparison on the last number of the list
+	## because there isn't a number after it
+	sorted = False
+	##local variable == use to break us out when list is sorted
+	## no forever loop yay!
 
-    ##get length to help make code readability better
-    ##we subtract 1 from length because we are always comparing current val with next val
-    arrLength = len(arr) -1
+	while not sorted:
+	## need to perform at a number of iterations we don't know
+	## as long as sorted  is false, will perform these actions
+		sorted = True
+		##reference local variable
+		for i in range(0, index_length):
+		##comparison time
+			if arr[i] > arr[i+1]:
+			# if value to left is greater than the value to the right
+				sorted = False
+				##sorted will be false
+				arr[i], arr[i+1] = arr[i+1], arr[i]
+				##swap the two values in our list
 
-    # number of rounds will be total length -1 so if length is 7, we will do 6 rounds
-    for i in range(arrLength):
 
-        # at each round, we compare the current j with the next value
-        for j in range(arrLength - i):
+				## whenever we sort all the values in our list,
+				##if statement wont activate
+				## sorted will turn true and break out of iteration loop
 
-            # only swap positions if left val > right val
-            # we are trying to get smallest starting left and work our way right
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j+1] = arr[j +1], arr[j]
-    return arr
+	return arr
 print(bubble_sort([5,2,1,9,0,4,6]))
 
 
