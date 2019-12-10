@@ -25,14 +25,14 @@ That being said, please still use the 20 minute rule :slightly_smiling_face:
 
 # Part 1
 
-## MVP Tasks
+## MVP Tasks []
 
  - Open up the [iterative_sorting](src/iterative_sorting) directory
  - Read through the descriptions of the `bubble_sort` and `selection_sort` algorithms
  - Implement `bubble_sort` and `selection_sort` in [iterative_sorting.py](src/iterative_sorting/iterative_sorting.py)
  - Test your implementation by running `test_iterative.py`
 
-# Part 2
+# Part 2 []
 
 ## MVP Tasks
 
