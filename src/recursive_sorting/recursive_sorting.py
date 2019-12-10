@@ -1,8 +1,5 @@
 # TO-DO: complete the helpe function below to merge 2 sorted leftys
 def merge( left, right ):
-    # elements = len(left) + len(right)
-    # merged_arr = [0] * elements
-    # TO-DO
     left_indx = 0
     right_indx = 0
     merged_arr = []
@@ -25,7 +22,6 @@ def merge( left, right ):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    import math
     # TO-DO
     if len(arr) <= 1:
       return arr
