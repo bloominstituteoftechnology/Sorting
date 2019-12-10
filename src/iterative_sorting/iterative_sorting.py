@@ -37,15 +37,18 @@ def bubble_sort(arr):
 def count_sort(arr, maximum=-1):
     count_array = []
     for elem in arr:
+        if elem < 0:
+            return "Error, negative numbers not allowed in Count Sort"
         if elem > len(count_array):
-            count_array += [0 for i in range(elem - len(count_array) + 1)]
+            count_array += [0 for i in range(elem - len(count_array) + 2)]
         count_array[elem] += 1
-    print(count_array)
     for i in range(1, len(count_array)):
         count_array[i] = count_array[i] + count_array[i-1]
-    print(count_array)
-
+    last_inserted = -1
+    for i in range(len(count_array)):
+        where_to_insert = count_array[i] - 1
+        while where_to_insert > last_inserted:
+            arr[where_to_insert] = i
+            where_to_insert -= 1
+        last_inserted = count_array[i] - 1
     return arr
-
-
-count_sort([1, 4, 1, 2, 7, 5, 2])
