@@ -1,9 +1,28 @@
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 def merge(arrA, arrB):
+    print("A:", arrA, "B:", arrB)
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
     # TO-DO
 
+    i = 0
+    while (len(arrA) > 0) and (len(arrB) > 0):
+        if arrA[0] < arrB[0]:
+            merged_arr[i] = arrA[0]
+            i += 1
+            del arrA[0]
+        else:
+            merged_arr[i] = arrB[0]
+            i += 1
+            del arrB[0]
+    if len(arrA) > 0:
+        for elem in arrA:
+            merged_arr[i] = elem
+            i += 1
+    elif len(arrB) > 0:
+        for elem in arrB:
+            merged_arr[i] = elem
+            i += 1
     return merged_arr
 
 
@@ -14,14 +33,8 @@ def merge_sort(arr):
         split_index = len(arr)//2
         first_half = arr[:split_index]
         second_half = arr[split_index:]
-        merge_sort(first_half)
-        merge_sort(second_half)
+        arr = merge(merge_sort(first_half), merge_sort(second_half))
     return arr
-
-
-nums = [1, 2, 3, 4, 5]
-split_index = len(nums)//2
-print(nums[:split_index], nums[split_index:])
 
 
 # STRETCH: implement an in-place merge sort algorithm
@@ -43,5 +56,3 @@ def merge_sort_in_place(arr, l, r):
 def timsort(arr):
 
     return arr
-
-print(merge_sort([1, 2, 3, 4, 5]))
