@@ -21,6 +21,8 @@ def selection_sort( arr ):
 
 # print(selection_sort(test_list))
 
+print(selection_sort(test_list))
+
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
     for i in range(0, len(arr)):
