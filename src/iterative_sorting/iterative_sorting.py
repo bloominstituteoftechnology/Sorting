@@ -38,6 +38,7 @@ def bubble_sort(arr):
     return arr
 
 
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 bubble_sort(arr1)
 print(arr1)
 
@@ -46,4 +47,35 @@ print(arr1)
 
 def count_sort(arr, maximum=-1):
 
-    return arr
+    # keep track of what the largest value is in the array
+    # iterate over array, upping max if needed
+    count = dict()
+    for item in arr:
+        if item < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        maximum = max(maximum, item)
+        count[item] = count.get(item, 0) + 1
+
+    # from 0 through maximum, add the count for the previous value to each count, cumulatively
+    for i in range(maximum+1):
+        if i == 0:
+            count[i] = count.get(i, 0)
+        count[i] = count.get(i, 0) + count.get(i - 1, 0)
+    # create an empty array *maximum* long
+    out = [None for y in range(len(arr))]
+    # iterate over original input array - look up the value in the dict using the original value as key and insert that value in the new, empty array at the 'count' index.
+    for toSort in arr:
+        newIndex = count[toSort] - 1
+        out[newIndex] = toSort
+        # decrement the dict 'count' value
+        count[toSort] -= 1
+
+    return out
+
+
+arr2 = [1, 4, 1, 2, 7, 5, 2]
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+arr1 = count_sort(arr1)
+arr2 = count_sort(arr2)
+print(arr1)
+print(arr2)
