@@ -14,7 +14,16 @@ def selection_sort( arr ):
 
 
 
-
+def bubble_sort(arr):
+    swapped = True
+    while swapped:
+        swapped = False
+        for index in range(len(arr)):
+            if index == 0:
+                continue
+            if arr[index] < arr[index - 1]:
+                arr[index], arr[index - 1] = arr[index - 1], arr[index]
+                swapped = True
     return arr
 
 
