@@ -69,7 +69,7 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # TO-DO
     count = len(arr)
-    if count == 1:
+    if count <= 1:
         return arr
     arr1 = merge_sort(arr[count // 2:])
     arr2 = merge_sort(arr[:count // 2])
