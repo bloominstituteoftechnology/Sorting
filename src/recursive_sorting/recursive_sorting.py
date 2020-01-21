@@ -77,9 +77,9 @@ def merge_sort(arr):
     return merge(arr1, arr2)
 
 
-arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7, 7, 7, 8]
 arr2 = merge_sort(arr1)
-print("arr2: ", arr2)
+print(arr2)
 
 
 # STRETCH: implement an in-place merge sort algorithm
