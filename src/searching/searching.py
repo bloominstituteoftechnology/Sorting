@@ -1,9 +1,10 @@
 # STRETCH: implement Linear Search				
 def linear_search(arr, target):
-  
-  # TO-DO: add missing code
+  for index in range(len(arr)):
+    if arr[index] == target:
+      return index
 
-   return -1   # not found
+  return -1   # not found
 
 
 # STRETCH: write an iterative implementation of Binary Search 
