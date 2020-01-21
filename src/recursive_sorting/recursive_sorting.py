@@ -32,16 +32,6 @@ def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
     # TO-DO
-    # bIndex = 0
-    # for aIndex, aValue in enumerate(arrA):
-    #     bValue = arrB[bIndex]
-    #     while bValue < aValue:
-    #         merged_arr[aIndex + bIndex] = bValue
-    #         bIndex += 1
-    #         bValue = arrB[bIndex]
-    #     merged_arr[aIndex + bIndex] = aValue
-    # for finishB in range(bIndex, len(arrB)):
-    #     merged_arr[finishB + len(arrA)] = arrB[finishB]
 
     ai = 0
     bi = 0
@@ -85,18 +75,46 @@ print(arr2)
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
+    # get mid start
+    midStart = mid + 1
 
-    return arr
+    while start <= mid and midStart <= end:
+        lowIndexValue = arr[start]
+        highIndexValue = arr[midStart]
+        if lowIndexValue < highIndexValue:
+            start += 1
+        else:
+            for shiftIndex in range(midStart, start, -1):
+                arr[shiftIndex] = arr[shiftIndex - 1]
+            arr[start] = highIndexValue
+            start += 1
+            mid += 1
+            midStart += 1
 
 
-def merge_sort_in_place(arr, l, r):
+def merge_sort_in_place(arr, lhs, rhs):
     # TO-DO
 
+    # check that lhs < rhs
+    if lhs < rhs:
+        mid = (lhs + rhs) // 2
+
+        merge_sort_in_place(arr, lhs, mid)
+        merge_sort_in_place(arr, mid + 1, rhs)
+
+        merge_in_place(arr, lhs, mid, rhs)
     return arr
+
+
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7, 7, 7, 8]
+merge_sort_in_place(arr1, 0, len(arr1) - 1)
+print("merge in place: ", arr1)
 
 
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
+
+
 def timsort(arr):
 
     return arr
