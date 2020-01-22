@@ -2,15 +2,59 @@
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
-    # TO-DO
     
+    # TO-DO
+    arr_a_index=0
+    arr_b_index=0
+    for i in range(0, len(merged_arr)):
+        if arr_a_index == len(arrA):
+            merged_arr[i]=arrB[arr_b_index]
+            arr_b_index+=1 
+        elif arr_b_index==len(arrB):
+            merged_arr[i]=arrA[arr_a_index]
+            arr_a_index+=1 
+        elif arrA[arr_a_index] < arrB[arr_b_index]:
+            merged_arr[i]=arrA[arr_a_index]
+            arr_a_index+=1        
+        elif arrA[arr_a_index] > arrB[arr_b_index]:
+            merged_arr[i]=arrB[arr_b_index]
+            arr_b_index+=1    
+           
+       
     return merged_arr
 
+# arrayA = [4,2,1,5,8]
+# arrayB = [3,6,9,7,10]
+# merge(arrayA, arrayB)
 
+# print(merge(arrayA, arrayB))
 # TO-DO: implement the Merge Sort function below USING RECURSION
+
 def merge_sort( arr ):
     # TO-DO
-
+    # Divide the arr in half
+    # base case
+    if len(arr) < 2:
+        return arr
+    else:
+        A = arr[:len(arr)//2]
+        B = arr[len(arr)//2:]
+        return merge(merge_sort(A), merge_sort(B))
+        
+    
+    
+    # if len(A) == 1:
+    #     return A
+    # elif len(B) == 1:
+    #     return B
+    # else:
+    #     merge_sort(A)
+    #     merge_sort(B)
+      
+    
+    
+      
+    # Recursively divide the array
     return arr
 
 
