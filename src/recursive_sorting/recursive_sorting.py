@@ -1,6 +1,5 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
-    # print(arrA, arrB)
     elements = len(arrA) + len(arrB)
     merged_arr = [0]*elements
     i=j=k=0
@@ -21,7 +20,6 @@ def merge(arrA, arrB):
         j += 1
         k += 1
     return merged_arr
-
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
