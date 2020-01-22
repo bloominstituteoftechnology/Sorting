@@ -5,7 +5,7 @@ def merge(arrA, arrB):
     # Create new array of zeros with length of elements
     merged_arr = [0] * elements
     # Create pointer variables
-    i=j=k=0
+    i = j = k = 0
     while i < len(arrA) and j < len(arrB):
         # Check if value at index i in arrA is smaller or equal to
         # the value at the corresponding index of arrB
@@ -49,12 +49,11 @@ def merge_sort(arr):
         middle = len(arr) // 2
 
         # Create 2 new arrays to be passed recursively to the merge() function
-        left = arr[:middle]
-        right = arr[middle:]
         # Recursively call the merge_sort() function on left and right
-        left = merge_sort(left)
-        right = merge_sort(right)
-        # Then merge the two arrays
+        left = merge_sort(arr[:middle])
+        right = merge_sort(arr[middle:])
+
+        # Merge the two arrays
         arr = merge(left, right)
 
         return arr
@@ -68,7 +67,7 @@ def merge_in_place(arr, start, mid, end):
 
 
 def merge_sort_in_place(arr, l, r):
-   # TO-DO
+    # TO-DO
 
     return arr
 
