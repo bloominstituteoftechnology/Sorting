@@ -12,12 +12,12 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
 
 2. For all other indices, beginning with [1]:
 
-    a. Copy the item at that index into a temp variable
+a. Copy the item at that index into a temp variable
 
-    b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted  
-    - Shift items over to the right as you iterate
-    
-    c. When the correct index is found, copy temp into this position
+b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted  
+- Shift items over to the right as you iterate
+
+c. When the correct index is found, copy temp into this position
 
 
 ### Your Task
@@ -33,8 +33,8 @@ In **Bubble Sort**, we make a series of swaps between adjacent elements, gradual
 
 ### Algorithm
 1. Loop through your array
-    - Compare each element to its neighbor
-    - If elements in wrong position (relative to each other, swap them)
+- Compare each element to its neighbor
+- If elements in wrong position (relative to each other, swap them)
 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
 
 ### Real-World Applications
@@ -60,11 +60,11 @@ An example of this algorithm being applied to an array with 10 numerical element
 
 2. For all indices EXCEPT the last index:
 
-    a. Loop through elements on right-hand-side 
-    of current index and find the smallest element
+a. Loop through elements on right-hand-side 
+of current index and find the smallest element
 
-    b. Swap the element at current index with the
-    smallest element found in above loop
+b. Swap the element at current index with the
+smallest element found in above loop
 
 
 ### Real-World Applications
@@ -86,7 +86,7 @@ Recall that the runtime complexity of an algorithm, often expressed using *Big O
 ### There are a few "order n" sorting algorithms whose runtime will be linear, even in a worst case scenario. 
 Look into Counting Sort.
 - How is this algorithm different from other iterative sorting algorithms?
-    - What are the advantages/disadvantages to this type of sorting algorithm?
+- What are the advantages/disadvantages to this type of sorting algorithm?
 - Take a look a the pseudocode for this algorithm and try implementing it in Python.
 
 ### You Might be Surprised at What Passes for a Sorting Algorithm
