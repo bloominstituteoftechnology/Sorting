@@ -1,5 +1,5 @@
 import unittest
-from searching import *
+from src.searching.searching import *
 
 
 class SearchingTests(unittest.TestCase):
