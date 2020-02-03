@@ -19,7 +19,6 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    
     # ready_to_test = True
     # while ready_to_test:
     #     ready_to_test = False
