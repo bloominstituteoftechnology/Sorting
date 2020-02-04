@@ -15,7 +15,7 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
     a. Copy the item at that index into a temp variable
 
     b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted  
-    - Shift items over to the right as you iterate
+    - Shift items over to the right as you iterate 
     
     c. When the correct index is found, copy temp into this position
 
