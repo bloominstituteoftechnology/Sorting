@@ -1,12 +1,11 @@
-# TO-DO: Complete the selection_sort() function below 
+# TO-DO: Complete the selection_sort() function below
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
-        # (hint, can do in 3 loc) 
-             
+        # (hint, can do in 3 loc)
 
 
 
@@ -35,9 +34,25 @@ def insertion_sort(testArr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    # Step 1: loop through the array
+    # get a variable for the length of the array
+    length = len(arr)
+    for i in range(length):
+        # setting a variable so we can tell if anything has been swapped or not
+        swapped = False
+        # adding - i - 1 to the range because we don't have to compare the last item against anything
+        # why do we need the -i part? Why not just - 1 to stand for the length minus 1?
+        for j in range(0, length - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                # keeping swapped as true as long as a change was made
+                swapped = True
 
+        if swapped == False:
+            # breaking the loop if we don't make a change
+            break
+    
     return arr
-
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
@@ -45,4 +60,5 @@ def count_sort( arr, maximum=-1 ):
     return arr
 
 
-print(insertion_sort(testArr))
+# print(insertion_sort(testArr))
+print(bubble_sort(testArr))
