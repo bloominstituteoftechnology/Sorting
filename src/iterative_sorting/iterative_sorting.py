@@ -12,8 +12,8 @@ def selection_sort( arr ):
                 min_el = arr[a]
 
         # TO-DO: swap
-        # arr.remove(min_el)
-        # arr.insert(i, min_el)
+        arr.remove(min_el)
+        arr.insert(i, min_el)
     return arr
 
 
