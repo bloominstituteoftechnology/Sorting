@@ -17,6 +17,18 @@ def selection_sort( arr ):
 
     return arr
 
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+
+        # while position is at least 1 and
+        while i > 0 and arr[i - 1] > arr[i]:
+            arr[i] = arr[i -1]
+
+    print(arr)
+
+
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
@@ -28,3 +40,5 @@ def bubble_sort( arr ):
 def count_sort( arr, maximum=-1 ):
 
     return arr
+
+insertion_sort(arr1)
