@@ -2,6 +2,8 @@
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
+    merged_arr.extend(arrA)
+    merged_arr.extend(arrB)
     # TO-DO
     
     return merged_arr
@@ -10,6 +12,10 @@ def merge( arrA, arrB ):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
+    middle = (len(arr) - 1 )// 2
+    list1 = arr[:middle]
+    list2 = arr[middle:]
+
 
     return arr
 
