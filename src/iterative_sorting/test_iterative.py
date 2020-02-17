@@ -25,7 +25,7 @@ class IterativeSortingTest(unittest.TestCase):
         self.assertEqual(bubble_sort(arr3), [0,1,2,3,4,5])
         self.assertEqual(bubble_sort(arr4), sorted(arr4))
 
-    # Uncomment this test to test your count_sort implementation
+ # Uncomment this test to test your count_sort implementation
     # def test_counting_sort(self):
     #     arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
     #     arr2 = []
