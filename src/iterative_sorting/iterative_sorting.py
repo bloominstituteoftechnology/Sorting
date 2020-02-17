@@ -20,9 +20,18 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    # Get the length of the array
+    n = len(arr)
+    # traverse the array
+    for j in range(len(arr)-1,0,-1):
+        for i in range(j):
+            if arr[i] > arr[i + 1]:
+                swap = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = swap
 
     return arr
-
+print(bubble_sort([3, 6, 7, 10, 2, 4, 8]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
