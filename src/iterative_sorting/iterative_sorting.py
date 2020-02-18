@@ -40,8 +40,18 @@ def selection_sort(arr):
 #     Compare each element to its neighbor
 #     If elements in wrong position (relative to each other, swap them)
 # 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
-# TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
+    did_a_swap = True
+    while did_a_swap:
+        did_a_swap = False
+        for i in range(len(arr) - 1):
+            left_side = i
+            right_side = i + 1
+            if arr[left_side] > arr[right_side]:
+                copied = arr[left_side]
+                arr[left_side] = arr[right_side]
+                arr[right_side] = copied
+                did_a_swap = True
     return arr
 
 
