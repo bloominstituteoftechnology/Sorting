@@ -6,7 +6,16 @@ def selection_sort(arr):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
-
+        # create a loop that starts at 1 more than the current index and continues to the end of the array
+        for j in range(i+1, len(arr)):
+            # compare each of the remaining items to the current index
+            if arr[j] < arr[cur_index]:
+                # if it is less then we will assign a variable to the value of the current index
+                k = arr[cur_index]
+                # then we will set the current index to the smaller value
+                arr[cur_index] = arr[j]
+                # finally we will set the original index to the current index, "swapping" their positions
+                arr[j] = k
         # TO-DO: swap
 
     return arr
