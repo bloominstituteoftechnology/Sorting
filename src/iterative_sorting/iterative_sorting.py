@@ -1,4 +1,5 @@
 # TO-DO: Complete the selection_sort() function below
+#
 import random
 
 array1 = [3, 5, 1, 2, 4, 11, 9, 29, 23, 4]
