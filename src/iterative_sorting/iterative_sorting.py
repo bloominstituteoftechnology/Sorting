@@ -5,13 +5,11 @@ arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        for checkIndex in range(cur_index, len(arr)):
+        smallest_index = i
+        for checkIndex in range(i, len(arr)):
             if arr[checkIndex] < arr[smallest_index]:
                 smallest_index = checkIndex
-        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
-        cur_index += 1
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
 
     return arr
 
