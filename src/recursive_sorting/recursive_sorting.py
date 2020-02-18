@@ -3,7 +3,22 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-    
+    a = 0
+    b = 0
+
+    for i in range(0, elements):
+        if a >= (arrA):
+            merged_arr[i] = arrB[b]
+            b += 1
+        elif b >= len(arrB):
+            merged_arr[i] = arrA[a]
+            a +=1
+        elif arrA[a] < arrB:
+            merged_arr[i] = arrA[a]
+            a +=1
+        else:
+            merged_arr[i] = arrB[b]
+            b +=1
     return merged_arr
 
 
@@ -18,7 +33,9 @@ def merge_sort( arr ):
         merge_sort(L) #sorting first half
         merge_sort(R) #sorting second half
 
-        i = j = k = 0
+        i =0 
+        j =0 
+        k = 0
         # Copy data to temp arrays
         while i <len(L) and j < len(R):
             if L[i] < R[j]:
@@ -28,7 +45,7 @@ def merge_sort( arr ):
                 arr[k] = R[j]
                 j+=1
             k+=1
-        #check if any element was left over
+        #check if any element was left
         while i < len(L):
             arr[k] = L[i]
             i+=1
