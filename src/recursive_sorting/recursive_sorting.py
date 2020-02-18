@@ -4,6 +4,8 @@ def merge( arrA, arrB ):
     merged_arr = [0] * elements
     # TO-DO
     
+
+    
     return merged_arr
 
 
