@@ -28,24 +28,24 @@ def bubble_sort( arr ):
 
 
 # STRETCH: implement the Count Sort function below
-# def count_sort( arr, maximum=-1 ):
-#     output = [0 for i in range(maximum)]
-#     count = [0 for i in range(maximum)]
-#     arr = ["" for _ in arr]
-#     for i in arr:
-#         count[ord(i)] += 1
+def count_sort( arr ):
+    output = [0 for i in range(maximum)]
+    count = [0 for i in range(maximum)]
+    arr = ["" for _ in arr]
+    for i in arr:
+        count[ord(i)] += 1
 
-#     for i in range(maximum):
-#         count[i] += count[i-1] # For all indices EXCEPT the last index:
+    for i in range(maximum):
+        count[i] += count[i-1] # For all indices EXCEPT the last index:
 
-#     # Loop through elements on right-hand-side 
-#     # of current index and find the smallest element
-#     for i in range(len(arr)):
-#         output[count[ord(arr[i])]-1] = arr[i]
-#         count[ord(arr[i])] -= 1
+    # Loop through elements on right-hand-side 
+    # of current index and find the smallest element
+    for i in range(len(arr)):
+        output[count[ord(arr[i])]-1] = arr[i]
+        count[ord(arr[i])] -= 1
 
-#     # Swap the element at current index with the
-#     # smallest element found in above loop
-#     for i in range(len(arr)):
-#         arr[i] = output[i]
-#     return arr
+    # Swap the element at current index with the
+    # smallest element found in above loop
+    for i in range(len(arr)):
+        arr[i] = output[i]
+    return arr
