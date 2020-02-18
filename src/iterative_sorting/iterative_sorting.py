@@ -55,6 +55,22 @@ def bubble_sort(arr):
     return arr
 
 
-# STRETCH: implement the Count Sort function below
+# Algorithm
+# 1. Create a separate list from 0 to the maximum integer
+# 2. Iterate through the given input once, incrementing the
+#   repetitions of that number in a separate list
+# 3. Replace the items in the original list from the count list
 def count_sort(arr, maximum=-1):
+    for i in arr:
+        if i < 0:
+            return 'Error, negative numbers not allowed in Count Sort'
+        if maximum < i:
+            maximum = i
+    count_list = [0] * (maximum + 1)
+    for i in arr:
+        count_list[i] += 1
+    arr = []
+    for i in range(len(count_list)):
+        for j in range(count_list[i]):
+            arr.append(i)
     return arr
