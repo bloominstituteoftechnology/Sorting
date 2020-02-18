@@ -2,8 +2,35 @@
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
-    # TO-DO
-    
+    # start at the first element of each array
+    indexA = indexB = indexMerged = 0
+
+    # while there are still values in both (arrA and arrB)
+    while indexA < len(arrA) and indexB < len(arrB):
+        # if the value in arrayA is smaller or equal than arrayB:
+        if arrA[indexA] <= arrB[indexB]:
+            # save value(arrA) in the merged array
+            merged_arr[indexMerged] = arrA[indexA]
+            # incriment the the index because we already use it
+            indexA += 1
+        else:
+            # save value(arrB) in the merged array
+            merged_arr[indexMerged] = arrB[indexB]
+            # incriment the the index because we already use it
+            indexB += 1
+        # increment the index of merged because we filled that spot
+        indexMerged +=1
+    # while there elements just in one of the arrays:
+    while indexB < len(arrB):
+        # add the final elements that are inside the arrayB in the merged array
+        merged_arr[indexMerged] = arrB[indexB]
+        indexB += 1
+        indexMerged += 1
+    while indexA < len(arrA):
+         # add the final elements that are inside the arrayA in the merged array
+        merged_arr[indexMerged] = arrA[indexA]
+        indexA += 1
+        indexMerged += 1
     return merged_arr
 
 
