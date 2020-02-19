@@ -68,9 +68,9 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     if len(arr) > 1:
         half = len(arr) // 2
-        left = merge_sort(arr[0:half])
+        left = merge_sort(arr[:half])
         right = merge_sort(arr[half:])
-        arr = merge(left, right)
+        arr = merge(left, right)  # Only merge once the arrays being passed in are already sorted
 
     return arr
 

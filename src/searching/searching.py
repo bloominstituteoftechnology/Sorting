@@ -10,7 +10,9 @@ def binary_search(arr, target):
         return -1  # array empty
     low = 0
     high = len(arr) - 1
-    while True:
+    max_loops = len(arr) + 1
+    num_of_loops = 1
+    while num_of_loops < max_loops:
         midpoint = (low + high) // 2
         if arr[midpoint] == target:
             return midpoint
@@ -18,19 +20,18 @@ def binary_search(arr, target):
             low = midpoint
         else:
             high = midpoint
+        num_of_loops += 1
 
 
 def binary_search_recursive(arr, target, low, high):
     middle = (low + high) // 2
-    print(arr,target,low,high)
     if len(arr) == 0:
         return -1  # array empty
-    elif arr[middle]==target:
+    elif arr[middle] == target:
         return middle
-    elif arr[middle]<target:
-        binary_search_recursive(arr,target,middle,high)
+    elif arr[middle] < target:
+        return binary_search_recursive(arr, target, middle, high)
     else:
-        binary_search_recursive(arr,target,low,middle)
+        return binary_search_recursive(arr, target, low, middle)
 
-arr1 = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
-print(binary_search_recursive(arr1, -8, 0, len(arr1) - 1))
+
