@@ -1,5 +1,5 @@
 # TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
+def selection_sort( arr ): # O(n^2)
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
