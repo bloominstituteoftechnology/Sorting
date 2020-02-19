@@ -33,5 +33,3 @@ def binary_search_recursive(arr, target, low, high):
         return binary_search_recursive(arr, target, middle, high)
     else:
         return binary_search_recursive(arr, target, low, middle)
-
-

@@ -44,6 +44,11 @@ def quicksort_students(arr):
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
+    # Given two arrays, combine into a sorted array
+    # Compare the first element of each, add the smallest to the merged array
+    # Iterate the pointer for the smaller value
+    # If one pointer reaches the end of its array, push all remaining values in the other array to the end of merged
+    # 4 possibilities, done with arrA, done with arrB, or not done and either is smaller
     a = 0
     b = 0
     # Since arrA/B are already sorted, prepare first element of each when merging
@@ -64,8 +69,13 @@ def merge(arrA, arrB):
     return merged_arr
 
 
+# This function also handles the divide part
 # Below: A recursive function that handles dividing the array (or subarray) in half
 def merge_sort(arr):
+    # Base case: stop dividing when the array cannot be divided any further
+    # Otherwise, find the middle of the array with //2
+    # Divide to left and right, then do merge sort on left and right (because this further divides)
+    # Finally, put the arrays back together by merging left and right
     if len(arr) > 1:
         half = len(arr) // 2
         left = merge_sort(arr[:half])
