@@ -32,36 +32,30 @@ def merge( arrA, arrB ):
 # merge([1, 3, 5, 7], [2, 4, 6, 8])
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
-# import math
-# def merge_sort( arr ):
-#     # TO-DO
-#     print(arr)
-#     if len(arr) < 2:
-#         return arr
+import math
+def merge_sort( arr ):
+    # TO-DO
+    print(arr)
+    if len(arr) < 2:
+        return arr
     
-#     half_point = math.ceil(len(arr) / 2)
-#     # size = len(arr)
+    half_point = math.ceil(len(arr) / 2)
+    h1 = [0] * half_point
+    h2 = []
 
-#     h1 = [0] * half_point
-#     h2 = []
-
-#     for i in range(0, len(arr)):
-#         if (i < half_point):
-#             h1[i] = arr[i]
-#         else:
-#             h2.append(arr[i])
+    for i in range(0, len(arr)):
+        if (i < half_point):
+            h1[i] = arr[i]
+        else:
+            h2.append(arr[i])
     
-#     # for k in range(half_point, len(arr)):
-#     #     h2[k] = arr[k]
-    
-#     h1 = merge_sort(h1)
-#     h2 = merge_sort(h2)
+    h1 = merge_sort(h1)
+    h2 = merge_sort(h2)
+    arr = merge(h1, h2)
 
-#     arr = merge(h1, h2)
+    return arr
 
-#     return arr
-
-# merge_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7])
+merge_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7])
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
