@@ -40,11 +40,12 @@ def partition(A, low, hi):
 	return (border)
 	
 
-A = [5,9,1,2,4,8,6,3,7]
-print(A)
-quick_sort(A)
-print(A)
+# A = [5,9,1,2,4,8,6,3,7]
+# print(A)
+# quick_sort(A)
+# print(A)
 
+#----------------------------------------------
 
 # arr = [3,0,1,8]
 
@@ -98,51 +99,54 @@ print(A)
 #     # TO-DO
     
 #     return merged_arr
-def get_half(arr): 
-    if len(arr) >1: 
-        mid = len(arr)//2 #Finding the mid of the array 
-        L = arr[:mid] # Dividing the array elements  
-        R = arr[mid:] # into 2 halves 
+
+#----------------------------------------------
+
+# def get_half(arr): 
+#     if len(arr) >1: 
+#         mid = len(arr)//2 #Finding the mid of the array 
+#         L = arr[:mid] # Dividing the array elements  
+#         R = arr[mid:] # into 2 halves 
   
-        get_half(L) # Sorting the first half 
-        get_half(R) # Sorting the second half 
+#         get_half(L) # Sorting the first half 
+#         get_half(R) # Sorting the second half 
   
-        i = j = k = 0
+#         i = j = k = 0
           
-        # Copy data to temp arrays L[] and R[] 
-        while i < len(L) and j < len(R): # while the length of each half is not 0
-            if L[i] < R[j]: # if the first element in the left half is less than the right
-                arr[k] = L[i] # make the first element of the array be this smaller first element
-                i+=1
-            else: 
-                arr[k] = R[j] # if the first element is bigger than the first to the right
-                # set the right first element as the first element of the array
-                j+=1
-            k+=1# do this replacement for sorting each item of the left and right halves 
-            # to form a new array, one array index at a time
+#         # Copy data to temp arrays L[] and R[] 
+#         while i < len(L) and j < len(R): # while the length of each half is not 0
+#             if L[i] < R[j]: # if the first element in the left half is less than the right
+#                 arr[k] = L[i] # make the first element of the array be this smaller first element
+#                 i+=1
+#             else: 
+#                 arr[k] = R[j] # if the first element is bigger than the first to the right
+#                 # set the right first element as the first element of the array
+#                 j+=1
+#             k+=1# do this replacement for sorting each item of the left and right halves 
+#             # to form a new array, one array index at a time
           
-        # Checking if any element was left 
-        while i < len(L): 
-            arr[k] = L[i] 
-            i+=1
-            k+=1
+#         # Checking if any element was left 
+#         while i < len(L): 
+#             arr[k] = L[i] 
+#             i+=1
+#             k+=1
           
-        while j < len(R): 
-            arr[k] = R[j] 
-            j+=1
-            k+=1
+#         while j < len(R): 
+#             arr[k] = R[j] 
+#             j+=1
+#             k+=1
 
-def get_list(arr):
-    for i in range(len(arr)):         
-        print(arr[i],end=" ") 
-    print() 
+# def get_list(arr):
+#     for i in range(len(arr)):         
+#         print(arr[i],end=" ") 
+#     print() 
 
-arr = [5,9,1,2,4,8,6,3,7] 
-get_list(arr)
-get_half(arr)
-get_list(arr)
+# arr = [5,9,1,2,4,8,6,3,7] 
+# get_list(arr)
+# get_half(arr)
+# get_list(arr)
 
-#     return arr
+#----------------------------------------------
 
 # l = []
 # # # TO-DO: implement the Merge Sort function below USING RECURSION    
@@ -233,3 +237,81 @@ get_list(arr)
 # def timsort( arr ):
 
 #     return arr
+
+
+
+#merge_sort base case, make sure you don't already have an assorted array, so make sure each element is longer than 1
+# def merge( arrA, arrB ):
+#     elements = len( arrA ) + len( arrB )
+#     merged_arr = [0] * elements
+#     a = 0#temp standin for i, we use as temporary indices
+#     b = 0
+#     # arrrA and arrB are sorted compare 1st element of each 
+#     for i in range(0, elements):
+#         if a >= len(arrA): 
+#             merged_arr[i] = arrB[b]
+#             b += 1
+#         elif b >= len(arrB):
+#             merged_arr[i] = arrA[a]
+#             a += 1
+#         elif arrA[a] < arrB[b]: # if item of the left is smaller to the element to the right, add that left element to the array
+#             merged_arr[i] = arrA[a]
+#             a += 1 # increment the index that we are working on by 1
+#         else:
+#             merged_arr[i] = arrB[b]
+#             b += 1
+#     return merged_arr
+
+def merge(arrA, arrB):
+    #compare the first element of each
+    elements = len(arrA) + len(arrB)
+    merged_arr = [0] * elements
+    index_arr_a = 0
+    index_arr_b = 0
+    for i in range(len(merged_arr)):
+        #if we are done with arr a default to b
+        if index_arr_a >= len(arrA):
+            merged_arr[i] = arrB[index_arr_b]
+            index_arr_b += 1
+        # if we are done with adding all of array b, we default to array a
+        elif index_arr_b >= len(arrB):
+            merged_arr[i] = arrA[index_arr_a]
+            index_arr_a += 1
+        # add the smallest to the merged array
+        elif arrA[index_arr_a] <= arrB[index_arr_b]:
+            merged_arr[i] = arrA[index_arr_a]
+            index_arr_a += 1 # iterate the pointer for the smaller value
+        else:
+            merged_arr[i] = arrB[index_arr_b]
+            index_arr_b += 1
+    return merged_arr
+
+def merge_sort(arr):
+    #if the length of the array is larger than 1
+    if len(arr) <= 1:
+        return arr
+    else:
+        mid = len(arr)//2 # find middle
+        # further divides
+        left = merge_sort(arr[:mid])
+        right = merge_sort(arr[mid:])
+        arr = merge(left, right)# put it back together merging left to right
+        return arr
+
+# use recursion by solving the smallest relevant problem. 
+# python good for collection of stuff
+
+arr = [5,9,1,2,4,8,6,3,7] 
+arr = merge_sort(arr)
+print(arr)
+
+
+# def power(value, exponent):
+# X ^ -n == 1 / x ^ n
+# if exponent < 0
+    # exponent *= -1
+    # value = 1/value
+    # if exponent == 0:
+        # return 1
+#     return value * power(value, exponent-1)
+# print(power(2, 3))    
