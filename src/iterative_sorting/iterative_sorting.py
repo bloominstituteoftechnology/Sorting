@@ -16,7 +16,8 @@ def selection_sort( arr ):
         # TO-DO: swap
     return arr
 
-print(selection_sort([3, 6, 7, 10, 2, 4, 8]))
+print(selection_sort([2, 3, 7, 10, 6, 4, 8]))
+select = [2]
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
