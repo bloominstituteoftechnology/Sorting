@@ -8,14 +8,14 @@ array1 = [3, 5, 1, 2, 4, 11, 9, 29, 23, 4]
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(len(arr)):
-        cur_index = i
+        min_index = i
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         for j in range(i+1, len(arr)):
-            if arr[cur_index] > arr[j]:
-                cur_index = j
+            if arr[min_index] > arr[j]:
+                min_index = j
 
-        arr[i], arr[cur_index] = arr[cur_index], arr[i]
+        arr[i], arr[min_index] = arr[min_index], arr[i]
 
         # TO-DO: swap
 
