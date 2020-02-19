@@ -1,5 +1,3 @@
-
-
 # Quick Sort Algorithm
 # 1. Select a pivot. Often times this is the first or last element in a set. It can also be the middle.
 # 2. Move all elements smaller than the pivot to the left.
@@ -36,18 +34,43 @@ def quicksort_students(arr):
         return []
 
 
-# TO-DO: complete the helpe function below to merge 2 sorted arrays
+# Algorithm
+# 1. While your data set contains more than one item, split it in half
+# 2. Once you have gotten down to a single element, you have also *sorted* that element
+#    (a single element cannot be "out of order")
+# 3. Start merging your single lists of one element together into larger, sorted sets
+# 4. Repeat step 3 until the entire data set has been reassembled
+# Below: A helper function that handles merging sorted pieces back together
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
-    # TO-DO
+    a = 0
+    b = 0
+    # Since arrA/B are already sorted, prepare first element of each when merging
+    for i in range(0, elements):
+        if a >= len(arrA):  # All the elements in arrA have been merged
+            merged_arr[i] = arrB[b]
+            b += 1
+        elif b >= len(arrB):  # All the elements in arrB have been merged
+            merged_arr[i] = arrA[a]
+            a += 1
+        elif arrA[a] < arrB[b]:  # The next element in arrA if smaller add to the final array
+            merged_arr[i] = arrA[a]
+            a += 1
+        else:  # The next element in arrB if smaller add to the final array
+            merged_arr[i] = arrB[b]
+            b += 1
 
     return merged_arr
 
 
-# TO-DO: implement the Merge Sort function below USING RECURSION
+# Below: A recursive function that handles dividing the array (or subarray) in half
 def merge_sort(arr):
-    # TO-DO
+    if len(arr) > 1:
+        half = len(arr) // 2
+        left = merge_sort(arr[0:half])
+        right = merge_sort(arr[half:])
+        arr = merge(left, right)
 
     return arr
 
