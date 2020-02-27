@@ -21,9 +21,18 @@ def selection_sort( arr ):
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
+# TO-DO: 
+# Bubble Sort:
+# Compare adjacent elements and swap them un
 def bubble_sort( arr ):
-
+    for i in range(0, len(arr)):
+        index = 0
+        while index < (len(arr) - 1):
+            if arr[index + 1] < arr[index]:
+                temp = arr[index + 1]
+                arr[index + 1] = arr[index]
+                arr[index] = temp
+            index += 1
     return arr
 
 
@@ -32,7 +41,7 @@ def count_sort( arr, maximum=-1 ):
 
     return arr
 
-# EXTRA STRETCH: Insertion sort:
+# EXTRA STRETCH:
 # Insertion Sort:
 # Given a list take the current element and it at the appropriate position of the list,
 # adjust the list every time you insert.
