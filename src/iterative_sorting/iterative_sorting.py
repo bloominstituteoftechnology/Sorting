@@ -33,5 +33,17 @@ def count_sort( arr, maximum=-1 ):
     return arr
 
 # EXTRA STRETCH: Insertion sort:
+# Insertion Sort:
+# Given a list take the current element and it at the appropriate position of the list,
+# adjust the list every time you insert.
+# It's similar to arranging the cards in a Card game
 def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        pointer = i
+        while pointer >= 1:
+            if arr[pointer] < arr[pointer - 1]:
+                temp = arr[pointer]
+                arr[pointer] = arr[pointer - 1]
+                arr[pointer - 1] = temp
+            pointer -= 1
     return arr
