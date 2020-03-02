@@ -1,4 +1,11 @@
+
+arr = [1, 3, 4, 68, 3, 244, 40, 112, 342, 543,
+       45, 21, 2, 4, 5, 7, 8, 4, 3, 45, 78, 9]
+
+
 # TO-DO: Complete the selection_sort() function below
+
+
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
@@ -20,7 +27,11 @@ def selection_sort(arr):
     return arr
 
 
+print(selection_sort(arr))
+
 # TO-DO:  implement the Bubble Sort function below
+
+
 def bubble_sort(arr):
     swap = True
     while swap:
@@ -44,7 +55,11 @@ def bubble_sort(arr):
     return arr
 
 
+print(bubble_sort(arr))
+
 # STRETCH: implement the Count Sort function below
+
+
 def count_sort(arr, maximum=-1):
     # count = arr_of_numb[]
     # count = 0
