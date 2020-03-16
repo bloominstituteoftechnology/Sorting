@@ -53,7 +53,29 @@ repeat step 1.
 
 
 def bubble_sort(arr):
+    #sets up a condition where we can see if there have been changes made
+    arr_change = True
+    while arr_change :
+        # turns off condition while we do our check
+        # only turns back on if change made
+        # if it stays False, it just returns what was passed in because its already sorted
+        arr_change = False
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i+1] :
+                #give i a temp home while we do next step so we dont lose it
+                place_holder = arr[i]
+                # this is where we set i and i+1 equal to eachother,
+                # then we set i+1 equal to i essentially swapping positions
+                arr[i]=arr[i+1]
+                arr[i+1] = place_holder
+                # if there was actually a change, we will set condition back to true
+                # if it stays False, it just returns what was passed in because its already sorted
+                arr_change = True
     return arr
+
+
+
+
 
 
 # STRETCH: implement the Count Sort function below
