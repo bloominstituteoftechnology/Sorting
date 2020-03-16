@@ -35,27 +35,15 @@ def bubble_sort( arr ):
 		working = False
 		
 		for j in range(len(arr)-1):
-			# print(j)
 			cur = arr[j]
 			nex = arr[j+1]
-			# print(39,cur,nex)
-			# print(39,i,j)
 
 			if cur > nex:
 				move = arr.pop(j+1)
-				# print(44,cur, move)
 				arr.insert(j, move)
-				# print(46,arr)
 				working = True
-			else:
-				# print(50,working)
-				# no 'working' increment
-				pass
-
-			# print("inside",cur, nxt)
 
 		if not working:
-			# print("\nDone?")
 			break
 
 		if breakcount > 10:
