@@ -37,5 +37,21 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
+    #start counter
+    counter = [0]*(maximum + 1)
+    # then enumerate
+    for i in arr:
+        counter[i] += 1
+        del arr
+        arr = []
+    for number, amount in enumerate(counter):
+        arr += [number] * amount
     return arr
+
+# debug the count sort in print statement:
+my_list = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
+my_new_list = count_sort(my_list, 9)
+print (my_list)
+
+print (my_new_list)
