@@ -30,9 +30,13 @@ def selection_sort(arr):
         for j in range(cur_index + 1, len(arr)):
             if arr[j] < arr[smallest_index]:
                 place_holder = arr[smallest_index]
-                # arr[i], arr[place_holder] = arr[place_holder], arr[i]
-                ##close! doesnt handle last index or move 3rd to last?
+
+
 # TO-DO: swap
+                # arr[j], arr[place_holder] = arr[place_holder], arr[j]
+                '''close! doesnt handle end of arr right?'''
+
+                '''this works'''
                 arr[smallest_index] = arr[j]
                 arr[j] = place_holder
 
