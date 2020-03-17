@@ -9,8 +9,7 @@ def merge(a, b):
 			merged.append(a.pop(0))
 		else:
 			merged.append(b.pop(0))
-	while a or b:
-		merged.append(a.pop(0) if a else b.pop(0))
+	merged.extend(a if a else b)
 
 	return merged
 
