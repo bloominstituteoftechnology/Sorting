@@ -46,7 +46,25 @@ def bubble_sort(arr):
     return arr
 # STRETCH: implement the Count Sort function below
 
+# THIS DOESN'T WORK
+
 
 def count_sort(arr, maximum=-1):
+    # count number of times each value appears
+    counts = [0] * (maximum + 1)
+    for num in arr:
+        counts[num] += 1
+
+    # overwrite coutns to hold next index an item to store where the next number goes
+    previous = 0
+    for i, count in enumerate(counts):
+        counts[i] = previous
+        previous += count
+
+    sorted_list = [None] * len(arr)
+
+    for item in arr:
+        sorted_list[counts[item]] = item
+        counts[item] += 1
 
     return arr
