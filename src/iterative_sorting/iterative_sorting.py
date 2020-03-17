@@ -1,4 +1,4 @@
-arr = [3,22,17,1,20,8,31,137, 12, 4, 19, 20, 2, 9]
+arr = [3,22,17,1,40,8,31,137, 12, 4, 19, 20, 2, 9]
 # arr = [7, 12, 4, 19, 20, 2, 9]
 # arr = [3,22,17,1,20,8,31,13]
 print(arr,"Begin selection \n")
@@ -27,21 +27,16 @@ def selection_sort( arr ):
 		if breakcount > 20:
 			print(20, 20)
 			break
-
+ 
 		print(29,arr)
 
 	return arr
 
 print(35,selection_sort(arr),"selection\n\n") 
 
-
-
-
-
-
 # TO-DO:  implement the Bubble Sort function below
 
-arr = [3,22,17,1,20,8,31,137, 12, 4, 19, 20, 2, 9]
+arr = [3,22,17,1,20,8,31,137, 12, 4, 19, 40, 2, 9]
 # arr = [7, 12, 4, 19, 20, 2, 9]
 # arr = [3,22,17,1,20,8,31,13]
 
