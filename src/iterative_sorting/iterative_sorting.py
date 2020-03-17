@@ -17,7 +17,7 @@ def selection_sort(arr):
         arr[i], arr[smallest_index] = arr[smallest_index], arr[i]     
     return arr
 
-# another way of doing it below
+# # another way of doing it below
 # def selection_sort(arr):
 #     # loop through n-1 elements
 #     for i in range(0, len(arr) - 1):
@@ -32,11 +32,22 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    while True:
+        no_swap_pass = True
+        for i in range(len(arr) - 1):
+            neighbor_index = (i+1)
+            if arr[i] > arr[neighbor_index]:
+                arr[i], arr[neighbor_index] = arr[neighbor_index], arr[i]
+                no_swap_pass = False
+        if no_swap_pass:
+            break
     return arr
 
+
+        # if arr[cur_index] > arr[neighbor_index]:
+        #     arr[cur_index], arr[neighbor_index] = arr[neighbor_index], arr[cur_index] 
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
+# def count_sort( arr, maximum=-1 ):
 
-    return arr
+#     return arr
