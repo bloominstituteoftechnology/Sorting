@@ -1,3 +1,4 @@
+import time
 # TO-DO: Complete the selection_sort() function below
 arr = [6, 3, 9, 1, 3, 7, 2]
 print(f'before iterative sort', arr)
@@ -18,7 +19,11 @@ def selection_sort(arr):
 
         # TO-DO: swap
     return arr
+start = time.time()
 print(f'after iterative sort', selection_sort(arr))
+end = time.time()
+print(f'Runtime: {end - start}')
+
 # TO-DO:  implement the Bubble Sort function below
 
 
@@ -29,10 +34,12 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
+start = time.time()
+print(f'bubble sort', bubble_sort(arr))
+end = time.time()
+print(f'Runtime: {end - start}')
 
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
 
     return arr
-
-print(f'bubble sort', bubble_sort(arr))
