@@ -1,3 +1,14 @@
+"""
+                                                    Merge Sort
+How It Works
+This is a “divide and conquer” algorithm.
+First, the original collection must be divided in half
+until we have broken the entire thing down to single collections
+each with a length of 1.
+
+"""
+
+
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
     merged_arr = []
@@ -41,7 +52,8 @@ def merge_sort(arr):
     print("left set  = ~~~>", left_set)
     print("right set = ~~~>", right_set)
 
-    # calling merge_sort recursively// this does not work, it needed to be run in initial split above
+    # calling merge_sort recursively// this does not work, it needed to be run in
+    # split left and right set above, it wasn't dividing all the way down
     # merge_sort(left_set)
     # merge_sort(right_set)
 

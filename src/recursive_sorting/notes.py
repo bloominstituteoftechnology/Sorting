@@ -52,8 +52,8 @@ def recursive_fib(n):
     return n_minus_1 + n_minus_2
 ​
 print(recursive_fib(3))
-​
-​/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                             quick sort
 
@@ -112,7 +112,32 @@ else:
 pick pivot might as well pick first because its unsorted, none are better
 put anything smaller into left array
 put anything bigger into right array
-return quicksort(left) + quicksort(right)
+return quicksort(left) + pivot + quicksort(right)
+
+quicksort implementation
+
+def quicksort(data):
+    if len(data) <= 2
+        return data
+
+
+    else:
+        pivot = [0]
+        left = []
+        right = []
+
+        for value in data[1:] :
+            if value <= pivot :
+                left.append(value)
+            else:
+                right.append(value)
+
+    return quicksort(left) + [pivot] + quicksort(right)
+    ####using recursion on our splits####
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 Merge                                               Merge Sort
 How It Works
@@ -120,4 +145,6 @@ This is a “divide and conquer” algorithm.
 First, the original collection must be divided in half
 until we have broken the entire thing down to single collections
 each with a length of 1.
+
+See other file for implementation
 '''
