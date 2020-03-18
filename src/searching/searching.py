@@ -24,7 +24,7 @@ def binary_search(arr, target):
         else:
             return mid
   return None
-  return -1 # not found 
+  return -1 # not found (an intended error) 
 
 
 # STRETCH: write a recursive implementation of Binary Search 

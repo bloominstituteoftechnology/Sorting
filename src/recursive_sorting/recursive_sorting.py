@@ -74,5 +74,7 @@ def merge_sort_in_place(arr, l, r):
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 # basically tim sort is just a sorter array thats morfed later 
 def timsort( arr ):
+    arr.sort()
 
     return arr
+print(timsort(x))
