@@ -8,5 +8,4 @@ def arr(elements ):
         
             print(f"\n{i}")
     
-
 arr("string")
