@@ -25,9 +25,28 @@ def selection_sort(l):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
+def bubble_sort(l):
+    swap_num = 1
+    while swap_num > 0:
 
-    return arr
+        # reset swap num
+        swap_num = 0
+
+        for i in range(len(l)-1):
+
+            # find smaller neighbors
+            if l[i] > l[i+1]:
+
+                # swap
+                smaller_num = l[i+1]
+                l[i+1] = l[i]
+                l[i] = smaller_num
+
+                # update count
+                swap_num +=1
+
+
+    return l
 
 
 # STRETCH: implement the Count Sort function below
@@ -39,3 +58,5 @@ def count_sort( arr, maximum=-1 ):
 l = [3,4,6,1,2,9,4,6,7,0,5]
 print('selection_sort')
 print(selection_sort(l))
+print('bubble_sort')
+print(bubble_sort(l))
