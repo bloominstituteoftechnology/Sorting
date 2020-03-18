@@ -33,7 +33,7 @@ def selection_sort(arr):
                 # replace current_index's value with
                 # the stored array_index_1 in swap_memory
                 arr[current_index] = swap_memory_value
-
+                print(arr)
     return arr
 
 
@@ -42,6 +42,7 @@ def selection_sort(arr):
 # -2 for each comparison, put the smallest first
 # -3 keep track of changes
 # -4 repeat until there are no changes
+# do max number of passes
 
 # arr = [6,3,6,3,7,4,37,9,7]
 
@@ -81,7 +82,6 @@ def bubble_sort(arr):
                 # changed_by_sort_counter = True
 
             list_index_counter += 1
-
     return arr
 
 
