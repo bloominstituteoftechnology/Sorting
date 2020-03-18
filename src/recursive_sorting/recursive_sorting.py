@@ -1,63 +1,60 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
-
-arrA = [1, 2, 3, 4, 5]
-arrB = [6, 7, 8, 9, 10]
-
-print('\n~~~ merge function starts ~~~~')
 def merge(arrA, arrB):
-    # elements = len(arrA) + len(arrB)
-    # merged_arr = [0] * elements
-    merged_arr = arrA + arrB
-    # TO-DO
+    merged_arr = []
+    first_i = 0
+    second_i = 0
 
-    print("arrA ~~~>", arrA)
-    print("arrB ~~~>", arrB)
-    print("merged_arr ~~~>", merged_arr, '\n~~~ merge function ends ~~~\n')
+    while first_i < len(arrA) and second_i < len(arrB):
+
+        if arrA[first_i] < arrB[second_i]:
+            merged_arr.append(arrA[first_i])
+            first_i += 1
+        else:
+            merged_arr.append(arrB[second_i])
+            second_i += 1
+
+    merged_arr.extend(arrA[first_i:])
+    merged_arr.extend(arrB[second_i:])
 
     return merged_arr
 
-merge(arrA, arrB)
-
-
-
-
-'''
-plan
-base case:  if array length 0 or 1
- return array
-else:
-pick pivot might as well pick first because its unsorted, none are better
-put anything smaller into left array
-put anything bigger into right array
-return quicksort(left) + quicksort(right)
-'''
-
-
 # TO-DO: implement the Merge Sort function below USING RECURSION
-arr = [5,4,6,7,9,1,2,3]
+################################################################
+arr = [5, 4, 8, 7, 9, 2, 5, 3]
+
+
 def merge_sort(arr):
-    set_a= [0, len(arr) //2 ]
-    set_b= [len(arr ) // 2 + 1, arr[-1]]
-    if len(arr) == 1:
+    # Base Case
+    if len(arr) <= 1:
         return arr
+    # define where to split
+    split_point = len(arr) // 2
 
-    for i in arr:
-        print("arr in range_a = ~~~>",arr[range_a])
-    '\n'
+    # set up splits
+    #first try DOES NOT WORK
+    # left_set = arr[:split_point]
+    # right_set = arr[split_point:]
+    left_set = merge_sort( arr[ :split_point] )
+    right_set = merge_sort( arr[ split_point: ] )
 
-    print("range_a = ~~~>", set_a)
-    print("range_b = ~~~>", set_b)
-    return arr
+    # sanity check
+    print("left set  = ~~~>", left_set)
+    print("right set = ~~~>", right_set)
+
+    # calling merge_sort recursively// this does not work, it needed to be run in initial split above
+    # merge_sort(left_set)
+    # merge_sort(right_set)
+
+    # Use the Merge Helper function
+    print('merged list', merge(left_set, right_set))
+    return merge(left_set, right_set)
+
 
 merge_sort(arr)
-print("baseCase or modified arr ~~~>",arr, '\n')
 
-
-
-
-
-
-
+print('\n'+"Sorted arr ~~~>",merge_sort(arr),'\n')
+print("Original array ~~~>", arr)
+print('\n~~~ merge_sort function ends ~~~~')
 
 
 # # STRETCH: implement an in-place merge sort algorithm
