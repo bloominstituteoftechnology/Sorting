@@ -6,7 +6,17 @@ def selection_sort( arr ):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
-             
+
+        middle_index = len(arr) // 2
+
+        if arr[i] > arr[middle_index]:
+            
+
+        # iterate through a loop to compare
+
+        # check if the element is smaller   
+        # 
+        # if smaller, swap the elements  
 
 
 
