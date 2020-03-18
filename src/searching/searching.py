@@ -42,11 +42,11 @@ def binary_search_recursive(arr, target, low, high):
   # if our middle element is greater than our search value
   # look at the lower subsection
   elif arr[int(mid)] > target: 
-    high = mid -1
+    high = mid - 1
   # if our middle element has not been found and not greater than our search value
   # look at the upper or subsection with bigger values
   else:
-    low = mid +1 
+    low = mid + 1 
 
   # TO-DO: add missing if/else statements, recursive calls
   return binary_search_recursive(arr, target, low, high)
