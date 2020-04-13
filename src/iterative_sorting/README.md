@@ -23,7 +23,7 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
 
 ### Your Task
 
--   [ ] Implement the `insertion_sort()` function in the Guided Project with your TA
+-   [x] Implement the `insertion_sort()` function in the Guided Project with your TA
 
 ### Real-World Applications
 
@@ -48,7 +48,7 @@ However, it should be noted that if you perform **Bubble Sort** on an array that
 
 ### Your Task
 
--   [ ] Complete `bubble_sort()` in `iterative_sorting.py`.
+-   [x] Complete `bubble_sort()` in `iterative_sorting.py`.
 
 ## Selection Sort
 
@@ -80,7 +80,7 @@ Recall that the runtime complexity of an algorithm, often expressed using *Big O
 
 ### Your Task
 
--   [ ] Complete `selection_sort()` in `iterative_sorting.py`.
+-   [x] Complete `selection_sort()` in `iterative_sorting.py`.
 
 ## Stretch Goals
 
