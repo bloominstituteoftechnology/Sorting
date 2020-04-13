@@ -37,7 +37,7 @@ Let's think about the group photo example again. Everyone's lined up and the pho
 
 ## Your Task
 
--   Implement the `quick_sort()` function in the Guided Project with your TA
+-   [ ] Implement the `quick_sort()` function in the Guided Project with your TA.
 
 ### Real-World Applications
 
@@ -68,23 +68,19 @@ Have you ever wondered how some of the languages you use actually implement thei
 
 ### Your Task
 
--   Implement `merge_sort()` in `recursive_sorting.py`. It's recommended that you use...
-    -   A recursive function that handles dividing the array (or subarray) in half
-    -   A helper function that handles merging sorted pieces back together
--   ***STRETCH*** - Try writing an *in-place* ***Merge Sort*** algorithm.
-
-## TO-DO in recursive_sorting.py
-
--   Implement the `merge_sort()`
+-   [ ] Implement `merge_sort()` in `recursive_sorting.py`. It's recommended that you use...
+    -   [ ] A recursive function that handles dividing the array (or subarray) in half
+    -   [ ] A helper function that handles merging sorted pieces back together
+-   [ ] ***STRETCH*** - Try writing an *in-place* ***Merge Sort*** algorithm.
 
 ## Stretch Goals
 
 ### Make a better Merge Sort
 
--   While a little more challenging, it is possible to implement ***Merge Sort*** **in-place** (without using extra memory). Try writing a second `merge_sort()` function that does this.
+-   [ ] While a little more challenging, it is possible to implement ***Merge Sort*** **in-place** (without using extra memory). Try writing a second `merge_sort()` function that does this.
 
 ### Timsort is a combination of the Merge Sort and Insertion Sort algorithms.
 
--   What programming languages use **Timsort** to implement their built-in `sort()` functions?
--   If an interviewer asked you to describe the **Tim Sort** algorithm in 3-4 sentences, what would you say?
--   Can you implement **Tim Sort** in Python?
+-   [ ] What programming languages use **Timsort** to implement their built-in `sort()` functions?
+-   [ ] If an interviewer asked you to describe the **Tim Sort** algorithm in 3-4 sentences, what would you say?
+-   [ ] Can you implement **Tim Sort** in Python?

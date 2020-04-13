@@ -23,7 +23,7 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
 
 ### Your Task
 
--   Implement the `insertion_sort()` function in the Guided Project with your TA
+-   [ ] Implement the `insertion_sort()` function in the Guided Project with your TA
 
 ### Real-World Applications
 
@@ -48,7 +48,7 @@ However, it should be noted that if you perform **Bubble Sort** on an array that
 
 ### Your Task
 
--   Complete `bubble_sort()` in `iterative_sorting.py`.
+-   [ ] Complete `bubble_sort()` in `iterative_sorting.py`.
 
 ## Selection Sort
 
@@ -80,17 +80,13 @@ Recall that the runtime complexity of an algorithm, often expressed using *Big O
 
 ### Your Task
 
--   Complete the missing parts of `selection_sort()` in `iterative_sorting.py`.
-
-## TO-DO in iterative_sorting.py
-
--   Complete `selection_sort()` and `bubble_sort()`
+-   [ ] Complete `selection_sort()` in `iterative_sorting.py`.
 
 ## Stretch Goals
 
 ### Try to write a search function
 
--   Complete the functions in `searching.py`
+-   [ ] Complete the functions in `searching.py`
 
 ### There are a few "order n" sorting algorithms whose runtime will be linear, even in a worst case scenario.
 

@@ -30,7 +30,7 @@ A visualization comparing these two algorithms is shown below.
 
 ### Your Task
 
--   (STRETCH) Complete some or all of the three functions in `searching.py`
+-   [ ] (STRETCH) Complete some or all of the three functions in `searching.py`
 
 ### Runtimes
 
