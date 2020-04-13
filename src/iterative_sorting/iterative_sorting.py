@@ -54,9 +54,8 @@ def count_sort( arr, maximum=-1 ):
         return arr
     
     maximum = max(arr)
-    minimum = min(arr)
     
-    if minimum < 0:
+    if min(arr) < 0:
         return "Error, negative numbers not allowed in Count Sort"
     
     count = [0 * i for i in range(maximum + 1)]
