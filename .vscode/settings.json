@@ -1,0 +1,17 @@
+{
+  "python.pythonPath": "C:\\Users\\jason\\.virtualenvs\\sorting-pk3X5ZgS\\Scripts\\python.exe",
+
+  "[python]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+  },
+
+  "python.formatting.provider": "yapf",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+}
