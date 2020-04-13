@@ -5,6 +5,10 @@
 from ..compare import compare_ascending
 
 
+def insertion_sort(array, compare=compare_ascending):
+    pass
+
+
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(array, compare=compare_ascending):
     # loop through n-1 elements
