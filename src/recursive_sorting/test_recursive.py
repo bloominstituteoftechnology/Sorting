@@ -1,5 +1,6 @@
 import unittest
 import random
+import copy
 from recursive_sorting import (
     merge_sort,
     merge_sort_in_place,
@@ -21,7 +22,7 @@ class RecursiveSortingTests(unittest.TestCase):
         for test_array in self.test_arrays:
 
             arrayA = test_array()
-            arrayB = test_array()
+            arrayB = copy.copy(arrayA)
             self.assertEqual(merge_sort(arrayA), sorted(arrayB))
 
     # Uncomment this test to test your in-place merge sort
@@ -30,7 +31,7 @@ class RecursiveSortingTests(unittest.TestCase):
     #     for test_array in self.test_arrays:
     #
     #         arrayA = test_array()
-    #         arrayB = test_array()
+    #         arrayB = copy.copy(arrayA)
     #         self.assertEqual(
     #             merge_sort_in_place(arrayA, 0, len(arrayA) - 1),
     #             sorted(arrayB),

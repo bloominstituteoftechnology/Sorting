@@ -1,5 +1,6 @@
 import unittest
 import random
+import copy
 from iterative_sorting import (
     insertion_sort,
     selection_sort,
@@ -23,7 +24,7 @@ class IterativeSortingTest(unittest.TestCase):
         for test_array in self.test_arrays:
 
             arrayA = test_array()
-            arrayB = test_array()
+            arrayB = copy.copy(arrayA)
             self.assertEqual(insertion_sort(arrayA), sorted(arrayB))
 
     def test_selection_sort(self):
@@ -31,7 +32,7 @@ class IterativeSortingTest(unittest.TestCase):
         for test_array in self.test_arrays:
 
             arrayA = test_array()
-            arrayB = test_array()
+            arrayB = copy.copy(arrayA)
             self.assertEqual(selection_sort(arrayA), sorted(arrayB))
 
     def test_bubble_sort(self):
@@ -39,7 +40,7 @@ class IterativeSortingTest(unittest.TestCase):
         for test_array in self.test_arrays:
 
             arrayA = test_array()
-            arrayB = test_array()
+            arrayB = copy.copy(arrayA)
             self.assertEqual(bubble_sort(arrayA), sorted(arrayB))
 
     # Uncomment this test to test your count_sort implementation
@@ -48,7 +49,7 @@ class IterativeSortingTest(unittest.TestCase):
     #     for test_array in self.test_arrays:
     #
     #         arrayA = test_array()
-    #         arrayB = test_array()
+    #         arrayB = copy.copy(arrayA)
     #
     #         if any(item < 0 for item in arrayA):
     #             expected_output = "Error, negative numbers not allowed in Count Sort"
