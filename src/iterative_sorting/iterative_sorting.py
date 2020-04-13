@@ -9,7 +9,22 @@ from compare import compare_ascending
 
 
 def insertion_sort(array, compare=compare_ascending):
-    pass
+
+    # for each item in _mutating_ array
+    for i in range(1, len(array)):
+
+        item = array[i]
+        j = i  # this index moves
+
+        # from [j] to the left, swap [j] and [j-1] until correct index for item
+        while compare(item, array[j - 1]) < 0 and j > 0:
+            array[j] = array[j - 1]
+            j -= 1
+
+        # insert item at [j]
+        array[j] = item
+
+    return array
 
 
 # TO-DO: Complete the selection_sort() function below
