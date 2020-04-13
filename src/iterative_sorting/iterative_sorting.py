@@ -23,13 +23,13 @@ def count_sort( arr, maximum=-1 ):
     if min(arr) < 0:
         return 'Error, negative numbers not allowed in Count Sort'
 
-    cntArray = [0] * (max(arr)+1)
+    cntArr = [0] * (max(arr)+1)
 
     for e in arr:
-        cntArray[e]+=1
+        cntArr[e]+=1
 
     index = 0
-    for i, e in enumerate(cntArray):
+    for i, e in enumerate(cntArr):
         arr[index:index+e] = [i]*e
         index+=e
 
