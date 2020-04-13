@@ -9,6 +9,12 @@ from compare import compare_ascending
 
 
 def insertion_sort(array, compare=compare_ascending):
+    # 0. take some array
+    # 1. start with the first item (i = 0) in the array -- this is sorted
+    # 2. take array[i], the next item (i = 1, 2, ...) in the array
+    # 3. compare array[i] to each previous item (j = i, i-1, ...) until you find the right spot for array[i]
+    # 4. move all checked items "more" than array[i] to the right and insert array[i] at its new index in the "sorted" portion of the array
+    # 5. repeat until there are no more items to sort
 
     # for each item in _mutating_ array
     for i in range(1, len(array)):
