@@ -1,6 +1,7 @@
 import unittest
 import random
 from iterative_sorting import (
+    insertion_sort,
     selection_sort,
     bubble_sort,
     count_sort,
@@ -16,6 +17,13 @@ class IterativeSortingTest(unittest.TestCase):
         lambda: [-1, 0, 1, 2, 3, 4, 5],
         lambda: random.sample(range(200), 50),
     )
+
+    def test_insertion_sort(self):
+
+        for test_array in self.test_arrays:
+
+            array = test_array()
+            self.assertEqual(insertion_sort(array), sorted(array))
 
     def test_selection_sort(self):
 
