@@ -62,6 +62,11 @@ def selection_sort(array, compare=compare_ascending):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(array, compare=compare_ascending):
+    # 0. take some array
+    # 1. for each pair of items (i, i+1) in the "unsorted" array, compare
+    # 2. swap array[i] and array[i+1] if they are out of order
+    # -- doing this once will move the "maximum" item to the end of array, which is now "sorted"
+    # 3. repeat the process on the "unsorted" array until nothing is left
 
     return array
 
