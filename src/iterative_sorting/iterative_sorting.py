@@ -35,7 +35,14 @@ def insertion_sort(array, compare=compare_ascending):
 
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(array, compare=compare_ascending):
-    # loop through n-1 elements
+    # 0. take some array
+    # 1. imagine the beginning of the array as "sorted" -- currently empty
+    # 2. start with the first item (i = 0, 1, 2, ...) -- this is the "current minimum"
+    # 3. move through the rest of array and record each value "less" than the "current minimum" as the new "current minimum"
+    # 4. swap the "current minimum" with item _after_ the end of the "sorted" portion of array
+    # 5. repeat for the remaining "unsorted" portion of array
+
+    # for each item in _mutating_ array
     for i in range(0, len(array) - 1):
         current_index = i
         index_of_min = current_index
