@@ -2,7 +2,10 @@
 #   ITERATIVE SORTING
 ############################################################
 
-from ..compare import compare_ascending
+import sys
+sys.path.append("../")
+
+from compare import compare_ascending
 
 
 def insertion_sort(array, compare=compare_ascending):

@@ -2,7 +2,10 @@
 #   RECURSIVE SORTING
 ############################################################
 
-from ..compare import compare_ascending
+import sys
+sys.path.append("../")
+
+from compare import compare_ascending
 
 
 def quick_sort(array, compare=compare_ascending):
