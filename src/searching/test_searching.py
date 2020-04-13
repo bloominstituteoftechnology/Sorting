@@ -8,32 +8,75 @@ from searching import (
 
 class SearchingTests(unittest.TestCase):
 
-    def test_linear_search(self):
-        arr1 = [-2, 7, 3, -9, 5, 1, 0, 4, -6]
-        arr2 = []
+    test_arrays = (
+        lambda: [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9],
+        lambda: [],
+    )
 
-        self.assertEqual(linear_search(arr1, 6), -1)
-        self.assertEqual(linear_search(arr1, -6), 8)
-        self.assertEqual(linear_search(arr1, 0), 6)
-        self.assertEqual(linear_search(arr2, 3), -1)
+    test_search_items = (
+        (
+            lambda: -8,
+            lambda: 0,
+        ),
+        (
+            lambda: 6,
+            lambda: 0,
+        ),
+    )
+
+    def index_of(self, array, value):
+
+        r = None
+
+        try:
+            r = array.index(value)
+
+        except ValueError:
+            r = None
+
+        return r
+
+    def test_linear_search(self):
+
+        for test_array in self.test_arrays:
+
+            array = test_array()
+
+            for test_search_item in self.test_search_items:
+
+                search_item = test_search_item()
+                self.assertEqual(
+                    linear_search(array, search_item),
+                    self.index_of(array, search_item),
+                )
 
     def test_binary_search(self):
-        arr1 = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
-        arr2 = []
 
-        self.assertEqual(binary_search(arr1, -8), 1)
-        self.assertEqual(binary_search(arr1, 0), 6)
-        self.assertEqual(binary_search(arr2, 6), -1)
-        self.assertEqual(binary_search(arr2, 0), -1)
+        for test_array in self.test_arrays:
+
+            array = test_array()
+
+            for test_search_item in self.test_search_items:
+
+                search_item = test_search_item()
+                self.assertEqual(
+                    binary_search(array, search_item),
+                    self.index_of(array, search_item),
+                )
 
     def test_binary_search_recursive(self):
-        arr1 = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
-        arr2 = []
 
-        self.assertEqual(binary_search_recursive(arr1, -8, 0, len(arr1) - 1), 1)
-        self.assertEqual(binary_search_recursive(arr1, 0, 0, len(arr1) - 1), 6)
-        self.assertEqual(binary_search_recursive(arr2, 6, 0, len(arr1) - 1), -1)
-        self.assertEqual(binary_search_recursive(arr2, 0, 0, len(arr1) - 1), -1)
+        for test_array in self.test_arrays:
+
+            array = test_array()
+
+            for test_search_item in self.test_search_items:
+
+                search_item = test_search_item()
+                self.assertEqual(
+                    binary_search_recursive(array, search_item, 0, len(array) - 1),
+                    self.index_of(array, search_item),
+                )
 
 
 if __name__ == '__main__':
