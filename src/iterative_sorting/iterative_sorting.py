@@ -68,6 +68,14 @@ def bubble_sort(array, compare=compare_ascending):
     # -- doing this once will move the "maximum" item to the end of array, which is now "sorted"
     # 3. repeat the process on the "unsorted" array until nothing is left
 
+    for i in range(0, len(array) - 1):
+        for j in range(0, len(array) - 1 - i):
+            if compare(array[j + 1], array[j]) < 0:
+                # swap
+                item = array[j + 1]
+                array[j + 1] = array[j]
+                array[j] = item
+
     return array
 
 
