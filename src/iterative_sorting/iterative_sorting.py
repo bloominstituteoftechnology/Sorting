@@ -44,12 +44,18 @@ def selection_sort(array, compare=compare_ascending):
 
     # for each item in _mutating_ array
     for i in range(0, len(array) - 1):
-        current_index = i
-        index_of_min = current_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
 
-        # TO-DO: swap
+        p = i  # index of this iteration's "minimum"
+
+        # find minumum in "unsorted" portion
+        for j in range(i, len(array)):
+            if compare(array[j], array[p]) < 0:
+                p = j
+
+        # swap
+        item = array[p]
+        array[p] = array[i]
+        array[i] = item
 
     return array
 
