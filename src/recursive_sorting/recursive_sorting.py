@@ -5,6 +5,10 @@
 from ..compare import compare_ascending
 
 
+def quick_sort(array, compare=compare_ascending):
+    pass
+
+
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrayA, arrayB, compare=compare_ascending):
     elements = len(arrayA) + len(arrayB)
