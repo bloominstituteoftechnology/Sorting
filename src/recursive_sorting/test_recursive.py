@@ -20,18 +20,20 @@ class RecursiveSortingTests(unittest.TestCase):
 
         for test_array in self.test_arrays:
 
-            array = test_array()
-            self.assertEqual(merge_sort(array), sorted(array))
+            arrayA = test_array()
+            arrayB = test_array()
+            self.assertEqual(merge_sort(arrayA), sorted(arrayB))
 
     # Uncomment this test to test your in-place merge sort
     # def test_in_place_merge_sort(self):
-
+    #
     #     for test_array in self.test_arrays:
-
-    #         array = test_array()
+    #
+    #         arrayA = test_array()
+    #         arrayB = test_array()
     #         self.assertEqual(
-    #             merge_sort_in_place(array, 0, len(array) - 1),
-    #             sorted(array),
+    #             merge_sort_in_place(arrayA, 0, len(arrayA) - 1),
+    #             sorted(arrayB),
     #         )
 
 

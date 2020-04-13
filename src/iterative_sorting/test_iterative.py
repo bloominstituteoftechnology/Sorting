@@ -22,36 +22,40 @@ class IterativeSortingTest(unittest.TestCase):
 
         for test_array in self.test_arrays:
 
-            array = test_array()
-            self.assertEqual(insertion_sort(array), sorted(array))
+            arrayA = test_array()
+            arrayB = test_array()
+            self.assertEqual(insertion_sort(arrayA), sorted(arrayB))
 
     def test_selection_sort(self):
 
         for test_array in self.test_arrays:
 
-            array = test_array()
-            self.assertEqual(selection_sort(array), sorted(array))
+            arrayA = test_array()
+            arrayB = test_array()
+            self.assertEqual(selection_sort(arrayA), sorted(arrayB))
 
     def test_bubble_sort(self):
 
         for test_array in self.test_arrays:
 
-            array = test_array()
-            self.assertEqual(bubble_sort(array), sorted(array))
+            arrayA = test_array()
+            arrayB = test_array()
+            self.assertEqual(bubble_sort(arrayA), sorted(arrayB))
 
     # Uncomment this test to test your count_sort implementation
     # def test_counting_sort(self):
     #
     #     for test_array in self.test_arrays:
     #
-    #         array = test_array()
+    #         arrayA = test_array()
+    #         arrayB = test_array()
     #
-    #         if any(item < 0 for item in array):
+    #         if any(item < 0 for item in arrayA):
     #             expected_output = "Error, negative numbers not allowed in Count Sort"
     #         else:
-    #             expected_output = sorted(array)
+    #             expected_output = sorted(arrayB)
     #
-    #         self.assertEqual(count_sort(array), expected_output)
+    #         self.assertEqual(count_sort(arrayA), expected_output)
 
 
 if __name__ == '__main__':
