@@ -8,11 +8,12 @@ def selection_sort( arr ):
 def bubble_sort( arr ):
     sorted = False
     while not sorted:
-      sorted = True
-      for i in range(len(arr)-1):
-          if arr[i] > arr[i+1]:
-              sorted = False
-              arr[i], arr[i+1] = arr[i+1], arr[i]
+        # Assume it's already sorted and look for evidence to the contrary.
+        sorted = True
+        for i in range(len(arr)-1):
+            if arr[i] > arr[i+1]:
+                sorted = False
+                arr[i], arr[i+1] = arr[i+1], arr[i]
 
     return arr
 
