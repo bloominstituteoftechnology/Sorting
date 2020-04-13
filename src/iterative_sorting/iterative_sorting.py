@@ -9,18 +9,36 @@ def selection_sort(arr):
 
         # progress through array looking for smaller number
         for j in range(cur_index, len(arr)):
-            if arr[cur_index] > arr[j]:
+            if arr[smallest_index] > arr[j]:
                 smallest_index = j
         # TO-DO: swap
-        arr[cur_index] = arr[smallest_index]
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort(arr):
 
+# UNDERSTAND
+    # Compare consecutive items
+    # The highest number will bubble all the way to the right with each iteration
+
+
+def bubble_sort(arr):
+    # PLAN
+    #  create first iteration that takes in the first index
+    for i in range(1, len(arr)):
+        #  make another iteration that is always at the prev number
+        for j in range(0, len(arr) - 1):
+            #  if 2nd number is greater than the first, swap
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                # i += 1
     return arr
+
+
+a = [8, 2, 5, 1]
+bubble_sort(a)
 
 
 # STRETCH: implement the Count Sort function below
