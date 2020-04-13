@@ -8,7 +8,7 @@ def selection_sort( arr ):
         # (hint, can do in 3 loc) 
              
             # i + 1 makes it so we start at 1 and not 0, b/c lists, aka arrays start at 0.
-        for j in range(i + 1, len(arr)): # i + 1 = 0 + 1
+        for j in range(i + 1, len(arr)): # i + 1 = 0 + 1, length(arr)
             if arr[j] < arr[smallest_index]:  # j ( is less than) smallest_index (1)
                 smallest_index = j # 1 = 1
 
