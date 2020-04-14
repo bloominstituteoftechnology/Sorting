@@ -33,6 +33,32 @@ def bubble_sort( arr ):
 
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
+'''
 
-    return arr
+Counting sort is a sorting algorithm that sorts the elements of an array by counting the number of occurrences of each unique element in the array. The count is stored in an auxiliary array and the sorting is done by mapping the count as an index of the auxiliary array.
+
+'''
+
+# Looking in the test_iterative.py, in arr4, the range is set to 200 so I will sed the max to 200
+
+def count_sort( arr, maximum=200 ):
+    # iterate over array
+    for i in arr:
+        # checking to see if there is a negative element in the array; if so, return the statement in the test file
+        if arr[i] < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+    # setting everything to zero
+    count = [0] * (maximum + 1)
+    arr_set = [0] * len(arr)
+
+    for i in arr:
+        count[i] +=1
+
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    
+    for i in range(len(arr) - 1, -1, -1):
+        arr_set[count[arr[i]] - 1] = arr[i]
+        count[arr[i]] -= 1
+
+    return arr_set
