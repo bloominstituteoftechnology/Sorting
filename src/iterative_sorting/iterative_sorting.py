@@ -1,5 +1,5 @@
 def selection_sort( arr ):
-    for i in range(len(arr)):
+    for i in range(len(arr)-1):
         sm_i = min(enumerate(arr[i:], start=i), key=lambda x: x[1])[0]
         arr[i], arr[sm_i] = arr[sm_i], arr[i]
 
