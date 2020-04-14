@@ -18,24 +18,24 @@ class RecursiveSortingTests(unittest.TestCase):
 
     # Uncomment this test to test your in-place merge sort implementation
     # def test_in_place_merge_sort(self):
-        arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-        arr2 = []
-        arr3 = [2]
-        arr4 = [0, 1, 2, 3, 4, 5]
-        arr5 = random.sample(range(200), 50)
+        # arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+        # arr2 = []
+        # arr3 = [2]
+        # arr4 = [0, 1, 2, 3, 4, 5]
+        # arr5 = random.sample(range(200), 50)
 
-        merge_sort_in_place(arr1, 0, len(arr1)-1)
-        merge_sort_in_place(arr2, 0, len(arr2)-1)
-        merge_sort_in_place(arr3, 0, len(arr3)-1)
-        merge_sort_in_place(arr4, 0, len(arr4)-1)
-        merge_sort_in_place(arr5, 0, len(arr5)-1)
+        # merge_sort_in_place(arr1, 0, len(arr1)-1)
+        # merge_sort_in_place(arr2, 0, len(arr2)-1)
+        # merge_sort_in_place(arr3, 0, len(arr3)-1)
+        # merge_sort_in_place(arr4, 0, len(arr4)-1)
+        # merge_sort_in_place(arr5, 0, len(arr5)-1)
 
-        # Compare the original array, now modified, with our expected
-        self.assertEqual(arr1, [0,1,2,3,4,5,6,7,8,9])
-        self.assertEqual(arr2, [])
-        self.assertEqual(arr3, [2])
-        self.assertEqual(arr4, [0,1,2,3,4,5])
-        self.assertEqual(arr5, sorted(arr5))
+        # # Compare the original array, now modified, with our expected
+        # self.assertEqual(arr1, [0,1,2,3,4,5,6,7,8,9])
+        # self.assertEqual(arr2, [])
+        # self.assertEqual(arr3, [2])
+        # self.assertEqual(arr4, [0,1,2,3,4,5])
+        # self.assertEqual(arr5, sorted(arr5))
 
 
 if __name__ == '__main__':
