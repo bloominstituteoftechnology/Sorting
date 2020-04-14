@@ -6,14 +6,13 @@ def selection_sort( arr ):
     return arr
 
 def bubble_sort( arr ):
-    sorted = False
-    while not sorted:
-        # Assume it's already sorted and look for evidence to the contrary.
-        sorted = True
-        for i in range(len(arr)-1):
+    elem_num = len(arr)
+    sorted_elems = 0
+    while sorted_elems != elem_num:
+        for i in range(elem_num - sorted_elems - 1):
             if arr[i] > arr[i+1]:
-                sorted = False
                 arr[i], arr[i+1] = arr[i+1], arr[i]
+        sorted_elems += 1
 
     return arr
 
