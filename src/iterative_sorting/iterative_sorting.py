@@ -6,6 +6,13 @@ def selection_sort( arr ):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
+
+            # move curr_index to next index
+            # compare smallest_index to curr_index
+            # replace smallest index with current index if curr_index is smaller
+          
+
+            for j in range(i+1, )
              
 
 
