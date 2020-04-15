@@ -1,4 +1,5 @@
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
+
 def merge( arrA, arrB ):
     result = []
     i = j = 0
@@ -15,33 +16,48 @@ def merge( arrA, arrB ):
 
     return result
 
+#arrA = [2,3,4,5,6,7]
+#arrB = [9,10,11,12,13]
+#merge(arrA, arrB)
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    if len(arr) < 2:
+    #(base case) if the array is empty or lenght 1 return
+    if len(arr) <= 1:
         return arr
-    mid = len(arr)//2
+        left = merge_sort(arr[:len(arr)//2])
+        right = merge_sort(arr[len(arr)//2:])
+        arr = merge(left, right)
 
-    left=merge_sort(arr[:mid])
-    right=merge_sort(arr[mid:])
-
-    return merge(left,right)
-
-
-
-# STRETCH: implement an in-place merge sort algorithm
-def merge_in_place(arr, start, mid, end):
+    return arr
+arr = [2,5,3,6,9,4,15,0]
+merge_sort(arr)
     # TO-DO
 
-    return arr
+# TO-DO: implement the Merge Sort function below USING RECURSION
+def merge_sort( arr ):
 
-def merge_sort_in_place(arr, l, r):
+    #split here
+
+    #find the middle of arr
+    #put stuff to the left in left
+    #put the stuff to the right in right
+
+    #merge left and right
+
+# # STRETCH: implement an in-place merge sort algorithm
+#def merge_in_place(arr, start, mid, end):
     # TO-DO
 
-    return arr
+   # return arr
+
+#def merge_sort_in_place(arr, l, r):
+    # TO-DO
+
+    #return arr
 
 
-# STRETCH: implement the Timsort function below
-def timsort( arr ):
+# # STRETCH: implement the Timsort function below
+#def timsort( arr ):
 
-    return arr
+    #return arr
