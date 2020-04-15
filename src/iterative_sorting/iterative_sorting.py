@@ -17,7 +17,7 @@ def selection_sort( arr ):
     # c. When the correct index is found, copy temp into this position
         # TO-DO: swap
 
-    arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
 
     return arr
@@ -37,14 +37,14 @@ def bubble_sort( arr ):
         swaps_occured = False
     
     #for each element in the array...
-    for i in range(len(arr) - 1):
+        for i in range(len(arr) - 1):
 
         # check neighbor to the right
-        if arr[i] > arr[i+1]:
+            if arr[i] > arr[i+1]:
         
         # if neighbor is smaller, swap and make flag true
-            arr[i],  arr[i+1] =  arr[i+1], arr[i]
-            swaps_occured = True
+                arr[i],  arr[i+1] =  arr[i+1], arr[i]
+                swaps_occured = True
 
     return arr
 
