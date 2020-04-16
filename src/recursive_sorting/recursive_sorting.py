@@ -4,19 +4,12 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
+    # Initialise pointers for the front of Arrays A & B
     a = 0
     b = 0
-
-    return merged_arr
-
-def merge(arrA, arrB):
-    elements = len(arrA) + len(arrB)
-    merged_arr = [0] * elements
-    a = 0
-    b = 0
-    # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
     for i in range(0, elements):
-        if a >= len(arrA):    # all elements in arrA have been merged
+        # compare thearrays
+         if a >= len(arrA):    # all elements in arrA have been merged
             merged_arr[i] = arrB[b]
             b += 1
         elif b >= len(arrB):  # all elements in arrB have been merged
@@ -29,6 +22,16 @@ def merge(arrA, arrB):
             merged_arr[i] = arrB[b]
             b += 1
     return merged_arr
+
+
+def merge(arrA, arrB):
+    elements = len(arrA) + len(arrB)
+    merged_arr = [0] * elements
+    a = 0
+    b = 0
+    # since arrA and arrB already sorted, we only need to compare the first element of each when merging!
+    for i in range(0, elements):
+       
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
