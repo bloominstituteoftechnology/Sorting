@@ -1,3 +1,6 @@
+import numpy as np
+
+
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
     # loop through n-1 elements
@@ -33,5 +36,27 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-
-    return arr
+    #Find the maximum value:
+    if maximum == -1:
+        try:
+            maximum = max(arr)
+        except ValueError:
+            return []
+    
+    # Store the count of each unique object.
+    count = np.zeros(maximum + 1)
+    for num in arr:
+        if num < 0:
+            return 'Error, negative numbers not allowed in Count Sort'
+        count[num] += 1
+    
+    # Make the count array cumulative.
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    
+    output_arr = arr.copy()
+    for num in arr:
+        output_arr[int(count[num]) - 1] = num
+        count[num] -= 1
+        
+    return output_arr
