@@ -1,8 +1,17 @@
 import unittest
 import random
-from recursive_sorting import *
+from recursive_sorting import merge, merge_sort
 
 class RecursiveSortingTests(unittest.TestCase):
+    def test_merge(self):
+        arr1 = [1, 3, 5, 7, 9]
+        arr2 = [2, 4, 6]
+        arr3 = []
+        arr4 = [1, 2, 3]
+        self.assertEqual(merge(arr1, arr2), [1, 2, 3, 4, 5, 6, 7, 9])
+        self.assertEqual(merge(arr3, arr4), [1, 2, 3])
+        self.assertEqual(merge(arr3, arr3), [])
+    
     def test_merge_sort(self):
         arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
         arr2 = []
