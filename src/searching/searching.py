@@ -13,7 +13,7 @@ def binary_search(arr, target):
         return -1 # array empty
 
     low = 0
-    high = len(arr)-1
+    high = len(arr)
 
     # TO-DO: add missing code
     while high > low:
