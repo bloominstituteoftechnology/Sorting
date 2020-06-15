@@ -60,6 +60,9 @@ print(bubble_sort([3,5,7,9]))
 
 
 # STRETCH: smallest_index
+# a technique based on keys in a specific range
+# it works by counting the number of objects having distinct keys
+
 def count_sort( arr, maximum=-1 ):
 
     return arr
