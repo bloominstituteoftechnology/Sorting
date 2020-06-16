@@ -3,8 +3,9 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-    a = 0
-    b = 0
+    a = 0 # initial array [1 4 9 10]
+    b = 0 # initial array [ 2 3 6 7 8]
+    # put both element list in one array [1 2 3 4 6 7 8 9 10]
     # arrA & arrB are sorted , we might need to compare the first element of each list before merging!
     # Therefore:
     for el in range(0, elements):# for every element in range from (0 to elements)
