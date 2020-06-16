@@ -3,8 +3,23 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-
-    
+    a = 0
+    b = 0
+    # arrA & arrB are sorted , we might need to compare the first element of each list before merging!
+    # Therefore:
+    for el in range(0, elements):# for every element in range from (0 to elements)
+        if a >= len(arrA):#     
+            merged_arr[el] = arrB[b]
+            b += 1
+        elif b >= len(arrB):  
+            merged_arr[el] = arrA[a]
+            a += 1
+        elif arrA[a] < arrB[b]:  
+            merged_arr[el] = arrA[a]
+            a += 1
+        else:  
+            merged_arr[el] = arrB[b]
+            b += 1
     return merged_arr
 
 
@@ -13,10 +28,9 @@ def merge_sort( arr ):
     # TO-DO
     # base case
     if len(arr) >1: 
-        mid = len(arr)//2 # Finding the mid of the array 
-        Left = arr[0:mid] # Dividing the array elements  
-        Right = arr[mid:] # into 2 halves 
-        arr = merge(merge_sort(Left), merge_sort(Right))
+        left = merge_sort(arr[0:len(arr) // 2]) # Dividing the array elements  
+        right = merge_sort(arr[len(arr) // 2:]) # into 2 lists
+        arr = merge(merge_sort(left), merge_sort(right))
     return arr
 
 
