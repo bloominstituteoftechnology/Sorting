@@ -34,6 +34,14 @@ def binary_search(arr, target):
 
 
 # STRETCH: write a recursive implementation of Binary Search 
+# we having an index of 5 numbers: [4,7,8,12,45,99] and we set 4 the low number and 99 the high number
+# we need to determine a middle index in these array of numbers.
+# to do so we say middle = (Lower + Upper) devided by 2: 0 + 5 /2 = 2 (0=4, 5=99)
+# searching for 45: we count the index array until the number 45 and devided by 2. The middle is 8
+# checking to see if our middle number is the number we are searching it
+# if the search value is bigger than the one we searching then middle number becomes new low abd the list came out smaller
+# so the new list will be [8, 12, 45, 99] same calculations again and the new list will be [12, 45, 99]
+
 def binary_search_recursive(arr, target, low, high):
   
   middle = (low+high)//2
