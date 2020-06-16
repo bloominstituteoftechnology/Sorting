@@ -1,5 +1,10 @@
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
+    # in Selection sort we trying to find the minimum value in a list
+    # so we set the first number as a minimum and we comparing it, to every number to the right
+    # as soon as we come accross with a number that is the minimum, we assign that as the new minimum and we continue.
+    # Example: [4,6,2,8,7]. Our first number was 4, however we found out that 2 is the minimum and we set it up to the left.
+    # the number 2 at the left is a sorted list and to the right is unsorted list. We continue our iteration with the minimum number in our right side and we put it in the left side last position.
     # loop through n-1 elements
     # we are looping through each item in our collection one at a time
     # 0 is the starting number of the index
@@ -16,7 +21,8 @@ def selection_sort( arr ):
             # if arr in the position j is less than our smallest_index
              if arr[j] < arr[smallest_index]:
                 # then we need to replace our smallest_index with j
-                # so we going through all the elements to the right we are currently are 
+                # so we going through all the elements to the right we are currently are on the index 
+                # and if we find something smaller we change that to the smallest index
                smallest_index = j
              
         # TO-DO: swap
