@@ -58,6 +58,52 @@ So you decide to break this insane task up into more manageable pieces. First, y
 4. Repeat step 3 until the entire data set has been reassembled
 ```
 
+https://www.geeksforgeeks.org/merge-sort/
+
+def mergeSort(arr):
+    if len(arr) < 2:
+        return arr
+
+    midpoint = len(array) // 2
+    left = mergeSort(arr[:midpoint])
+    right = mergeSort(arr[midpoint:])
+    return merge(left, right)
+
+def merge(left, right):
+    # make a new array that is as large as both arrays combined
+    # set a pointer to the head of each array
+    # copy the smallest item under a pointer, then increment that pointer
+
+    result = []
+    left_pointer = 0
+    right_pointer = 0
+
+    while left_pointer < len(left) and right_pointer < len(right):
+        if left[left_pointer] <= right[right_pointer]:
+            result.push(left[left_pointer)
+            left_pointer = left_pointer + 1
+        else
+            result.push(right[right_pointer)
+            right_pointer = right_pointer + 1
+
+    while left_pointer < len(left):
+        result.push(left[left_pointer)
+        left_pointer = left_pointer + 1
+
+    while right_pointer < len(right):
+        result.push(right[right_pointer)
+        right_pointer = right_pointer + 1
+
+    # result should be the sorted, merged list
+    return result
+
+
+    [1, 3, 7]      [5, _, _, _]
+           ^           ^
+
+
+    [1, 3, 5, ]
+
 
 ### Real-World Applications
 Have you ever wondered how some of the languages you use actually implement their built-in `sort()` functions? Many of them actually utilize the ***Merge Sort*** algorithm! *WHY* they do so is because this sorting algorithm is reliably efficient. In all cases, regardless of how sorted the original data set might be, this algorithm will have a runtime of O(n log(n)), one of the better sorting runtimes out there.
