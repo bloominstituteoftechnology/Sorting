@@ -1,36 +1,16 @@
-# STRETCH: implement Linear Search
-def linear_search(arr, target):
+# this creates a random but sequential list of numbers to search
+import random
 
-    # TO-DO: add missing code
+random_list_length = int(input("Input desired random search-list length: "))
 
-    return -1  # not found
+# https://stackoverflow.com/questions/16655089/python-random-numbers-into-a-list#16655177
 
+numbers = []
+for i in range(random_list_length):
+    # parameters: start, stop, step
+    numbers.append(random.randrange(1, random_list_length, 1))
 
-# STRETCH: write an iterative implementation of Binary Search
-def binary_search(arr, target):
-
-    if len(arr) == 0:
-        return -1  # array empty
-
-    low = 0
-    high = len(arr) - 1
-
-    # TO-DO: add missing code
-
-    return -1  # not found
-
-
-# STRETCH: write a recursive implementation of Binary Search
-def binary_search_recursive(arr, target, low, high):
-
-    middle = (low + high) // 2
-
-    if len(arr) == 0:
-        return -1  # array empty
-    # TO-DO: add missing if/else statements, recursive calls
-
-
-###
+numbers = sorted(numbers)
 
 
 # Title: binary search experiment 2020.03.15 v2 11:41ET GGA
@@ -113,6 +93,7 @@ while lower_bound != upper_bound:
         # protecting against an edge case:
         # exit this innter loop if you hit the lower bound
         if lower_bound == location_observed:
+            print("This is as near as we could get.")
             print("Your search result may not exist.")
             break
 
@@ -145,3 +126,6 @@ while lower_bound != upper_bound:
     # 5. repeat (goes back to top of while loop)
     # continue looking until the the search target matches the location observed
     # in the target sorted list
+
+print("This is the whole list you searched:")
+print(numbers)
