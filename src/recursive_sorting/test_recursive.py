@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 import unittest
 import random
 from recursive_sorting import *
