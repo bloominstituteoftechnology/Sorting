@@ -18,7 +18,7 @@ class IterativeSortingTest(unittest.TestCase):
         arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
         arr2 = []
         arr3 = [0, 1, 2, 3, 4, 5]
-        arr4 = random.sample(range(200), 50)
+        arr4 = random.sample(range(2000), 50)
 
         self.assertEqual(bubble_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
         self.assertEqual(bubble_sort(arr2), [])
