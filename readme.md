@@ -22,6 +22,7 @@ Your task is to take a simple problem (sort an list of ints) and a pre-defined p
 
 That being said, please still use the 20 minute rule :slightly_smiling_face:
 
+Initial Commit!
 
 # Part 1
 
