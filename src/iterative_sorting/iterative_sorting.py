@@ -19,9 +19,20 @@ def selection_sort( arr ):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
-
-    return arr
+def bubble_sort(array):
+    input_array = array.copy()
+    swaps = 0
+    for i in range(len(array)-1):
+        if array[i] > array[i+1]:
+            swaps = swaps + 1
+            temp = array[i+1]
+            array[i+1] = array[i]
+            array[i] = temp
+    if swaps == 0:
+        return input_array
+    else:
+        bubble_sort(array)
+    return array
 
 
 # STRETCH: implement the Count Sort function below
