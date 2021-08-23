@@ -41,6 +41,8 @@ That being said, please still use the 20 minute rule :slightly_smiling_face:
  - Implement `merge_sort` in [recursive_sorting.py](src/recursive_sorting/recursive_sorting.py)
  - Test your implementation by running `test_recursive.py`
 
+#part 3
+
 ## Stretch Goals
  - Implement all the methods in the `searching.py` file in the `searching` directory.
  - Implement the `count_sort` algorithm in the `iterative_sorting` directory.
